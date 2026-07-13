@@ -1,0 +1,64 @@
+---
+title: "HubSpot: Send a Video When a Meeting is Booked"
+description: "Learn how to automatically send a personalized Sendspark video in HubSpot when a prospect books a meeting. Boost show rates."
+---
+
+## 1. Create Automation
+
+Go to [Sendspark Automated Workflows](https://sendspark.com/automated-workflows).
+
+Create a "new automation"
+
+![Sendspark Automated Workflows dashboard with new automation button](/images/11176283/c345e477-image.png)
+
+## 2. Add Trigger: Meeting Booked
+
+Add a trigger to start the automation.
+
+![Sendspark workflow editor showing trigger selection options](/images/11176283/2fd578fa-image.png)
+
+Select **HubSpot**, and the event **"New Meeting Created."**This event will fire anytime someone books a meeting.
+
+![HubSpot integration trigger menu displaying New Meeting Created event](/images/11176283/0142a076-image.png)
+
+If you'd like to, you can refine this down to a specific meeting ID or title, so you only trigger this automation when certain meetings are booked.
+
+Click the funnel to add filters:
+
+![Workflow trigger settings with funnel icon to add filters](/images/11176283/d11faca8-image.png)
+
+And then add your conditions:
+
+![Filter conditions panel for refining meeting trigger criteria](/images/11176283/76f9b6fd-image.png)
+
+## 3. Add Action: Create Sendspark AI Video
+
+Before you can create your dynamic video in this automation, you need to first get more information about the person who booked the meeting from HubSpot.
+
+Add a HubSpot action for "Find Contact"
+
+![HubSpot Find Contact action setup in workflow builder](/images/11176283/e12abbda-image.png)
+
+Use "Guest Emails" to find more information:
+
+![Guest Emails field selection for HubSpot contact lookup](/images/11176283/44f9f496-image.png)
+
+And then, add an action to create your Sendspark video. Select **"Sendspark"**and **"Create Dynamic Video"**
+
+![Sendspark Create Dynamic Video action option in workflow](/images/11176283/ea712939-image.png)
+
+Map in all of the contact fields you would like to use to personalize your video:
+
+![Contact field mapping interface for personalizing video content](/images/11176283/e3d9a716-image.png)
+
+Save this step!
+
+## 4. Add Action: Send Video
+
+You can send this video directly in Gmail or Outreach, or check out one of the [many other ways](https://help.sendspark.com/en/collections/12626407-automatically-send-videos) to share your video in automated workflows.
+
+![Action options for sending video via Gmail or Outreach](/images/11176283/b72b7cd9-image.png)
+
+The entire workflow should look something like this:
+
+![Complete workflow overview showing all automation steps connected](/images/11176283/212ab7d8-image.png)

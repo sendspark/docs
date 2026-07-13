@@ -1,0 +1,160 @@
+---
+title: "GHL - Auto-Generate Video on Meeting Booking"
+description: "Learn how to automatically generate personalized Sendspark videos when someone books a meeting in GoHighLevel using webhooks and"
+---
+
+## 🔄 Automatically Generate Videos in Sendspark When Someone Books a Meeting in GoHighLevel
+
+Hi there! Dan from Tech Support here 👋
+
+This guide will walk you through **how to automatically generate a personalized Sendspark video** whenever someone books a meeting in **GoHighLevel**. We’ll cover every step in detail, from workflow setup to webhook integration and dynamic video creation.
+
+<iframe src="https://www.youtube.com/embed/BCir5H1X89E?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+---
+
+## 🔧 Step-by-Step: Setting Up the Trigger
+
+## 1. Create a New Workflow in GoHighLevel
+
+- Go to **Automations** → click on **Workflows** → then **Start from Scratch**.
+- Name your workflow (e.g., `May 22nd`).
+- Save it.
+
+---
+
+## 2. Create a Calendar and a Form
+
+To capture all necessary data:
+
+## Create a Form:
+
+- Go to **Sites** → **Forms** → **Builder**.
+- Click **Create New**.
+- Add fields: **First Name** (mandatory), **Email**, and optionally others.
+- Drag in the **Website** field (used for video background personalization).
+- Save the form.
+
+## Create a Calendar:
+
+- Go to **Calendars** under **Settings**.
+- Click **Create New**.
+- Select **Personal Booking**.
+- Link your previously created form under **Forms and Payments**.
+- Save and publish.
+
+---
+
+## 🔗 Step 3: Create the Trigger in Workflow
+
+- Add a trigger: **Customer Booked Appointment**.
+- Select your calendar (e.g., `Sunspark 2`).
+- Click **Save Trigger**.
+
+Now, we tell the system **what happens next** — i.e., generate a video.
+
+---
+
+## 🌐 Step 4: Configure the Webhook to Sendspark
+
+- Add a new action → choose **Custom Webhook** (not standard one).
+- In the **URL field**, use the Sendspark API endpoint (found in your Help Center).
+  - Go to **Help Center** → search for "API" → use the **Add Single Prospect** endpoint.
+  - This works for bulk requests too.
+
+## Use Headers:
+
+- `accept`
+- `key`
+- `secret`
+
+Get these under:
+
+- **Menu → API Credentials** in Sendspark.
+
+Paste them into your webhook setup.
+
+---
+
+## 🧠 Step 5: Set Up Dynamic Video in Sendspark
+
+1. Go to **Dynamic Videos** in Sendspark.
+2. Click **Create New**.
+3. Choose **GoHighLevel – Meetings** as the use case.
+4. Select a sample video.
+5. Choose a template.
+6. Continue to setup.
+
+## Find and Use:
+
+- **Campaign ID** → located via the 3-dot menu in the campaign list.
+- Paste into your webhook payload.
+- Remove any curly braces `{}` or unnecessary default data.
+
+---
+
+## 🔄 Step 6: Map Correct Variables
+
+Make sure to:
+
+- Use `firstName` and `email` in payload.
+- Include the right website URL from the booking form for personalization.
+- Leave fields like job title or company empty if not in use — required fields must be present to avoid webhook failure.
+
+---
+
+## ✅ Final Checks & Testing
+
+1. **Save all settings.**
+2. Click **Save Action** in GoHighLevel.
+3. Publish the workflow.
+4. **Test in Incognito Mode**:
+  - Make a booking.
+  - Check Sendspark for video generation status.
+  - If needed, refresh enrollment or logs to verify workflow execution.
+
+---
+
+## 🎁 Bonus
+
+If you are coming from the video (above), here's the information I promised:
+
+URL:
+
+```
+https://api-gw.sendspark.com/v1/workspaces/{WORKSPACE-ID}/dynamics/{CAMPAIGN-ID}/prospect
+```
+
+Headers:
+
+```
+x-api-secret  xxxxxxxxxxxxxxxxx-api-key     xxxxxxxxxxxxxxxxAccept        application/json
+```
+
+​Payload:
+
+```
+{  "processAndAuthorizeCharge": true,  "prospectDepurationConfig": {    "forceCreation": false,     "payloadDepurationStrategy": "keep-first-valid"  },  "prospect": {      "contactName": "#{{contact.name}}",      "contactEmail": "#{{contact.email}}",      "company": "",      "jobTitle": "",      "backgroundUrl": "#{{contact.website}}"  }}
+```
+
+Note: If you are planning on NOT using one the BackgroundURL fields, do not leave it empty. Please remove it.
+
+Note 2: Do NOT select "#&#123;&#123;contact.website_Url&#125;&#125;" ONLY USE "#&#123;&#123;contact.website&#125;&#125;"
+
+---
+
+## 🎉 That’s It!
+
+Once everything is set up and tested:
+
+- Your personalized video will generate automatically.
+- You'll see the video linked to the booking.
+
+**Troubleshooting Tip**: If you don’t see a video, check the webhook execution log in GoHighLevel to ensure the flow finished correctly and the payload was accepted.
+
+---
+
+## 💬 Need Help?
+
+If anything’s unclear or doesn’t work as expected, reach out — we're happy to assist.  
+Thanks for following along!

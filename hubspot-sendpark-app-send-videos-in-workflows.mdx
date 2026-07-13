@@ -1,0 +1,98 @@
+---
+title: "HubSpot+Sendpark App: Send Videos in Workflows"
+description: "Learn how to send personalized videos in HubSpot workflows using the Sendspark app. Automate video outreach and track view analytics in your CRM."
+---
+
+The [Sendspark + HubSpot App Integration](/hubspot-app-basic-installation-and-testing) makes it easy to automatically send AI-personalized videos in HubSpot emails.
+
+## How to Automatically Send AI-Personalized in HubSpot Workflows
+
+## 1. Create Your Dynamic Video in Sendspark
+
+Go to the [dynamic videos tab](https://sendspark.com/dynamic-videos) in Sendspark.
+
+Click on **"Create Dynamic Video,"**and follow the steps to create a dynamic video campaign.
+
+Here's you'll be able to take one video and use placeholders (i.e. "contact first name") that will get updated when you import your contact information.
+
+[Learn more about creating AI-personalized videos here.](/dynamic-videos-make-videos-with-ai-introductions)
+
+## 2. Set Up Your Workflow in HubSpot
+
+The goal of the workflow is automatically send dynamic video emails in HubSpot as soon as contacts are added to the Sendspark Dynamic Video Campaign.
+
+![HubSpot workflow canvas showing Sendspark Dynamic Video Generated trigger and email action](/images/8874862/d76d4b65-pMgLNa1MNrUTYIOSS2kye0ETE0NuoQ32NMVuROxhJQ-syhv0LNHBU1viIz3VilGNd3OxKE0RlSXCZ4NZCcYEzikRnQK00XLkmdNXC-HM3LC4k8lyIvMiJjjAjNNeLgKbD8JpEbkasT1UMQA_64f3OgM.png)
+
+There are 2 important pieces of this workflow:
+
+### A) The Trigger: Dynamic Video Generated
+
+The trigger indicates when someone should be enrolled in this workflow. In this case, you should use a "Filter Criteria" trigger: **Sendspark Dynamic Video Generated for Contact**
+
+This basically means: when a contact has a video from that campaign generated for them, enroll them in this HubSpot Workflow!
+
+**I. Click to "Set Up Triggers"**
+
+![HubSpot workflow trigger setup menu with enrollment options displayed](/images/8874862/43547de3-uUUYcWf0VTO6AmbLDrAX02hkpIEg51UwLMTOMwhO4eIfP-pdHUHbdmiB1IcM3FV1EswsS4vtsXk-U17yrLlouRqGa3qEH884JfEXXOHkktUqppGHKoFRKdW6qrRW2MYOOumMAEJuvCQk3g42QENxOgI.png)
+
+**II. Use the option “When filter criteria is met”**
+
+![HubSpot filter criteria selection showing When filter criteria is met option](/images/8874862/47ec3e6c-NaUkcqLNXRjgzW9KD6qF1Djf940aCVwyT_iwZiu20JarRWB8Lt5cgtm4Z76PgdyUmUvCTmcTd_stsxkYueJRZwSFfFMqV7w-SThFx6CHvvSFeAa7CJN9PVd3TwWGsekq9O24x1Je2T_Lm_hUMoJwxMQ.png)
+
+**III. Use Sendspark → Dynamic Video Generated for Contact properties**
+
+![HubSpot property selector displaying Sendspark Dynamic Video Generated for Contact properties](/images/8874862/8cef7bba-J2AkkU8JmKYHy9QrvRWgBp4_hnc2Z_fsaHiA3mLm7v-6HTjB4Vc0tzdvkrBWap_diUsCN0jGQc9Dw1BgvyCjKACca_p8TH79HeEeYiLV485FY1pcGK_q2BbitgYDE3jsB4J3m9xkgttCRCSwE_UM0ZQ.png)
+
+**IV. Select “Dynamic Campaign Id”**
+
+Use the **Dynamic Video Campaign ID**of the campaign you just created. (You can find the Dynamic Video Campaign ID in the URL of your dynamic video campaign between the slashes after**“edit-v2”)**
+
+![HubSpot workflow showing Dynamic Campaign ID field selection in filter criteria](/images/8874862/f72c93d3-HGPmAtmj-O7X4MGYv3yVA75mOPrVj0FITqfCKPEvmyf6ntJEtlTD6YPQ6iFNd_lzRbrjFgAOwp9XRwT3ymXWDOxxpViDsEmiLveS8rFtPpNj0DCsE5KIH-G-BX-UduSnVDX6fm5bP3QvtVP2NpUuGFU.png)
+
+**V. Paste that value in HubSpot**
+
+![HubSpot workflow trigger configuration with Dynamic Campaign ID value pasted in field](/images/8874862/47869f8b-Rgy3gG-QdaOOZDC4PHQC8xJkltOXDfg0O79OCI7Cy0hT7OrqutwOlD9X8XEhJ0mfwBtXcXb4wbeHylZQ77nuR2DIWALDzn0ZmZSn0be3SBCne_fQhM6Bbv6BbcmpSVTYx5o5UbzDIaofv5_uJI_PlYE.png)
+
+Boom! You have your trigger set up.
+
+Now, let's create the dynamic video email that you want to send when the contact matches the trigger.
+
+## B. Create Email in HubSpot
+
+**I. Create a new marketing email.**
+
+**II. Add an HTML module.**
+
+You will need to click “more” and then “HTML - Email”
+
+![HubSpot email editor More menu expanded showing HTML Email module option](/images/8874862/0b28a26c-iy8wr40b1hX9EJ-9wxpLQMVXA0jHkMZLVxglteXWR_9mH4B8-277c5yfq2WOkVgFaiG9AUBfHkR7VgQ8Eoq716brniJXvutMPGOqcNYeM93I4Q_rg-quaxClg8pfQmJm05__ercoV10RqocJNgCLhvk.png)
+
+**III. Add Sendspark Share Snippet to HubSpot email.**
+
+From Sendspark, click **“Share Campaign”**and then **“HubSpot Marketing Hub”**
+
+![Sendspark Share Campaign menu with HubSpot Marketing Hub integration option highlighted](/images/8874862/d9cf8d31-5ej8jEuK0iCJzQC2WscVRjoVL_EVXVa21odRqssUY-HEuwgKG-qK3pEOxTyRQ37ej066KWu2aVvYTdS3fiuUMeKcmclHZVKRl8HcR49gg8LRudvQImDtLsZB75elvf5PcQEoPz59yuXSdpY4Y7K9YSk.png)
+
+**IV. Paste that right into the HTML code block in HubSpot**
+
+It will look like a broken image – that’s okay!
+
+You can preview that email with one of the contacts from your dynamic video campaigns to make sure videos are rendering correctly
+
+![HubSpot email editor HTML code block displaying pasted Sendspark share snippet code](/images/8874862/eccaaf84-image.png)
+
+**V. Publish your email so you can use it in automation.**
+
+## 3. Publish HubSpot Workflow
+
+Go back to your workflow, add your email as a step.
+
+![HubSpot workflow canvas showing email action step added to automation workflow](/images/8874862/d600f285-AM5b6ruGdpxc7hi7OejGiaxUbrPAJwp_F_NcgOC-lzeRj_l46NPNP7rwlMq9NH-ioIGey1-lNVc58lMEvICtibA6q98hGEaNMuHh3QBvUI-7JxRnqS5TXofvt3qYKXfXubvbdOblLxPzRfE7K3aVSfM.png)
+
+Now, you can **Review and Publish** your workflow.
+
+Make sure to use the option**"Yes, enroll existing contacts who meet the trigger as of now"** to include all of the contacts that you've already generated videos for in Sendspark.
+
+![HubSpot workflow publish dialog with enrollment option for existing contacts selected](/images/8874862/51c9cc85-image.png)
+
+Now, whenever you add a new contact to that campaign, they will automatically get the video email sent to them!

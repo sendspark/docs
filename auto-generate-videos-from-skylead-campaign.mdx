@@ -1,0 +1,83 @@
+---
+title: "Auto-Generate Videos from Skylead Campaign"
+description: "Learn how to automatically generate personalized videos from Skylead campaigns using Sendspark integration and webhooks."
+---
+
+<iframe src="https://www.youtube.com/embed/UaGdW794weE?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 🔄 How to Automatically Generate Videos Using Skylead and Sendspark
+
+This guide walks through setting up an automation where specific actions in a Skylead campaign automatically trigger video creation in Sendspark.
+
+---
+
+## 🚀 Step 1: Set Up the Integration
+
+1. In Skylead, go to **Integrations &gt; Individual Webhooks**.
+2. Click **Create** to add a new webhook.
+3. Scroll to **Campaigns** and select the campaign where you want the action to trigger.
+4. You’ll have full control over which campaign activates the webhook.
+
+---
+
+## ⚙️ Step 2: Create a New Automation in Sendspark
+
+1. Open **Sendspark**, go to the **Automation** section, and click **New Automation**.
+2. Name the automation (e.g., “SkyLead”).
+3. Choose the event: **Incoming Webhook**.
+4. Select **Create New Connection** and name it (e.g., “Skylead Connection”).
+
+---
+
+## 🔧 Step 3: Configure Webhook Parameters
+
+1. In Sendspark, go to **Help Center** and search for “API.”
+2. Open the first result (API article).
+3. Scroll to find a section with sample payloads. Copy the example for a single prospect.
+4. Paste this into the webhook body. Replace the dynamic fields using:
+  - `#{{campaignId}}`
+  - `#{{workspaceId}}`
+5. Go to **API Credentials** in Skylead and copy:
+  - **Campaign ID**
+  - **Workspace ID**
+  - **Secret Key**
+  - **API Key**
+
+Paste those into the header section of your webhook.
+
+**Important:**
+
+- Remove any quotation marks.
+- Ensure one key-value pair per line.
+- Paste keys exactly as they appear in Skylead.
+
+---
+
+## 🧪 Step 4: Test the Workflow
+
+1. In Skylead, assign a condition like **lead replies** or **LinkedIn profile viewed**.
+2. Set the webhook to trigger Sendspark automation.
+3. Select the account and video template inside Sendspark.
+4. Map key variables such as:
+  - **First Name**
+  - **Email**
+  - (Optional) Website (can be extracted from the domain in email)
+
+---
+
+## ✅ Step 5: Review the Result
+
+1. Click **Check Results** in Sendspark.
+2. If successful, you’ll see an **incoming WebCode received** message.
+3. The platform will show the extracted data, such as email and LinkedIn profile.
+
+Once confirmed, Sendspark will generate a dynamic video for the lead.
+
+---
+
+## 🔁 Final Reminders
+
+- Don’t forget to click **Create** on Skylead’s webhook to activate it.
+- Always select **Dynamic Video** as the action in Sendspark.
+- Make sure everything is properly mapped and active.
+- The automation will now run for every trigger event set in your Skylead campaign.

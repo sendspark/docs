@@ -1,0 +1,95 @@
+---
+title: "How to Download Videos in Bulk Using Zapier"
+description: "Learn how to download multiple videos at once using Zapier webhooks, Google Sheets, and JDownloader2 for efficient bulk downloads."
+---
+
+<iframe src="https://www.youtube.com/embed/FHAuhRseXAw?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+If you're running a dynamic video campaign and want to download multiple videos at once, this guide will walk you through a simple way to do it using **Zapier** and a download manager like **JDownloader2**.
+
+---
+
+## 🛠️ What You’ll Need
+
+- A dynamic video campaign (with *non-generated* videos)
+- A **Zapier** account
+- A **Google Sheet** with headers: `email` and `download link`
+- A download manager (e.g. [JDownloader2](http://jdownloader.org/))
+
+---
+
+## ✅ Step-by-Step Instructions
+
+## 1. Set Up a Zapier Webhook
+
+1. Go to [Zapier](https://zapier.com/) and create a new Zap.
+2. **Trigger** → Search for **Webhooks by Zapier**.
+3. Choose **Catch Hook** and click **Continue**.
+4. Copy the **Custom Webhook URL** Zapier provides.
+
+## 2. Connect the Webhook in Sendspark
+
+1. Log into **Sendspark**.
+2. Navigate to **Webhooks** from the menu.
+3. Create a new webhook:
+  - Paste the Zapier URL.
+  - Name it (e.g. `Zapier Test`).
+4. Click to **add events**, then select:
+  - **When a video is created**
+5. Choose the appropriate campaign and click **Add Campaign**.
+
+✅ Your webhook is now connected.
+
+---
+
+## 3. Trigger Video Generation
+
+1. Go to your campaign in Sendspark.
+2. Click **Generate** and choose a fast rendering option.
+3. Wait for videos to be generated (they’ll be sent to Zapier automatically).
+
+---
+
+## 4. Set Up Google Sheets Action in Zapier
+
+1. Back in Zapier, click **Action**.
+2. Choose **Google Sheets**.
+3. Set the event to **Create Spreadsheet Row**.
+4. Connect your Google account.
+5. Select your Drive and the Google Sheet you prepared.
+6. Choose your worksheet (make sure it has `email` and `download link` columns).
+
+## 5. Map Data Fields
+
+1. Zapier will now let you map fields:
+  - For **Email**, select the email from your webhook data.
+  - For **Download Link**, look for the high-res or low-res link (depends on your video type):
+    - If using a **background video**, choose the **high-res** option.
+    - If it’s a **full-screen face recording**, select the **lower resolution** one.
+2. Click **Continue** → **Test Step** to make sure it works.
+
+---
+
+## 6. Bulk Download via JDownloader2
+
+1. Once links are in your Google Sheet:
+  - Select and **copy** the entire column of download links.
+2. Open **JDownloader2**:
+  - It will auto-detect the links and list them.
+3. Click **Start Download**.
+
+🎉 That’s it! All your video files will begin downloading automatically.
+
+---
+
+## 🧠 Notes & Tips
+
+- Always ensure videos are **not generated** when connecting the webhook. Zapier won't receive past/generated content.
+- If your download links aren’t showing correctly in Zapier, double-check your webhook payload and sheet structure.
+- JDownloader2 supports batch downloads effortlessly from copied links.
+
+---
+
+## ❓Need Help?
+
+If you run into issues or have any questions, feel free to reach out to our support team. We’re happy to help!

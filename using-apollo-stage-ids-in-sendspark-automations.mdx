@@ -1,0 +1,33 @@
+---
+title: "Using Apollo Stage IDs in Sendspark Automations"
+description: "Learn how to use Apollo stage IDs in Sendspark automations with reference table and setup tips for accurate workflow triggers."
+---
+
+When setting up automations between Apollo and Sendspark through Agentic Workflows, you may need to use the **stage ID** rather than the display name (e.g., "Interested").   
+  
+Apollo’s API assigns an internal ID to each stage, and this is the value Agentic WOrkflows listens for when a trigger runs.  
+​
+
+Below is the reference table for Apollo’s default contact stages, showing only the **ID** and **Display Name** you’ll need:
+
+| Stage ID | Display Name |
+| --- | --- |
+| 6643bd8bcfbcbd030006fbf4 | Cold |
+| 6643bd8bcfbcbd030006fbf5 | Approaching |
+| 6643bd8bcfbcbd030006fbf6 | Replied |
+| 6643bd8bcfbcbd030006fbf7 | Interested |
+| 6643bd8bcfbcbd030006fbf8 | Not Interested |
+| 6643bd8bcfbcbd030006fbf9 | Unresponsive |
+| 6643bd8bcfbcbd030006fbfa | Do Not Contact |
+| 6643bd8bcfbcbd030006fbfb | Bad Data |
+| 6643bd8bcfbcbd030006fbfc | Changed Job |
+
+## How to Use These IDs
+
+- In Agentic Workflows, when creating a condition like **“Contact Stage = Interested”**, replace the word *Interested* with the actual **stage ID** from the table.
+- Example: instead of filtering on `"Interested"`, use `6643bd8bcfbcbd030006fbf7`.
+- This ensures the trigger fires correctly when Apollo updates a contact’s stage.
+
+---
+
+✅ **Tip**: If you ever add custom stages in Apollo, repeat the process (via API or export) to get the new IDs and update your automations.

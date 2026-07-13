@@ -1,0 +1,68 @@
+---
+title: "Webhooks - How to Create Webhooks in Sendspark"
+description: "Learn how to create and set up webhooks in Sendspark. Trigger automated workflows whenever a prospect views or engages with your personalized video."
+---
+
+Webhooks in Sendspark allow you to trigger specific events from your dynamic video campaigns. By integrating webhooks, you can automate actions based on user interactions or system events within your Sendspark account.
+
+Please note that at this time, **webhooks are only available for dynamic video campaigns**(not all videos in your Sendspark library).
+
+## How to Use Webooks in Sendspark
+
+Navigate to the Webhooks section within the Settings panel in your Sendspark account.
+
+![Sendspark settings panel with Webhooks section highlighted in navigation menu](/images/9186828/0482ca00-https-3A-2F-2Fprod-files-secure_s3_us-west-2_amazonaws_com-2Fee4c45d8-c21d-4300-b544-90937e250892-2F90b62c73-f757-464e-8c1a-31a9b473e853-2FScreenshot_2024-04-11_at_1_41_07_p_m_.png)
+
+From there, you can...
+
+## Create a New Webhook:
+
+- Click on the**“Add Webhook”**button located in the top-right corner.
+- Fill in all the necessary information, such as the Name and Webhook URL
+
+![Add Webhook dialog form with Name and Webhook URL input fields](/images/9186828/e476b50e-https-3A-2F-2Fprod-files-secure_s3_us-west-2_amazonaws_com-2Fee4c45d8-c21d-4300-b544-90937e250892-2F566b4ea3-ebdf-479a-9b68-694da4505258-2FScreenshot_2024-04-11_at_1_44_26_p_m_.png)
+
+## Configure Webhook Events:
+
+- After creating your webhook, click on its name to access the events. ​![Webhook configuration page showing webhook name and option to access events](/images/9186828/b8b40aff-image.png)
+- Here, you will see all of the available webhook events: ​![List of available webhook event types with checkboxes for selection](/images/9186828/66769908-image.png)
+- You can select the ones that you want to use for this webhook URL. This is what each of the webhooks do:
+  - **Video Created**:
+    - This event is triggered when a new video is successfully created in the dynamic campaign that you associated in your Webhook.
+  - **Video CTA Clicked**:
+    - When a viewer interacts with a Call-to-Action (CTA) button in the share page, this event is triggered.
+  - **Video Liked**:
+    - This event occurs when a viewer indicates their positive sentiment towards a video by clicking the "Like”button associated with the video content.
+  - **Video Played**:
+    - When a viewer initiates playback of a video, either by clicking the play button or auto-play functionality, this event is triggered.
+  - **Video Viewed**:
+    - This event is triggered when a viewer opens or accesses a video, regardless of whether they interact with the playback controls or watch the video in its entirety.
+  - **Video Watched %**:
+    - This event tracks the percentage of the video that a viewer has watched before pausing or closing the playback.
+  - **Video Ready to Download**
+    - This fires when the video .mp4 is ready to download, which can take a few minutes longer than the "Video Created" event. You can use this webhook to get the .mp4 of the video to download or upload to another site.
+  - **Video Failed to Generate**
+    - This will fire when your dynamic video generates with an error. You can use this event to keep an eye on errors.
+
+Please review this article to see all [properties that are sent with webhooks](/webhooks-properties-in-sendspark-webhooks).
+
+## Associate Webhooks with Dynamic Video Campaigns
+
+By default, when you create a new webhook, it will be associated with all dynamic video campaigns in your workspace.
+
+If you'd like it to only be associated with some dynamic videos campaigns, than you can click "Connect Campaign," and associate it only with specific campaigns.
+
+![Webhook settings showing Connect Campaign button to associate with specific campaigns](/images/9186828/02baeafb-image.png)
+
+This can help you set up more precise automation, especially when you want to automatically send out a video after it's been created.
+
+(Learn more about [using webhooks with dynamic video campaigns here](/webhooks-for-dynamic-video-notifications))
+
+## Sendspark Webhook FAQs
+
+1. **What are webhooks, and how do they work in Sendspark?**
+  - Webhooks are automated messages sent from Sendspark to another application when a specific event occurs. In Sendspark, you can configure webhooks to trigger events based on user interactions or system actions within your dynamic video campaigns.
+2. **Are webhooks available for all types of videos in Sendspark?**
+  - Currently, webhooks are **only available for dynamic videos in Sendspark**. Dynamic videos allow for personalized content generation based on user data, making them ideal for triggering events and automating workflows through webhooks.
+3. **Where can I find more information or support for setting up and configuring webhooks in Sendspark?**
+  - For more detailed instructions or assistance with webhook setup and configuration, you can reach out to our support team for personalized support and guidance.

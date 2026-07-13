@@ -1,0 +1,78 @@
+---
+title: "Webhooks - Properties in Sendspark Webhooks"
+description: "Discover all properties included in Sendspark webhooks for dynamic video campaigns including campaign IDs, contact info, and links."
+---
+
+Webhooks in Sendspark allow you to subscribe to specific events from a video events for your dynamic video campaigns. By integrating webhooks, you can automate actions based on user interactions or system events within your Sendspark account.
+
+Before you get started, please review this article on how to use Sendspark webhooks.
+
+## Sendspark Webhook Properties:
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| `campaignId` | *string* | ID of the dynamic video that was created. This is specific to the individual video, and different from the "Dynamic Video Campaign ID," which is for all videos created from this dynamic video campaign. |
+| `campaignName` | *string* | Nameof the dynamic video that was created. This is specific to the individual video, and different from the "Dynamic Video Campaign Name," which is for all videos created from this dynamic video campaign. |
+| `contactInfo` | *object* | Object with information about for whom the dynamic video was created. |
+| `contactInfo.contactEmail` | *string* | The email address of the prospect for whom the dynamic video was created. |
+| `contactInfo.contactFirstName` | *string* | The first name of the prospect for whom the dynamic video was created. |
+| `creatorId` | *string* | The ID of the Sendspark user who created the dynamic video. |
+| `creatorName` | *string* | The name of the Sendspark user who created the dynamic video. |
+| `dynamicCampaignId` | *string* | The ID of the dynamic campaign under which the campaign was created. |
+| `dynamicCampaignName` | *string* | The name of the dynamic campaign under which the campaign was created. |
+| `videoLink` | *string* | The link where the generated video is hosted. You can share this link with prospects to send the video to them. |
+| `embedLink` | *string* | The website embed link for the generated video. You can use this to embed the video on a webpage. |
+| `thumbnailUrl` | *string* | The URL for the generated video thumbnail. You can use this to embed an image preview of the video. |
+| `workspaceId` | *string* | The ID of the workspace containing the dynamic campaign where the video was created. |
+| `workspaceName` | *string* | The name of the workspace containing the dynamic campaign where the video was created. |
+
+Additional properties per event:
+
+**Video CTA Clicked**:
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| `ctaText` | *string* | The text displayed on the clicked CTA. |
+| `ctaLink` | *string* | The link to which the clicked CTA redirects. |
+
+**Video Watched %**:
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| `watchPercentage` | *number* | The percentage of the video the visitor watched before pausing, stopping, or finishing it. |
+
+## Webhook: Video Ready to Download: video_mp4_ready
+
+Properties for ALL webhooks:  
+​
+
+## Properties in contactInfo:
+
+| Name ​ | Type ​ | Description ​ |
+| --- | --- | --- |
+| jobTitle ​ | string ​ | The job title of the prospect. ​ |
+| company ​ | string ​ | The company name of the prospect. ​ |
+| backgroundUrl ​ | string ​ | The background image URL of the prospect. ​ |
+| fields ​ | object ​ | Object with custom fields of the prospect. ​ |
+
+## Property at root level:
+
+| Name ​ | Type ​ | Description ​ |
+| --- | --- | --- |
+| emailEmbedHTML ​ | string ​ | HTML code to embed the video in emails. ​ |
+
+## Properties for "Video Ready to Download" webhook (video_mp4_ready):
+
+| Name ​ | Type ​ | Description ​ |
+| --- | --- | --- |
+| emailDownloadLink ​ | string ​ | HTML link to download the video in emails. ​ |
+| downloadVideoLinkLow ​ | string ​ | Download link for low quality video. ​ |
+| downloadVideoLinkMedium ​ | string ​ | Download link for medium quality video. ​ |
+| downloadVideoLinkHigh ​ | string ​ | Download link for high quality video. ​ |
+| downloadVideoLinks ​ | array ​ | Array with all available download links. ​ |
+
+## Additional property:
+
+| Name ​ | Type ​ | Description ​ |
+| --- | --- | --- |
+| eventType ​ | string ​ | The event type that triggered the webhook (e.g., video_mp4_ready, video_generated_dv, etc.). ​ |

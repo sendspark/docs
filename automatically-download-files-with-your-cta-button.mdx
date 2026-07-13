@@ -1,0 +1,79 @@
+---
+title: "Automatically download files with your CTA button"
+description: "Learn how to set up automatic file downloads with CTA buttons in Sendspark using direct links from Dropbox and Google Drive."
+---
+
+<iframe src="https://www.youtube.com/embed/H9itMQs2j-g?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## How to Share Files Through CTA Buttons in Sendspark
+
+Sendspark allows you to enhance your videos by adding CTA (Call-to-Action) buttons. One common use is sharing files, and this article explains two effective methods: **indirect download links** and **direct download links**. Direct downloads are recommended as they reduce friction for users accessing your files.
+
+## Getting Started
+
+Before sharing a file, upload it to a cloud service like **Dropbox** or **Google Drive**. Ensure the link permissions allow "Anyone with the link" to view or download the file.
+
+---
+
+## Method 1: Indirect Download Link
+
+This method involves sharing a regular link to the file location:
+
+1. Upload your file to Google Drive or Dropbox.
+2. Copy the shareable link provided by the cloud service.
+3. Paste this link into the CTA button in Sendspark.
+
+When users click the button, they’ll be directed to the file's page where they can manually download it.
+
+---
+
+## Method 2: Direct Download Link (Recommended)
+
+This method enables users to download the file immediately after clicking the CTA button.
+
+## For Dropbox
+
+1. Copy the shareable link.
+2. Locate the part of the URL that says `dl=0` at the end of the video
+3. Replace `0` with `1`. Examples:`FROM: https://www.dropbox.com/s/example?dl=0` `TO: https://www.dropbox.com/s/example?dl=1`
+4. Paste the updated link into the Sendspark CTA button.
+
+## For Google Drive
+
+1. Copy the shareable link.
+
+Example link:
+
+```
+ https://drive.google.com/file/d/WqedqWfoksdk/view?usp=sharing
+```
+
+2. Locate and remove the following sections: `/file/d/ ` & `/view?usp=sharing`
+
+![](/images/10193673/5cdc601d-image.png)
+
+3. Add the following section BEFORE the video ID: `/uc?export=download&id=VIDEO-ID`  
+​
+
+This is how the example URL should now look like:
+
+`https://drive.google.com/uc?export=download&id=`WqedqWfoksdk
+
+```
+If that wasn't clear, here's another example with visual help.In red, you'll see the sections that need to be removed and in green, the ones that need to be included :
+```
+
+![](/images/10193673/5f3449a1-image.png)
+
+4. Paste the updated link into the Sendspark CTA button.
+
+---
+
+## Tips for Success
+
+- Double-check the permissions on your file. Ensure the link allows "Anyone with the link" to access it.
+- Test your links to verify that the direct download behavior works as intended.
+
+By following these steps, your viewers can quickly and easily download your shared files, improving their overall experience.
+
+For any further assistance, feel free to contact Sendspark Support.

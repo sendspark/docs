@@ -1,0 +1,115 @@
+---
+title: "Custom Domain Migration"
+description: "Step-by-step guide to migrating your custom domain in Sendspark, ensuring uninterrupted video delivery and consistent brand experience."
+---
+
+## 🧩 What you need before starting
+
+🌐 New subdomain ready (e.g. `watch.newdomain.com`)  
+🔧 Access to DNS settings (Cloudflare, Route 53, GoDaddy, etc.)  
+⏰ Schedule a low-traffic window (recommended: off-peak hours)  
+📌 Ability to create A records and redirects
+
+---
+
+## 🪜 Migration steps
+
+---
+
+## 1️⃣ Contact Support
+
+Request removal of your current custom domain.
+
+We’ll confirm once it has been fully removed on our side.
+
+---
+
+## 2️⃣ Add New Domain in Sendspark
+
+Go to **Settings → Custom Domain** and add your new subdomain.
+
+⚠️ The IP address is generated only at this step (it cannot be known in advance).
+
+---
+
+## 3️⃣ Create DNS A Record
+
+Add a new A record in your DNS provider.
+
+➡️ Point `watch.newdomain.com` → Sendspark IP address
+
+## ⚠️ Important DNS rules:
+
+- Do not reuse existing DNS records
+- Create a fresh record every time
+- Add it immediately after receiving the IP
+- Avoid duplicate or conflicting record names
+- If your DNS provider requires it, set the record to **DNS only (not proxied)**
+  - In Cloudflare, this is typically the default behavior unless manually proxied
+
+---
+
+## ⚠️ Possible DNS Security Restriction (CAA)
+
+In some cases, your domain may have additional DNS security settings configured by your IT or security team.
+
+These settings (called **CAA records**) control which providers are allowed to issue SSL certificates for your domain.
+
+If these restrictions are in place, Sendspark may not be able to generate a secure certificate automatically — even if your A record is set up correctly.
+
+## What to do
+
+If your domain doesn’t verify, you may need to:
+
+- Ask your IT team to allow Google’s certificate provider (`pki.goog`), or
+- Remove any restrictive CAA settings
+
+---
+
+## 4️⃣ Set Up 301 Redirect (Critical)
+
+This ensures old links keep working without interruption.
+
+🔁 Configure a **301 Permanent Redirect**
+
+Mapping:
+
+`watch.olddomain.com/*` → `watch.newdomain.com/*`
+
+⚠️ Do NOT delete the old domain — it is required for redirects to function properly.
+
+---
+
+## 5️⃣ Wait for Propagation
+
+⏳ DNS propagation can take up to 24 hours.
+
+Once everything resolves, Sendspark will automatically verify your new domain.
+
+---
+
+## 📊 What changes during migration
+
+| Scenario | Result |
+| --- | --- |
+| Old link clicked before redirect | ❌ Temporary broken page |
+| Old link clicked after redirect | ✅ Seamless redirect to new domain |
+| New campaigns after migration | ✅ Use new domain only |
+| Existing embed codes in emails/templates | 🔄 Must be updated manually |
+
+---
+
+## ⚠️ Important
+
+Do not launch new campaigns until:
+
+✔ DNS is fully propagated  
+✔ Domain is verified in Sendspark
+
+This ensures clean URLs and avoids deliverability issues.
+
+---
+
+## 🆘 Need help?
+
+Contact Sendspark support to start the process or if anything looks off during setup.

@@ -1,0 +1,89 @@
+---
+title: "Auto-Send AI Personalized Videos"
+description: "Learn how to automatically send AI personalized videos through Instantly with Sendspark integration using dynamic campaigns and"
+---
+
+Use these steps to have Instantly automatically send videos as soon as they're created through this automation.
+
+## 1. Create Dynamic Video Campaign in Sendspark
+
+This will act as the template for all AI-personalized videos created. Learn more about creating [dynamic videos](/dynamic-videos-make-videos-with-ai-introductions) here.
+
+## 2. Add Video Placeholder to Instantly Email Template
+
+You can add this placeholder snippet to your snippet to your **Instantly**e-mail template so it will be changed for every lead.
+
+Go to your Dynamic Video Campaign and click **"Share Campaign"**
+
+![Sendspark Dynamic Video Campaign with Share Campaign button highlighted](/images/12116804/fb53bab5-image.png)
+
+Search for **"Instantly"**
+
+![Share Campaign dialog with Instantly option in search results](/images/12116804/e3db4685-image.png)
+
+Click to copy the snippet, and paste directly in your Instantly sequence, where you want your video to appear in email.
+
+![Instantly snippet copied to clipboard ready for email template](/images/12116804/2905b811-image.png)
+
+​
+
+## 3. Create Your First Step Of The Workflow
+
+Go to your agentic workflows, and click on plus icon and choose Sendspark, it should look as in the image below,  
+​
+
+![Agentic workflows builder with Sendspark action selected from menu](/images/12116804/944a845d-image.png)
+
+You can just select your campaign from the dropdown in the Agentic workflow builder or if you ever need to copy it, there is a “Campaign ID” button you can click to copy it.
+
+![Sendspark campaign dropdown selector and Campaign ID copy button](/images/12116804/63b3a75f-3ed63545-e8d2-4c53-b5c5-4adef3d5764a.png)
+
+Map the fields you like, we suggest always mapping the e-mail or first name field because we will use them in the next step.
+
+![Field mapping interface showing email and first name selections](/images/12116804/5ad39322-image.png)
+
+## 4. Search The Lead On Instantly
+
+Click on the plus icon and choose action, search for the "Instantly", choose "search lead" and connect your Instantly account and click on the continue button on the right corner.
+
+Then map the contact e-mail from your Sendspark video and click on save.
+
+![Instantly search lead action with email field mapping configured](/images/12116804/ff479dec-image.png)
+
+## 5. Create The Lead On Instantly
+
+Click on the plus icon and choose action, search for the "Instantly", choose "create lead" and hit continue.
+
+![Instantly create lead action selection in workflow builder](/images/12116804/fa21261f-image.png)
+
+Choose your Instantly campaign in the first step and choose contact e-mail and first name respectively.
+
+![Create lead form with campaign selection and contact fields mapped](/images/12116804/93c5fdf9-image.png)
+
+​We will add a router in the last step so if the lead exists, it will automatically go to step 6 and add leat to the campaign, if the lead doesn't exists, it will go to step 5 and create the lead first.  
+​
+
+## 6. Add Lead To Campaign
+
+Add another step and choose "Add Lead To Campaign"
+
+![Add Lead To Campaign action step in workflow builder](/images/12116804/62d47ff1-image.png)
+
+Map your Sendspark Campaign ID to "Lead IDs" section and your Instantly Campaign to the "To Campaign ID - ID" section and make sure to choose "yes" for the check duplicates in the campaigns to prevent duplicates. astlly click on save.
+
+![Lead mapping interface with Sendspark Campaign ID and duplicate check](/images/12116804/6b1f9298-image.png)
+
+## 7. Add A Router
+
+Click on the plus icon again and choose "tool" and Router under your second step which is "Instantly: Search Lead". Add "Lead ID" on the If section's field and choose "non-empty".
+
+![Router configuration with Lead ID field and non-empty condition](/images/12116804/514cc5a3-image.png)
+
+Map the 5th step "add lead to campaign" into your "**then**" condition and your 4th step into your "**else**" condition and click on save.  
+​  
+What this means is, if your search finds a Lead ID, it will add that lead to the campaign but if it doesn't have the Lead ID it will create the lead and then add it to the campaign.  
+​
+
+This is how your workflow look in the end. You can click on start button and add a prospect into your Dynamic Video Campaign and it will automatically do the all steps for you.
+
+![Completed agentic workflow showing all seven steps connected](/images/12116804/2f099b45-image.png)

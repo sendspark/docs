@@ -1,0 +1,52 @@
+---
+title: "AI Video Campaigns: Clay + Lemlist Setup"
+description: "Learn how to automate AI personalized video email campaigns using Clay, Lemlist, and Sendspark with dynamic video templates and"
+---
+
+To see how this works, either watch this full tutorial, or follow the steps below:
+
+## How to Send AI Personalized Videos with Lemlist and Clay
+
+<iframe src="https://www.youtube.com/embed/nr8TjKqMhmg?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 1. Create your Dynamic Video Campaign in Sendspark
+
+Start by creating your [dynamic video campaign](/dynamic-videos-make-videos-with-ai-introductions) in Sendspark. This will be the template for all of your AI personalized videos.
+
+## 2. Add Video Placeholder to Lemlist
+
+Create your email campaign in Lemlist, and add the Sendspark placeholder where the video should go.
+
+You can add this placeholder by following these steps:
+
+- Select **"Share Campaign"** in Sendspark ​![](/images/11155409/cc8bd38b-image.png)
+- Search for **"Lemlist"**and click to copy the snippet ​![](/images/11155409/579bbb03-image.png)
+- In your Lemlist email template, click**"more rich"** and then**"code view"** ​![](/images/11155409/b26dda83-image.png)
+- **Paste** the Sendspark snippet directly into your Lemlist email campaign ​![](/images/11155409/a06d7661-image.png)
+- Switch back to out of code view to **finish editing**your email
+
+![](/images/11155409/51ca3680-image.png)
+
+## 3. Automate through Clay
+
+Watch this video to see just how to run this automation in Clay:
+
+<iframe src="https://www.youtube.com/embed/awf4YYurLRc?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+In Clay, [use this template](https://app.clay.com/shared-table/share_0svfkpzWzDCHZrXApE9) or follow the steps below...
+
+- Use the **[Sendspark Clay enrichment](/clay-integration-create-ai-videos)** to create AI-personalized videos
+- Add a column for**"video link,"** so you have a way to verify that videos were successfully generated before adding contacts into the Lemlist campaign
+- Then, use the **Lemlist enrichment** to add contacts into Lemlist campaigns. Make sure to use this run setting to only add contacts after their videos have generated.
+
+Since we already have the Sendspark video placeholder snippet in Lemlist, that is all we need to do!
+
+The emails will update with the correct video when the emails send out, the same way that #&#123;&#123;firstName&#125;&#125; & #&#123;&#123;companyName&#125;&#125; get updated with the correct data.
+
+You can hit "preview" to preview the video email as it will look for your contacts:
+
+![](/images/11155409/695209db-image.png)
+
+## Additional Notes
+
+This guide is assuming that you are currently use Clay, and want to run your automation through them! If you do not use Clay, you can run this automation through [Sendspark Automated Workflows](https://help.sendspark.com/en/collections/11908106-automated-workflows) instead to use fewer tools.

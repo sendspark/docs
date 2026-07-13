@@ -1,0 +1,69 @@
+---
+title: "Woodpecker — Send Personalized Videos at Scale"
+description: "Learn how to send personalized Sendspark videos through Woodpecker. Integrate Sendspark with Woodpecker for video outreach at scale."
+---
+
+<iframe src="https://www.youtube.com/embed/axcIf6nfboY?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+This guide shows you how to create dynamic, personalized videos with Sendspark that automatically update with recipient information when sent through Woodpecker campaigns.
+
+## What You'll Accomplish
+
+By the end of this setup, your videos will automatically display each recipient's name and company information, creating personalized experiences at scale. For example, a video saying "Hey there" will automatically become "Hey Bethany" or "Hey Brandon" for each viewer.
+
+## Prerequisites
+
+- Active Sendspark account
+- Active Woodpecker account
+- Contact data in Woodpecker with first names and company information
+
+## Step 1: Upload Your Video to Sendspark
+
+1. Record or upload your video to your Sendspark workspace
+2. Navigate to your video's page to begin editing
+
+**Note:** All branding elements (logo, colors, styles) can be customized to match your company's brand instead of using Sendspark defaults.
+
+## Step 2: Add Dynamic Personalization
+
+1. On your video page, click **Customize**
+2. Add merge tags like **####&#123;&#123;first_name&#125;&#125;** and **####&#123;&#123;company_name&#125;&#125;** in these areas:
+  - **Header text** - appears above the video
+  - **Message area** - appears below the video
+  - **Call-to-action button** - customize button text
+3. Set up **fallback text** for cases where contact data is missing (e.g., "Schedule demo with me" instead of "Schedule demo ####&#123;&#123;first_name&#125;&#125;")
+
+**Tip:** When you use these merge tags in Sendspark, they'll automatically pull the corresponding contact data from Woodpecker when the video is viewed.
+
+## Step 3: Customize Your Video Thumbnail
+
+1. Navigate to the **thumbnail editor**
+2. Add **text overlay** with personalization tags
+3. Include engaging text that will drive email opens
+
+**Why this matters:** The thumbnail is the first thing recipients see in their email, making it crucial for driving engagement.
+
+## Step 4: Add Video to Your Woodpecker Campaign
+
+1. Copy the **Woodpecker snippet** from your Sendspark video page
+2. In Woodpecker, paste the snippet into your email template
+3. Adjust spacing as needed by adding or removing line breaks
+
+## Customization Options
+
+## Change Default Link Text
+
+If you want to modify the "Watch video on Sendspark" text that appears below thumbnails:
+
+- Edit directly in the email template, or
+- Update the default in your Sendspark workspace settings
+
+## Available Merge Tags
+
+You can use any merge tags that correspond to fields in your Woodpecker contact data, including:
+
+- **####&#123;&#123;first_name&#125;&#125;**
+- **####&#123;&#123;company_name&#125;&#125;**
+- Any custom fields you've set up in Woodpecker
+
+**Ready to get started?** This integration helps you stand out and connect with prospects at scale while maintaining a personal touch. If you need any assistance setting this up, don't hesitate to reach out to our support team.

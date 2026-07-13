@@ -1,0 +1,126 @@
+---
+title: "Trigger Sendspark Videos from SalesLoft and Send Them via Apollo Sequences"
+description: "Automate video outreach by triggering Sendspark video creation from SalesLoft and sending personalized emails via Apollo sequences."
+---
+
+## 🎥 How to Automate Video Emails: SalesLoft → Apollo Workflow
+
+This guide walks you through setting up an automation where a new user in SalesLoft automatically generates a personalized video in Sendspark and sends it via an email sequence in Apollo.
+
+<iframe src="https://www.youtube.com/embed/KMIQuQmeSgM?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+---
+
+## ⚡ Overview of the Flow
+
+**Trigger:** New User Created in SalesLoft  
+**Action 1:** Create Dynamic Video in Sendspark  
+**Action 2:** Find Contact in Apollo  
+**Action 3:** Add Contact to Apollo Sequence
+
+---
+
+## 🧩 Step 1: Set Up the Trigger (SalesLoft)
+
+1. Open your automation or agentic workflow platform.
+2. Add a **Trigger** step.
+3. Search for **SalesLoft**.
+4. Select the event **User Created**.
+
+🔎 **Optional:**  
+Add filtering conditions if you only want this automation to run for specific users (e.g., based on role, company, or email domain).
+
+---
+
+## 🎬 Step 2: Generate the Video (Sendspark)
+
+1. Add a new **Action**.
+2. Search for **Sendspark**.
+3. Select **Create a Video**.
+4. Choose your connected Sendspark account.
+5. Select your **Dynamic Video Campaign** (e.g., “New Combine”).
+
+## 🔗 Map the Fields
+
+- **First Name** → Map from SalesLoft data.
+- **Contact Email** → Map from SalesLoft data.
+
+---
+
+## 🌐 Configure Background URL (Optional but Recommended)
+
+If you want the recipient’s website to appear in the dynamic background:
+
+1. Add a **Data Cropping** tool step before the Sendspark action.
+2. Select the email address field.
+3. Crop by the `@` symbol to extract the domain.
+  - Example: `dan@sendspark.com` → `sendspark.com`
+4. Map this result to the **Background URL** field in Sendspark.
+
+This adds strong personalization to your video.
+
+---
+
+## 🔎 Step 3: Locate the Contact (Apollo)
+
+1. Add a new **Action**.
+2. Search for **Apollo**.
+3. Select **Find Contact**.
+
+📌 Why this matters:  
+You need the **Contact ID** returned by this step to add the person to a sequence in the next action — even if the contact is newly created.
+
+---
+
+## 📩 Step 4: Add Contact to Sequence (Apollo)
+
+1. Add another **Apollo** action.
+2. Select **Add Contact to a Sequence**.
+
+## 🔗 Map the Fields
+
+- **Contact ID** → Map from the “Find Contact” step.
+- **Sequence ID** →
+  - Open your Apollo sequence.
+  - Copy the ID from the browser URL.
+  - Paste it into this field.
+- **Send Email From** → Enter the sender’s email address.
+
+---
+
+## 📝 Step 5: Configure the Email Template
+
+## 🎥 1. Get the Video Code
+
+1. Go to your **Sendspark Dynamic Video Campaign**.
+2. Click **Share**.
+3. Copy the snippet code for Apollo.
+
+---
+
+## ✍️ 2. Create a Template in Apollo
+
+1. Go to **Apollo → Emails → Templates**.
+2. Create a new template (or edit an existing one).
+3. Paste the Sendspark snippet code into the body.
+4. Save the template.
+
+---
+
+## 🔗 3. Link Template to Sequence
+
+1. Open the Apollo sequence used in Step 4.
+2. Load the template you just created.
+
+---
+
+## 🚀 Final Result
+
+Now, whenever a new user is created in SalesLoft:
+
+- A personalized Sendspark video is automatically generated
+- The contact is located in Apollo
+- The contact is added to your sequence
+- The email (with embedded dynamic video) is sent automatically
+
+Your video outreach is now fully automated and scalable.

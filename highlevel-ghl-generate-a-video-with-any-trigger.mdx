@@ -1,0 +1,89 @@
+---
+title: "HighLevel (GHL) - Generate a Video With Any Trigger"
+description: "Learn how to automate dynamic video generation in HighLevel using webhooks and triggers for personalized prospect outreach."
+---
+
+## ⚙️ Automating Dynamic Video Generation in Go High Level (GHL)
+
+This guide shows how to trigger automatic Sendspark dynamic video generation through Go High Level workflows using webhooks.
+
+Step 1: Connecting and sending data from GHL to Sendspark
+
+<iframe src="https://www.youtube.com/embed/f2YEE6UjHws?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+Step 2: Sending data back to GHL to launch the campaign
+
+<iframe src="https://www.youtube.com/embed/qlOGiJcMQYg?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 🧩 Overview
+
+When a trigger fires in GHL (like adding a tag), a webhook sends contact data to Sendspark, which instantly generates a personalized video.
+
+---
+
+## 📌 Prerequisites
+
+- A ready dynamic video campaign.
+- Access to workflows in both Sendspark and GHL.
+
+---
+
+## 🔗 Step 1: Create the Incoming Webhook (Sendspark)
+
+1. Go to your workflow system (e.g., Agentic Workflows).
+2. Create a new workflow.
+3. Add a **Trigger → Webhook → Incoming**.
+4. Create a new connection (e.g., “nov26”).
+5. Set the step to **wait for webhook**.
+6. Copy the webhook URL — you’ll paste this in GHL.
+
+---
+
+## 🏁 Step 2: Set the Trigger in GHL
+
+1. In Go High Level, create a new workflow.
+2. Select **Trigger → Contact Tag**.
+3. Add a filter with a new tag (e.g., `november26`).
+  - *Tip: use lowercase and no spaces.*
+4. Save.
+
+---
+
+## 📬 Step 3: Add the Webhook Action in GHL
+
+1. Add an **Action → Webhook** (the second webhook option).
+2. Paste the webhook URL from Step 1.
+3. Configure the **Raw Body** (payload):
+  - Include contact fields such as name, email, website.
+  - Set:
+    - **force_creation: false**
+    - **keep_first_valid: true**
+4. Save the action + workflow.
+
+---
+
+## 🎥 Step 4: Map Data & Generate the Video (Sendspark)
+
+1. In GHL, run a **Test** using a contact.
+2. In Sendspark, confirm the webhook step received the data.
+3. Add an **Action → Create Dynamic Video**.
+4. Select your campaign (click **update list** if needed).
+5. Map fields:
+  - Contact name
+  - Email
+  - Background URL
+6. Click **Start** and test again to confirm video generation.
+
+```
+{  "processAndAuthorizeCharge": true,  "prospectDepurationConfig": {    "forceCreation": false,     "payloadDepurationStrategy": "keep-first-valid"  },  "prospect": {      "contactName": "#{{contact.name}}",      "contactEmail": "#{{contact.email}}",      "company": "#{{contact.company_name}}",      "customfield": "",      "backgroundUrl": "#{{contact.website}}"  }}
+```
+
+---
+
+## ✉️ Optional: Send the Video via GHL
+
+1. In GHL, add a **Wait** step (e.g., 1 day).
+2. Add **Send Email**.
+3. In Sendspark, click **Share campaign → search “lead connector”**.
+4. Paste the snippet into GHL’s plain-text email.
+5. The thumbnail in the email will auto-convert into the correct personalized video for each contact.

@@ -1,0 +1,42 @@
+---
+title: "Send AI Videos in Smartlead (Clay + Sendspark)"
+description: "Learn how to send AI videos in Smartlead using Clay and Sendspark integration. Set up dynamic video emails and automate lead"
+---
+
+## How to Send Videos in Smartlead via Clay
+
+This guide assumes that you've already created Sendspark videos in Clay, and you're looking to send them in Smartlead campaigns as soon as they generate.
+
+If you have not done that yet, please start with this guide on [how to create Sendspark videos in Clay](/clay-integration-create-ai-videos).
+
+## 1. Prep Your Video Email
+
+Before you set up any automation, you should add the Sendspark dynamic video snippet to your email campaign, as a placeholder for where you want the video to be.
+
+- In your Sendspark video campaign, select **"Share Campaign"**
+- Search for **"Smartlead"**
+- Click the first option, **"Smartlead (Image URL)"** ​![](/images/11115719/1c344cec-image.png)
+- Paste that into your email, where you want the video to go ​![](/images/11115719/02c50ecf-image.png)
+- Now, you've added an image preview. But we want to make sure it's clickable, so when your viewer receives this email, they will be able to click it to watch their video!
+- Back in Sendspark, click the 2nd option:**"Smartlead (Video URL)"**
+- In your email, add this as a hyperlink to the image you just pasted.
+
+Awesome, now let's go back to Clay to make sure that **once videos generate, contacts will automatically get enrolled in that Smartlead Sequence** and receive a video email.
+
+## 2. Automatically Send Video Email
+
+The final step is to **automatically enroll contacts in your Smartlead sequence** once videos get created for them.
+
+To do this, you can **add an enrichment for Smartlead** in Clay.
+
+When the video successfully generates, you'll see the text in the "Sendspark" column update to say **"✅ Success"**
+
+and then the lead will automatically get moved to the **"Add Lead to Campaign Step"**
+
+![](/images/11115719/75e9ca6c-image.png)
+
+That's it!! Since you already have the Sendspark dynamic video snippet in Smartlead, every contact in your campaign will see the video made for them.
+
+---
+
+If you need any help at all, you can [schedule an onboarding call](https://www.sendspark.com/meetings/bethany-sendspark/sendspark-automated-workflows-demo) with our team to help get started.

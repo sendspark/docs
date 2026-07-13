@@ -1,0 +1,107 @@
+---
+title: "HubSpot: Workflows + Sendspark + Sequences"
+description: "Learn how to trigger personalized Sendspark videos and sequence emails in HubSpot Workflows. Step-by-step automation setup guide."
+---
+
+## 🎬 How to Automate Video Emails: HubSpot → Sendspark Workflow
+
+This workflow automatically:
+
+✅ Generates a personalized video in Sendspark  
+✅ Enrolls the contact into a HubSpot Sequence  
+✅ Sends an email containing the dynamic video
+
+<iframe src="https://www.youtube.com/embed/mRkCs6ZDMo4?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+---
+
+## ⚡ Step 1: Set Up the Trigger (HubSpot)
+
+1️⃣ Go to **Workflows** in HubSpot.  
+2️⃣ Click **Create workflow**.  
+3️⃣ Set your **Trigger** — this defines when automation starts.
+
+## 🎯 Example Triggers
+
+- 👤 New contact created
+- 🏷️ Lead added
+- 🧾 Quote sent
+- 💳 Subscription upgraded
+
+⚠️ **Important:**  
+Make sure the **Sendspark integration** is installed.  
+Go to **Settings → Integrations → Connected Apps** and confirm it’s connected.
+
+---
+
+## 🎥 Step 2: Configure Video Generation (Sendspark)
+
+1️⃣ In your Workflow, click **Add Action**.  
+2️⃣ Select **Sendspark**.  
+3️⃣ Choose **Create a Video**.
+
+## 📝 Required Fields
+
+✔️ **Acknowledge Charges**  
+Check the box confirming potential dynamic video minute charges.
+
+🌐 **Background URL**  
+Select **“Use email domain as background URL”** to ensure a background appears even if the contact has no website property.
+
+🔐 **Credentials**  
+Paste:
+
+- Workspace ID
+- API Key
+- API Secret Key
+
+You can find these inside Sendspark under **API Credentials**.
+
+---
+
+## 🔄 Map the Contact Data
+
+| Field | What to Map |
+| --- | --- |
+| 🌍 Website URL | Contact’s Website property |
+| 📧 Contact Email | Contact’s Email (Required) |
+| 👋 Contact Name | First Name (Avoid Full Name for better pronunciation) |
+
+---
+
+🎯 **Campaign ID**  
+Paste your **Dynamic Video Campaign ID** from Sendspark.
+
+---
+
+## 📩 Step 3: Enroll Contact in a Sequence (HubSpot)
+
+1️⃣ Add another Workflow action: **Enroll in a Sequence**  
+2️⃣ Choose your Sequence (example: *“Feb 18”*)  
+3️⃣ Assign:
+
+- 👤 Sender
+- 👥 Contact Owner
+
+4️⃣ Click **Save**
+
+---
+
+## ✉️ Step 4: Add the Video to Your Email Template
+
+1️⃣ Go to the Sequence you selected.  
+2️⃣ Edit the email step.  
+3️⃣ In Sendspark, open your **Dynamic Video Campaign**.  
+4️⃣ Copy the snippet code specifically for **HubSpot Sales Hub**.  
+5️⃣ Paste the snippet into the body of your HubSpot email.  
+6️⃣ Click **Update** to save.
+
+---
+
+## 🚀 Result
+
+Now, whenever your trigger happens in HubSpot:
+
+- 🎥 A personalized video is generated
+- 📩 The contact is enrolled in your sequence
+- 🤖 The email sends automatically with the video included

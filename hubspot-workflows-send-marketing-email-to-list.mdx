@@ -1,0 +1,128 @@
+---
+title: "HubSpot Workflows: Send Marketing Email to List"
+description: "Step-by-step guide to sending HubSpot marketing emails automatically when contacts are added to a list using Sendspark workflows."
+---
+
+## 🎬 How to Automate Sendspark Videos with HubSpot
+
+This guide explains **two ways** to automate the creation and delivery of personalized Sendspark videos using HubSpot:
+
+- **Method 1:** HubSpot Workflows (HubSpot-driven automation)
+- **Method 2:** Sendspark Agentic Workflows (Sendspark-driven automation)
+
+Choose the option that best fits where you want your automation logic to live.
+
+---
+
+## 🧩 Method 1: Using HubSpot Workflows
+
+This method keeps everything centralized in **HubSpot**, from the trigger to the email send.
+
+<iframe src="https://www.youtube.com/embed/ELfWvgwRiOU?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+---
+
+## 🔔 Step 1: Set Up the Workflow Trigger
+
+1. In HubSpot, go to **Workflows** → **Create workflow** → **From scratch**
+2. Choose **Contact-based workflow**
+3. Set the enrollment trigger to **Segment Membership** *(formerly “List membership”)*
+4. Select the list or segment that should trigger the automation *(e.g. when a contact is added to a specific list)*
+5. Save the trigger
+
+---
+
+## 🎥 Step 2: Configure Sendspark Video Generation
+
+1. Add a new action to the workflow
+2. Scroll down and select the **Sendspark** app 👉 *Make sure the native Sendspark app is installed from the HubSpot Marketplace*
+3. Choose **Create a dynamic video**
+
+⚠️ **Important**
+
+- You must check **both mandatory checkboxes** in the setup window for the action to run
+
+## Required Fields
+
+- **Dynamic Campaign ID**
+  - Go to your Sendspark **Dynamic Campaign**
+  - Copy the **Campaign ID** shown at the bottom
+  - Paste it into HubSpot
+- **API Credentials**
+  - Workspace ID
+  - API Key
+  - Secret Key 👉 Found in Sendspark under **API Credentials**
+- **Dynamic Data Mapping**
+  - Map HubSpot properties to Sendspark fields
+  - Example:
+    - `First Name` → `Contact Name`
+    - `Website` → `Website URL`
+
+⚠️ **Important**
+
+- Always map **First Name**, not Full Name
+
+1. Click **Save**
+
+---
+
+## ✉️ Step 3: Create the Automated Marketing Email
+
+This email will deliver the personalized video.
+
+1. In HubSpot, go to **Marketing → Emails**
+2. Click **Create email**
+3. Select **Automated email** (not Regular)
+4. Choose your template
+
+## Embed the Sendspark Video
+
+1. In Sendspark, open your **Dynamic Campaign**
+2. Click **Share Campaign**
+3. Select **HubSpot Marketing Hub**
+4. Copy the provided **HTML code**
+5. In the HubSpot email editor:
+  - Drag an **HTML block**
+  - Paste the code inside
+
+🧠 This HTML acts as a **dynamic placeholder** and will automatically resolve to the correct video for each contact.
+
+1. Save the email and confirm it’s **available for automation**
+
+---
+
+## 🚀 Step 4: Add the Email to the Workflow
+
+1. Return to your HubSpot workflow
+2. Add a new action **after** the Sendspark video step
+3. Select **Send Email (Marketing Email)**
+4. Choose the automated email you created
+5. Review and **turn on** the workflow
+
+✅ Done! Your contacts will now receive personalized videos automatically.
+
+---
+
+## 🤖 Method 2: Using Sendspark Agentic Workflows
+
+This method shifts automation control to **Sendspark**, using sequences and triggers synced with HubSpot.
+
+---
+
+## 🔁 Workflow Setup in Sendspark
+
+1. In Sendspark, go to **Agentic Workflows**
+2. Set the trigger to **New contact in list**
+3. Select the appropriate **HubSpot list**
+4. Add the action **Create Dynamic Video**
+5. Add a final action: **HubSpot → Enroll contact in a sequence**
+
+---
+
+## 🔗 Field Mapping
+
+- Map required fields such as:
+  - **Contact ID**
+- Use the field selector to search and match HubSpot properties correctly
+
+⚠️ Make sure all required fields are mapped, or the workflow will fail silently.

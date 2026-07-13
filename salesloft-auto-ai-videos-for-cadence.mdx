@@ -1,0 +1,82 @@
+---
+title: "Salesloft - Auto AI Videos for Cadence"
+description: "Learn how to create AI-personalized videos in Salesloft cadences with Sendspark to boost email replies 2-3x without manual recording."
+---
+
+Adding Sendspark AI-personalized videos to Salesloft cadences helps you get more replies without recording anything manually. Each prospect gets a message tailored to them, increasing engagement and making your emails stand out. It’s fast, scalable, and proven to drive 2–3x more replies.
+
+## How to Create Personalized Videos For Salesloft Cadences with AI
+
+<iframe src="https://www.youtube.com/embed/TK6cFW5dJuQ?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 1. Create Dynamic Video Campaign in Sendspark
+
+This will act as the template for all AI-personalized videos created. Learn more about creating [dynamic videos](/dynamic-videos-make-videos-with-ai-introductions) here.
+
+## 2. Add Video Placeholder to Salesloft Email Template
+
+You can add this placeholder snippet to your snippet to your Salesloft email cadence to mark where the video should go.
+
+Go to your Dynamic Video Campaign and click **"Share Campaign"**
+
+![Sendspark Dynamic Video Campaign page with Share Campaign button highlighted](/images/11400066/07bd1579-image.png)
+
+Search for **"Salesloft"**
+
+![Sendspark share options dropdown menu with Salesloft integration option visible](/images/11400066/3423d384-image.png)
+
+Click to copy the snippet, and paste directly in your SalesLoft email, where you want your video to appear in email.
+
+![Sendspark snippet code display with copy button for Salesloft email integration](/images/11400066/6af66fb0-image.png)
+
+We recommend adding the video to **Day 2 of the email cadenc**e, so you can ensure the video has time to generate before the email is sent out. This can help with deliverability too!
+
+---
+
+**Pro tip:**if you want to preview how this will look for real contacts in Salesloft, make a Sendspark video for **George ([g.p.burdell@example.net](mailto:g.p.burdell@example.net))**. This is the default contact that Salesloft uses, so you can use it for testing.
+
+![Sendspark video preview showing personalized video for George Burdell contact](/images/11400066/58a308cc-image.png)
+
+## 3. Create Automated Workflow to Create Dynamic Video When Someone Gets Added to Salesloft
+
+Now, we want to make sure that whenever someone gets enrolled in this email sequence, their video automatically gets generated for them.
+
+Create a new [automated workflow](/sendspark-automated-workflows-beginner-s-guide) in Sendspark.
+
+![Sendspark dashboard with Create New Automated Workflow button option](/images/11400066/6918d998-image.png)
+
+For the trigger, select**"Salesloft"** and connect your Salesloft account. Use the option **"Person Updated"**
+
+![Sendspark workflow trigger selection showing Salesloft and Person Updated option](/images/11400066/ba5d9a1d-image.png)
+
+Then, click the **funnel** to get to advanced options.
+
+![Sendspark workflow advanced options funnel icon for refining trigger conditions](/images/11400066/8b4e1fb1-image.png)
+
+Refine this to say **"Most Recent Cadence" i**s the cadence you'd like to use to trigger this automation (where you added the video placeholder).
+
+![Sendspark workflow filter settings for Most Recent Cadence selection](/images/11400066/fbd4dc7f-image.png)
+
+Add either the cadence title or ID, depending on what you selected above. I would recommend using the ID when possible to be precise.
+
+![Sendspark workflow field showing cadence ID input for automation trigger](/images/11400066/857ac5a9-image.png)
+
+For the action, select **"Sendspark"** and **"Create Dynamic Video"**
+
+![Sendspark workflow action selection showing Create Dynamic Video option](/images/11400066/cc398d54-image.png)
+
+Map the fields from Salesloft to Sendspark, so you can use the correct first name, company name, etc. in video.
+
+![Sendspark workflow field mapping interface connecting Salesloft to Sendspark data](/images/11400066/135ffb6c-image.png)
+
+Click **"Start"** to turn on your workflow.
+
+![Sendspark workflow Start button to activate the automation workflow](/images/11400066/053b3f0a-image.png)
+
+Test this by enrolling contacts in the Salesloft cadence. When you do that, you should see the video start generating in Sendspark, and the email send with the correct video link.
+
+(Just make sure to give a minute or 2 for the video to generate... and remember to send the video on Day 2 or later to give time for the videos to generate in your real compaigns).
+
+Click into the **"Automated Log"** to get more insight into your automation:
+
+![Sendspark Automated Log section showing workflow execution history and details](/images/11400066/79cca59c-image.png)

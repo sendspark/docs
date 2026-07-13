@@ -1,0 +1,72 @@
+---
+title: "HighLevel (GHL) - Using Tags to Trigger Actions"
+description: "Learn how to use HighLevel tags to trigger automations and create workflows that update or create contacts with proper tagging."
+---
+
+Tags are one of the most effective ways to trigger automations in GoHighLevel. When a tag is applied to a contact, you can use it to launch campaigns, send emails, send SMS messages, and more.
+
+Here’s how it works with Sendspark:
+
+- When a video is generated in Sendspark, we want to either **create a new contact** in GoHighLevel or **update an existing contact**.
+- In both cases, we’ll apply a tag (for example, the name of the campaign) so the contact is added to the right automation sequence.
+
+Because sometimes the contact already exists and sometimes it doesn’t, we use the **Error Handler tool** in Agentic Workflows:
+
+- **If the contact exists** → update the contact and apply the tag.
+- **If the contact doesn’t exist** → create the contact and apply the tag.
+
+This setup ensures that every contact receives the correct tag and is automatically placed into the right automation.
+
+## In the following example, you'll notice the steps required to build this:
+
+![Agentic Workflows diagram showing trigger, search, update, break, and create contact steps](/images/12161614/7a4c2232-image.png)
+
+## Workflow Example: Updating or Creating a Contact with Tags
+
+Here’s how to build a workflow that ensures every contact gets the correct tag—whether the contact already exists or not.
+
+## Step 1: Trigger
+
+Start with the trigger: **Dynamic Video Campaign → Video Created**.
+
+## Step 2: Search for Contact
+
+Add the action **Hubato: Search Contact by Email or Phone Number**.
+
+- This checks if the contact already exists in GoHighLevel.
+
+## Step 3: Update Contact
+
+Add the action **Hubato: Update Contact**.
+
+- This step requires a **Contact ID**, which is provided by the search in Step 2.
+- The update is used to apply a tag to the existing contact.
+
+![Hubato Update Contact action panel with Contact ID field and tag application settings](/images/12161614/384455b8-image.png)
+
+![Contact tag configuration interface displaying tag name and automation sequence assignment](/images/12161614/0cbd3bc9-image.png)
+
+## Step 4: Tool Break
+
+Insert a **Tool Break**.
+
+- Purpose: If a contact was found and updated in Step 3, the workflow stops here.
+- This prevents creating a duplicate contact.
+
+## Step 5: Create Contact (Error Handler)
+
+After the Tool Break, add the action **Create Contact**.
+
+- This step only runs if the contact was **not found** in Step 2 (Search for a Contact)
+- The Error Handler ensures that when the search fails (no contact exists), the workflow continues here to create a new contact and apply the tag.
+
+![Create Contact action panel in Error Handler showing contact fields and tag application](/images/12161614/d3b0bdfe-image.png)
+
+​
+
+## How It Works
+
+- **If the contact exists** → Search succeeds → Update the contact → Apply tag → Stop.
+- **If the contact doesn’t exist** → Search fails → Error Handler passes control → Create the contact → Apply tag.
+
+This setup guarantees that every video-triggered workflow results in a properly tagged contact, without duplicates.

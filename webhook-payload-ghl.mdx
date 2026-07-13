@@ -1,0 +1,10 @@
+---
+title: "Webhook payload (GHL)"
+description: "Learn how to configure GHL webhook payload for Sendspark API integration with proper JSON formatting and contact field mapping."
+---
+
+This is the raw information you need to paste when you're firing a webhook or triggering an API towards Sendspark.
+
+```
+{  "processAndAuthorizeCharge": true,  "prospectDepurationConfig": {    "forceCreation": false,     "payloadDepurationStrategy": "keep-first-valid"  },  "prospect": {      "firstName": "#{{contact.first_name}}",      "contactEmail": "#{{contact.email}}",      "company": "#{{contact.company_name}}",      "customfield": "",      "backgroundUrl": "#{{contact.website}}"  }}
+```

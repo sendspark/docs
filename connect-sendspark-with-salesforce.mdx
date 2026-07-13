@@ -1,0 +1,81 @@
+---
+title: "Connect Sendspark with Salesforce"
+description: "Integrate Sendspark with Salesforce to send personalized video emails directly from your CRM. Complete setup guide for connecting your Salesforce account."
+---
+
+## Why Connect Sendspark with Salesforce?
+
+You can integrate Sendspark with Salesforce to send video view data into Salesforce records.
+
+This will help you understand how viewers are engaging with video, build reports to see which deals were influenced by Sendspark, and understand what ROI Sendspark is providing to your sales process.
+
+And not only can you track, **you can act!**
+
+You will be able to see watch percentages, call-to-action conversions, and other video engagement metrics in order to follow up accordingly.
+
+## What Data Can You Send from Sendspark to Salesforce?
+
+It is possible to send these events from Sendspark into Salesforce:
+
+- **Video Created:**
+  - This event occurs when a new Dynamic Video is created for a Salesforce contact.
+- **Video CTA Clicked:**
+  - This event occurs when a contact clicks a video “call-to-action” button on a Sendspark video page.
+- **Video Liked:**
+  - This event occurs when a viewer clicks the "Like” button on a Sendspark video page.
+- **Video Played:**
+  - This event occurs when a video starts to play on a video page, either because the “play” button was clicked, or because autoplay is enabled.
+- **Video Viewed:**
+  - This event is triggered when a viewer opens or accesses a video, regardless of whether they interact with the playback controls or watch the video in its entirety.
+- **Video Watched %:**
+  - This event tracks the percentage of the video that a viewer has watched before pausing or closing the playback.
+
+When you connect this data to Salesforce, you will be able to select the object in Salesforce you wish to associate it with.
+
+## How to Connect Sendspark with Salesforce
+
+Note: Sendspark is NOT on the Salesforce AppExchange at this time. You will be sending data from Sendspark to Salesforce **using webhooks.**
+
+**1. In Salesforce, create your webhook URL to receive data.**
+
+- In Salesforce, you can create webhooks with APEX calls.
+- If you would prefer a no-code way to create webhooks, you can use this app on the Salesforce AppExchange: [Declarative Webhooks - Effortless Integrations for Salesforce](https://www.google.com/url?q=https://appexchange.salesforce.com/appxListingDetail?listingId%3Da0N4V00000FNBsKUAX&sa=D&source=editors&ust=1721110559987624&usg=AOvVaw1FJSnNTLSlI12rlqqdcRHC).
+- If you are using the app, follow these steps to launch an inbound call template:: Video:
+
+<iframe src="https://www.youtube.com/embed/xjX9P1_qYiM?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+**How to create a webhook in Salesforce using Declarative Webhooks:**
+
+- Select **“Create Inbound Call Template”** ​![Declarative Webhooks interface showing Create Inbound Call Template option](/images/9614413/cc3fd58f-AD_4nXf7N7PhUN7xusOK7WXNTlejYApDv4Ga48RO4qo5TVHJHr9JReaJAp_n3LBt9Lq9KuOAzeyZ2WpxngjHilKuhtRDfOarkYqIJoZRnzIBSNVe5rJ0W80yNjr35PelUxccabh6q6m4WQWq3T7kMfM2amvpSSAb.png)
+- Click **“new”**
+
+![New inbound call template creation form with clickable new button](/images/9614413/8c3dfb8d-AD_4nXc-GrX-LoywW5-PI5VvpdPJUUKQhMP-2MCiwYtJYt8R9pjdo7tZ1DYaOYIRbShe8C2iKjaLlYqlkZeJ2GD8u5f9UhVLSVA_AcgDU9BPr0Da_5WbSBSp4qZEB-aAkGSYEVvjkop0PWxjEStD0WWUaE_pS2sf.png)
+
+- Choose your **HTTP method** ​![HTTP method selection dropdown menu for webhook configuration](/images/9614413/c8522f06-AD_4nXeq0uk0nz7vhs3H0_YyxF9HovWCwS0vh4dMwOOCZstatwVSup3b7yoj02oUZnv0W7BECNvbey9Dg3l3LE7CviUk85_76TZunvA_Um1b8nwggn5WNFoCv1UfXwVNK4TOy_D1tPI244Q-zRyN7IOayCafKc1R.png)
+- Activate your **template** ​![Template activation toggle or button in Salesforce settings](/images/9614413/f901e6dc-AD_4nXf8BO8bnyTXWFf6kQrVNm3Vhv94DRiTH8SBDad4ipNJyuFoGSx1dRF8v0f0FKs79IRrv8mntaA0ApmnLm31U-ul6HfiYOaoW4zfIwaurykgxZ-xZYz4utB0mTdjlxUzSUH1q9266YL-5jqnqCREAB4W-Vdq.png)
+- Set up your **call authentication** ​![Call authentication setup section with security configuration options](/images/9614413/2d9f76c7-AD_4nXejIRu8Wwb5SmMQ2wwJ6D_BcQ9b6rKReRYEs_Hk1g-oUsn33Rl9gt5jfzdX4klbyhHl8fZ6h80AA-MOW5wnQGVySiKZ-QlifxUaCxVL8WGvLFzzAM3PTWvEL7O_CvxTDIffQsg4tUDx2bY90fhANupD619K.png)
+- Select the **main object**the template will be working with. This object dictates the actions you can take when the callback is received, and the actions you can take in the response. ​![Main object selection dropdown for webhook template mapping](/images/9614413/61a7e997-AD_4nXfXqNYkAdqVS3_qn8dP1sn4vZ8zHeDVtsg1WONqzLPSP6zfSx56CNZxMSLcFeEbRjL4W5iYPrE0kXlr8UNEH42wfVaNVJkd-_486jA0iRnSyrVZHFFhyV-rGW6mVPnMsLe_q4vdqKaTYcXfAmO2Z1k-8NtL.png)
+- Choose your expected **request body format**. For Sendspark, this should be **JSON**. ​![Request body format selection with JSON option highlighted](/images/9614413/06a08edd-AD_4nXfxVDs6W6R5Lm2Az86bdS9pIkCntITAYVQ1k-Bqo-zxuosK0YcLXW1GzpetW1BwVBS8AcsPSWwY-dMdZarMV7ZVPGVxr57lLHDY8qR6oKLSW2NG7-yPBxR6_fgtwx4ych-wtj38JAu5zq60zsyiawDHuoZh.png)
+- To get a head start, use this sample response from Sendspark ​`{ "campaignId": "bw14856ml6d64idzd25ms597bq5o8fw0", "campaignName": "Bethany Test > s.e@sendspark.com", "contactEmail": "s.e@sendspark.com", "contactInfo": { "contactEmail": "s.e@sendspark.com", "contactFirstName": "Bethany" }, "creatorId": "awbebxvg0zaifsxff61ylo6d168bkliu", "creatorName": "Bethany", "dynamicCampaignId": "1r4xl5k1vvs9hw5dsbvojsqxg0ii79xx", "dynamicCampaignName": "Bethany Test", "videoLink": "https://sendspark.com/share/7rh2bw5mv9ryf8go6j1hmj9ur8p5i4jn", "embedLink": "https://sendspark.com/embed/7rh2bw5mv9ryf8go6j1hmj9ur8p5i4jn", "thumbnailUrl": "https://thumbnail.sendspark.com/animated/kwm4cz49g55zwbgq6c4uzo1cnm35k9gz.b8dc25f6ebf5273a886084dbb827e54ca8f926a7/sendspark-animated-thumbnail-kwm4cz49.gif", "workspaceId": "w1dnne4qcatrajzwy4wacx9mf8tym0kd", "workspaceName": "Sendspark"}`
+- Decide what actions you should take when a callback is received. There is a lot of flexibility in what you map. You can play around with all of the mapping options here. ​![Field mapping interface showing Sendspark data matched to Salesforce fields](/images/9614413/f7ac48cb-AD_4nXdfAJ1S7P-YRLdihaEejI0ITmd4dUNpr7mlgnXylmi2RVPleTydjcDyLqmKyKDG4KzuCN8uS_2XyKzYkppLds7WrxErJgla5_cydCunuRLcBMd-YTdf9FwacbDVK0Ehukg2M9qQfmqekXFuZjtk0sv906M.png)
+- In the final step, you have the option to craft a response. Please leave this blank. ​![Response configuration panel with text area for custom response setup](/images/9614413/594d795d-AD_4nXdcFNbifueg7h7ZzszEtp0IH9R_OZ9UlUee8YYV3p7LCCvSEDRZmhT9jIkUlTpHVyToJ7VNQgTRx__45Aeng1jjoBdGDmGXJzN0eQloVGKjIQ6F6S3RC6fTe1942TtStMtgYSVdHBj1tWXgSi2ZPZ09PF5C.png)
+- After set up, you’ll see a URL to send callouts. This is what you need to connect with Sendspark! ​![Webhook URL display showing the endpoint to copy for integration](/images/9614413/4b7e4fdd-AD_4nXcixXpL1kWLWAmklZqNr0vrF1fZcuFAHmMhssuw1pzUB2XSx0Fcf3M2KPQ_EzLD7eKb6jZcUyn9YT0r0dD0M_PCW4rHDjBd3Navgi7uV0bzBk8wpul6OulE02xFG-QO0r9l1bmDaOJtBdq_GbFfB5xe9dk.png)
+
+**2. In Sendspark, create a webhook**
+
+- Navigate to your [Sendspark webhook settings](https://sendspark.com/settings/webhooks)
+- Add your title and webhook URL ​![Sendspark webhook settings page with title and URL input fields](/images/9614413/1d3aa595-AD_4nXd3K3MMcPe6iGh130sHgMjUP7wSVjaerK0eQ5x8DkmhuEbFlD-ZX1yByIg6ZER4OuX0EBfExMu1TY4J6OBseDunZxwQA2MOTgW5IOZ-dIjTCcIhtzY-vUrpwdUEpDiPf0LIRyQvBnsjVVETUy4xp7B1uycL.png)
+- Keep this as a “global” webhook to receive data for all events in your Sendspark workspace.
+- **Select the checkboxes** for which events you want to receive notifications for: ​![Sendspark event checkboxes for Video Created, Played, Viewed selections](/images/9614413/2fd3eecc-AD_4nXcPwPJOjwFe4M1Vu-QYENAd9AQ6UFAqVe-M6LsBztAFGtUizf908KcxCxHx6Nnch7pJyHQIQFDCEeMqcqONnd8aLa0UemEKZIvr1TSUPNzYMVDP8nBZpt6spAibiX8QFuq4gr3Ct-grUJJb4m8D2mdIbo4y.png)
+
+3. That’s it! Now, you’re all set to take the information from the webhooks and create or update objects or trigger Processes and Flows.
+
+## Related Information
+
+Since you’ll be mapping data from Sendspark to Salesforce based on the viewer’s email address, this integration requires the viewer’s email address to be known.
+
+For this reason, we recommend you install your Marketing Cloud tracking code on Sendspark website pages. This will let you track video page views the same way you can track page views on other websites.
+
+You can see more information on [connecting Salesforce Marketing Cloud to Sendspark here](/how-to-set-up-sendspark-for-salesforce).
+
+​

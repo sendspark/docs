@@ -1,0 +1,68 @@
+---
+title: "Smartlead - Auto-Send Videos to New Leads"
+description: "Learn how to automatically create AI-personalized Sendspark videos for Smartlead leads using agentic workflows and campaign triggers."
+---
+
+In this article, you'll learn how to automatically create AI-personalized videos for leads when they get added into Smartlead sequences.
+
+<iframe src="https://www.youtube.com/embed/LOvvbgkJFbM?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## How to Create Sendspark Videos When Leads Get Added to Smartlead Campaign
+
+## 1. Create a Dynamic Video Campaign in Sendspark
+
+Start by creating your [dynamic video campaign](/dynamic-videos-make-videos-with-ai-introductions) in Sendspark. This will be the template you use to create all of the personalized videos.
+
+## 2. Create an Email Campaign in Smartlead
+
+Create your email campaign in Smartlead, and add your Sendspark video placeholder where you want your video to appear.
+
+Note that you will have to add this to the 2nd email in Smartlead, or a later step, to ensure that the video has enough time to generate before you send off the video email.
+
+Learn how to get your Sendspark video placeholder for Smartlead [Smartlead dynamic video integration](/smartlead-send-dynamic-videos).
+
+## 3. Create an Agentic Workflow in Sendspark
+
+Go to the [Agentic Workflow](https://sendspark.com/agentic-workflows) section of Sendspark and **create a new automation**.
+
+## 4. Use “Smartlead: Lead moved to specified status" as the Trigger
+
+For your trigger, select **Smartlead** and then **Lead moved to specified status**
+
+Connect your Smartlead account, and then **specify the Smartlead email campaign** that you're using here.
+
+![Sendspark Agentic Workflow trigger settings showing Smartlead campaign selection dropdown](/images/12133944/752412e5-image.png)
+
+Click**"continue"** to save the step.**​**
+
+## 5. Select the Status "In Progress"
+
+Click anywhere in the first step to launch the settings modal.
+
+Set select the statusto **"IN PROGRESS,"** so when leads get updated to this status in Smartlead, it will trigger the automation in Sendspark.
+
+![Workflow trigger status configuration panel with In Progress status option selected](/images/12133944/9ef6a474-image.png)
+
+## 6. Add Step to Create Sendspark Video
+
+Add an action for **"Sendspark"** and select **"Create Dynamic Video"**
+
+![Sendspark action menu displaying Create Dynamic Video option for workflow automation](/images/12133944/f0526b13-image.png)
+
+Select the dynamic video campaign you are using, and then map the fields from Smartlead that you would like to use in your Sendspark video.
+
+![Dynamic video campaign field mapping interface with Smartlead lead data fields](/images/12133944/681ca48f-image.png)
+
+Make sure to **map in the email field,** because this is essential for matching the right video to the right lead in Smartlead.
+
+## 7. Add Step to Create Sendspark Video
+
+That's it! Your entire automation should look something like this, where...
+
+- When a lead in Smartlead moves to "in progress" status of your chosen campaign...
+- You're automatically creating a dynamic video...
+- And then updating the video placeholder in your email to make sure that every lead gets the right video.
+
+![Complete Agentic Workflow automation showing trigger, video creation, and email steps](/images/12133944/4dd3dfb5-image.png)
+
+When you're ready, hit **"start"**and begin adding leads to your campaign in Smartlead!

@@ -1,0 +1,62 @@
+---
+title: "Agentic Workflows: Add Variable Fallbacks"
+description: "Learn how to add fallbacks for missing variables in Agentic Workflows using Table Replacement to ensure clean automation data."
+---
+
+When you’re working with automations, it’s common to run into missing data. For example, if a contact doesn’t have a first name filled in, your video or email could look awkward. To prevent this, you can add a **fallback value** using the **Table Replacement** tool in Sendspark’s Agentic Workflows.
+
+This guide will walk you through setting up a fallback step so your automations always have clean, usable data.
+
+## Step 1: Add the Table Replacement Tool
+
+Inside your Agentic Workflow:
+
+1. Add a tool for **Table Replacement**.
+2. For the **Field Input Data**, select the field you want to check (e.g. "First Name").
+3. For the **Second Field**, select **Empty List**.
+
+This setup lets the workflow detect when the selected field is empty.
+
+*Example:*
+
+![Table Replacement tool configuration showing Field Input Data and Empty List selection](/images/12309834/e9e599c2-Screenshot_2025-09-17_at_12_09_26_AM.png)
+
+## Step 2: Configure the Logic
+
+Next, tell the workflow what to do if the field is empty.
+
+1. Add a condition: **If the value is non-empty, replace it with the original field data**.
+2. Otherwise, specify a fallback word (for example, "there").
+
+This ensures that if a contact’s first name is missing, the message still flows naturally:  
+*“Hi there”* instead of *“Hi watermelon.”*
+
+*Example:*
+
+![Conditional logic setup with fallback value entered for empty field scenario](/images/12309834/054eaeda-Screenshot_2025-09-17_at_12_09_43_AM.png)
+
+## Step 3: Use the Replacement Field in Your Workflow
+
+Finally, make sure you’re using the updated field everywhere you want the fallback to appear.
+
+For example, in the **Contact Name** field of a dynamic video, select:  
+`Table replacement: Replacement value`
+
+This way, Sendspark will automatically use the contact’s real data if available, or your fallback value if not.
+
+*Example:*
+
+![Dynamic video Contact Name field dropdown with Table replacement Replacement value option](/images/12309834/08e4608e-Screenshot_2025-09-17_at_12_11_56_AM.png)
+
+## Best Practices for Fallbacks
+
+- **Keep it natural**: Use fallback values like “there,” “friend,” or “your team” that sound human in context.
+- **Match the tone**: If your brand is casual, “there” works. If it’s more formal, try “valued contact.”
+- **Test before launching**: Always run a test automation to make sure your fallback logic displays correctly.
+- **Use sparingly**: Fallbacks are a safety net, not a replacement for clean CRM data. Keep your contact lists as complete as possible.
+
+---
+
+## Summary
+
+By adding a fallback with the **Table Replacement** tool, you ensure your automations always look polished, even if some data fields are missing. This small step can make your personalized videos and outreach feel much more natural and professional.

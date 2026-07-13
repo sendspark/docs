@@ -1,0 +1,83 @@
+---
+title: "Create Dynamic Video Backgrounds from Email Domains"
+description: "Learn how to automatically create personalized dynamic video backgrounds in Sendspark using recipient email domains for B2B outreach."
+---
+
+Turn any email address into a personalized background URL using agentic workflows.
+
+This allows you to automatically generate branded or customized video backgrounds based on your contact’s email domain.
+
+<iframe src="https://www.youtube.com/embed/WOdxHVCdmWk?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+---
+
+## ⚙️ How It Works
+
+You’ll build a simple workflow with three parts:
+
+## 1. Trigger your workflow
+
+Start with any trigger, for example:
+
+- A meeting booked
+- A form submission
+- A new contact created
+
+---
+
+## 2. Extract the email domain (Data Cropping)
+
+Click the ➕ between steps and select:
+
+**Tool → Data Cropping**
+
+In this step:
+
+- Select the **email field**
+- Configure the cropping to extract everything **after the “@”**
+
+👉 Example:  
+`dan@sendspark.com` → `sendspark.com`
+
+This will give you a clean domain you can reuse dynamically.
+
+---
+
+## 3. Use it in your Dynamic Video Campaign
+
+In your **Dynamic Video Campaign** step:
+
+- Go to the **Background URL** field
+- Insert the output from the Data Cropping step
+
+Now your background becomes dynamic based on the email domain.
+
+---
+
+## 💡 Example Use Case
+
+If your contact is:
+
+- `john@nike.com` → background could be Nike-themed
+- `sarah@shopify.com` → background could be Shopify-themed
+
+This creates a more personalized and relevant video experience automatically.
+
+---
+
+## 🚀 Why This Matters
+
+- Personalization at scale
+- No manual editing
+- Works with any trigger
+- Fully automated workflows
+
+---
+
+## ✅ Summary
+
+By adding a **Data Cropping** step between your trigger and your video campaign, you can:
+
+- Extract the email domain
+- Convert it into a usable variable
+- Power dynamic backgrounds automatically

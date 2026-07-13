@@ -1,0 +1,98 @@
+---
+title: "Auto-Send Personalized Video Emails in Apollo"
+description: "Learn how to automatically send AI-personalized Sendspark videos through Apollo sequences with step-by-step setup instructions."
+---
+
+In this guide, you’ll learn how to automatically send AI-personalized Sendspark videos through Apollo sequences.
+
+<iframe src="https://www.youtube.com/embed/zDyMHJYcS9w?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## Step 1: Create a Dynamic Video Campaign in Sendspark
+
+Start by setting up a **[Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions)** in Sendspark. This is the template video that will be personalized at scale with your contact’s details (name, company, etc.).
+
+---
+
+## Step 2: Add a Sendspark Placeholder into Your Apollo Sequence
+
+In Apollo, edit your sequence email where you’d like the personalized video to appear. This placeholder will automatically update with each contact’s unique video once it’s generated.
+
+Add this into Apollo by...
+
+1. Going to your Dynamic Video Campaign
+2. Clicking "Share Video"
+3. Searching for "Apollo"
+4. Clicking on the snippet to copy it to your clipboard ​![Sendspark Share Video dialog with Apollo option highlighted in search results](/images/12178551/14838791-image.png)
+5. Pasting into Apollo exactly where you'd like it to appear in your email ​![Apollo sequence email editor with Sendspark video placeholder code pasted](/images/12178551/e2c22507-image.png)
+
+---
+
+## Step 3: Build a Sendspark Automation to Enroll Contacts in Apollo
+
+Now we’ll [set up an automation](https://sendspark.com/agentic-workflows) that connects Sendspark with Apollo that looks something like this:
+
+![Sendspark automation workflow diagram showing trigger and action steps](/images/12178551/313173bf-image.png)
+
+## 1. Choose Your Trigger
+
+- If you already have a trigger (like “Contact added to Apollo list” or “Contact added in HubSpot”), use that.
+- Otherwise, simply use **“Sendspark Video Generated”** as the trigger and connect the dynamic video campaign you'd like to use ​![Sendspark automation trigger selection with Sendspark Video Generated option](/images/12178551/9aa7629a-image.png)
+
+## 2. Add Step: Apollo.io: Find Contact
+
+- Add a step: **Apollo.io: Find Contact**
+- Use the **Sendspark email field** as the search parameter. ​![Sendspark automation step showing Apollo Find Contact with email parameter](/images/12178551/9edb91bf-image.png)
+
+## 3. Add Step: HTTP Request/Outgoing webhook: Send request
+
+- Create a new step: **HTTP Request/Outgoing webhook: Send request**
+- **Paste the following URL**, using the real campaign ID from your Apollo sequence (you can find it in the URL of your Apollo sequence):
+
+​**URL**:
+
+```
+https://api.apollo.io/api/v1/emailer_campaigns/{YOUR_CAMPAIGN_ID}/add_contact_ids
+```
+
+**How to Find Apollo Campaign ID:**
+
+![Apollo sequence URL bar showing campaign ID in the address](/images/12178551/b61a82d0-image.png)
+
+Make sure to select **"Json,"**so everything looks like this:
+
+![Sendspark HTTP request configuration set to JSON format](/images/12178551/a4454db5-image.png)
+
+Click **"Continue"** and fill out the rest of the API call:
+
+**Request Method**: `POST`
+
+**Request Parameters**:
+
+- `contact_ids` → `StringArray` → insert this dynamically from the “Find Lead in Apollo” step
+- `emailer_campaign_id` → `String` →Your Apollo campaign ID (find this in the URL of your sequence)
+- `send_email_from_email_account_id` → `String` →Your connected Apollo email account (you can find this from [Apollo API Docs](https://docs.apollo.io/reference/get-a-list-of-email-accounts))
+
+**Request Headers**:
+
+- `X-Api-Key` → `String` → Get your Aollo API key here: [Apollo Developer Keys](https://developer.apollo.io/keys)
+- `Content-Type` → `String` →` application/json`
+
+It should all look something like this:
+
+![Sendspark webhook request parameters filled with contact IDs and campaign details](/images/12178551/e0cffca2-image.png)
+
+After you save this step, you have everything you need to make sure that after leads have videos created for them, you are automatically enrolling them in Apollo sequences.
+
+## 4. Start Automation
+
+When all looks good, **"Start"** to start running this automation.
+
+![Sendspark automation Start button ready to activate the workflow](/images/12178551/8e788cce-image.png)
+
+Then test your trigger and make sure that contacts are getting successfully enrolled in sequences!
+
+---
+
+## Bonus: Create Contacts in Apollo If They Don't Already Exist
+
+For the most part, your contacts should already exist in Apollo (because they have a large database). However, if you believe that some contacts might not exist, then you can add logic to [create contacts in Apollo if they don't exist](/create-contacts-in-apollo-if-they-don-t-already-exist).
