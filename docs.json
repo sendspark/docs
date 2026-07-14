@@ -128,7 +128,6 @@
                   "close-send-dynamic-videos",
                   "constant-contact-send-dynamic-videos",
                   "convertkit-send-dynamic-videos",
-                  "customer-io-send-dynamic-videos",
                   "go-high-level-send-dynamic-videos",
                   "highlevel-ghl-generate-a-video-with-any-trigger",
                   "hubspot-marketing-emails-send-dynamic-videos",
@@ -638,14 +637,11 @@
           "change-camera-microphone-source",
           "close-send-personalized-videos-at-scale",
           "create-contacts-in-apollo-if-they-don-t-already-exist",
-          "create-dynamic-videos-via-zapier-automation",
           "delete-a-folder",
           "filter-videos-by-creators",
           "filter-videos-by-plays-likes-and-cta-clicked",
           "get-started-with-sendspark-solo-plan",
           "getting-started-with-sendspark-starter",
-          "gmass",
-          "gong-engage",
           "greenhouse-recruiting",
           "groove",
           "growbots",
@@ -659,7 +655,6 @@
           "how-to-request-a-video",
           "how-to-search-videos-in-sendspark",
           "how-to-add-google-tag-manager-to-sendspark",
-          "inspiration",
           "keep-send-ai-personalized-video-emails",
           "leadconnector-send-personalized-videos-at-scale",
           "leadsimple",
@@ -669,12 +664,10 @@
           "podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
           "rename-a-folder",
           "reorder-videos",
-          "rift",
           "salesforce-cadences-send-personalized-videos-at-scale",
           "salesforce-marketing-cloud-send-personalized-videos-at-scale",
           "saleshandy",
           "save-default-meeting-links",
-          "scout",
           "sendspark-desktop-application-for-macos",
           "upload-avatars",
           "uptics-integration",
@@ -1677,10 +1670,6 @@
       "destination": "/meeting-booked-create-video-calendly"
     },
     {
-      "source": "/en/articles/11060750-*",
-      "destination": "/customer-io-send-dynamic-videos"
-    },
-    {
       "source": "/en/articles/10771229-*",
       "destination": "/ai-video-templates-scripts-teleprompter"
     },
@@ -1713,14 +1702,6 @@
       "destination": "/constant-contact-sharpspring-integration"
     },
     {
-      "source": "/en/articles/9573208-*",
-      "destination": "/gmass"
-    },
-    {
-      "source": "/en/articles/9513562-*",
-      "destination": "/scout"
-    },
-    {
       "source": "/en/articles/9566220-*",
       "destination": "/saleshandy"
     },
@@ -1731,10 +1712,6 @@
     {
       "source": "/en/articles/9279882-*",
       "destination": "/sendspark-recording-shortcuts-and-hotkeys"
-    },
-    {
-      "source": "/en/articles/9261783-*",
-      "destination": "/rift"
     },
     {
       "source": "/en/articles/9261802-*",
@@ -1787,18 +1764,6 @@
     {
       "source": "/en/articles/9051823-*",
       "destination": "/api-automatically-create-dynamic-videos-via-api"
-    },
-    {
-      "source": "/en/articles/8900621-*",
-      "destination": "/create-dynamic-videos-via-zapier-automation"
-    },
-    {
-      "source": "/en/articles/8896005-*",
-      "destination": "/gong-engage"
-    },
-    {
-      "source": "/en/articles/8792406-*",
-      "destination": "/inspiration"
     },
     {
       "source": "/en/articles/8852193-*",
@@ -2359,6 +2324,22 @@
     {
       "source": "/en/articles/13456122-*",
       "destination": "/video-recording-best-practices-in-sendspark"
+    },
+    {
+      "source": "/en/articles/11060750-*",
+      "destination": "/customer-io-send-video-emails"
+    },
+    {
+      "source": "/en/articles/8896005-*",
+      "destination": "/gong-engage-send-automated-videos-in-email-flows"
+    },
+    {
+      "source": "/en/articles/9573208-*",
+      "destination": "/gmass-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8900621-*",
+      "destination": "/zapier-create-dynamic-videos-via-integration"
     },
     {
       "source": "/en/collections/:slug*",
