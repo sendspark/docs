@@ -1,46 +1,82 @@
 ---
 title: "Sendspark MCP server"
-description: "Connect Sendspark to Claude, ChatGPT, and other AI assistants over the Model Context Protocol (MCP)."
+description: "Connect Sendspark to Claude, ChatGPT, and other AI assistants over the Model Context Protocol (MCP) to ask about your Dynamic Videos, prospects, and analytics in plain language."
 keywords:
   - "sendspark mcp"
   - "sendspark model context protocol"
   - "connect sendspark to claude"
+  - "sendspark ai assistant"
 ---
 
-The Sendspark MCP server lets AI assistants that support the Model Context Protocol — Claude, ChatGPT, Mistral Le Chat, Perplexity, Grok — read your Dynamic Videos, prospects, and analytics in plain language, directly from your assistant.
+The Sendspark MCP server lets AI assistants that support the Model Context Protocol — Claude, ChatGPT, Mistral Le Chat, Perplexity, and Grok — read your Dynamic Videos, prospects, and analytics in plain language, directly from your assistant. You add one connector URL, sign in to Sendspark once, and start asking questions.
 
 ## Key takeaways
 
-- Add one remote connector URL and sign in — no API keys to copy.
-- The connection is **read-only**: assistants can look things up but cannot create, edit, or delete.
-- Requires a Sendspark account on the **Growth, Business, or Scale** plan.
+- Connect with a single URL and a browser sign-in — there are no API keys or tokens to copy.
+- The connection is **read-only**: assistants can look things up but cannot create, edit, or delete anything.
+- Available on the **Growth, Business, and Scale** plans.
+- Your assistant can read workspaces, Dynamic Video campaigns, prospects, and engagement analytics — scoped to the workspaces you belong to.
 
-## Connection URL
+## Endpoint
 
 ```
 https://apiv2.sendspark.com/api/mcp
 ```
 
-Add this as a custom (remote) MCP connector in your AI assistant. Your assistant opens a Sendspark sign-in page — log in and approve access, and the connection stays linked to your account until you remove it.
+Add this as a **custom (remote) MCP connector** in your assistant. See [Connect your assistant](/mcp/connect) for per-client steps.
 
-## Requirements
+## Verified clients
 
-- A Sendspark account on the **Growth, Business, or Scale** plan (Free and trial plans don't include MCP access).
+| Client | Transport | Authentication |
+| --- | --- | --- |
+| Claude (web & desktop) | Remote (HTTP) | OAuth — browser sign-in |
+| ChatGPT | Remote (HTTP) | OAuth — browser sign-in |
+| Mistral Le Chat | Remote (HTTP) | OAuth — browser sign-in |
+| Perplexity | Remote (HTTP) | OAuth — browser sign-in |
+| Grok (xAI) | Remote (HTTP) | OAuth — browser sign-in |
+
+## Prerequisites
+
+- A Sendspark account on the **Growth, Business, or Scale** plan. Free and trial plans don't include MCP access.
 - An AI assistant that supports custom remote MCP connectors.
 
-## What your assistant can access
+<Note>
+  This connection is added manually today. Sendspark is being submitted to the official connector marketplaces of the major AI providers — once that's live, you'll be able to add it in one click.
+</Note>
 
-The connection only sees data in workspaces you belong to that are active:
+## What you can do with it
 
-- **Workspaces** — the workspaces you're a member of and your role in each.
-- **Dynamic Video campaigns** — campaign name, status, settings, and share-page setup.
-- **Prospects** — name, email, company, job title, status, and (when complete) share/embed links and engagement stats.
-- **Analytics** — visits, plays, CTA clicks, thumbs-up, and a per-visitor breakdown (location, device, watch %).
+Ask your assistant in plain language; it picks the right read-only tool for you.
 
-## Set up per provider
+| Ask your assistant | Tool it calls |
+| --- | --- |
+| "Which Sendspark workspaces can I access?" | `list_workspaces` |
+| "Show my Dynamic Video campaigns" | `list_dynamic_campaigns` |
+| "How is the Q3 Outbound campaign set up?" | `get_dynamic_campaign` |
+| "How is that campaign performing, and who watched it most?" | `get_dynamic_campaign_analytics` |
+| "List the prospects in that campaign that errored" | `list_prospects` |
+| "Why is jane@acme.com's video stuck processing?" | `get_prospect_status` |
 
-The exact steps vary by AI assistant. For provider-specific, always-current instructions, see the full guide: [Connect AI Apps MCP](/connect-ai-apps-mcp).
+See the full [tool reference](/mcp/tools).
 
-The MCP endpoints are also documented in the [API reference](/api-reference) under the **MCP** group.
+## Read-only and safe
+
+<Check>
+  The MCP connection can only **read** data, and only in workspaces you're a member of that are active. It cannot create, edit, or delete campaigns, prospects, or settings.
+</Check>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Do I need an API key?">No. Authentication is a browser sign-in (OAuth) — you approve access once and the connection stays linked to your account until you remove it.</Accordion>
+  <Accordion title="Which plans include MCP?">Growth, Business, and Scale. Free and trial plans don't have MCP access.</Accordion>
+  <Accordion title="Can the assistant change anything in my account?">No. The connection is strictly read-only.</Accordion>
+  <Accordion title="What data can it see?">Only the workspaces you belong to: their Dynamic Video campaigns, prospects, and engagement analytics. See the [tool reference](/mcp/tools) for the exact fields.</Accordion>
+</AccordionGroup>
+
+<CardGroup cols={2}>
+  <Card title="Connect your assistant" icon="plug" href="/mcp/connect">Step-by-step setup for Claude, ChatGPT, and more.</Card>
+  <Card title="Tool reference" icon="wrench" href="/mcp/tools">Every tool the assistant can call, with inputs and outputs.</Card>
+</CardGroup>
 
 _Updated July 2026._

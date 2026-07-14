@@ -1,0 +1,94 @@
+---
+title: "Tool reference"
+description: "The read-only tools the Sendspark MCP server exposes to your AI assistant, with inputs and what each returns."
+keywords:
+  - "sendspark mcp tools"
+  - "sendspark mcp reference"
+---
+
+The Sendspark MCP server exposes six **read-only** tools. Your assistant chooses which to call based on your question — you don't call them directly. All tools are scoped to workspaces you belong to.
+
+## Workspaces and campaigns
+
+### list_workspaces
+
+Lists the Sendspark workspaces you belong to, newest id first.
+
+| Input | Required | Description |
+| --- | --- | --- |
+| `limit` | No | Max workspaces to return (1–50, default 20). |
+| `cursor` | No | Pagination cursor from a previous call. |
+
+Returns each workspace's id, slug, and your role. Most follow-up tools need a workspace id from here.
+
+### list_dynamic_campaigns
+
+Lists Dynamic Video campaigns in a workspace, newest first, with optional name search.
+
+| Input | Required | Description |
+| --- | --- | --- |
+| `workspaceId` | Yes | Workspace to list campaigns from. |
+| `query` | No | Case-insensitive campaign-name search. |
+| `limit` | No | Max items (1–50, default 20). |
+| `cursor` | No | Pagination cursor. |
+
+Returns each campaign's id, name, and status.
+
+### get_dynamic_campaign
+
+Returns the full configuration of one Dynamic Video campaign.
+
+| Input | Required | Description |
+| --- | --- | --- |
+| `workspaceId` | Yes | Workspace that contains the campaign. |
+| `dynamicId` | Yes | Campaign id (from `list_dynamic_campaigns`). |
+
+Returns folder, share-page customization (title, message, layout, CTA buttons, calendar), and the dynamic-background flag — richer than the list view.
+
+## Prospects and analytics
+
+### list_prospects
+
+Lists prospects inside a Dynamic Video campaign, newest first, with status filters and search.
+
+| Input | Required | Description |
+| --- | --- | --- |
+| `workspaceId` | Yes | Workspace that owns the campaign. |
+| `dynamicId` | Yes | Campaign whose prospects to list. |
+| `statuses` | No | Any of `completed`, `pending`, `errored`, `processing`. Omit for all. |
+| `search` | No | Case-insensitive match on prospect email or name. |
+| `limit` | No | Max prospects (1–100, default 20). |
+| `cursor` | No | Pagination cursor. |
+
+Completed prospects include public share/embed URLs and engagement stats (views, plays, responses, CTAs, thumbs-up).
+
+### get_prospect_status
+
+Returns the full per-prospect state for one prospect, including diagnostics for stuck or failed videos.
+
+| Input | Required | Description |
+| --- | --- | --- |
+| `workspaceId` | Yes | Workspace that contains the video. |
+| `videoId` | Yes | Dynamic video id. |
+| `prospectId` **or** `prospectEmail` | Yes | Identify the prospect by id (preferred) or email. |
+
+Adds regeneration count, validation details (why a prospect is invalid), and per-step resource status (audio cloning, screenshot, lip-sync, campaign, video) — useful for diagnosing "processing" or "errored" prospects.
+
+### get_dynamic_campaign_analytics
+
+Returns the lifetime engagement view for a Dynamic Video campaign — the same data as the Sendspark Analytics modal.
+
+| Input | Required | Description |
+| --- | --- | --- |
+| `workspaceId` | Yes | Workspace the campaign belongs to. |
+| `dynamicId` | Yes | Campaign to get analytics for. |
+| `limit` | No | Max visitors per page (1–50, default 25). |
+| `cursor` | No | Pagination cursor for the visitor list. |
+
+Returns aggregate counts (visits, plays, CTA clicks, thumbs-up) plus a per-visitor breakdown with location, device, and watch percentage.
+
+<Note>
+  On Free-tier workspaces the aggregate summary is returned, but the per-visitor breakdown is empty and marked locked. The full visitor breakdown is available on Growth, Business, and Scale plans.
+</Note>
+
+_Updated July 2026._

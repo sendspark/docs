@@ -1,0 +1,58 @@
+---
+title: "Connect your assistant"
+description: "Add the Sendspark MCP server to Claude, ChatGPT, Mistral Le Chat, Perplexity, or Grok as a custom remote connector."
+keywords:
+  - "connect sendspark mcp"
+  - "sendspark claude connector"
+  - "sendspark chatgpt mcp"
+---
+
+Connecting takes about a minute: add Sendspark as a custom (remote) MCP connector in your assistant, then sign in to approve access.
+
+## Before you start
+
+- A Sendspark account on the **Growth, Business, or Scale** plan.
+- The Sendspark MCP URL:
+
+```
+https://apiv2.sendspark.com/api/mcp
+```
+
+## Add the connector
+
+<Steps>
+  <Step title="Open your assistant's connector settings">
+    In your AI assistant, go to where custom or remote MCP connectors are added (see the per-client guides below).
+  </Step>
+  <Step title="Add a custom remote connector">
+    Create a new connector and paste the Sendspark MCP URL above. Give it a name like "Sendspark".
+  </Step>
+  <Step title="Sign in to Sendspark">
+    Your assistant opens a Sendspark sign-in page. Log in and approve access. There are no keys or tokens to copy.
+  </Step>
+  <Step title="Verify the connection">
+    Ask the assistant a read-only question such as "Which Sendspark workspaces can I access?" — it should call `list_workspaces` and return your workspaces.
+  </Step>
+</Steps>
+
+## Per-client guides
+
+Exact steps differ by provider and change often, so follow the provider's own guide (these stay current):
+
+| Provider | Official guide |
+| --- | --- |
+| Claude (web & desktop) | [Custom connectors with remote MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) |
+| ChatGPT | [Developer mode & MCP connectors](https://help.openai.com/en/articles/12584461-developer-mode-apps-and-full-mcp-connectors-in-chatgpt-beta) |
+| Mistral Le Chat | [MCP connectors in Le Chat](https://help.mistral.ai/) |
+| Perplexity | [Custom remote connectors](https://www.perplexity.ai/help-center/en/articles/13915507-adding-custom-remote-connectors) |
+| Grok (xAI) | [Grok connectors](https://x.ai/) |
+
+<Warning>
+  Availability and exact steps vary by provider and plan. For example, ChatGPT custom MCP connectors require Developer Mode on an eligible plan, and Claude's Free plan allows one custom connector. Check the linked guide for current details.
+</Warning>
+
+## Remove or re-authenticate
+
+The connection stays linked to your account until you remove it in your assistant's connector settings. Remove and re-add the connector to sign in again.
+
+_Updated July 2026._

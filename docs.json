@@ -688,8 +688,20 @@
       {
         "tab": "MCP",
         "icon": "plug",
-        "pages": [
-          "mcp/overview"
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "mcp/overview",
+              "mcp/connect"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "mcp/tools"
+            ]
+          }
         ]
       }
     ]
