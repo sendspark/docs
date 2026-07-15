@@ -31,11 +31,11 @@ Before setting up the automation, you should do the prep work:
 4. Add your Sendspark Dynamic Video Snippet to your follow up campaign in Lemlist
   1. In Lemlist, you'll want to make sure that you have the Sendspark video placeholder in your email campaign where you want the video to appear in email. You can find the Sendspark video placeholder by following these steps:
     1. Go to your **Sendspark dynamic video**
-    2. Click **"Share Campaign"** ​![](/images/11055981/44f7a8d2-image.png)
-    3. Search for "**Lemlist"** ​![](/images/11055981/6efeeab8-image.png)
+    2. Click **"Share Campaign"** ​![Purple Share Campaign button in Sendspark dynamic video](/images/11055981/44f7a8d2-image.png)
+    3. Search for "**Lemlist"** ​![Share Dynamic Video panel with Lemlist search result](/images/11055981/6efeeab8-image.png)
     4. **Click on Lemlist** to copy the Sendspark video placeholder to your clipboard
-    5. **Open your Lemlist email.**At the bottom of the email editor, you'll see 3 dots. Click on this, and then click on **"code view"**to get into the code editor ​![](/images/11055981/9221cf86-image.png)
-    6. **Paste directly into your Lemlist email**where you want the video to appear ​![](/images/11055981/c5a74ac9-image.png)
+    5. **Open your Lemlist email.**At the bottom of the email editor, you'll see 3 dots. Click on this, and then click on **"code view"**to get into the code editor ​![Lemlist email editor toolbar with code view icon selected](/images/11055981/9221cf86-image.png)
+    6. **Paste directly into your Lemlist email**where you want the video to appear ​![Sendspark video placeholder pasted into Lemlist email sequence editor](/images/11055981/c5a74ac9-image.png)
 
 Alright, now that everything is prepped, let's create the automation!
 
@@ -43,15 +43,15 @@ Alright, now that everything is prepped, let's create the automation!
 
 Go to the [automated workflow section](https://sendspark.com/automated-workflows) of Sendspark, and create a **new automation**.
 
-![](/images/11055981/91f55b21-image.png)
+![New automation button in Sendspark automated workflows](/images/11055981/91f55b21-image.png)
 
 For the trigger, select **"Lemlist"** and then **"Emails Replied"**
 
-![](/images/11055981/2b2db26e-image.png)
+![Trigger setup with lemlist app and Emails Replied event](/images/11055981/2b2db26e-image.png)
 
 To connect your Lemlist account, go into your Lemlist integration settings, and **generate an API key**
 
-![](/images/11055981/91f24f18-image.png)
+![Lemlist Integrations page with Generate API key button](/images/11055981/91f24f18-image.png)
 
 Paste this in your access token back in Sendspark to connect Lemlist with Sendspark.
 
@@ -59,31 +59,31 @@ Now, we want to make sure that users only enter the automation when prospects re
 
 So click on on the **"filter"** icon in Sendspark
 
-![](/images/11055981/15c7860b-image.png)
+![Filter icon in Sendspark automation trigger toolbar](/images/11055981/15c7860b-image.png)
 
 And then filter by condition**"Campaign Name"** contains (whatever it should contain to indicate that it is a campaign you want to generate a video for).
 
-![](/images/11055981/2fb758a6-image.png)
+![Filter condition on Campaign name in Sendspark](/images/11055981/2fb758a6-image.png)
 
 ## 2. Add Action: Generate Sendspark Video
 
 Right underneath the trigger you just added, click to **add an action:**
 
-![](/images/11055981/31bbaac8-image.png)
+![Add an action button in Sendspark workflow](/images/11055981/31bbaac8-image.png)
 
 Select **"Sendspark"** and then **"Create dynamic video"**
 
-![](/images/11055981/373a78d7-image.png)
+![Add action panel selecting Sendspark Create dynamic video](/images/11055981/373a78d7-image.png)
 
 Map in all of the fields from Lemlist. This is the information you'll be using in your Sendspark video ("first name," etc.)
 
-![](/images/11055981/aeda235f-image.png)
+![Mapping Lemlist fields into Sendspark create dynamic video](/images/11055981/aeda235f-image.png)
 
 Note that the **email field is essential**in order to make sure that the right person in your follow up Lemlist campaign will see the right video made for them.
 
 Also note that if you want to use a dynamic background, you need to click**"show all fields"** to see the Sendspark background URL field.
 
-![](/images/11055981/743e9273-image.png)
+![Show all fields option with Save button in Sendspark](/images/11055981/743e9273-image.png)
 
 Awesome, once you save this step, you'll be automatically generating personalized videos for people who reply to Lemlist emails!
 
@@ -103,7 +103,7 @@ The video should be generated, and the placeholder should be in your email, so a
 
 Select **Lemlist**, and then **"Add Lead to Campaign,"**and then **map in the fields**from the previous steps into Lemlist.
 
-![](/images/11055981/24a6f68b-image.png)
+![Lemlist Add a lead to a campaign field mapping](/images/11055981/24a6f68b-image.png)
 
 Save this step, and turn on the Sendspark automation, that is it!
 
