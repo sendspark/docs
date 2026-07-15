@@ -1,7 +1,22 @@
 ---
 title: "Custom Domain Migration"
 description: "Step-by-step guide to migrating your custom domain in Sendspark, ensuring uninterrupted video delivery and consistent brand experience."
+keywords:
+  - Sendspark custom domain migration
+  - migrate custom video domain
+  - custom domain A record setup
+  - 301 redirect custom domain
+  - CAA record SSL Sendspark
 ---
+
+To migrate a custom domain in Sendspark: contact support to remove your current domain, add the new subdomain in **Settings → Custom Domain** (this generates the IP address), create a fresh DNS A record pointing to that IP, set a 301 permanent redirect from the old domain to the new one so existing links keep working, then wait for DNS to propagate. Don't delete the old domain.
+
+## Key takeaways
+
+- Follow the order: contact support to remove the old domain → add the new subdomain (this generates the IP) → create a fresh A record → set a 301 redirect → wait for propagation.
+- Keep the old domain live — the 301 permanent redirect from old to new links depends on it.
+- CAA records can block automatic SSL issuance; ask IT to allow Google's provider (`pki.goog`) or remove restrictive CAA settings.
+- DNS propagation can take up to 24 hours; don't launch new campaigns until the domain is fully propagated and verified in Sendspark.
 
 ## 🧩 What you need before starting
 
@@ -113,3 +128,27 @@ This ensures clean URLs and avoids deliverability issues.
 ## 🆘 Need help?
 
 Contact Sendspark support to start the process or if anything looks off during setup.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why can't I set up the A record before adding the domain?">
+    The IP address is generated only when you add the new subdomain in Settings → Custom Domain — it can't be known in advance. Add the domain first, then create a fresh A record pointing to the IP you receive.
+  </Accordion>
+  <Accordion title="Can I reuse my existing DNS record?">
+    No. Create a fresh A record every time, add it immediately after receiving the IP, and avoid duplicate or conflicting record names. If your DNS provider requires it, set the record to DNS only (not proxied).
+  </Accordion>
+  <Accordion title="Should I delete the old domain after migrating?">
+    No. Do not delete the old domain — the 301 permanent redirect (mapping `watch.olddomain.com/*` → `watch.newdomain.com/*`) needs it to keep existing links working.
+  </Accordion>
+  <Accordion title="My domain won't verify — what should I check?">
+    Your domain may have CAA records set by your IT or security team that control which providers can issue SSL certificates. Ask IT to allow Google's certificate provider (`pki.goog`) or remove the restrictive CAA settings.
+  </Accordion>
+  <Accordion title="How long does the migration take to go live?">
+    DNS propagation can take up to 24 hours. Once everything resolves, Sendspark automatically verifies the new domain. Don't launch new campaigns until DNS is fully propagated and the domain is verified.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

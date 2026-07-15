@@ -1,7 +1,23 @@
 ---
 title: "Go High Level - Send Dynamic Videos"
 description: "Learn how to send dynamic videos through GoHighLevel using Sendspark integration with step-by-step setup and campaign creation."
+keywords:
+  - gohighlevel dynamic videos
+  - sendspark ghl integration
+  - lead connector video snippet
+  - ghl code element video
+  - send video campaign gohighlevel
 ---
+
+To send dynamic videos through GoHighLevel, upload your contacts as a CSV and save them to a list, create a Blank Template and paste your Sendspark snippet (from Share Campaign → Lead Connector) into a Code element, then build a campaign in Marketing → Campaigns that uses that template and sends to your Smart List.
+
+## Key takeaways
+
+- The GoHighLevel connection runs through **Lead Connector**.
+- Upload contacts via a **CSV file** under Contacts, map your fields, and save them to a named list.
+- Paste the Sendspark snippet into a **Code element** inside a Blank Template — this is what makes the video thumbnail appear.
+- Grab the snippet from **Share Campaign → Lead Connector (GoHighLevel)** in your Sendspark Dynamic Video Campaign.
+- Build and send the campaign under **Marketing → Campaigns**, choosing your saved template and a Smart List of the contacts you uploaded.
 
 <iframe src="https://www.youtube.com/embed/ok0WWSC_C-I?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -82,3 +98,27 @@ In this guide, I’ll walk you through how to send **dynamic videos** using Send
 That’s it! 🎉 You’re now ready to send dynamic video campaigns from GoHighLevel using Sendspark.
 
 If you have questions, don’t hesitate to reach out—we’re here to help 💬.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How does Sendspark connect to GoHighLevel?">
+    The integration runs through Lead Connector. In Sendspark you open your Dynamic Video Campaign, click Share Campaign, and select Lead Connector (GoHighLevel) to get the code snippet you paste into GoHighLevel.
+  </Accordion>
+  <Accordion title="Why isn't the video thumbnail showing up in my template?">
+    Make sure you pasted the Sendspark snippet into a Code element, not a regular text or content block. The thumbnail/cover only appears when the snippet lives in a Code element.
+  </Accordion>
+  <Accordion title="Do I have to create a template?">
+    Creating a template is optional but recommended. Go to Marketing → Templates, choose Blank Template, add a Code element, and paste your snippet. Saving it as a template lets you reuse it across campaigns.
+  </Accordion>
+  <Accordion title="What's the best way to add my contacts?">
+    You can add contacts manually, but uploading a CSV file under Contacts is the best option. Map your fields (First Name, Last Name, Job Title, Website, etc.), then choose "Create a list from the contacts" and give it a name so you can target it as a Smart List when sending.
+  </Accordion>
+  <Accordion title="Why is my campaign taking a while to send?">
+    Larger campaigns take longer because GoHighLevel runs background checks and processes recipients based on list size. Small lists usually finish almost instantly. If a list looks missing, double-check your CSV import under Contacts → Lists.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

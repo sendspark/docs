@@ -1,7 +1,22 @@
 ---
 title: "Send AI Videos on LinkedIn via Clay & LGM"
 description: "Send AI-personalized Sendspark videos on LinkedIn using Clay and La Growth Machine. Step-by-step guide to automating personalized video outreach at scale."
+keywords:
+  - AI video LinkedIn Clay
+  - La Growth Machine personalized video
+  - Sendspark Clay integration
+  - LinkedIn automation video outreach
+  - send video LinkedIn connection request
 ---
+
+This workflow finds leads in Clay, automatically generates an AI-personalized Sendspark video for each one, and sends it inside a LinkedIn message or connection request through La Growth Machine. The Video Link column from Clay maps to La Growth Machine's Custom Attribute 1, which places each prospect's personalized video into your outreach.
+
+## Key takeaways
+
+- Combine Clay, Sendspark, and La Growth Machine to send AI-personalized videos on LinkedIn automatically.
+- Generate videos with the Sendspark + Clay integration; a successful row shows "✅ Success" and a Video Link.
+- Map the Clay "Video Link" field to La Growth Machine's "Custom Attribute 1."
+- Use Custom Attribute 1 in your La Growth Machine message or connection request so each prospect receives their own video.
 
 This guide will walk through how you can...
 
@@ -22,3 +37,24 @@ This guide will walk through how you can...
 7. To finalize the automation, make sure that when leads get added to the audience you're using in Clay, they will get **automatically enrolled in your LaGrowthMachine workflow.**
 
 That's it! Let us know if you have questions!
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Do I have to use RB2B to source leads?">
+    No. The tutorial uses the RB2B webhook to add website visitors to a Clay table, but you can use any leads in Clay for this automation.
+  </Accordion>
+  <Accordion title="How do I generate the AI-personalized videos?">
+    Use the Sendspark + Clay integration. Once the first video generates, the status updates to "✅ Success" — click it and make a new column from the "Video Link" value.
+  </Accordion>
+  <Accordion title="How does the video get into my La Growth Machine message?">
+    Use the Clay enrichment for La Growth Machine to add the prospect to a La Growth Machine audience, mapping the "Video Link" field to "Custom Attribute 1." Then reference Custom Attribute 1 in your workflow wherever you want the video to appear.
+  </Accordion>
+  <Accordion title="How do I make the whole flow run automatically?">
+    Make sure that when leads are added to the audience you're using in Clay, they get automatically enrolled in your La Growth Machine workflow.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

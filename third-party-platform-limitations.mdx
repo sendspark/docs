@@ -1,7 +1,22 @@
 ---
 title: "Third-Party Platform Limitations"
 description: "Understand current third-party integration limitations in Sendspark to plan your video personalization workflows and avoid common issues."
+keywords:
+  - third-party platform limitations
+  - linkedin video generation limits
+  - website background scraping limits
+  - sendspark video generation failed
+  - rate limits video personalization
 ---
+
+Sendspark can build videos from external sources like websites and LinkedIn profiles, but those features depend on third-party platforms Sendspark doesn't control. Rate limits, anti-automation security, and usage restrictions can cause video generation to fail or be rejected. For LinkedIn, keep usage to 20–30 videos per day and avoid large bulk requests to prevent temporary blocks.
+
+## Key takeaways
+
+- Website and LinkedIn backgrounds rely on **external platforms Sendspark can't control**.
+- Failures often come from **rate limits, anti-bot security, or usage-based restrictions** on the host, not from Sendspark.
+- For **LinkedIn**, keep usage to **20–30 videos per day** and avoid large bulk requests.
+- If you hit failures, **wait 24–48 hours** and **reset your session cookies** before retrying.
 
 ## Third-Party Platform Limitations (e.g., Websites, LinkedIn)
 
@@ -46,3 +61,22 @@ If you exceed these limits and experience failures:
 ## Key Takeaway
 
 Sendspark’s video generation system is fully operational, but when using external sources, performance is subject to the availability and policies of those platforms. We continuously optimize our integrations, but cannot override third-party restrictions.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why did my video fail to generate?">
+    When using external sources, video generation can fail or be rejected because the external platform limited or denied the request, for example through rate limits or security protections against automated requests. This is not an issue within Sendspark.
+  </Accordion>
+  <Accordion title="How many LinkedIn videos can I generate per day?">
+    Keep LinkedIn usage between 20–30 videos per day and avoid large bulk requests in a short timeframe, since LinkedIn applies stricter controls on automated requests.
+  </Accordion>
+  <Accordion title="What should I do after repeated failures?">
+    Wait 24–48 hours before retrying, and reset your session (cookies) before starting again.
+  </Accordion>
+  <Accordion title="Can Sendspark override these third-party restrictions?">
+    No. Sendspark continuously optimizes its integrations but cannot override the restrictions or policies of external platforms like websites and LinkedIn.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

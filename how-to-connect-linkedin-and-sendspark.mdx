@@ -1,7 +1,22 @@
 ---
 title: "How to Connect LinkedIn and Sendspark"
 description: "Learn how to connect your LinkedIn account to Sendspark by adding your li_at cookie value, plus daily video generation limits and troubleshooting tips."
+keywords:
+  - connect LinkedIn to Sendspark
+  - LinkedIn li_at cookie
+  - LinkedIn profile background video
+  - LinkedIn video generation limits
+  - dynamic video LinkedIn profile
 ---
+
+To generate dynamic videos over LinkedIn profiles, connect your LinkedIn account in your Dynamic Video campaign by clicking Connect Social Account and pasting your LinkedIn li_at cookie value. Because LinkedIn can throttle rapid profile fetches, keep generation to 20 to 30 videos per day and avoid sending large batches all at once.
+
+## Key takeaways
+
+- Connect LinkedIn by pasting your li_at cookie value into Sendspark via the Connect Social Account button.
+- Find the li_at value in Chrome Developer Tools under Application → Cookies → linkedin.com → li_at.
+- Limit LinkedIn-background video generation to 20 to 30 videos per day to prevent temporary blocks.
+- If videos fail or are rejected, wait 24 to 48 hours and reset your cookie/session before retrying.
 
 Sendspark makes it easy to generate dynamic videos of you speaking over LinkedIn profiles.
 
@@ -55,3 +70,24 @@ Following these guidelines helps ensure consistent video generation and prevents
 For more information, check this help article.
 
 [LinkedIn profile background won't create video](/linkedin-profile-background-won-t-create-video)
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Where do I find my LinkedIn li_at cookie value?">
+    Open LinkedIn in Chrome, right-click the page and choose Inspect, then in Developer Tools go to Application → Cookies → https://www.linkedin.com → li_at. Copy the li_at value and paste it into Sendspark. If you don't see "Application," click the &gt;&gt; on the top menu to reveal more options.
+  </Accordion>
+  <Accordion title="How many LinkedIn-background videos can I generate per day?">
+    Limit generation to 20 to 30 videos per day when using LinkedIn profile backgrounds, and avoid sending large batches all at once. LinkedIn may temporarily block requests if too many profile fetches happen in a short period.
+  </Accordion>
+  <Accordion title="Why did my LinkedIn videos fail or get rejected?">
+    LinkedIn can temporarily block requests when too many profile fetches are made in a short time, which causes video generation attempts to fail or be rejected.
+  </Accordion>
+  <Accordion title="What should I do if generation keeps failing?">
+    Wait 24 to 48 hours before trying again, then reset your cookie/session before retrying. This helps ensure consistent generation and prevents temporary blocks.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

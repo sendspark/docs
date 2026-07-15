@@ -1,7 +1,22 @@
 ---
 title: "Pipedrive - Send Dynamic Videos"
 description: "Learn how to send Sendspark dynamic AI-personalized videos through Pipedrive. Connect your CRM to automate video outreach for every deal in your pipeline."
+keywords:
+  - pipedrive dynamic video
+  - send dynamic video pipedrive
+  - pipedrive video snippet email
+  - sendspark pipedrive csv import
+  - personalized video pipedrive campaign
 ---
+
+To send dynamic videos in Pipedrive, export the CSV from your Sendspark Dynamic Video campaign and import it into Pipedrive contacts, map the fields, then copy the Pipedrive snippet from **Share Campaign** and paste it into an HTML block in your Pipedrive email. Each recipient gets their own personalized video.
+
+## Key takeaways
+
+- Always import **Sendspark's exported CSV**, not the original file you used to build the campaign. The export filters out contacts whose video hit a processing error.
+- In Pipedrive, use **Import Data → Upload Spreadsheet** to add the contacts, then map the fields. Background URL doesn't need a tag, Job Title has no matching Pipedrive merge tag, and Company maps to the **NAME** tag from the **Organization** column.
+- Get the snippet from Sendspark's **Share Campaign** → **Pipedrive**, which copies the code to your clipboard automatically.
+- In the Pipedrive Email Editor, drop an **HTML block**, clear the text under Content Properties, then paste the snippet so the thumbnail appears.
 
 In this tutorial, we'll show you how to send dynamic videos in Pipedrive using the Sendspark + Pipedrive integration.
 
@@ -65,3 +80,22 @@ Note that Background URL doesn't require a tag. Job Title does not have a mergin
 ![Send Campaign](/images/9204268/d052883f-image.png)
 
 ## Happy recordings!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why import the exported CSV instead of my original file?">
+    The CSV you export from your Dynamic Video campaign filters out any processing errors, so it only contains contacts whose video generated successfully. Importing the original file you used to create the campaign can include contacts that don't have a finished video.
+  </Accordion>
+  <Accordion title="How should I map the fields when importing into Pipedrive?">
+    Background URL doesn't require a tag. Job Title has no merge tag to connect to in Pipedrive, so it's left unmapped. Company connects with the NAME tag — be sure to select the NAME tag from the Organization column.
+  </Accordion>
+  <Accordion title="Where do I get the Pipedrive snippet?">
+    In Sendspark, open your Dynamic Video campaign, click **Share Campaign** to open the Integration Options, find Pipedrive, and click its button. That automatically copies the snippet code to your clipboard.
+  </Accordion>
+  <Accordion title="How do I add the snippet to a Pipedrive email?">
+    In the Pipedrive Email Editor, grab the HTML block and drop it into the email body. Click the block's text, erase the text under Content Properties on the right, then paste the copied snippet. The video thumbnail will show up.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

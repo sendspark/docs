@@ -1,7 +1,22 @@
 ---
 title: "How to fix black recording with Sendspark"
 description: "Fix black screen recording issues in Sendspark by disabling hardware acceleration and Camera Effects for clear video capture."
+keywords:
+  - black screen recording Sendspark
+  - fix black video recording
+  - disable hardware acceleration Chrome
+  - Camera Effects black screen
+  - Sendspark recording troubleshooting
 ---
+
+A black recording with audio usually means your browser had trouble processing the video encoder with your computer hardware. The most reliable fix is to disable "Use hardware acceleration when available" in Chrome (chrome://settings/system) and relaunch. If you use the Sendspark Chrome extension, also turn off Camera Effects, which can overload your computer and cause the same black screen.
+
+## Key takeaways
+
+- A black screen with working audio almost always points to a hardware-acceleration problem in your browser, not a lost recording.
+- Fix it by disabling **Use hardware acceleration when available** at **chrome://settings/system**, then clicking **Relaunch**.
+- If you use the Sendspark Chrome extension, turning off the resource-intensive **Camera Effects** feature can also resolve it.
+- If you have a dedicated graphics card and the issue persists, try toggling hardware acceleration in the card's own settings.
 
 You recorded an awesome video but when checking the preview you only get a black screen and audio? I am sorry for your loss, let's figure out why this happens so we can solve it.
 
@@ -41,3 +56,26 @@ If you need more help feel free to reach out and book a support session.
 For Sendspark-specific issues, you can also reach out to Sendspark support for further assistance with the Chrome extension.
 
 Happy recording!
+
+## Why is my Sendspark recording a black screen?
+
+A black screen with audio means the recording captured fine but your browser could not render the video, usually because it struggled to process the video encoder with your computer's hardware. This is why disabling hardware acceleration (which hands encoding back to software) resolves most cases.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why does my recording show a black screen but still have sound?">
+    This usually means your browser had trouble processing the video encoder with your computer hardware. The audio captures correctly, but the video track fails to render. Disabling hardware acceleration in your browser fixes most cases.
+  </Accordion>
+  <Accordion title="How do I disable hardware acceleration in Chrome?">
+    Open Chrome settings (the three dots at the top right), click the **System** tab (or go to **chrome://settings/system**), turn off **Use hardware acceleration when available**, and click **Relaunch** to restart the browser. Then try recording again.
+  </Accordion>
+  <Accordion title="Can Camera Effects cause a black recording?">
+    Yes. In the Sendspark Chrome extension, Camera Effects can be resource-intensive and may cause a black screen if your computer struggles with the processing demands. Open the extension from your Chrome toolbar and toggle Camera Effects off to reduce the load.
+  </Accordion>
+  <Accordion title="I disabled hardware acceleration and it's still black. What now?">
+    If you have a dedicated graphics card, open its configuration and try disabling hardware acceleration there (or enabling it if it was already off). There is no single cause for black recordings, so if it continues, reach out to Sendspark support and book a session.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

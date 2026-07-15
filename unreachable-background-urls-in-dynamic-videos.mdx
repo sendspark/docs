@@ -1,7 +1,22 @@
 ---
 title: "Unreachable Background URLs in Dynamic Videos"
 description: "Learn how to handle unreachable background URLs in Dynamic Videos with fallback options and troubleshooting rejected leads."
+keywords:
+  - unreachable background URL dynamic video
+  - fallback background dynamic video
+  - rejected leads dynamic video
+  - invalid website URL Sendspark
+  - error handling dynamic video campaign
 ---
+
+When a dynamic video's background URL can't be reached, Sendspark handles it in two ways. If a lead has no website URL at all, the system uses a fallback background so the video still generates. If a URL is provided but fails to load, that video is rejected — you can fix the URL in the Contacts section of your campaign and resubmit.
+
+## Key takeaways
+
+- **No website URL provided:** Sendspark automatically uses a fallback background so the video still generates. Enable it by setting a Fallback URL, then at the Contacts step click the settings wheel and select **Generate Video Using Fallback Data** in the Error Handling panel.
+- **Invalid or unloadable URL:** if a URL is provided but fails to load or render, the video generation is rejected. Review rejected leads in the **Contacts** section, edit the URL that failed, and resubmit.
+- The Error Handling panel offers two choices: generate the video using fallback data, or do not generate it, show an error, and let you update the information.
+- Videos generated from fallback content are easy to spot afterward — they show an orange status indicator and an orange play button.
 
 ## Learn how to handle background URLs the right way:
 
@@ -18,3 +33,22 @@ And that's it! The system will automatically complete the video rendering proces
 - **Invalid or Unloadable Website URL:** If a website URL is provided but **fails to load or render properly**, the video generation will be **rejected**. ![Error message indicating invalid or unloadable website URL rejection notification](/images/11178712/978de147-image.png) You can review these rejected leads in the **Contacts** section of your dynamic video campaign: ![Contacts section of dynamic video campaign showing rejected leads list](/images/11178712/5dbf75f1-image.png) Once in **Contacts,**edit the URL that failed: ![Contact edit form with URL field ready for correction and resubmission](/images/11178712/408f5c05-image.png)
 
 And that's it! Let us know if you have any questions :)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What happens if a lead has no website URL?">
+    If the URL field is left completely empty, the system automatically uses a fallback background for the video, so the video is still generated and usable.
+  </Accordion>
+  <Accordion title="How do I enable fallback backgrounds?">
+    Create a new Dynamic Video Campaign and set up the Fallback URL you want to use. Then, at the Contacts step, click the settings wheel on the right-hand side to open the Error Handling panel and select **Generate Video Using Fallback Data**.
+  </Accordion>
+  <Accordion title="What happens if a website URL is provided but won't load?">
+    If a URL is provided but fails to load or render properly, the video generation is rejected. You can review these rejected leads in the **Contacts** section of your dynamic video campaign, edit the URL that failed, and resubmit it.
+  </Accordion>
+  <Accordion title="How can I tell which videos used a fallback background?">
+    Videos generated using fallback content are marked with an orange status indicator and an orange play button, so they're easy to identify after generation.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

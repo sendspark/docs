@@ -1,7 +1,22 @@
 ---
 title: "Agentic Workflows: Add Variable Fallbacks"
 description: "Learn how to add fallbacks for missing variables in Agentic Workflows using Table Replacement to ensure clean automation data."
+keywords:
+  - agentic workflow variable fallback
+  - Table Replacement Sendspark
+  - fallback for missing first name
+  - clean automation data
+  - dynamic video fallback value
 ---
+
+In Agentic Workflows, use the **Table Replacement** tool to add a fallback for missing variables like first name. Point it at the field to check, compare it against **Empty List**, and if the field is empty substitute a natural word such as "there." Then use the replacement value field wherever the variable appears so messages never read awkwardly.
+
+## Key takeaways
+
+- The **Table Replacement** tool adds a fallback value when a field (for example, First Name) is empty.
+- Set **Field Input Data** to the field you want to check and the **Second Field** to **Empty List** to detect blanks.
+- If the value is non-empty, use the original field data; otherwise, use your fallback word (for example, "there").
+- Reference the `Table replacement: Replacement value` field wherever you want the fallback to appear, such as a dynamic video's Contact Name field.
 
 When you’re working with automations, it’s common to run into missing data. For example, if a contact doesn’t have a first name filled in, your video or email could look awkward. To prevent this, you can add a **fallback value** using the **Table Replacement** tool in Sendspark’s Agentic Workflows.
 
@@ -60,3 +75,27 @@ This way, Sendspark will automatically use the contact’s real data if availabl
 ## Summary
 
 By adding a fallback with the **Table Replacement** tool, you ensure your automations always look polished, even if some data fields are missing. This small step can make your personalized videos and outreach feel much more natural and professional.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What does the Table Replacement tool do?">
+    It lets you detect when a field is empty and substitute a fallback value, so missing data (like a blank first name) doesn't make your video or email look awkward.
+  </Accordion>
+  <Accordion title="How do I detect an empty field?">
+    Add the Table Replacement tool, set **Field Input Data** to the field you want to check (e.g. "First Name"), and set the **Second Field** to **Empty List**. That configuration lets the workflow tell when the field is empty.
+  </Accordion>
+  <Accordion title="What should I use as a fallback value?">
+    Use something natural that fits your brand tone — "there," "friend," or "your team" for casual, or "valued contact" for formal. So "Hi there" reads well instead of an awkward placeholder.
+  </Accordion>
+  <Accordion title="Where do I use the fallback after setting it up?">
+    Use the updated field everywhere you want the fallback to appear. For example, in a dynamic video's **Contact Name** field, select `Table replacement: Replacement value`. Sendspark then uses real data when available and the fallback when not.
+  </Accordion>
+  <Accordion title="Should I rely on fallbacks instead of cleaning my CRM data?">
+    No. Fallbacks are a safety net, not a substitute for clean data. Keep your contact lists as complete as possible and test your automation before launching to confirm the fallback logic displays correctly.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

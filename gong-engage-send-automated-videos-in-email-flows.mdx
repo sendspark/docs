@@ -1,7 +1,22 @@
 ---
 title: "Gong Engage — Send Automated Videos in Email Flows"
 description: "Learn how to integrate Sendspark with Gong Engage to send AI-personalized video emails in automated workflows for better outreach."
+keywords:
+  - Gong Engage video emails
+  - Sendspark Gong integration
+  - personalized video email flow
+  - CRM video embed snippet
+  - Gong Engage automated outreach
 ---
+
+To send automated personalized videos in Gong Engage, create a Dynamic Video campaign in Sendspark, then use an automated workflow to push Sendspark's HTML email embed snippet into a CRM field. Because Gong syncs with your CRM, you can insert that field into your Gong Engage emails so each contact receives their own personalized video.
+
+## Key takeaways
+
+- Gong Engage doesn't connect to Sendspark directly — you bridge them through a CRM field that Gong syncs with.
+- This works with Salesforce, HubSpot, Zoho, HighLevel, and Close CRM.
+- An automated workflow maps Sendspark's "HTML Embed Email Snippet" to a CRM field after videos are created.
+- You can trigger on all videos in a workspace, or from a single campaign mapped to a specific field if you want multiple snippets saved at once.
 
 You can use Sendspark and Gong Engage together to create hyper-personalized videos outreach.
 
@@ -38,3 +53,22 @@ Once the Sendspark email embed snippet is saved in your CRM, you will be able to
 Now, when you add contacts to your Gong Engage flows, you'll see their videos in the email.
 
 ![Gong Engage email preview displaying personalized video from Sendspark](/images/11382784/214d9bbc-image.png)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which CRMs work with this Gong Engage method?">
+    This approach works with Salesforce, HubSpot, Zoho, HighLevel, and Close CRM. You push Sendspark's email embed snippet into a field in one of these CRMs, and Gong reads it from there.
+  </Accordion>
+  <Accordion title="Do I need my CRM synced with Gong?">
+    Yes. Because the Sendspark video snippet lives in a CRM field, your CRM must be synced with Gong so that field is available to use inside your Gong Engage emails.
+  </Accordion>
+  <Accordion title="Can I keep more than one video snippet available at once?">
+    Yes. Instead of triggering on all videos in your workspace, you can set the automation to trigger from a single dynamic video campaign and map it to a specific CRM field, so you can store more than one Sendspark snippet at a time.
+  </Accordion>
+  <Accordion title="What Sendspark field do I map into the CRM?">
+    Map Sendspark's "HTML Embed Email Snippet" to a CRM field (for example, a field named "Sendspark Embed Snippet"). Once saved, you insert that CRM field into your Gong Engage email to display the video.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

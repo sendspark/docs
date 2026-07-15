@@ -1,7 +1,22 @@
 ---
 title: "Why Your Card Doesn’t Support This Payment"
 description: "Learn how to fix card payment failures due to Indian RBI regulations and 3D Secure restrictions with manual invoice payment solutions."
+keywords:
+  - card doesn't support this payment
+  - Indian card recurring payment failed
+  - RBI 3D Secure OTP payment
+  - pay invoice manually Sendspark
+  - authentication required card error
 ---
+
+If your card shows "doesn't support this payment," it's usually an Indian bank enforcing RBI rules that require 3D Secure (OTP) approval for each charge. The initial purchase works because it includes OTP, but recurring charges don't trigger OTP, so the bank blocks them. This is a bank-level restriction. The fix is to pay the invoice manually, where OTP authentication is supported.
+
+## Key takeaways
+
+- Cause: RBI regulations require 3D Secure (OTP) authentication and manual approval; recurring charges don't trigger OTP, so Indian banks block them automatically.
+- It's most common when the merchant is outside India, an international provider processes the charge, or the payment is recurring or automatic.
+- This is a bank-level restriction that Sendspark cannot override.
+- Workaround: pay the unpaid invoice manually (Billing → Invoices → Pay Invoice) — it's treated as a one-time payment, so OTP is requested and allowed.
 
 ## The Root Cause: 3D Secure (OTP) & Recurring Payments in India
 
@@ -63,3 +78,24 @@ Click on the VIEW INVOICE button that corresponds to the open billing:
 Use the PAY INVOICE ONLINE option
 
 ![Invoice details page with Pay Invoice Online button displayed](/images/13609805/3f626eb7-image.png)
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why does my card fail on renewals but worked the first time?">
+    The initial purchase often succeeds because it includes OTP authentication. Recurring charges don't trigger OTP, so your bank blocks them automatically under RBI rules — you may see errors like "Card doesn't support this payment," "Authentication required," or "Recurring payment not allowed."
+  </Accordion>
+  <Accordion title="Is this something Sendspark can fix on its end?">
+    No. This is a bank-level restriction driven by RBI (Reserve Bank of India) regulations, not something Sendspark can override.
+  </Accordion>
+  <Accordion title="How do I pay my invoice manually?">
+    Log in to your account, go to **Billing**, open **Invoices**, select the unpaid invoice, click **Pay Invoice**, and complete the payment. Your bank will request OTP, which is supported for one-time payments.
+  </Accordion>
+  <Accordion title="Why does paying manually work when automatic charges don't?">
+    A manual invoice payment is treated as a one-time payment, where OTP authentication is allowed and you stay in full control of the transaction — so it isn't blocked the way an automatic recurring charge is.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

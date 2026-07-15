@@ -1,7 +1,22 @@
 ---
 title: "Zoho — Send Dynamic Videos"
 description: "Learn how to send dynamic video campaigns through Zoho with step-by-step setup, contact import, and HTML integration guide."
+keywords:
+  - zoho dynamic video
+  - send dynamic videos zoho
+  - zoho email campaign video
+  - sendspark zoho csv import
+  - zoho insert HTML video
 ---
+
+To send a Dynamic Video campaign through Zoho, first process your videos in Sendspark and download the updated CSV. In Zoho, import that CSV into a contact list, create a regular email campaign, add an Insert HTML block, and paste the Zoho HTML code from Sendspark's Share Campaign menu. Each contact then receives their own video.
+
+## Key takeaways
+
+- Download **Sendspark's updated CSV**, not your original list. The updated export filters out any videos that did not process successfully.
+- When importing to Zoho, only the **mandatory fields (email and first name)** need mapping. Job title and company name are optional, and you do not need to map Video Link or background URL.
+- Paste Sendspark's Zoho HTML (from **Share Campaign → Zoho**) into an **Insert HTML** block inside a Zoho email campaign.
+- For accurate testing, add yourself as a contact and send to a secondary email on a **different domain** — sending from the same inbox to the same inbox can be flagged as spam and placeholders may not render in test emails.
 
 <iframe src="https://www.youtube.com/embed/18WGYh1p4d4?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -63,3 +78,24 @@ Note: You don't need to map Video Link or background URL.
 
 - **Variables and Placeholders:** During test emails, placeholders might not display correctly due to variable placeholders. For accurate testing, add yourself as a contact and send the campaign to a secondary email with a different domain.
 - **Spam Issues:** Sending emails from the same inbox to the same inbox may be flagged as spam. Use a different domain for test emails if needed.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which CSV should I upload to Zoho?">
+    Download the updated CSV from Sendspark after all your videos have processed. This version filters out any unsuccessful videos, so you only import contacts who actually have a video ready.
+  </Accordion>
+  <Accordion title="Which fields do I need to map when importing contacts?">
+    Only the mandatory fields — email and first name — need to be mapped. Job title and company name are optional. You do not need to map Video Link or background URL.
+  </Accordion>
+  <Accordion title="Where do I paste the video code in Zoho?">
+    In your Zoho email campaign, choose a pre-designed template, drag an Insert HTML block into the content, then paste the HTML code from Sendspark's Share Campaign → Zoho menu and apply the changes.
+  </Accordion>
+  <Accordion title="Why do the placeholders look wrong in my test email?">
+    During test emails, variable placeholders may not display correctly. For accurate testing, add yourself as a contact and send the campaign to a secondary email on a different domain, since sending from the same inbox to the same inbox can also be flagged as spam.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

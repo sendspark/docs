@@ -1,11 +1,26 @@
 ---
 title: "Slack Notifications for Video Views"
 description: "Set up real-time Slack notifications when viewers watch your Sendspark videos using automated workflows and trigger settings."
+keywords:
+  - Slack notification video views
+  - Sendspark Slack alerts
+  - notify Slack when video watched
+  - agentic workflow Slack
+  - real-time video view notifications
 ---
 
 ## How to Get Slack Notifications When Someone Watches Your Video
 
 Get notified in real time when someone watches your video or clicks on a call to action.
+
+Sendspark can post to Slack the moment someone watches your video or clicks a call to action. You build an Agentic Workflow using the trigger **Sendspark: New Video Watched - All Campaigns**, add a Slack action to send a message to a public channel, connect Slack, then start the automation. Your message can include any fields Sendspark returns for context.
+
+## Key takeaways
+
+- Slack view notifications are built with an Agentic Workflow in Sendspark, not a native setting.
+- The trigger is **Sendspark: New Video Watched - All Campaigns**, which fires when any video in your workspace is watched.
+- The action is **Slack → Send a message to a public channel**, where you connect Slack and choose the channel.
+- You can personalize the message with the fields Sendspark returns, then click **Start** to turn the automation on.
 
 ## 1. Create Automated Workflow In Sendspark
 
@@ -25,3 +40,22 @@ Get notified in real time when someone watches your video or clicks on a call to
 - Select the slack channel you want to send notifications to, and write your message. You can use any of the fields that Sendspark returns in your message to get more context on your video. In the end, it might look something like this: ​![](/images/10769516/f5930631-image.png)
 
 Save, and hit **"Start"** to turn on your automation!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which trigger sends a notification when my video is watched?">
+    In your Agentic Workflow, add a trigger and select **Sendspark: New Video Watched - All Campaigns**. This means the automation starts whenever a video is watched from any Sendspark dynamic video campaign in your workspace.
+  </Accordion>
+  <Accordion title="How do I connect Slack to the workflow?">
+    Add an action to your workflow, select **Slack**, choose **Send a message to a public channel**, and then connect your Slack account. After connecting, pick the channel you want notifications sent to.
+  </Accordion>
+  <Accordion title="Can I customize the notification message?">
+    Yes. When setting up the Slack action you write your own message, and you can include any of the fields Sendspark returns to add more context about the video that was watched.
+  </Accordion>
+  <Accordion title="Does this notify me for a call-to-action click too?">
+    Yes. The workflow lets you get notified in real time when someone watches your video or clicks on a call to action.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

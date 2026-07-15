@@ -1,7 +1,22 @@
 ---
 title: "Automate Video Follow-Ups: Intercom + HubSpot"
 description: "Learn how to automate Sendspark video follow-ups using agentic workflows with Intercom and HubSpot integration. Save time at scale."
+keywords:
+  - Intercom HubSpot video automation
+  - automate video follow-ups
+  - Sendspark Intercom integration
+  - personalized video HubSpot email
+  - Intercom tag webhook workflow
 ---
+
+To automate video follow-ups with Intercom and HubSpot, tag upgrade-ready customers in Intercom to fire a webhook, connect that webhook to Sendspark through an automation platform (Albato, Zapier, or Make) to generate a personalized video, then have HubSpot send the video by email. This scales personalized outreach to customers who show upgrade intent.
+
+## Key takeaways
+
+- An Intercom tag added to a conversation triggers a webhook that passes customer info (name, email, company) to your automation platform.
+- The webhook connects to Sendspark to automatically generate a personalized video, matched to the tagged customer.
+- HubSpot then sends the generated video link by email using an automated workflow.
+- Use clear, standardized tags and test each step with a dummy customer before going live.
 
 ## ⭐ Why Use This Workflow
 
@@ -97,3 +112,24 @@ By following these steps, you can fully automate follow-up with upgrade-ready cu
 - HubSpot email automation
 - Automate video emails
 - Customer upgrade workflow
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What triggers the automated video in this workflow?">
+    Adding a tag to a conversation in Intercom (for example, `Upgrade_Interested`) fires a webhook. That webhook passes the customer's info to your automation platform, which triggers Sendspark to generate a personalized video.
+  </Accordion>
+  <Accordion title="Which automation platforms can I use to connect Intercom to Sendspark?">
+    You can paste the webhook URL from Albato, Zapier, or Make into Intercom's webhook settings, then connect that webhook to Sendspark inside the automation platform.
+  </Accordion>
+  <Accordion title="What customer data should the webhook pass?">
+    Make sure the webhook passes customer info such as name, email, and company, then map those fields so Sendspark knows which data to personalize (for example, the customer's first name).
+  </Accordion>
+  <Accordion title="How is the video actually delivered to the customer?">
+    HubSpot handles delivery. Create an automated HubSpot workflow that triggers when a new video link is generated, and insert the Sendspark snippet code into a HubSpot email template so the video goes out by email.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

@@ -1,7 +1,22 @@
 ---
 title: "Klaviyo - Auto Send Videos for New Lists"
 description: "Learn how to automatically generate and send personalized videos in Klaviyo when contacts are added to lists using Sendspark"
+keywords:
+  - Klaviyo personalized video
+  - Sendspark Klaviyo automation
+  - auto send video new list
+  - Klaviyo flow added to list
+  - dynamic video Klaviyo
 ---
+
+You can automatically generate and send a personalized Sendspark video whenever a contact is added to a Klaviyo list. Set up a video campaign in Sendspark, build a Klaviyo flow triggered by "Added to List" with a time delay and an HTML email block holding the embed code, then create a Sendspark automation triggered by Klaviyo's "Added profiles to list" to generate each contact's video.
+
+## Key takeaways
+
+- The workflow spans three setups: a Sendspark video campaign, a Klaviyo flow, and a Sendspark automation.
+- In Klaviyo, trigger the flow on Added to List, add a time delay (e.g., 1 day) so Sendspark can generate the video, and paste the embed code into an HTML block (not a text block).
+- In Sendspark, the automation triggers on Klaviyo → Added profiles to list, uses the same list, then runs a Create a Dynamic Video step with the contact data mapped.
+- Optionally add a Data Cropping step to derive a company domain from a business email for the video background; API calls may take 5-10 minutes to complete.
 
 <iframe src="https://www.youtube.com/embed/fH7YVNoWHuk?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -75,3 +90,22 @@ Useful when you want the video background to match the contact’s company domai
 ## 👤 Run a Self-Test
 
 - Add your own email to the Klaviyo list and trigger the flow.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why add a time delay in the Klaviyo flow?">
+    The delay (for example, 1 day) gives Sendspark time to generate the personalized video before the email goes out, so the recipient receives a completed video rather than a placeholder.
+  </Accordion>
+  <Accordion title="Should I use a text block or an HTML block for the email?">
+    Use the HTML block, not the text block. Delete all the default HTML in the block, then paste the embed code you copied from Sendspark's Share campaign step.
+  </Accordion>
+  <Accordion title="How do I match the video background to the contact's company?">
+    Add a Data Cropping step before the Dynamic Video step. Select Email as the input, crop using the "@" character, and choose "Crop to the End" (e.g., dan@senspark.com → senspark.com). Then map the result to Background URL. This works mainly for business emails, not Gmail or Outlook addresses.
+  </Accordion>
+  <Accordion title="How long does it take, and how do I test it?">
+    API calls may take 5-10 minutes. Check the automation history in Sendspark for statuses like Added profiles to list, Data cropping, and Create dynamic video, confirm the video was processed in the campaign, then run a self-test by adding your own email to the Klaviyo list and triggering the flow.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

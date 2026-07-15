@@ -1,7 +1,22 @@
 ---
 title: "HubSpot: Send a Video When a Meeting is Booked"
 description: "Learn how to automatically send a personalized Sendspark video in HubSpot when a prospect books a meeting. Boost show rates."
+keywords:
+  - HubSpot meeting booked video
+  - send video when meeting is booked
+  - Sendspark HubSpot automation
+  - New Meeting Created trigger
+  - personalized video HubSpot
 ---
+
+To send a video automatically when a meeting is booked, create a Sendspark Automated Workflow that triggers on HubSpot's **"New Meeting Created"** event. Add a HubSpot **Find Contact** action to look up the booker by their guest email, create a Sendspark AI video with their details, then send it through Gmail, Outreach, or another channel.
+
+## Key takeaways
+
+- The workflow uses HubSpot's **"New Meeting Created"** trigger, which fires any time someone books a meeting.
+- Add a **Find Contact** action (using **Guest Emails**) before creating the video, so you have the contact details needed to personalize it.
+- The **Create Dynamic Video** action lets you map in HubSpot contact fields to personalize each video.
+- You can optionally filter the trigger by meeting ID or title so it only runs for specific meetings.
 
 ## 1. Create Automation
 
@@ -62,3 +77,22 @@ You can send this video directly in Gmail or Outreach, or check out one of the [
 The entire workflow should look something like this:
 
 ![Complete workflow overview showing all automation steps connected](/images/11176283/212ab7d8-image.png)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which HubSpot trigger fires when a meeting is booked?">
+    Use the **"New Meeting Created"** event under the HubSpot trigger. It fires any time someone books a meeting.
+  </Accordion>
+  <Accordion title="Why do I need a Find Contact action before creating the video?">
+    Before you can create a personalized dynamic video, you need more information about the person who booked the meeting. The HubSpot **Find Contact** action looks that up — use **Guest Emails** to find the contact — so those fields are available to personalize the video.
+  </Accordion>
+  <Accordion title="Can I limit the automation to only certain meetings?">
+    Yes. Click the funnel on the trigger to add filters, then set conditions such as a specific meeting ID or title, so the automation only fires when those meetings are booked.
+  </Accordion>
+  <Accordion title="How do I send the video once it's created?">
+    You can send it directly through Gmail or Outreach, or use one of the [many other ways](https://help.sendspark.com/en/collections/12626407-automatically-send-videos) to share your video in automated workflows.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

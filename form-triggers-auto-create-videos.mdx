@@ -1,11 +1,26 @@
 ---
 title: "Form Triggers: Auto-Create Videos"
 description: "Learn how to create AI personalized videos automatically from form submissions using HubSpot, Airtable, webhooks and other triggers."
+keywords:
+  - form trigger auto-create video
+  - AI personalized video from form
+  - form submission video automation
+  - Sendspark form trigger
+  - create dynamic video on form submit
 ---
+
+To auto-create videos from form submissions, build a Sendspark automated workflow: add a **Form Submission** trigger (from your website, CRM, Airtable, or Google Sheets), then a **Sendspark: Create Dynamic Video** action mapped to your form fields. Add a final step to send the video. Missing data? Add a **Find Contact** action before creating the video.
 
 Sendspark makes it easy to automatically create AI personalized videos when forms are submitted.
 
 This can be useful if you want to send an automated video message to a lead who fills out a form, to capture their attention and help them move forward in your sales process.
+
+## Key takeaways
+
+- The workflow is three steps: a **Form Submission** trigger, a **Create Dynamic Video** action, and a step to send the video.
+- The trigger can be a form submitted through your website, CRM, or a tool like Airtable or Google Sheets — check the app section for supported apps, and select the specific form that should fire the automation.
+- In the Create Dynamic Video action, pick your campaign and map the trigger fields (first name, email, etc.) into the video.
+- If you're missing contact data, add a **Find Contact** action before the video step to look up more information in your CRM.
 
 ## How to Create AI Personalized Videos from Form Submissions
 
@@ -56,3 +71,22 @@ Check out all ways to share automated workflows that are supported in Sendspark.
 In the end, your automated workflow will look something like this:
 
 ![](/images/11173982/6ea52414-image.png)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What kinds of forms can trigger this automation?">
+    The form submission can come from your website, your CRM, or even a tool like Airtable or Google Sheets. Check the app section in Sendspark to see which apps are supported, and be sure to select the specific form that should trigger the automation.
+  </Accordion>
+  <Accordion title="How do I personalize the video with form data?">
+    In the **Sendspark: Create Dynamic Video** action, select the dynamic video campaign you want to use, then map the fields from your trigger — such as first name and email — into the video.
+  </Accordion>
+  <Accordion title="What if my form doesn't capture all the contact data I need?">
+    Add a **Find Contact** action before the Create Dynamic Video step. It looks up more information about the contact in your CRM, giving you additional data fields to use in the video.
+  </Accordion>
+  <Accordion title="How is the video sent after it's created?">
+    Add a final step to send it. You can embed the video directly in Gmail or Outlook, add the contact to an automated sequence, or choose another supported way to share.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

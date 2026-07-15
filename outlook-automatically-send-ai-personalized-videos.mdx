@@ -1,7 +1,22 @@
 ---
 title: "Outlook - Automatically Send AI Personalized Videos"
 description: "Set up automated AI personalized video campaigns in Outlook using Sendspark workflows to generate and send custom videos to contacts."
+keywords:
+  - Outlook personalized videos
+  - automatically send videos Outlook
+  - Sendspark Outlook workflow
+  - AI video Outlook
+  - Outlook dynamic video automation
 ---
+
+You can upload contacts to Sendspark, generate personalized videos, and auto-send them from Outlook using an Automated Workflow. Trigger the workflow on Sendspark's **New Video Generated** event, add a Microsoft Outlook **Create Draft Email** action, then a **Send Email** action — and each contact is emailed their own video automatically once it's created.
+
+## Key takeaways
+
+- You'll need **admin access** to Outlook (to connect the Sendspark app) and the **Automated Workflows** feature in Sendspark (currently in Beta).
+- Trigger the workflow on Sendspark's **New Video Generated** event and select your Dynamic Video Campaign.
+- Add a Microsoft Outlook **Create Draft Email** action, then a **Send Email** action using the message ID from the draft step.
+- Embed the video with the provided HTML snippet (replacing the video link and thumbnail URL) or just include a plain-text link.
 
 Want to upload contacts to Sendspark, generate personalized videos, and auto-send them via Outlook? This tutorial shows you how! 🚀
 
@@ -95,3 +110,24 @@ You can now hit **"Start"**to start your automation.
 And now, when you add contacts to your dynamic video campaign, they will automatically be sent the video email from Outlook after their videos get created.
 
 Happy connecting!
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What do I need to connect Sendspark and Outlook?">
+    Two things: **admin access** to Outlook (so you can connect the Sendspark app) and the **Automated Workflows** feature in Sendspark, which is currently in Beta.
+  </Accordion>
+  <Accordion title="What triggers the workflow?">
+    Set the trigger to **Sendspark** and **New Video Generated**, then select the Dynamic Video Campaign you created. Each newly generated video kicks off the Outlook steps.
+  </Accordion>
+  <Accordion title="How do I embed the video in the Outlook email?">
+    Use an HTML email with the provided code snippet, replacing **[VIDEO LINK]** and **[THUMBNAIL URL]** with your real video and thumbnail links from the dropdown. If you'd rather not use HTML, send a plain-text email that simply includes the link to your video.
+  </Accordion>
+  <Accordion title="When are the videos actually sent?">
+    Automatically. Once you add contacts to your dynamic video campaign and their videos are created, the workflow sends each contact their video email from Outlook. The final **Send Email** action uses the message ID from the draft step.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

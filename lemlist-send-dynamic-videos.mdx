@@ -1,7 +1,22 @@
 ---
 title: "Lemlist — Send Dynamic Videos"
 description: "Learn how to integrate Sendspark dynamic videos into your Lemlist email campaigns with step-by-step setup and troubleshooting tips."
+keywords:
+  - lemlist dynamic video
+  - send personalized video lemlist
+  - lemlist code view snippet
+  - sendspark lemlist integration
+  - dynamic video email campaign
 ---
+
+To send dynamic videos in Lemlist, create your campaign in Sendspark, click Share Campaign, and select Lemlist to copy the snippet. In your Lemlist email, open the "..." More Rich options, switch to Code View, paste the snippet, then switch back. Your personalized video preview appears in the email.
+
+## Key takeaways
+
+- Copy the video snippet from Sendspark via **Share Campaign → Lemlist**.
+- In Lemlist, paste the snippet inside **Code View** (found under the "..." More Rich options), then switch back to the visual editor.
+- Use **Preview** in the bottom right to confirm the personalized video loads for a given contact before sending.
+- Videos are matched by **email address**, so each contact must have the same email in both Sendspark and Lemlist — otherwise they see the fallback video.
 
 <iframe src="https://www.youtube.com/embed/JYuYKSG52Zw?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -52,3 +67,22 @@ When you preview this email for contacts for whom you have generated videos for,
 If you do NOT see their video, double check that you have the **same email address for the contact in both Sendspark and Lemlist.**
 
 We use the email address to match the right video to the right person, so if you are missing their email address in Sendspark, you would just see the fallback video in Lemlist.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why do I have to paste the snippet in Code View?">
+    The Sendspark snippet is HTML, so it needs to go into Lemlist's **Code View** (opened from the "..." More Rich options at the bottom of the editor). Once pasted, switch back to the visual editor and the dynamic video preview appears in the email.
+  </Accordion>
+  <Accordion title="Why do I see the fallback video instead of a personalized one?">
+    Videos are matched by email address. If a contact's email in Lemlist doesn't match the email you generated a video for in Sendspark — or the contact has no email in Sendspark — Lemlist shows the fallback video instead of the personalized one.
+  </Accordion>
+  <Accordion title="How can I check the setup before sending?">
+    Click **Preview** in the bottom right of the Lemlist editor. When you preview for a contact you've generated a video for, their AI video fills the preview area, confirming everything is wired up correctly.
+  </Accordion>
+  <Accordion title="Do I need to create the dynamic video first?">
+    Yes. Build your dynamic video campaign in Sendspark first — see [how to make dynamic videos](/dynamic-videos-make-videos-with-ai-introductions) — then come back to copy the Lemlist snippet.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

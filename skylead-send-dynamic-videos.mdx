@@ -1,7 +1,22 @@
 ---
 title: "Skylead - Send Dynamic Videos"
 description: "Learn how to integrate Sendspark with Skylead to send AI-personalized dynamic videos in LinkedIn automation campaigns step-by-step."
+keywords:
+  - Skylead dynamic videos
+  - Sendspark Skylead integration
+  - AI personalized video LinkedIn
+  - Skylead video automation
+  - videoLink Skylead CSV
 ---
+
+To send dynamic videos with Skylead, create a Dynamic Video Campaign in Sendspark, import your contacts, and generate the AI-personalized videos. Then download Sendspark's CSV, rename the columns to match Skylead's fields, import it into Skylead, and drop the #&#123;&#123;videoLink&#125;&#125; field into your LinkedIn connection request or message.
+
+## Key takeaways
+
+- Build a [Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions) in Sendspark, then import contacts by typing them in, uploading a CSV, or using Zapier/API.
+- Download Sendspark's CSV after generating videos — it adds the **Video Link** column, which is what you send in LinkedIn.
+- **Rename the CSV columns** to Skylead's field names before importing (for example, Video Link → **videoLink**).
+- In your Skylead sequence, use the **#&#123;&#123;videoLink&#125;&#125;** dynamic field where you want the video; it unfurls into an animated preview in LinkedIn messages.
 
 Use Sendspark and Skylead together to send AI-personalized videos in LinkedIn automation.
 
@@ -57,3 +72,25 @@ When you send the video link in your LinkedIn messages, it will unfurl into an a
 ![How AI Video Looks in LinkedIn](/images/9145326/dc68faa2-image.png)
 
 That's it! Happy connecting!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I import contacts into the Sendspark campaign?">
+    You can type contact information manually, import a CSV, or set up a Zapier or API integration into your dynamic video campaign.
+  </Accordion>
+  <Accordion title="How do I keep the LinkedIn profile URL for Skylead?">
+    Sendspark doesn't have a dedicated "profileUrl" field, so import it into a field you aren't using (like "Job Title"). It'll be easy to find and map when you export your CSV for Skylead.
+  </Accordion>
+  <Accordion title="Which CSV column is the actual video?">
+    The **Video Link** column, added when you download the CSV after generating videos. It's the personalized dynamic video link for each viewer, and it's what you send in your LinkedIn connection requests and messages.
+  </Accordion>
+  <Accordion title="How do I rename columns to match Skylead's fields?">
+    Map them like this: First Name → firstName, Email → email, Company Name → currentCompany, Job Title → profileLink, Background Url → website, and Video Link → videoLink.
+  </Accordion>
+  <Accordion title="How does the video appear in a LinkedIn message?">
+    When you send the video link via the #&#123;&#123;videoLink&#125;&#125; field, it unfurls into an animated preview in the LinkedIn message.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

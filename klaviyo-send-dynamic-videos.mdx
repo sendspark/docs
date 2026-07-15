@@ -1,7 +1,22 @@
 ---
 title: "Klaviyo - Send Dynamic Videos"
 description: "Learn how to send dynamic videos in Klaviyo with personalized content. Step-by-step guide to upload leads and create video campaigns."
+keywords:
+  - Klaviyo dynamic videos
+  - send personalized video Klaviyo
+  - Sendspark Klaviyo integration
+  - Klaviyo video email HTML block
+  - dynamic video SMS Klaviyo
 ---
+
+To send dynamic videos in Klaviyo, copy the Klaviyo snippet from your Sendspark campaign's **Share Campaign** menu and download the CSV of leads you generated videos for. Upload that CSV as a Klaviyo list, create an email campaign, drag in an **HTML block**, and paste the snippet. Preview to confirm the video populates, then send.
+
+## Key takeaways
+
+- You need two things from Sendspark: the **Klaviyo snippet** (from Share Campaign) and the **CSV file** of the leads you generated videos for.
+- Upload the CSV as a Klaviyo list and map fields like First Name, Email, and Video Link, then paste the snippet into an **HTML block** in your email campaign.
+- Always preview or test the campaign to confirm the video populates correctly before sending.
+- For **SMS**, the HTML snippet is not compatible — use the **Video Link** field from your CSV as a variable in the message body instead.
 
 ## What is a Dynamic Video?
 
@@ -81,3 +96,25 @@ Once your email or SMS is configured and tested:
 
 1. Schedule or send the campaign.
 2. Monitor results and adjust as needed for future campaigns.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What is a dynamic video?">
+    A dynamic video is automatically personalized for each recipient. From a single recording, Sendspark adds each prospect's website to the background and, with AI, can add the prospect's name — so it looks like you recorded a separate video for everyone.
+  </Accordion>
+  <Accordion title="Where do I get the video snippet for Klaviyo?">
+    Open your Dynamic Video Campaign, click **Share Campaign**, and copy the snippet by clicking **Copy to Clipboard** on the Klaviyo option.
+  </Accordion>
+  <Accordion title="Do I have to upload a CSV?">
+    Yes. Export the CSV of the leads you generated videos for, then upload it as a Klaviyo list (Audience → Lists & Segments → Create List → Upload Contacts) and map fields such as First Name, Email, and Video Link.
+  </Accordion>
+  <Accordion title="How do I add the video to the email?">
+    In the Klaviyo email editor, drag and drop an **HTML block** into the email body and paste the snippet you copied from Sendspark into that block. Then use the preview function to confirm the video populates.
+  </Accordion>
+  <Accordion title="Can I send dynamic videos over SMS?">
+    Yes, but HTML snippet codes are not compatible with SMS. Instead, choose **SMS** as the campaign type and use the **Video Link** field from your CSV as a variable in the SMS body.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

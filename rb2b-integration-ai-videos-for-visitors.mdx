@@ -1,7 +1,22 @@
 ---
 title: "RB2B Integration - AI Videos for Visitors"
 description: "Set up RB2B and Sendspark integration to automatically create AI personalized videos for website visitors using webhook automation"
+keywords:
+  - RB2B Sendspark integration
+  - AI videos for website visitors
+  - RB2B webhook automation
+  - personalized video website visitors
+  - RB2B agentic workflow
 ---
+
+The RB2B and Sendspark integration automatically creates AI-personalized videos for the website visitors RB2B identifies. You build a Sendspark Agentic Workflow triggered by an incoming webhook, paste that webhook URL into RB2B, map the visitor data into a Create Dynamic Video step, then add a step to send the video by email or LinkedIn.
+
+## Key takeaways
+
+- The integration turns website visitors identified by RB2B into personalized videos automatically, on autopilot.
+- It's built as a Sendspark Agentic Workflow using an **Incoming Webhook** trigger.
+- You copy the Sendspark webhook URL into RB2B's integrations, then send a test event to confirm the connection and pull RB2B data into the workflow.
+- Map the RB2B data fields into a **Sendspark: Create Dynamic Video** step, then add a final step to send the video through email, LinkedIn, or any of 50+ sending platforms.
 
 Use the RB2B and Sendspark integration to send personalized videos to website visitors on autopilot!
 
@@ -21,3 +36,25 @@ Use the RB2B and Sendspark integration to send personalized videos to website vi
 10. Add another step in your automation to send the video out through email or LinkedIn. Sendspark integrates with 50+ sending platforms, so you can choose your platform, or just send with Gmail/Outlook. [Learn more here](https://help.sendspark.com/en/collections/11908106-automated-workflows).
 
 Happy scaling!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What does the RB2B + Sendspark integration do?">
+    It lets you send personalized videos to website visitors on autopilot. When RB2B identifies a visitor, the connected Sendspark workflow automatically creates an AI-personalized video for them and sends it out.
+  </Accordion>
+  <Accordion title="Which trigger do I use in the Sendspark workflow?">
+    Select **Incoming Webhook** as the trigger. Sendspark gives you a webhook URL to copy, and you click "wait for webhook" to start testing the connection.
+  </Accordion>
+  <Accordion title="How do I connect RB2B to Sendspark?">
+    Copy the webhook URL from Sendspark, go to RB2B integrations, select **Sendspark**, and paste the URL. Then click "Send test event to your Sendspark account" to confirm the connection — you should see the RB2B data appear back in Sendspark.
+  </Accordion>
+  <Accordion title="How is each video personalized?">
+    Add a **Sendspark: Create Dynamic Video** step, select the dynamic video campaign you want to use, and map in the RB2B data fields. Those mapped fields are what personalize each video.
+  </Accordion>
+  <Accordion title="How does the video get sent to the visitor?">
+    Add another step in the automation to send the video out through email or LinkedIn. Sendspark integrates with 50+ sending platforms, so you can pick your platform or just send with Gmail/Outlook.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

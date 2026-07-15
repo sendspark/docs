@@ -1,7 +1,23 @@
 ---
 title: "Outreach - AI Video for New Sequence Leads"
 description: "Learn how to automatically create AI videos when leads get added to Outreach sequences using Sendspark integration and workflows."
+keywords:
+  - Outreach AI video
+  - automatic video for sequence leads
+  - Sendspark Outreach integration
+  - dynamic video snippet Outreach
+  - agentic workflow Outreach
 ---
+
+You can automatically create and send personalized AI videos to new Outreach.io sequence leads with Sendspark. Create a Dynamic Video Campaign, paste the Dynamic Video Snippet into your Outreach email template, then build an Agentic Workflow that triggers a video whenever a prospect is enrolled in the sequence. This requires Outreach Admin access and the Agentic Workflow feature enabled in Sendspark.
+
+## Key takeaways
+
+- Two prerequisites: Outreach Admin access (to connect the Sendspark Outreach App) and the Agentic Workflow feature enabled in Sendspark.
+- Paste the Sendspark "Dynamic Video Snippet" into your Outreach email template exactly where you want the video to appear; you must generate at least one video first to reach the Share Campaign page.
+- The Agentic Workflow uses the "Prospect Enrolled in Sequence" trigger from Outreach and a "Create Dynamic Video" action in Sendspark.
+- Always map the "email" field, as it is essential for the integration to work properly.
+- Leave a brief time delay between enrolling contacts and the email sending so the video has time to generate.
 
 This guide walks through how to automatically create and send personalized videos in Outreach.io sequences using AI.
 
@@ -50,3 +66,25 @@ So, this is how your whole Sendspark automation should look:
 That's it! Hit **"Start"** to start your automation.
 
 You can now add prospects to your sequences in Outreach, and you'll see dynamic videos start getting created for each person in Sendspark.You can now add prospects to your sequences in Outreach, and you'll see dynamic videos start getting created for each person in Sendspark.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What do I need before setting this up?">
+    You need Outreach Admin access to connect the Sendspark Outreach App, and the Agentic Workflow feature enabled in Sendspark.
+  </Accordion>
+  <Accordion title="Where do I get the Dynamic Video Snippet?">
+    In Sendspark, click "Share Campaign" and search for "Outreach" in the modal, then click on Outreach to copy the snippet. Note that you need to generate at least one video from your dynamic video campaign to reach this page.
+  </Accordion>
+  <Accordion title="What trigger and action does the Agentic Workflow use?">
+    The trigger is "Outreach → Prospect Enrolled in Sequence" (with a condition that the task has a note containing your dynamic video campaign), and the action is Sendspark's "Create Dynamic Video." Then you select the Dynamic Video Campaign and map in the fields from Outreach.
+  </Accordion>
+  <Accordion title="Which field is essential to map?">
+    Make sure to map "email," as this is essential for the integration to work properly.
+  </Accordion>
+  <Accordion title="Why should I add a time delay in my sequence?">
+    We recommend leaving a brief time delay between when you enroll contacts in the sequence and when the email actually sends, to give the video time to generate.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

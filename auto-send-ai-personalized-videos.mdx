@@ -1,7 +1,22 @@
 ---
 title: "Auto-Send AI Personalized Videos"
 description: "Learn how to automatically send AI personalized videos through Instantly with Sendspark integration using dynamic campaigns and"
+keywords:
+  - auto-send AI personalized videos
+  - Instantly Sendspark automation
+  - agentic workflow video automation
+  - dynamic video campaign Instantly
+  - add lead to Instantly campaign automatically
 ---
+
+Set up a Sendspark Agentic Workflow so Instantly automatically emails each AI-personalized video the moment it's created. Build a Dynamic Video Campaign as your template, add its snippet to your Instantly email, then chain workflow steps that search for the lead in Instantly, create it if needed, and add it to your campaign, using a router to handle both cases.
+
+## Key takeaways
+
+- Your [Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions) acts as the template for every AI-personalized video created.
+- Add the Instantly snippet to your email template via **Share Campaign → Instantly**, pasting it where you want the video to appear.
+- In the agentic workflow, map at least the **email** or **first name** field — both are used in later steps.
+- A **Router** on the "Search Lead" step's Lead ID (non-empty) sends existing leads straight to "Add Lead To Campaign" and new leads through "Create Lead" first; enable duplicate checking to avoid adding a lead twice.
 
 Use these steps to have Instantly automatically send videos as soon as they're created through this automation.
 
@@ -87,3 +102,25 @@ What this means is, if your search finds a Lead ID, it will add that lead to the
 This is how your workflow look in the end. You can click on start button and add a prospect into your Dynamic Video Campaign and it will automatically do the all steps for you.
 
 ![Completed agentic workflow showing all seven steps connected](/images/12116804/2f099b45-image.png)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What triggers this automation?">
+    The workflow starts from your Sendspark Dynamic Video Campaign. When you add a prospect to the campaign and a video is created, the agentic workflow runs the remaining steps automatically to search, create, and add the lead in Instantly.
+  </Accordion>
+  <Accordion title="Which fields should I map from the Sendspark step?">
+    Map the fields you need, but we suggest always mapping the **email** and **first name** fields, because those are used in the later Instantly search and create-lead steps.
+  </Accordion>
+  <Accordion title="Why do I need both a 'Search Lead' and a 'Create Lead' step?">
+    The Search Lead step checks whether the contact already exists in Instantly. The Router then uses the Lead ID: if it's non-empty (the lead exists), the flow adds that lead to the campaign; if it's empty, it creates the lead first and then adds it. This prevents duplicate leads.
+  </Accordion>
+  <Accordion title="How do I stop the same lead being added twice?">
+    In the **Add Lead To Campaign** step, choose "yes" for check duplicates in the campaigns. Combined with the Router logic, this keeps existing leads from being recreated or added again.
+  </Accordion>
+  <Accordion title="Where does the video actually get inserted in the email?">
+    You paste the Instantly snippet (from **Share Campaign → Instantly**) directly into your Instantly sequence where you want the video to appear. The snippet is replaced with each lead's personalized video when the email sends.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

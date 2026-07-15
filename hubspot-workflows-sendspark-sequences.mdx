@@ -1,7 +1,22 @@
 ---
 title: "HubSpot: Workflows + Sendspark + Sequences"
 description: "Learn how to trigger personalized Sendspark videos and sequence emails in HubSpot Workflows. Step-by-step automation setup guide."
+keywords:
+  - HubSpot workflows Sendspark video
+  - HubSpot sequence dynamic video
+  - HubSpot create a video action
+  - automate video emails HubSpot
+  - Sendspark HubSpot integration
 ---
+
+This HubSpot Workflow automatically generates a personalized Sendspark video, enrolls the contact in a HubSpot Sequence, and sends an email containing the dynamic video. You set a workflow trigger, add the Sendspark **Create a Video** action with your credentials and campaign ID, enroll the contact in a sequence, then paste the HubSpot snippet into the sequence email.
+
+## Key takeaways
+
+- The workflow does three things: generates a personalized video in Sendspark, enrolls the contact in a HubSpot Sequence, and sends an email containing the dynamic video.
+- Before you start, confirm the Sendspark integration is installed under **Settings → Integrations → Connected Apps**.
+- The **Create a Video** action requires acknowledging charges, a Background URL, and your Sendspark credentials (Workspace ID, API Key, API Secret Key), plus mapping the Contact Email (required) and pasting your Dynamic Video Campaign ID.
+- Finish by copying the snippet for **HubSpot Sales Hub** from your Dynamic Video Campaign, pasting it into the sequence email body, and clicking **Update**.
 
 ## 🎬 How to Automate Video Emails: HubSpot → Sendspark Workflow
 
@@ -105,3 +120,25 @@ Now, whenever your trigger happens in HubSpot:
 - 🎥 A personalized video is generated
 - 📩 The contact is enrolled in your sequence
 - 🤖 The email sends automatically with the video included
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What does this HubSpot workflow do?">
+    It automatically generates a personalized video in Sendspark, enrolls the contact into a HubSpot Sequence, and sends an email containing the dynamic video.
+  </Accordion>
+  <Accordion title="What do I need to set up before building the workflow?">
+    Make sure the Sendspark integration is installed. Go to **Settings → Integrations → Connected Apps** and confirm it's connected before adding the Sendspark action to your workflow.
+  </Accordion>
+  <Accordion title="What fields are required in the Create a Video action?">
+    You need to check **Acknowledge Charges**, set a **Background URL** (selecting "Use email domain as background URL" ensures a background even if the contact has no website), and paste your Sendspark **credentials** — Workspace ID, API Key, and API Secret Key. You must also map the Contact Email (required) and paste your Dynamic Video Campaign ID.
+  </Accordion>
+  <Accordion title="Should I map Full Name or First Name for the contact?">
+    Map **First Name** rather than Full Name. First Name gives better pronunciation in the personalized video.
+  </Accordion>
+  <Accordion title="Where do I get the video snippet for the email?">
+    In Sendspark, open your Dynamic Video Campaign and copy the snippet code specifically for **HubSpot Sales Hub**. Paste it into the body of your HubSpot email step and click **Update** to save.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

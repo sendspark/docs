@@ -1,7 +1,22 @@
 ---
 title: "Create Contacts in Apollo If They Don't Already Exist"
 description: "Learn how to create contacts in Apollo when they don't exist using Router steps and conditional workflows for seamless automation."
+keywords:
+  - create contacts in Apollo
+  - Apollo router step
+  - Apollo create lead workflow
+  - enroll new Apollo contact
+  - Apollo video sequence automation
 ---
+
+Sometimes a contact doesn't exist in Apollo yet. To make sure everyone still gets enrolled in your video sequence, add a **Router step** to check whether the lead exists, add a **Create Lead in Apollo** step for the ones that are missing, then re-run the same HTTP request using the new lead's ID. A break between the two paths keeps existing and new leads separate.
+
+## Key takeaways
+
+- Add a **Router step** to check whether the lead already exists in Apollo.
+- If the lead is missing, add a **Create Lead in Apollo** step, then re-run the HTTP request using the newly created lead's ID (not the ID from "Find Lead").
+- Put a break between the two paths — existing lead vs. new lead — so each is handled correctly.
+- The result: no matter what, every contact ends up enrolled in your Apollo video sequence.
 
 Sometimes the contact may not exist in Apollo yet. You can account for this:
 
@@ -13,3 +28,24 @@ Sometimes the contact may not exist in Apollo yet. You can account for this:
 This ensures that no matter what, every contact ends up enrolled in your Apollo video sequence. The flow should look something like this:
 
 ![](/images/12194598/3340933d-image.png)
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Do I usually need this step?">
+    For the most part, no. Your contacts should already exist in Apollo because Apollo has a large database. Add this logic only if you believe some contacts might be missing.
+  </Accordion>
+  <Accordion title="How does the workflow handle new versus existing leads?">
+    A Router step checks whether the lead exists. Existing leads continue on one path, while missing leads get a **Create Lead in Apollo** step and then re-run the HTTP request with the new lead's ID. A break between the paths keeps the two cases separate.
+  </Accordion>
+  <Accordion title="Why re-run the HTTP request after creating the lead?">
+    The newly created lead has a different ID than the one returned by "Find Lead." You run the same request again referencing the new lead's ID so that contact gets enrolled.
+  </Accordion>
+  <Accordion title="What is the HTTP request enrolling contacts into?">
+    It calls Apollo's API to add the contact to your Apollo sequence. See [Auto-Send Personalized Video Emails in Apollo](/auto-send-personalized-video-emails-in-apollo) for the full enrollment automation this fits into.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

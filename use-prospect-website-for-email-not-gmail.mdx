@@ -1,7 +1,22 @@
 ---
 title: "Use Prospect Website for Email (Not Gmail)"
 description: "Learn how to use prospect's website in email address for personalized videos by creating a HubSpot workflow with Background URL"
+keywords:
+  - prospect website background url
+  - hubspot background url property
+  - dynamic video background from email
+  - exclude gmail background url
+  - hubspot workflow video personalization
 ---
+
+Sendspark can't automatically pull a prospect's website from their email address while skipping free domains like Gmail, but you can build this in HubSpot. Create a Background URL contact property, then a HubSpot workflow that sets it to the prospect's website when known and to your website when it isn't. Use that property when importing HubSpot leads into Sendspark.
+
+## Key takeaways
+
+- Sendspark does not natively derive a website from an email address while excluding free domains like Gmail; you build the logic in HubSpot instead.
+- Create a new **Background URL** contact property in HubSpot.
+- Use a HubSpot workflow to set Background URL to the prospect's website when known (auto-populated for company email addresses) and to your website when it isn't.
+- Map that Background URL property when importing HubSpot leads into Sendspark to make dynamic videos.
 
 You might be wondering... "Is it possible for Sendspark to show the prospects website from their email address, unless it's a free email address like Gmail?"
 
@@ -19,3 +34,22 @@ Then, you can use this property, "Background URL" whenever you are importing Hub
 Here's a walkthrough of how you could create this workflow in HubSpot:
 
 <iframe src="https://www.youtube.com/embed/ST2kPrtWFdY?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Can Sendspark automatically use a prospect's website unless it's a free email like Gmail?">
+    Sendspark does not have this advanced functionality built in. You can achieve the same result by setting up a Background URL property and workflow in HubSpot.
+  </Accordion>
+  <Accordion title="How do I set this up in HubSpot?">
+    Create a new **Background URL** contact property, then build a HubSpot workflow that decides what Background URL each contact should have.
+  </Accordion>
+  <Accordion title="What should Background URL be for contacts with a free email address?">
+    When HubSpot doesn't know the contact's website (which is typical for free email addresses), set Background URL to your own website as a fallback. When their website URL is known, use their website URL.
+  </Accordion>
+  <Accordion title="How do I use the Background URL property in Sendspark?">
+    Use the Background URL property whenever you import HubSpot leads into Sendspark to make dynamic videos.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

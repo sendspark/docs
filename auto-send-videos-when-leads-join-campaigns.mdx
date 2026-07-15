@@ -1,11 +1,26 @@
 ---
 title: "Auto-Send Videos When Leads Join Campaigns"
 description: "Learn how to automatically create and send AI-personalized videos when leads get added to Instantly campaigns using Sendspark"
+keywords:
+  - auto-send videos Instantly
+  - Sendspark Instantly automation
+  - AI personalized video campaign
+  - Instantly Email Sent trigger
+  - agentic workflow dynamic video
 ---
+
+To auto-send videos when leads join an Instantly campaign, create a dynamic video campaign in Sendspark, add its placeholder to your Instantly email, then build an Agentic Workflow that triggers on "Instantly — Email Sent" and runs the "Sendspark — Create Dynamic Video" action. Each lead gets a personalized video matched by email.
 
 In this article, we'll walk through how to automatically create and send AI-personalized videos when leads get added to campaigns in Instantly.
 
 You can use data fields in Instantly (like first name, company name, website URL, etc.) to personalize videos at scale.
+
+## Key takeaways
+
+- The flow has three pieces: a Sendspark dynamic video campaign, the Sendspark placeholder pasted into your Instantly email, and an Agentic Workflow that ties them together.
+- The workflow triggers on **"Instantly — Email Sent"**, so place your video placeholder in the 2nd (or later) step to give the video time to generate before it sends.
+- Filter the trigger by campaign ID and by first step so contacts don't re-enroll as later emails go out.
+- Always map the **email** field in the "Create Dynamic Video" action, since email is what updates the placeholder and ensures the right person receives the right video.
 
 ## How to Automatically Create Sendspark Videos When Leads Get Added to Instantly Campaigns
 
@@ -70,3 +85,22 @@ That's it! Your automation should look something like this:
 ![Sendspark completed workflow automation with start button ready](/images/12133851/a57442f0-image.png)
 
 If all looks good, hit **"start"** to start your automation, and start adding real contacts into Instantly.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why does my video placeholder need to be in the 2nd step, not the 1st?">
+    The automation is triggered *after* the first email is sent ("Instantly — Email Sent"). If the placeholder were in the first email, there wouldn't be time to generate the personalized video before that email goes out. Putting it in the 2nd (or later) step gives Sendspark enough time to create the video first.
+  </Accordion>
+  <Accordion title="How do I stop contacts from re-enrolling as I send more emails?">
+    Use the funnel next to your trigger to add filters. We recommend two: one that matches the specific Instantly campaign ID, and another that only fires on the first step. The first-step filter prevents contacts from re-enrolling every time a later email in the sequence sends.
+  </Accordion>
+  <Accordion title="Why is the email field so important in the Create Dynamic Video action?">
+    The email field is what updates the Sendspark placeholder inside your Instantly email campaign. It's the key that matches the right video to the right person, so if you skip it the correct video won't reach the correct recipient.
+  </Accordion>
+  <Accordion title="How do I paste the Sendspark placeholder into Instantly?">
+    In your dynamic video campaign, click **Share Campaign**, select **Instantly**, and copy the placeholder. In your Instantly email template, switch into **code view**, paste it, switch back to non-code view, and click **save**.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

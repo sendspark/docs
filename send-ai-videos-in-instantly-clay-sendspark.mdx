@@ -1,7 +1,22 @@
 ---
 title: "Send AI Videos in Instantly (Clay + Sendspark)"
 description: "Learn how to send AI videos in Instantly campaigns using Clay and Sendspark integration with step-by-step setup instructions."
+keywords:
+  - send AI videos in Instantly
+  - Clay Instantly Sendspark
+  - Instantly video code snippet
+  - Add Lead to Campaign Clay
+  - automated video email Instantly
 ---
+
+To send AI videos in Instantly from Clay, first paste your Sendspark Instantly share snippet into your Instantly email using Code View. Then, in Clay, add the "Add Lead to Campaign" Instantly enrichment with your Campaign ID and contact email. As videos generate in Clay, contacts are enrolled and receive their personalized video automatically. This guide assumes you've already [created Sendspark videos in Clay](/clay-integration-create-ai-videos).
+
+## Key takeaways
+
+- This guide assumes you've already created your Sendspark videos in Clay — if not, start with [how to create Sendspark videos in Clay](/clay-integration-create-ai-videos).
+- Prep the email by copying the **Instantly** snippet from **Share Campaign** and pasting it into your Instantly email in **Code View**; a Sendspark placeholder appears once you switch back out.
+- Preview the video as a real contact by clicking **Preview** and entering their address in the "email" variable.
+- Automate sending by adding Clay's **"Add Lead to Campaign"** Instantly enrichment, selecting your Campaign ID, and passing the contact email so videos are sent as soon as they generate.
 
 ## How to Send Videos in Smartlead via Clay
 
@@ -34,3 +49,22 @@ Now, the final step is to add a column in Clay to add your contact to the Instan
 - Add the contact email, and any other data you want to send to Instantly![AI Video Data to Send to Clay](/images/11115902/9deca50f-image.png)
 
 You can save and run the workflow. And that's it! Congratulations!!! 🥳
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Do I need to create the videos before following this guide?">
+    Yes. This guide assumes you've already created your Sendspark videos in Clay. If you haven't, start with [how to create Sendspark videos in Clay](/clay-integration-create-ai-videos) first.
+  </Accordion>
+  <Accordion title="How do I add the Sendspark video to my Instantly email?">
+    From Sendspark, click **Share Campaign**, then **Instantly** to copy the code snippet. In Instantly, switch your email into **Code View**, paste the snippet where you want the video, then switch back out. You'll see the Sendspark placeholder in your email.
+  </Accordion>
+  <Accordion title="Can I preview the video email before sending?">
+    Yes. Click **Preview** and enter the address of a contact who's been added to your Sendspark campaign in the "email" variable to see their personalized video.
+  </Accordion>
+  <Accordion title="How are contacts enrolled into the Instantly campaign automatically?">
+    In Clay, click **Add Enrichment**, search for Instantly, and select **"Add Lead to Campaign."** Choose your Campaign ID and pass the contact email (plus any other data). Save and run so contacts are enrolled as their videos generate.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._
