@@ -1,15 +1,66 @@
 ---
 title: "Salesforce \"Company\" variable missing - Workaround"
 description: "Fix missing Salesforce Company variable with our simple workaround. Learn how to resolve merge tag issues for video sharing."
+keywords:
+  - Salesforce Company variable missing
+  - Salesforce custom field workaround
+  - Sendspark Salesforce merge tags
+  - company merge tag Salesforce
 ---
 
-Are you trying to share a video making use of all our Merge tags but you realized that the field "Company" is missing from Salesforce?
+If the **Company** merge tag is missing when you share a Sendspark video in Salesforce, the fix is to create a custom **Company** text field in Salesforce, add it to your Contact page layout, fill it in for your contact, and then reference that field as a merge tag when you build the email.
 
-No worries! Here's a workaround:
+## Key takeaways
+
+- Sendspark works with three variables: **first name**, **company name**, and **job title**. The missing-Company issue only affects the company variable.
+- Salesforce does not always expose a Company field on a single contact, so you create one as a custom **Text** field under **Setup → Edit Object → Fields & Relationships**.
+- After creating the field you must add it to the **Contact** page layout and populate it on the contact before it can be merged into an email.
+- When you insert the Company merge field in Salesforce, copy the code between the curly braces and use it to replace the company portion of your Sendspark video link.
 
 <iframe src="https://www.youtube.com/embed/o_U7bLU0zfQ?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## How to add a Company field in Salesforce
+
+1. Open a contact and click **Edit** to check the available fields. If there is no **Company** field, this workaround creates one. (On a Windows computer you can press **Ctrl+F** in the fields list and search for "company" to confirm it is missing.)
+2. Click the **Setup** gear, then choose **Edit Object**. Tip: open it in a new browser tab so you don't lose your current page.
+3. Go to **Fields & Relationships** and click **New**.
+4. Select the **Text** field type and click **Next**.
+5. For the **Field Label**, type **Company** with a capital C. Set a character length such as 15 or 20, and confirm the **Field Name** reads **Company**. Click **Next**.
+6. On the next screen, leave the **field-level visibility** checkbox selected so you avoid an extra step later, then click **Next** and **Save**.
+7. Go to **Page Layouts**, open the **Contact Layout**, and drag the **Company** field into the layout where you want it (for example, just above the phone field). Click **Save**.
+8. Return to your contact, click **Edit**, enter the company name, and **Save**. If the value does not appear to save, refresh and try again. Editing another field at the same time can help it stick.
+
+## How to use the Company field when sharing your video
+
+1. In Sendspark, click **Share Video** and copy the **Image URL** and the **Video URL**. Paste both into a notepad or document so you can edit them.
+2. In Salesforce, open **Send List Email** for your contact and use the merge-field picker: choose **Contact**, then **Company**, and click **Insert**. Salesforce inserts a merge code wrapped in curly braces.
+3. Copy the code from between the curly braces (the part that refers to Company) and use it to replace the company portion of your Sendspark video link.
+4. Insert the video the usual way: click the **image** icon, choose **Web Image**, paste the **Image URL**, and click **Insert**. Then single-click the image, click the **link (chain)** icon, paste the **Video URL**, and **Save**.
+5. Send yourself a **test** first. Check for stray spaces in the subject or body before sending the real campaign.
 
 **If you do not know how to share a video in Salesforce, be sure to check this video:**  
 ​
 
 <iframe src="https://www.youtube.com/embed/30n_T0Eg4-0?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why is the Company variable missing in Salesforce?">
+    When you send to a single, specific contact, Salesforce does not always expose a Company field, so the company merge tag has nothing to pull from. Creating a custom Company text field and adding it to the Contact page layout gives the merge tag a field to reference.
+  </Accordion>
+  <Accordion title="Which variables does Sendspark support?">
+    Sendspark works with three variables: first name, company name, and job title. This workaround is only needed for the company name variable when that field is missing in Salesforce.
+  </Accordion>
+  <Accordion title="What field type should the Company field be?">
+    Use the Text field type. When naming it, use Company with a capital C for both the label and the field name so it matches cleanly.
+  </Accordion>
+  <Accordion title="I saved the field but the value isn't showing on the contact. What should I do?">
+    Refresh the page and try editing again. In some cases the value does not save on the first try, and editing another field at the same time can help it save correctly.
+  </Accordion>
+  <Accordion title="Do I still need to test before sending?">
+    Yes. Always send yourself a test email first. It's easy to miss issues like an extra space in the subject line, which can push text onto a new line.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

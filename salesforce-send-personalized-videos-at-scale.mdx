@@ -1,10 +1,56 @@
 ---
 title: "Salesforce: Send Personalized Videos at Scale"
 description: "Learn how to send personalized videos at scale through Salesforce with dynamic video campaigns and proper snippet code setup."
+keywords:
+  - Salesforce personalized video
+  - Sendspark Salesforce merge tags
+  - send list email Salesforce video
+  - personalized video variables Salesforce
 ---
+
+To send personalized videos through Salesforce, add Sendspark variables (first name, company name, job title) with fallback text to your video's header, message, and call-to-action, then share it in a Salesforce email using two links: the **Image URL** inserted as a web image, and the **Salesforce Video URL** attached to that image. Each recipient sees their own personalized version.
+
+## Key takeaways
+
+- Sendspark personalizes a video with three variables: **first name**, **company name**, and **job title**, added to the header, message, and call-to-action.
+- Always set **fallback text** for each variable so the video still reads well when a contact's field is empty.
+- You share the video in Salesforce using two copied links: the **Image URL** (inserted as a web image) and the **Salesforce Video URL** (attached to that image as a link).
+- The snippet/links must be applied to an actual email, not a template.
 
 Here you'll find how to share a Dynamic Video campaign through Salesforce.
 
 <iframe src="https://www.youtube.com/embed/30n_T0Eg4-0?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
 Pro tip: The snippet code needs to be applied to an email and not to a template
+
+## How to send personalized videos through Salesforce
+
+1. In Sendspark, open the video you want to share and go to its **edit** section. On the left you'll see the **Customize** options: the **header** (title), the **message** below the video, and the **call-to-action** button.
+2. Click into the header, message, or call-to-action and open the **personalize** dropdown to add a variable. You can choose **first name**, **company name**, or **job title**.
+3. When you add a variable, a small dialog lets you set **fallback text**. This is what displays if the contact's field is empty in Salesforce, so choose fallback text that still reads well (for example, "Hey there" instead of "Hey [first name]").
+4. Toggle the **call-to-action** on so your button appears, then finish setting up the video page.
+5. In Salesforce, go to **Contacts** and open the contact you want to email. Make sure the fields are filled in, including the **Title** field, which maps to Sendspark's job title variable. Click **Send List Email** and add a subject line.
+6. In the email editor, click the **image** icon and choose **Web Image**.
+7. Back in Sendspark, click **Share Video**. Under the shortcuts, click **Edit/Add**, find **Salesforce**, and enable the first two options, the **Image URL** and the **Video URL**. Click **Save changes** so both appear as shortcuts.
+8. Click the **Image URL** shortcut to copy it, return to Salesforce, paste it under **Enter Image URL**, and click **Insert**.
+9. Single-click the inserted image so it becomes highlighted, then click the **link (chain)** icon. Back in Sendspark, copy the **Salesforce Video URL**, return to Salesforce, clear the link field, paste the URL, and click **Save**. You can leave the other field empty.
+10. Send the email. Each recipient sees their personalized version, with variables replaced by their own data (or your fallback text).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which variables can I personalize?">
+    Sendspark offers three variables: first name, company name, and job title. You can add them to the video's header, message, and call-to-action.
+  </Accordion>
+  <Accordion title="What is fallback text and why does it matter?">
+    Fallback text is what displays when a contact's field is empty in Salesforce. Setting it ensures your video still reads well, for example showing "Hey there" instead of a blank space where the first name would go.
+  </Accordion>
+  <Accordion title="How many links do I copy from Sendspark?">
+    Two: the Image URL, which you insert as a web image, and the Salesforce Video URL, which you attach to that image as a link. Enable both under the Salesforce options in the Share Video shortcuts.
+  </Accordion>
+  <Accordion title="Should I add the code to a template or an email?">
+    Apply the links to an actual email, not a template. The Salesforce Title field maps to Sendspark's job title variable, so fill that in on the contact to take advantage of it.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._
