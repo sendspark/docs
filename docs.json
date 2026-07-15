@@ -33,6 +33,65 @@
   "styling": {
     "eyebrows": "section"
   },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity"
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Sign in",
+        "href": "https://app.sendspark.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Start free",
+      "href": "https://www.sendspark.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/sendspark/"
+    },
+    "links": [
+      {
+        "header": "Product",
+        "items": [
+          {
+            "label": "Pricing",
+            "href": "https://www.sendspark.com/pricing"
+          },
+          {
+            "label": "Integrations",
+            "href": "https://www.sendspark.com/integrations"
+          },
+          {
+            "label": "Request a demo",
+            "href": "https://www.sendspark.com/demo"
+          }
+        ]
+      },
+      {
+        "header": "Company",
+        "items": [
+          {
+            "label": "Privacy policy",
+            "href": "https://www.sendspark.com/privacy"
+          },
+          {
+            "label": "Terms of service",
+            "href": "https://www.sendspark.com/terms"
+          }
+        ]
+      }
+    ]
+  },
   "seo": {
     "metatags": {
       "canonical": "https://help.sendspark.com",
