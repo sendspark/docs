@@ -2374,6 +2374,30 @@
     {
       "source": "/en/collections/:slug*",
       "destination": "/"
+    },
+    {
+      "source": "/en/articles/6465055-*",
+      "destination": "/hubspot-marketing-emails-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/10812070-*",
+      "destination": "/hubspot-sales-sequences-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8448648-*",
+      "destination": "/use-a-combined-video-in-a-dynamic-video-campaign"
+    },
+    {
+      "source": "/en/articles/8915173-*",
+      "destination": "/linkedin-automation-send-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/8708738-*",
+      "destination": "/dynamic-videos-make-videos-with-ai-introductions"
+    },
+    {
+      "source": "/en/articles/12626407-*",
+      "destination": "/dynamic-videos-make-videos-with-ai-introductions"
     }
   ],
   "api": {
