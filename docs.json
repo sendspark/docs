@@ -798,7 +798,7 @@
               {
                 "group": "Getting started & plans",
                 "pages": [
-                  "get-started-with-sendspark-solo-plan",
+                  "get-started-with-sendspark-business-plan",
                   "getting-started-with-sendspark-starter",
                   "how-to-cancel-sendspark",
                   "how-to-request-a-video"
@@ -2195,8 +2195,12 @@
       "destination": "/can-i-use-the-request-video-link-multiple-times"
     },
     {
+      "source": "/get-started-with-sendspark-solo-plan",
+      "destination": "/get-started-with-sendspark-business-plan"
+    },
+    {
       "source": "/en/articles/5566769-*",
-      "destination": "/get-started-with-sendspark-solo-plan"
+      "destination": "/get-started-with-sendspark-business-plan"
     },
     {
       "source": "/en/articles/5566759-*",
