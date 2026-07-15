@@ -35,9 +35,18 @@
   },
   "seo": {
     "metatags": {
-      "canonical": "https://help.sendspark.com"
+      "canonical": "https://help.sendspark.com",
+      "description": "Sendspark help center — guides for recording, personalizing, and sending video at scale across your favorite sales and marketing tools."
     },
-    "indexing": "navigable"
+    "indexing": "navigable",
+    "organization": {
+      "name": "Sendspark",
+      "url": "https://www.sendspark.com",
+      "logo": "https://help.sendspark.com/logo/logo.svg",
+      "sameAs": [
+        "https://www.linkedin.com/company/sendspark/"
+      ]
+    }
   },
   "navigation": {
     "tabs": [
