@@ -4,6 +4,50 @@ description: "Learn how to create and share Dynamic Video campaigns in Close CRM
 
 
 ​Step-by-step tutorial to understand how to create and share a Dynamic Video campaign with Close CRM:"
+keywords:
+  - close dynamic video
+  - send dynamic video close crm
+  - close video email template
+  - close workflow video snippet
+  - sendspark close integration
 ---
 
+To send a dynamic video through Close, open your finished Dynamic Video campaign in Sendspark, click **Share Campaign**, and copy the **Close** snippet. In Close, create a new email template, paste the snippet into the body, and save. Add supporting text, attach the template to a workflow email, and enroll the contacts you generated videos for so each person receives their matching video.
+
+## Key takeaways
+
+- You share a dynamic video by copying the **Share Campaign → Close** snippet in Sendspark and pasting it into a **Close email template**.
+- In the template the snippet shows as a placeholder that becomes the right video for the right person, matched by email address.
+- Close adds some extra elements above and below the placeholder, and the template editor may show a broken image — this is expected because there's nothing to populate in the editor. It renders correctly when sent.
+- Add real text alongside the video rather than sending a thumbnail on its own, which helps deliverability. The only things needed from Sendspark are the snippet and sending to the same emails you created videos for.
+
 <iframe src="https://www.youtube.com/embed/sxDKpfK1r8s?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## How to send dynamic videos in Close
+
+1. **Finish your Dynamic Video campaign** in Sendspark. (New to this? See [Close — Send Personalized Videos at Scale](/close-send-personalized-videos-at-scale) for building the campaign from scratch.)
+2. In Close, create a new email template and give it a subject line.
+3. In the template body, go back to Sendspark, click **Share Campaign**, find **Close**, and click it — you'll see it copy the snippet to your clipboard.
+4. Place your cursor in the template body and paste with **Cmd+V** (Mac) or **Ctrl+V** (Windows). The snippet appears as the video placeholder.
+5. Add supporting text around the video so you're not sending a bare thumbnail, then **save** the template.
+6. Attach the template to a workflow email. A simple workflow — a manual trigger followed by the email — works well.
+7. Turn on the workflow, then go to **Contacts** and enroll the contacts you generated videos for. Each recipient receives their own personalized video, matched by email.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="The template shows a broken image. Is something wrong?">
+    No. The Close template editor has nothing to populate, so the placeholder can appear as a broken image. Whether you view it in the editor or switch to the code view, the snippet code is intact and the video renders correctly for recipients when the email is sent.
+  </Accordion>
+  <Accordion title="Close is adding elements above and below the video. Should I remove them?">
+    Don't worry about them. Close adds a few details around the placeholder that don't appear in the delivered email. The placeholder still resolves to the correct personalized video when sent.
+  </Accordion>
+  <Accordion title="How does each contact get the right video?">
+    The video is matched by email address. As long as you send to the same email addresses you generated videos for, the placeholder resolves to the correct video for each person, with the background changing per contact.
+  </Accordion>
+  <Accordion title="Should I send just the video thumbnail on its own?">
+    No. Add real text alongside the video to enrich the message. Sending only a thumbnail can hurt deliverability, so pair the video with written context.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

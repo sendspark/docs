@@ -1,12 +1,57 @@
 ---
 title: "Apollo — Send Dynamic Videos"
 description: "Learn how to send dynamic Sendspark videos through Apollo.io. Integrate Sendspark with Apollo for personalized video outreach at scale."
+keywords:
+  - apollo dynamic video
+  - send dynamic video apollo
+  - apollo video snippet template
+  - personalized video apollo sequence
+  - sendspark apollo csv
 ---
 
 ## Sending Dynamic Videos With Apollo
 
 Are you wondering how to send dynamic videos using Apollo? If so, I can help you with that. Sending dynamic videos with Apollo is easy and convenient
 
+Sending a Dynamic Video campaign through Apollo takes two things: the code snippet Sendspark generates for Apollo, and the CSV file of contacts Sendspark produces for that campaign. Paste the snippet into an Apollo **email template** (not directly into a sequence body), then upload the CSV to Apollo so each contact receives the right video. The email address ties the correct video to the correct person.
+
+## Key takeaways
+
+- Two pieces are required: the **Apollo code snippet** from **Share Campaign**, and the **CSV file** Sendspark produces for the campaign.
+- Paste the snippet into **Emails → Templates → create a template**, never directly into a sequence's email body. Pasting it straight into a sequence appears to work but breaks the variables when you send.
+- Download and upload **Sendspark's CSV**, not your original list. Sendspark's export only includes the contacts a video was successfully generated for.
+- On upload, only the **email** field is required. Email is the unique key that matches each video to each recipient; background URL, video link, and GIF URL are optional.
+
 ## Video Tutorial
 
 <iframe src="https://www.youtube.com/embed/IYJKujo2P_w?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## How to send dynamic videos in Apollo
+
+1. **Finish your Dynamic Video campaign** in Sendspark. (New to this? Start with [Apollo — Send Static Videos at Scale](/apollo-send-static-videos-at-scale) to build the campaign first.)
+2. In Sendspark, click **Share Campaign**, find and select **Apollo**, and copy the code snippet it provides.
+3. In Apollo, go to **Emails → Templates** and **create a new template**. Paste the snippet into the template body — it automatically turns into the video thumbnail preview.
+4. Adjust any surrounding text, add a subject line, name the template, and click **Save**.
+5. In your sequence, open the email step and click **Load templates**, select the template you created, clone it, and save. Do not paste the raw snippet into the sequence body.
+6. Back in Sendspark, **download the campaign CSV file**.
+7. In Apollo, go to **Contacts → Add contacts → Upload CSV file** and import that file. When mapping fields, map the **email** column (required); the other columns are optional.
+8. Enroll those contacts in your sequence. Each recipient receives their own personalized video, matched by email address.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why can't I paste the snippet directly into the sequence email?">
+    Apollo's sequence email body and its templates look similar but do not behave the same way. If you paste the snippet straight into a sequence body it will appear to work, but the personalization variables break when the email actually sends. Always paste the snippet into a template (Emails → Templates), then load that template into your sequence.
+  </Accordion>
+  <Accordion title="Why do I need to download Sendspark's CSV instead of using my own list?">
+    When you generate videos for many contacts, some videos may not render — for example, a prospect's website may fail to respond in time while thousands of videos are being created. Sendspark's exported CSV is a clean file containing only the contacts a video was successfully generated for, so you don't email people who would receive an empty placeholder.
+  </Accordion>
+  <Accordion title="Which fields do I have to map when uploading the CSV to Apollo?">
+    Only the **email** field is required. Email is the unique variable that connects the right video to the right person. The background URL, video link, and GIF URL columns are optional — they're provided in case you want to use them elsewhere (for example, in Zapier). First name, company, and job title are useful for Apollo variables but are not mandatory.
+  </Accordion>
+  <Accordion title="What is the circle shown behind the thumbnail?">
+    That is the fallback image. It's only used if you accidentally email someone who isn't in your generated list, so the thumbnail still looks intact instead of appearing empty. Contacts who are in your list see their own personalized video.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._
