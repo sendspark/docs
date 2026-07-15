@@ -1,7 +1,22 @@
 ---
 title: "Outreach - Auto-Send AI Personalized Videos"
 description: "Learn how to automatically send AI personalized videos in Outreach using Sendspark automation with video placeholders and workflows."
+keywords:
+  - auto-send personalized videos Outreach
+  - Sendspark Outreach automation
+  - Outreach video placeholder
+  - add prospect to Outreach sequence workflow
+  - Sendspark agentic workflow Outreach
 ---
+
+To auto-send AI personalized videos in Outreach, first paste your Sendspark video placeholder into an Outreach email template, then build a Sendspark Agentic Workflow that triggers on a chosen event, finds the prospect in Outreach by email, and adds them to your sequence. Each prospect then receives an email with the personalized video made for them.
+
+## Key takeaways
+
+- Setup has two parts: add the Sendspark video placeholder to an Outreach email template, then build an Agentic Workflow that enrolls prospects into the sequence.
+- The placeholder shows the right video per person automatically, as long as a video exists in Sendspark for that contact's email address.
+- The workflow needs an **Outreach - Find Prospect By Email Address** action before **Outreach - Add Prospect to Sequence**, because the sequence step requires the Prospect ID, not the email.
+- This method works when every person receives a video from the **same** Dynamic Video campaign; if the prospect doesn't yet exist in Outreach, add an **Outreach - Create Prospect** step (or a router) first.
 
 Follow these steps or watch the video below to automatically send videos in Outreach after they've been created from any Sendspark automation.
 
@@ -73,6 +88,12 @@ Now, you can add the next action for **Outreach - Add Prospect to Sequence**. Se
 
 Altogether, the fields should look something like this:
 
+| Field | What it is | Where it comes from |
+| --- | --- | --- |
+| **Sequence ID** | The Outreach sequence you're adding the contact to | Select from the dropdown; click **Update List** to refresh options |
+| **Prospect ID** | The Outreach prospect ID | Select from the previous **Find Prospect By Email** step |
+| **Mailbox ID** | The sender email address to send from | Choose the Outreach mailbox you want to use |
+
 ![Outreach Add Prospect to Sequence action with Sequence ID, Prospect ID, and Mailbox ID fields](/images/12082407/b0b16a85-image.png)
 
 ## Part III. Start the Automation
@@ -135,3 +156,25 @@ If your sequence could include a mix of new & existing prospects, you could add 
 **Entire Automation:**
 
 ![Complete Sendspark automation workflow with router and conditional prospect creation paths](/images/12082407/41fada38-image.png)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I automatically send personalized videos in Outreach?">
+    Paste your Sendspark video placeholder into an Outreach email template, then build a Sendspark Agentic Workflow that triggers on your chosen event, finds the prospect in Outreach by email address, and adds them to your sequence. Each prospect then receives the personalized video created for them.
+  </Accordion>
+  <Accordion title="Why is my Sendspark video not showing up in Outreach when I test?">
+    The most common cause is previewing a contact you haven't actually created a Sendspark video for. Check that (1) you've created a video in Sendspark for the prospect you're testing, and (2) the prospect has the same email address in both Outreach and Sendspark.
+  </Accordion>
+  <Accordion title="Why is my prospect not being added to the Outreach sequence?">
+    Confirm your "Add Prospect to Sequence" step uses the **Prospect ID**, not the prospect email — add a "Find Prospect By Email Address" step to look it up. If you're still getting a "prospect not found" error, the prospect likely doesn't exist in Outreach yet, so add an **Outreach - Create Prospect** step first.
+  </Accordion>
+  <Accordion title="Can I automatically create a Sendspark video when a prospect is enrolled in a sequence?">
+    Yes, but it's a different workflow. Use the **trigger: Outreach - Prospect Enrolled in Sequence**, select your target sequence, then add an action to create a Sendspark video. Keep the Sendspark placeholder in your sequence and leave a time delay (around 15 minutes) for the video to generate.
+  </Accordion>
+  <Accordion title="Does this work if I use multiple senders in one Outreach sequence?">
+    No. This placeholder method works when every person in the sequence receives a video from the same Sendspark Dynamic Video campaign. If you're using multiple senders, you'll need a different approach.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._
