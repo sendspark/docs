@@ -123,6 +123,7 @@
         "groups": [
           {
             "group": "Getting Started",
+            "icon": "rocket",
             "pages": [
               "index",
               "ai-video-templates-scripts-teleprompter",
@@ -151,6 +152,7 @@
           },
           {
             "group": "Dynamic Video",
+            "icon": "wand-magic-sparkles",
             "pages": [
               "how-to-use-lip-cloning",
               "how-to-turn-voice-cloning-s-personalization-off",
@@ -260,6 +262,7 @@
           },
           {
             "group": "Installations & Integrations",
+            "icon": "puzzle-piece",
             "pages": [
               "how-to-connect-sendspark-and-salesforge",
               {
@@ -326,6 +329,7 @@
           },
           {
             "group": "Automated Workflows",
+            "icon": "gears",
             "pages": [
               "auto-generate-videos-from-skylead-campaign",
               "create-dynamic-video-backgrounds-from-email-domains",
@@ -393,73 +397,114 @@
           },
           {
             "group": "Advanced Skills",
+            "icon": "graduation-cap",
             "pages": [
-              "ai-voice-cloning-how-to-get-the-best-results",
-              "ai-personalized-videos-in-multiple-languages",
-              "automate-video-sharing-through-zapier",
-              "automations-for-notifications",
-              "camera-effects-blur-virtual-backgrounds",
-              "camera-or-microphone-not-detected-no-inputs",
-              "can-autoplay-videos-include-sound",
-              "connect-ai-apps-mcp",
-              "connect-linkedin-for-dynamic-videos",
-              "custom-domain-migration",
-              "hide-chrome-bookmarks-bar-when-recording",
-              "how-enable-disable-the-like-button",
-              "how-to-create-and-use-multiple-workspaces",
-              "how-to-delete-a-video",
-              "how-to-remove-team-members",
-              "how-to-adjust-the-thumbnail-s-size-in-lemlist",
-              "how-to-brand-your-recording-toolbar",
-              "how-to-bulk-delete-videos",
-              "how-to-change-your-email-address-and-password",
-              "how-to-connect-linkedin-and-sendspark",
-              "how-to-create-api-keys",
-              "how-to-create-sub-accounts-for-agencies",
-              "how-to-create-a-dynamic-video-campaign",
-              "how-to-download-videos-in-bulk-using-zapier",
-              "how-to-embed-calendars-with-videos",
-              "how-to-make-dynamic-videos-with-linkedin-profiles",
-              "how-to-make-videos-with-dynamic-backgrounds",
-              "how-to-make-an-ai-generated-video-script",
-              "how-to-modify-shortcuts-on-share-modal",
-              "how-to-recover-videos-desktop-app",
-              "how-to-rename-a-video",
-              "how-to-replace-a-video-while-keeping-the-same-link",
-              "how-to-trim-videos-in-sendspark",
-              "how-to-understand-video-analytics",
-              "how-to-upload-a-custom-video-thumbnail",
-              "how-to-use-autoplay-on-sendspark",
-              "how-to-use-camera-spotlight",
-              "how-to-use-templates",
-              "how-to-use-the-sendspark-countdown-timer",
-              "how-to-use-an-image-as-a-background-url",
-              "how-to-enable-or-disable-captions",
-              "languages-supported-in-dynamic-videos",
-              "make-longer-videos-use-less-dynamic-video-minutes",
-              "missing-thumbnail-emails-in-spam-folder",
-              "move-videos-between-personal-and-team-libraries",
-              "multiple-variables-in-dynamic-videos",
-              "pitch-deck-videos-with-google-slides",
-              "record-screen-and-computer-audio",
-              "recording-missing-when-switching-chrome-tabs",
-              "regenerate-videos-edit-variables",
-              "salesforce-company-variable-missing-workaround",
-              "sendspark-recording-shortcuts-and-hotkeys",
-              "simulate-scrolling-a-webpage-in-dynamic-video",
-              "slack-notification-for-new-dynamic-videos",
-              "supported-email-automation-platforms",
-              "the-correct-recording-method-for-dynamic-videos",
-              "tips-for-sending-videos-over-linkedin-messages",
-              "touch-up-your-appearance",
-              "track-who-has-watched-your-videos",
-              "use-merge-tags-to-personalize-videos-at-scale",
-              "use-a-combined-video-in-a-dynamic-video-campaign",
-              "using-apollo-stage-ids-in-sendspark-automations",
-              "video-analytics-vs-email-open-rates",
-              "voice-cloning-with-multiple-languages",
-              "webhook-payload-ghl",
-              "webhooks-how-to-create-webhooks-in-sendspark",
+              {
+                "group": "Recording & camera",
+                "pages": [
+                  "camera-effects-blur-virtual-backgrounds",
+                  "camera-or-microphone-not-detected-no-inputs",
+                  "hide-chrome-bookmarks-bar-when-recording",
+                  "how-to-brand-your-recording-toolbar",
+                  "how-to-use-camera-spotlight",
+                  "pitch-deck-videos-with-google-slides",
+                  "record-screen-and-computer-audio",
+                  "recording-missing-when-switching-chrome-tabs",
+                  "sendspark-recording-shortcuts-and-hotkeys",
+                  "touch-up-your-appearance"
+                ]
+              },
+              {
+                "group": "AI voice & language",
+                "pages": [
+                  "ai-voice-cloning-how-to-get-the-best-results",
+                  "ai-personalized-videos-in-multiple-languages",
+                  "how-to-make-an-ai-generated-video-script",
+                  "languages-supported-in-dynamic-videos",
+                  "voice-cloning-with-multiple-languages"
+                ]
+              },
+              {
+                "group": "Dynamic video techniques",
+                "pages": [
+                  "connect-linkedin-for-dynamic-videos",
+                  "how-to-create-a-dynamic-video-campaign",
+                  "how-to-make-dynamic-videos-with-linkedin-profiles",
+                  "how-to-make-videos-with-dynamic-backgrounds",
+                  "how-to-use-an-image-as-a-background-url",
+                  "make-longer-videos-use-less-dynamic-video-minutes",
+                  "multiple-variables-in-dynamic-videos",
+                  "regenerate-videos-edit-variables",
+                  "salesforce-company-variable-missing-workaround",
+                  "simulate-scrolling-a-webpage-in-dynamic-video",
+                  "the-correct-recording-method-for-dynamic-videos",
+                  "use-merge-tags-to-personalize-videos-at-scale",
+                  "use-a-combined-video-in-a-dynamic-video-campaign"
+                ]
+              },
+              {
+                "group": "Managing your video library",
+                "pages": [
+                  "how-to-adjust-the-thumbnail-s-size-in-lemlist",
+                  "how-to-bulk-delete-videos",
+                  "how-to-delete-a-video",
+                  "how-to-recover-videos-desktop-app",
+                  "how-to-rename-a-video",
+                  "how-to-replace-a-video-while-keeping-the-same-link",
+                  "how-to-trim-videos-in-sendspark",
+                  "how-to-upload-a-custom-video-thumbnail",
+                  "how-to-use-templates",
+                  "move-videos-between-personal-and-team-libraries"
+                ]
+              },
+              {
+                "group": "Playback & engagement",
+                "pages": [
+                  "can-autoplay-videos-include-sound",
+                  "how-enable-disable-the-like-button",
+                  "how-to-embed-calendars-with-videos",
+                  "how-to-enable-or-disable-captions",
+                  "how-to-modify-shortcuts-on-share-modal",
+                  "how-to-use-autoplay-on-sendspark",
+                  "how-to-use-the-sendspark-countdown-timer",
+                  "missing-thumbnail-emails-in-spam-folder"
+                ]
+              },
+              {
+                "group": "Analytics & tracking",
+                "pages": [
+                  "how-to-understand-video-analytics",
+                  "track-who-has-watched-your-videos",
+                  "video-analytics-vs-email-open-rates"
+                ]
+              },
+              {
+                "group": "Account, team & workspaces",
+                "pages": [
+                  "custom-domain-migration",
+                  "how-to-change-your-email-address-and-password",
+                  "how-to-create-and-use-multiple-workspaces",
+                  "how-to-create-sub-accounts-for-agencies",
+                  "how-to-remove-team-members"
+                ]
+              },
+              {
+                "group": "Automation, API & webhooks",
+                "pages": [
+                  "automate-video-sharing-through-zapier",
+                  "automations-for-notifications",
+                  "connect-ai-apps-mcp",
+                  "how-to-connect-linkedin-and-sendspark",
+                  "how-to-create-api-keys",
+                  "how-to-download-videos-in-bulk-using-zapier",
+                  "slack-notification-for-new-dynamic-videos",
+                  "supported-email-automation-platforms",
+                  "tips-for-sending-videos-over-linkedin-messages",
+                  "using-apollo-stage-ids-in-sendspark-automations",
+                  "webhook-payload-ghl",
+                  "webhooks-how-to-create-webhooks-in-sendspark"
+                ]
+              },
               {
                 "group": "Edit Videos",
                 "pages": [
@@ -507,6 +552,7 @@
           },
           {
             "group": "Public API and Webhooks",
+            "icon": "code",
             "pages": [
               "api-automatically-create-dynamic-videos-via-api",
               "webhooks-properties-in-sendspark-webhooks"
@@ -514,68 +560,104 @@
           },
           {
             "group": "FAQ & Troubleshooting",
+            "icon": "life-ring",
             "pages": [
-              "ai-voice-cloning-faqs",
-              "agentic-workflows-add-variable-fallbacks",
-              "automatically-download-files-with-your-cta-button",
-              "bulk-video-downloads-with-agentic-workflows",
-              "can-i-use-the-request-video-link-multiple-times",
-              "can-you-send-emails-from-sendspark",
-              "dynamic-video-campaign-limits",
-              "dynamic-video-campaigns-configuring-error-handling-for-dynamic-backgrounds",
-              "dynamic-video-length",
-              "dynamic-videos-2026",
-              "edit-landing-page-in-dynamic-video-campaign",
-              "fallback-websites-in-dynamic-video-feature",
-              "give-the-chrome-extension-permission-to-record",
-              "how-to-clear-site-data",
-              "how-to-create-a-free-trial",
-              "how-to-enable-disable-hardware-acceleration",
-              "how-to-get-notified-when-someone-watches-your-video",
-              "how-to-hide-the-sendspark-recording-toolbar",
-              "how-to-pause-resume-videos",
-              "how-to-record-system-audio-in-sendspark",
-              "how-to-remove-breakpoints-from-combined-videos",
-              "how-to-remove-hubspot-s-hubl-code-warning-message",
-              "how-to-review-and-pay-our-invoices",
-              "how-to-set-or-change-your-logo",
-              "how-to-update-your-payment-method",
-              "how-to-adjust-the-logo-size",
-              "how-to-avoid-triggering-spam-filters",
-              "how-to-find-your-workspace-id",
-              "how-to-fix-black-recording-with-sendspark",
-              "how-to-record-in-powerpoint-in-full-screen",
-              "how-to-record-videos-over-pdf-files-chrome-extension",
-              "hubspot-auto-send-videos-from-different-sales-reps",
-              "linkedin-background-video-generation-limits",
-              "linkedin-profile-background-won-t-create-video",
-              "locked-out-of-my-account-lost-account-access",
-              "log-in-issues-troubleshoot",
-              "mac-app-blocked-by-apple-security-check",
-              "multiple-variables-guideline",
-              "my-download-is-slow",
-              "optimize-ai-voice-output-in-dynamic-videos",
-              "permissions-missing",
-              "record-over-powerpoint-pdfs-applications",
-              "share-dynamic-videos-without-sales-email-tools",
-              "solo-growth-team-plan-features",
-              "third-party-platform-limitations",
-              "troubleshooting-recording-issues-chrome-extension",
-              "use-prospect-website-for-email-not-gmail",
-              "using-sendspark-with-multiple-screens",
-              "variables-and-placeholders-in-sendspark-videos",
-              "watch-videos-in-fullscreen",
-              "what-are-dynamic-video-minutes-credits",
-              "what-video-formats-can-i-upload-to-sendspark",
-              "what-to-do-when-video-processing-is-taking-too-long",
-              "why-is-my-video-washed-out-after-uploading-it",
-              "why-isn-t-my-camera-working",
-              "why-your-card-doesn-t-support-this-payment",
-              "why-is-my-audio-video-out-of-sync",
-              "why-is-my-video-uploading-slowly",
-              "why-is-the-chrome-extension-not-working",
-              "why-is-there-no-audio-on-my-video",
-              "how-to-create-a-video-email-signature",
+              {
+                "group": "Recording & camera issues",
+                "pages": [
+                  "give-the-chrome-extension-permission-to-record",
+                  "how-to-clear-site-data",
+                  "how-to-enable-disable-hardware-acceleration",
+                  "how-to-hide-the-sendspark-recording-toolbar",
+                  "how-to-pause-resume-videos",
+                  "how-to-record-system-audio-in-sendspark",
+                  "how-to-fix-black-recording-with-sendspark",
+                  "how-to-record-in-powerpoint-in-full-screen",
+                  "how-to-record-videos-over-pdf-files-chrome-extension",
+                  "permissions-missing",
+                  "record-over-powerpoint-pdfs-applications",
+                  "troubleshooting-recording-issues-chrome-extension",
+                  "using-sendspark-with-multiple-screens",
+                  "why-isn-t-my-camera-working",
+                  "why-is-the-chrome-extension-not-working"
+                ]
+              },
+              {
+                "group": "Playback & video quality",
+                "pages": [
+                  "watch-videos-in-fullscreen",
+                  "why-is-my-video-washed-out-after-uploading-it",
+                  "why-is-my-audio-video-out-of-sync",
+                  "why-is-my-video-uploading-slowly",
+                  "why-is-there-no-audio-on-my-video"
+                ]
+              },
+              {
+                "group": "Dynamic video & AI questions",
+                "pages": [
+                  "ai-voice-cloning-faqs",
+                  "agentic-workflows-add-variable-fallbacks",
+                  "dynamic-video-campaigns-configuring-error-handling-for-dynamic-backgrounds",
+                  "dynamic-video-length",
+                  "dynamic-videos-2026",
+                  "edit-landing-page-in-dynamic-video-campaign",
+                  "fallback-websites-in-dynamic-video-feature",
+                  "linkedin-profile-background-won-t-create-video",
+                  "multiple-variables-guideline",
+                  "optimize-ai-voice-output-in-dynamic-videos",
+                  "use-prospect-website-for-email-not-gmail",
+                  "variables-and-placeholders-in-sendspark-videos"
+                ]
+              },
+              {
+                "group": "Account & billing",
+                "pages": [
+                  "how-to-create-a-free-trial",
+                  "how-to-review-and-pay-our-invoices",
+                  "how-to-set-or-change-your-logo",
+                  "how-to-update-your-payment-method",
+                  "how-to-adjust-the-logo-size",
+                  "how-to-find-your-workspace-id",
+                  "locked-out-of-my-account-lost-account-access",
+                  "log-in-issues-troubleshoot",
+                  "why-your-card-doesn-t-support-this-payment"
+                ]
+              },
+              {
+                "group": "Plans, limits & credits",
+                "pages": [
+                  "dynamic-video-campaign-limits",
+                  "linkedin-background-video-generation-limits",
+                  "solo-growth-team-plan-features",
+                  "what-are-dynamic-video-minutes-credits"
+                ]
+              },
+              {
+                "group": "Sharing & integrations",
+                "pages": [
+                  "automatically-download-files-with-your-cta-button",
+                  "bulk-video-downloads-with-agentic-workflows",
+                  "can-you-send-emails-from-sendspark",
+                  "how-to-remove-hubspot-s-hubl-code-warning-message",
+                  "how-to-avoid-triggering-spam-filters",
+                  "hubspot-auto-send-videos-from-different-sales-reps",
+                  "share-dynamic-videos-without-sales-email-tools",
+                  "third-party-platform-limitations",
+                  "how-to-create-a-video-email-signature"
+                ]
+              },
+              {
+                "group": "General questions",
+                "pages": [
+                  "can-i-use-the-request-video-link-multiple-times",
+                  "how-to-get-notified-when-someone-watches-your-video",
+                  "how-to-remove-breakpoints-from-combined-videos",
+                  "mac-app-blocked-by-apple-security-check",
+                  "my-download-is-slow",
+                  "what-video-formats-can-i-upload-to-sendspark",
+                  "what-to-do-when-video-processing-is-taking-too-long"
+                ]
+              },
               {
                 "group": "Sendspark Partner Program",
                 "pages": [
@@ -587,6 +669,7 @@
           },
           {
             "group": "Regular Videos",
+            "icon": "video",
             "pages": [
               {
                 "group": "Record Videos",
@@ -710,48 +793,74 @@
           },
           {
             "group": "More Guides",
+            "icon": "book-open",
             "pages": [
-              "analytics-update-implications-for-videos-recorded-before-jan-19-2022",
-              "analytics-update-percentage-watched",
-              "bridger-send-personalized-videos-at-scale",
-              "change-camera-microphone-source",
-              "close-send-personalized-videos-at-scale",
-              "create-contacts-in-apollo-if-they-don-t-already-exist",
-              "delete-a-folder",
-              "filter-videos-by-creators",
-              "filter-videos-by-plays-likes-and-cta-clicked",
-              "get-started-with-sendspark-solo-plan",
-              "getting-started-with-sendspark-starter",
-              "greenhouse-recruiting",
-              "groove",
-              "growbots",
-              "how-merge-tag-fallbacks-work",
-              "how-to-understand-sendspark-video-analytics",
-              "how-to-add-salesloft-tracking-snippet-to-sendspark",
-              "how-to-cancel-sendspark",
-              "how-to-create-a-folder-in-sendspark",
-              "how-to-edit-your-linkedin-messages",
-              "how-to-move-videos-between-folders",
-              "how-to-request-a-video",
-              "how-to-search-videos-in-sendspark",
-              "how-to-add-google-tag-manager-to-sendspark",
-              "keep-send-ai-personalized-video-emails",
-              "leadconnector-send-personalized-videos-at-scale",
-              "leadsimple",
-              "microsoft-dynamics-crm",
-              "multilead-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
-              "phoneburner-send-personalized-videos-at-scale",
-              "podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
-              "rename-a-folder",
-              "reorder-videos",
-              "salesforce-cadences-send-personalized-videos-at-scale",
-              "salesforce-marketing-cloud-send-personalized-videos-at-scale",
-              "saleshandy",
-              "save-default-meeting-links",
-              "sendspark-desktop-application-for-macos",
-              "upload-avatars",
-              "uptics-integration",
-              "vincere"
+              {
+                "group": "Getting started & plans",
+                "pages": [
+                  "get-started-with-sendspark-solo-plan",
+                  "getting-started-with-sendspark-starter",
+                  "how-to-cancel-sendspark",
+                  "how-to-request-a-video"
+                ]
+              },
+              {
+                "group": "Organizing your library",
+                "pages": [
+                  "delete-a-folder",
+                  "filter-videos-by-creators",
+                  "filter-videos-by-plays-likes-and-cta-clicked",
+                  "how-to-create-a-folder-in-sendspark",
+                  "how-to-move-videos-between-folders",
+                  "how-to-search-videos-in-sendspark",
+                  "rename-a-folder",
+                  "reorder-videos",
+                  "save-default-meeting-links",
+                  "upload-avatars"
+                ]
+              },
+              {
+                "group": "Analytics",
+                "pages": [
+                  "analytics-update-implications-for-videos-recorded-before-jan-19-2022",
+                  "analytics-update-percentage-watched",
+                  "how-to-understand-sendspark-video-analytics"
+                ]
+              },
+              {
+                "group": "Recording & desktop app",
+                "pages": [
+                  "change-camera-microphone-source",
+                  "sendspark-desktop-application-for-macos"
+                ]
+              },
+              {
+                "group": "Integration guides",
+                "pages": [
+                  "bridger-send-personalized-videos-at-scale",
+                  "close-send-personalized-videos-at-scale",
+                  "create-contacts-in-apollo-if-they-don-t-already-exist",
+                  "greenhouse-recruiting",
+                  "groove",
+                  "growbots",
+                  "how-merge-tag-fallbacks-work",
+                  "how-to-add-salesloft-tracking-snippet-to-sendspark",
+                  "how-to-add-google-tag-manager-to-sendspark",
+                  "how-to-edit-your-linkedin-messages",
+                  "keep-send-ai-personalized-video-emails",
+                  "leadconnector-send-personalized-videos-at-scale",
+                  "leadsimple",
+                  "microsoft-dynamics-crm",
+                  "multilead-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
+                  "phoneburner-send-personalized-videos-at-scale",
+                  "podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
+                  "salesforce-cadences-send-personalized-videos-at-scale",
+                  "salesforce-marketing-cloud-send-personalized-videos-at-scale",
+                  "saleshandy",
+                  "uptics-integration",
+                  "vincere"
+                ]
+              }
             ]
           }
         ]
@@ -767,6 +876,7 @@
         "groups": [
           {
             "group": "Get started",
+            "icon": "circle-play",
             "pages": [
               "mcp/overview",
               "mcp/connect"
@@ -774,6 +884,7 @@
           },
           {
             "group": "Reference",
+            "icon": "wrench",
             "pages": [
               "mcp/tools"
             ]
