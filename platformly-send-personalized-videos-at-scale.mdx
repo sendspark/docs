@@ -1,7 +1,22 @@
 ---
 title: "Platformly —  Send Personalized Videos at Scale"
 description: "Learn how to send personalized videos at scale in Platformly using Sendspark integration with merge tags for automated customization."
+keywords:
+  - send personalized videos Platformly
+  - Platformly video email
+  - Sendspark Platformly integration
+  - merge tags personalized video
+  - embed video Platformly HTML
 ---
+
+To send personalized videos at scale in Platformly, record your video in Sendspark, add merge tags to personalize the name, company, or job title for each recipient, then click Share Video and copy the Platformly snippet. Paste it into Platformly's HTML email builder where you want the video to appear, and send.
+
+## Key takeaways
+
+- The Sendspark + Platformly integration uses [merge tags](/use-merge-tags-to-personalize-videos-at-scale) to automatically swap in the right first name, company name, or job title for each recipient.
+- You share the video by clicking **Share Video**, selecting **Platformly**, and copying the snippet, then pasting it into Platformly's HTML email builder.
+- If you don't see Platformly on the share modal, you can [modify your shortcuts](/how-to-modify-shortcuts-on-share-modal).
+- Whether the video plays in-line depends on the recipient's email client; clients that don't support video (like Gmail or Outlook) show a clickable fallback image instead.
 
 ## Why Send Bulk Personalized Videos in Platformly?
 
@@ -58,3 +73,25 @@ If they are using an email client that supports video (like Apple Mail, Superhum
 ## 2. Can I send combined videos this way?
 
 You **cannot** embed combined videos in email this way. Instead, we recommend sending the video as [an image + a link](/hubspot-embed-videos-in-emails-as-images).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I personalize the video for each recipient?">
+    Add [merge tags](/use-merge-tags-to-personalize-videos-at-scale) to the video page or thumbnail text. They automatically update for each recipient with details like first name, company name, or job title. If a recipient's information is unknown, they'll see a [fallback](/how-merge-tag-fallbacks-work).
+  </Accordion>
+  <Accordion title="Where do I paste the Sendspark snippet in Platformly?">
+    From any email in Platformly, switch to the HTML email builder and paste your video snippet where you want the video to appear. Click the HTML button again to preview the video email. It helps to leave yourself a note like "video goes here" so the spot is easy to find in the code.
+  </Accordion>
+  <Accordion title="Why don't I see Platformly on the share modal?">
+    If Platformly isn't listed on the Sendspark share modal, you can [modify your shortcuts](/how-to-modify-shortcuts-on-share-modal) to add it.
+  </Accordion>
+  <Accordion title="Will the video play inside the email?">
+    It might, depending on the recipient's email client. Clients that support video (like Apple Mail, Superhuman, or Samsung) play it in-line; clients that don't (like Gmail or Outlook) show a fallback image the recipient clicks to watch in their browser. See [which email clients support video](https://blog.sendspark.com/which-email-clients-support-embedded-videos).
+  </Accordion>
+  <Accordion title="Can I embed a combined video this way?">
+    No. Combined videos cannot be embedded in email through the snippet. Instead, send the video as [an image plus a link](/hubspot-embed-videos-in-emails-as-images).
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

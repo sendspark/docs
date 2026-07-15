@@ -1,9 +1,24 @@
 ---
 title: "HighLevel - Create & Share Videos"
 description: "Learn how to create and share personalized videos in HighLevel automations using Sendspark integration for automated prospects"
+keywords:
+  - HighLevel video integration
+  - send personalized videos HighLevel
+  - HighLevel Sendspark webhook
+  - automated videos HighLevel
+  - dynamic video HighLevel workflow
 ---
 
+The HighLevel + Sendspark integration generates a personalized video for each contact and sends it back into HighLevel automatically. You connect HighLevel as an Agentic Workflow trigger, pass contact fields through a Custom Webhook, create the dynamic video, then push the share URL and email HTML snippet back to the contact for use in emails, SMS, or WhatsApp.
+
 Easily create and share videos in HighLevel workflows to send personalized videos to your prospects... 100% automated!
+
+## Key takeaways
+
+- Generate and share personalized videos automatically from any trigger event in HighLevel, using contact properties like first name and company name.
+- Pass data with a **Custom Webhook** (not the other **Webhook** field) — there are two webhook fields in HighLevel and only the Custom Webhook works here.
+- Create two custom contact fields in HighLevel — **Sendspark Share URL** (for SMS/WhatsApp) and **Sendspark Email HTML Snippet** (for email) — so Sendspark can push data back.
+- Add a time delay of roughly 15 minutes before sending, to give Sendspark enough time to generate the video.
 
 ## What You Can Do With HighLevel + Sendspark
 
@@ -72,3 +87,27 @@ A: When you're sending the webhook, you can add lines with more contact fields t
 A: Click "Update" to make sure you're seeing all available HighLevel fields in Sendspark.
 
 ![Sendspark field update button in contact field selection interface](/images/12060743/f112b644-image.png)
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which webhook field should I use in HighLevel?">
+    Use the **Custom Webhook** field, not the other **Webhook** field. HighLevel has two webhook fields and it's easy to confuse them — if data isn't reaching Sendspark, this is the most common cause.
+  </Accordion>
+  <Accordion title="Which contact fields does Sendspark support from HighLevel?">
+    Sendspark supports contact email, contact first name, contact job title, company name, and a background URL (used behind your video when you're using a Dynamic Background). Send whichever fields you plan to use in your video.
+  </Accordion>
+  <Accordion title="How do I send the generated video back into HighLevel?">
+    Before setting up the automation, create two custom contact fields in HighLevel: **Sendspark Share URL** (for SMS or WhatsApp) and **Sendspark Email HTML Snippet** (for email). Then add a **HighLevel: Update a Contact** action in Sendspark, map in the Contact ID, and push those fields back.
+  </Accordion>
+  <Accordion title="Why aren't my HighLevel custom variables showing in Sendspark?">
+    Click **Update** to refresh the available HighLevel fields in Sendspark. This applies both to the fields you send in and to the custom fields you create for pushing data back.
+  </Accordion>
+  <Accordion title="How long should I wait before sending the video?">
+    Add a time delay of about 15 minutes in your HighLevel automation before the email, SMS, or WhatsApp step. This gives Sendspark enough time to generate the personalized video before it's shared.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

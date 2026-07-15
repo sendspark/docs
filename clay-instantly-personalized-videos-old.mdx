@@ -1,7 +1,15 @@
 ---
 title: "Clay + Instantly: Personalized Videos (Old)"
 description: "Learn how to create personalized AI videos in Clay and automate email delivery through Instantly for enhanced outreach campaigns."
+keywords:
+  - Clay Instantly personalized videos
+  - Sendspark API Clay
+  - AI video outreach automation
+  - generate videos Clay HTTP API
+  - share dynamic videos Instantly
 ---
+
+This guide uses the Sendspark API to automatically create and send personalized videos: build a lead list in Clay, generate AI-personalized videos by calling Sendspark's API through a Clay HTTP request, then share those videos in an Instantly email sequence. Each stage is covered step by step below.
 
 **We now have a direct Clay integration! We'd recommend you use the direct integration instead of the API for simplicity. Here's the [link to the new guide](/clay-integration-create-ai-videos).**
 
@@ -20,6 +28,13 @@ These are the steps:
 3. [Share videos in email sequences in Instantly](#h_fe951ea5e8)
 
 Let's dive in!
+
+## Key takeaways
+
+- There's now a direct Clay integration, which we recommend over this API method for simplicity — see the [new guide](/clay-integration-create-ai-videos). This API approach is still useful if you want to swap in other platforms (Make, HighLevel for automation; Smartlead, Apollo, Outreach, Salesloft for email).
+- The workflow has three stages: create a qualified lead list in Clay, generate AI videos via a Clay **HTTP API** request to Sendspark, then share the videos in Instantly.
+- For AI personalization, record with the starter phrase **"Hi Watermelon"** and toggle voice cloning **on** — a better mic gives better AI results.
+- Put the video email in the **second step** of your Instantly sequence so videos have time to generate and your first email stays plain text for deliverability.
 
 ---
 
@@ -143,3 +158,25 @@ You've successfully...
 3. And enrolled them in an email sequence
 
 Congratulations!!!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Should I still use this API method?">
+    For most cases we recommend the [direct Clay integration](/clay-integration-create-ai-videos) instead, since it's simpler. This API method remains useful if you want to swap in other automation platforms (like Make or HighLevel) or other email senders (like Smartlead, Apollo, Outreach, or Salesloft).
+  </Accordion>
+  <Accordion title="Why do I record with the phrase &quot;Hi Watermelon&quot;?">
+    "Watermelon" is a placeholder starter phrase. With voice cloning toggled on, Sendspark replaces the word "watermelon" with each contact's name in the video's audio, and the on-page "first name" variable updates too. Using a better-quality mic improves the AI result.
+  </Accordion>
+  <Accordion title="Can I use platforms other than Clay and Instantly?">
+    Yes. You can swap Clay for another automation tool such as Make or HighLevel, and swap Instantly for another email sender such as Smartlead, Apollo, Outreach, or Salesloft.
+  </Accordion>
+  <Accordion title="How do I know the Clay HTTP API request worked?">
+    You'll see a **200** status in the Clay column, and videos will start generating in your Sendspark campaign. Once the first 10 rows look good, you can run the request for all remaining rows or any that errored.
+  </Accordion>
+  <Accordion title="Why put the video email in the second step of the sequence?">
+    Two reasons: it gives your videos time to generate (about a minute each, longer for a large list as the last video finishes), and keeping the first email plain text with no images or links helps deliverability.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

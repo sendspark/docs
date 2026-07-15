@@ -1,7 +1,21 @@
 ---
 title: "HubSpot: Auto-Send Videos from Different Sales Reps"
 description: "Learn how to configure HubSpot Workflows to automatically send Sendspark videos from the correct sales rep. Scale personalized outreach."
+keywords:
+  - hubspot send videos from different reps
+  - hubspot workflow sendspark video
+  - round robin sales rep video
+  - auto-send personalized video hubspot
+  - sendspark hubspot app
 ---
+
+When demos are round-robined across sales reps, you can still auto-send the right video from the right person. Build a HubSpot Workflow, use branches to determine the assigned rep, add a step that uses the Sendspark HubSpot App to create the video, then send that rep's email with the Sendspark dynamic video snippet embedded.
+
+## Key takeaways
+
+- Use a **HubSpot Workflow** with **branches** to route each contact to their assigned rep (for example, after a round-robin demo booking).
+- Each branch uses the **Sendspark HubSpot App** step to automatically create the video for that rep.
+- Follow the create-video step with the **rep's own email**, which has the **Sendspark dynamic video snippet** embedded, so the video comes from the correct person.
 
 <iframe src="https://www.youtube.com/embed/NIFPrywjnWI?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -17,3 +31,21 @@ How would you automatically send the right video from the right person?
 2. Use branches to distinguish which rep should be creating the video
 3. Use the Sendspark HubSpot App to automatically create the video
 4. Follow that step with the right email from the rep (with the Sendspark dynamic video snippet embedded in that email)
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How does the right video get sent from the right rep when demos are assigned by round robin?">
+    Inside the HubSpot Workflow you add branches that distinguish which rep a contact was assigned to. Each branch creates the video with the Sendspark HubSpot App and sends that rep's own email, so the video always matches the assigned person.
+  </Accordion>
+  <Accordion title="What creates the video inside the workflow?">
+    The Sendspark HubSpot App step. You add it into the workflow so the personalized video is created automatically for each contact.
+  </Accordion>
+  <Accordion title="How is the video included in the email?">
+    The rep's email step has the Sendspark dynamic video snippet embedded, so the personalized video appears in the message that goes out from that rep.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

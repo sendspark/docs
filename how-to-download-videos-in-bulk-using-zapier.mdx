@@ -1,7 +1,22 @@
 ---
 title: "How to Download Videos in Bulk Using Zapier"
 description: "Learn how to download multiple videos at once using Zapier webhooks, Google Sheets, and JDownloader2 for efficient bulk downloads."
+keywords:
+  - download videos in bulk
+  - zapier bulk video download
+  - sendspark webhook zapier
+  - jdownloader2 bulk download
+  - export dynamic video links
 ---
+
+To download videos in bulk from a Sendspark dynamic video campaign, connect a Zapier "Catch Hook" webhook to Sendspark's "When a video is created" event, route the download links into a Google Sheet, then copy the link column into a download manager like JDownloader2 to download them all at once.
+
+## Key takeaways
+
+- Connect a **Zapier Catch Hook** webhook to Sendspark's **When a video is created** event before generating videos — Zapier won't receive already-generated content.
+- Send the email and download link for each video into a **Google Sheet** with `email` and `download link` columns.
+- Choose the right link resolution: **high-res** for background videos, **lower resolution** for full-screen face recordings.
+- Copy the download-link column into **JDownloader2**, which auto-detects the links and downloads them in bulk.
 
 <iframe src="https://www.youtube.com/embed/FHAuhRseXAw?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -93,3 +108,22 @@ If you're running a dynamic video campaign and want to download multiple videos 
 ## ❓Need Help?
 
 If you run into issues or have any questions, feel free to reach out to our support team. We’re happy to help!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why do videos need to be non-generated when I connect the webhook?">
+    Zapier only receives videos created *after* the webhook is connected. It won't pull in past or already-generated content, so connect the webhook before triggering generation to make sure every video's link reaches your Google Sheet.
+  </Accordion>
+  <Accordion title="Which download link should I map — high-res or low-res?">
+    It depends on the video type. For a **background video**, choose the **high-res** link. For a **full-screen face recording**, select the **lower resolution** link.
+  </Accordion>
+  <Accordion title="What do I need before starting?">
+    A dynamic video campaign (with non-generated videos), a Zapier account, a Google Sheet with `email` and `download link` headers, and a download manager such as [JDownloader2](http://jdownloader.org/).
+  </Accordion>
+  <Accordion title="My download links aren't showing correctly in Zapier — what should I check?">
+    Double-check your webhook payload and the structure of your Google Sheet. Make sure the sheet has the correct `email` and `download link` columns and that the fields are mapped to the right values from the webhook data.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

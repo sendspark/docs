@@ -1,7 +1,22 @@
 ---
 title: "HubSpot: Workflows + Sendspark + Marketing Email"
 description: "Learn how to create AI-personalized videos automatically using Sendspark HubSpot integration workflows for leads, forms, and meetings."
+keywords:
+  - hubspot workflow dynamic video
+  - sendspark hubspot integration
+  - create dynamic video hubspot action
+  - automatically send video email hubspot
+  - hubspot marketing email video snippet
 ---
+
+This guide shows how to automatically generate Sendspark dynamic videos from **HubSpot workflow actions**, then optionally email them once each video is created. Use it to make AI-personalized videos when new contacts are added, leads submit forms, prospects book sales meetings, or any tracked HubSpot action fires.
+
+## Key takeaways
+
+- **Part 1:** add the "Create a Dynamic Video" workflow action (under Connected Apps → Sendspark) to generate AI-personalized videos on any HubSpot trigger.
+- The action needs your Workspace ID, Dynamic Campaign ID, contact fields, website URL, API key, and API secret — all found on your Sendspark API credentials page.
+- **Part 2:** build a second workflow triggered by the "Dynamic Video Generated for Contact" property to automatically email the video once it's ready.
+- In that email, paste your HubSpot Marketing Hub share snippet (from Share Campaign at the bottom of the campaign builder) into an HTML block.
 
 This article will show you how to automatically generate Sendspark dynamic videos through **HubSpot workflow actions**.
 
@@ -126,3 +141,27 @@ Now, whenever contacts are sent this email, they will get the dynamic video that
 **6. Turn on the workflow!**
 
 That's it! Now when your contacts dynamic videos have generated, they will automatically receive a personalized video email made just for them.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What HubSpot triggers can generate a dynamic video?">
+    Any trigger you set on the workflow. Common examples are new contacts being added, leads filling out a form, prospects scheduling a sales meeting, or any other action tracked in HubSpot. In this guide a form submission is used because it's easy to test.
+  </Accordion>
+  <Accordion title="Where do I find my Workspace ID, API key, and API secret?">
+    On your [Sendspark API credentials page](https://sendspark.com/settings/api-credentials). If you don't see an API key, click "Create New Key" to generate one. You'll generate a new secret key each time you create a new campaign, so copy it to your clipboard immediately.
+  </Accordion>
+  <Accordion title="Where do I find the Dynamic Video Campaign ID?">
+    Look at the URL of your Dynamic Video Campaign builder — the ID is the value between the two slashes at the end of the URL.
+  </Accordion>
+  <Accordion title="What happens when I run out of dynamic video minutes?">
+    At the top of the action form there's a checkbox, "I authorize to buy additional DVMs if required," which enables pay-as-you-go pricing. If you leave it unchecked, your automations stop working once you hit your dynamic video minutes and start again the following month.
+  </Accordion>
+  <Accordion title="I don't see Sendspark as a workflow action or enrollment trigger — what's wrong?">
+    You likely haven't connected the HubSpot app yet. Connect it in your [Sendspark Integration settings](https://sendspark.com/settings/integrations) or install the [Sendspark + HubSpot App](https://app.hubspot.com/ecosystem/6058669/marketplace/apps/marketing/video/sendspark), then Sendspark will appear under Connected Apps and as a trigger property.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

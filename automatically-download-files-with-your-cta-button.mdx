@@ -1,7 +1,22 @@
 ---
 title: "Automatically download files with your CTA button"
 description: "Learn how to set up automatic file downloads with CTA buttons in Sendspark using direct links from Dropbox and Google Drive."
+keywords:
+  - Sendspark CTA button file download
+  - direct download link CTA
+  - Dropbox direct download link
+  - Google Drive direct download link
+  - share files with video CTA
 ---
+
+To automatically download a file from a Sendspark CTA button, upload the file to Dropbox or Google Drive, convert the share link into a direct-download link, then paste that link into your CTA button. Direct links download the file instantly when viewers click, reducing friction compared with a regular share link.
+
+## Key takeaways
+
+- Sendspark CTA buttons can link to files hosted on Dropbox or Google Drive; set the file permission to "Anyone with the link."
+- Two methods work: an **indirect link** (opens the file's page to download manually) or a **direct link** (downloads immediately on click). Direct is recommended.
+- For **Dropbox**, change `dl=0` to `dl=1` at the end of the share link.
+- For **Google Drive**, rebuild the link as `https://drive.google.com/uc?export=download&id=FILE-ID`.
 
 <iframe src="https://www.youtube.com/embed/H9itMQs2j-g?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -77,3 +92,22 @@ If that wasn't clear, here's another example with visual help.In red, you'll see
 By following these steps, your viewers can quickly and easily download your shared files, improving their overall experience.
 
 For any further assistance, feel free to contact Sendspark Support.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What's the difference between an indirect and a direct download link?">
+    An indirect link sends the viewer to the file's page on Dropbox or Google Drive, where they download it manually. A direct link starts the download immediately when the CTA button is clicked. Direct links are recommended because they reduce friction for viewers.
+  </Accordion>
+  <Accordion title="How do I make a Dropbox direct download link?">
+    Copy the shareable link, find the `dl=0` at the end of the URL, and change the `0` to `1` — for example, `https://www.dropbox.com/s/example?dl=0` becomes `https://www.dropbox.com/s/example?dl=1`. Paste the updated link into the Sendspark CTA button.
+  </Accordion>
+  <Accordion title="How do I make a Google Drive direct download link?">
+    Take the file's share link, remove the `/file/d/` and `/view?usp=sharing` sections, and rebuild it as `https://drive.google.com/uc?export=download&id=FILE-ID`, keeping the file ID from the original link. Paste the result into the CTA button.
+  </Accordion>
+  <Accordion title="Why isn't my file downloading when someone clicks the button?">
+    Check that the file's permissions allow "Anyone with the link" to view or download it, and test the link yourself to confirm the direct-download behavior works before sharing.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

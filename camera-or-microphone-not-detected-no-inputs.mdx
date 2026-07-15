@@ -1,7 +1,22 @@
 ---
 title: "Camera or Microphone not detected / No Inputs"
 description: "Fix camera or microphone not detected issues in Sendspark Chrome Extension with these troubleshooting steps and settings solutions."
+keywords:
+  - camera not detected Sendspark
+  - microphone not detected Sendspark
+  - no inputs Chrome Extension
+  - Sendspark mic not working
+  - fix no camera inputs
 ---
+
+If Sendspark shows "No Camera Inputs" or "No Microphone Inputs," another app is usually controlling your device or the wrong input is selected. Close apps like OBS or Zoom that may have taken over the camera or mic, connect the device directly to your computer, select the correct input in the Chrome Extension Settings, and check the site's permissions in Chrome.
+
+## Key takeaways
+
+- Another application (such as OBS or Zoom) controlling your camera or microphone can stop Sendspark from detecting it — close those apps first.
+- Connect the microphone directly to your PC or Mac rather than through a USB hub or external monitor.
+- In the Chrome Extension Settings, select the correct microphone and make sure it isn't toggled off or set to a different device from a previous session.
+- For a permanent fix, set your default microphone in Chrome at `chrome://settings/content/microphone`, and check that the site has no restrictions applied.
 
 If this is what you see when you open your Sendspark Chrome Extension, this guide is for you.
 
@@ -25,3 +40,25 @@ Click on SITE SETTINGS to access the following page:
 ![site settings](/images/9203993/b59d94c6-image.png)
 
 Related article: "**Why is there no audio on my video?"** [troubleshoot missing audio](/why-is-there-no-audio-on-my-video)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why does Sendspark say there are no camera or microphone inputs?">
+    Most often another application is controlling your peripherals. Recording apps like OBS or even Zoom can take control of the camera or microphone and prevent Sendspark from detecting them. Close those apps and try again.
+  </Accordion>
+  <Accordion title="My microphone is connected but still isn't detected — what should I check?">
+    Check whether the microphone is connected directly to your computer or through an external device like a USB hub or external monitor. If it's going through an external device, try connecting it directly to the PC or Mac.
+  </Accordion>
+  <Accordion title="How do I select the right microphone in the Chrome Extension?">
+    Go to the Chrome Extension Settings and choose the correct microphone from the dropdown. Make sure it isn't toggled to "off" from a previous session, and isn't set to a different microphone than the one you want to use.
+  </Accordion>
+  <Accordion title="How do I fix this permanently?">
+    Change your default microphone in Chrome by entering `chrome://settings/content/microphone` in your address bar and pressing Enter. You should also open Site Settings to confirm the site doesn't have restrictions previously applied to the camera or microphone.
+  </Accordion>
+  <Accordion title="What if my video records but has no audio?">
+    That's a separate issue — see [Why is there no audio on my video?](/why-is-there-no-audio-on-my-video) for steps to troubleshoot missing audio.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

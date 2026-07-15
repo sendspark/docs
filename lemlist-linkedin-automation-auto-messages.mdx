@@ -1,7 +1,22 @@
 ---
 title: "Lemlist LinkedIn Automation: Auto Messages"
 description: "Learn how to automate personalized LinkedIn messages using Lemlist and Sendspark with dynamic videos in a fully autopilot workflow."
+keywords:
+  - Lemlist LinkedIn automation
+  - Lemlist Sendspark integration
+  - automate LinkedIn video message
+  - dynamic video Lemlist
+  - LinkedIn video follow-up
 ---
+
+To automate personalized LinkedIn messages, connect Sendspark to Lemlist so each new dynamic video is pushed into a Lemlist campaign and sent as a LinkedIn follow-up with the GIF preview unfurled. You'll create a Lemlist custom variable for the link, enable Auto Launch, and build a Sendspark Agentic Workflow triggered on New Video Generated.
+
+## Key takeaways
+
+- Lemlist needs a campaign-specific custom variable to store the video link; give it a simple name like `custom`.
+- Build a Sendspark Agentic Workflow with the trigger New Video Generated and the action Add a lead to a campaign, mapping the video link to your custom field as a string.
+- Only send the video link as a follow-up message to people you're already connected with; never put it in a connection request, which LinkedIn may flag as spam.
+- LinkedIn automatically unfurls the URL, so the video preview/GIF appears with no extra configuration.
 
 ## 📘 Overview
 
@@ -132,3 +147,25 @@ Once everything is set up:
 4. Lemlist adds the lead to your campaign.
 5. Video link fills your custom variable.
 6. LinkedIn message is sent automatically with GIF preview.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why do I need a custom variable in Lemlist?">
+    Lemlist requires a custom variable to store the Sendspark video link so it can be inserted into the message. These custom variables are campaign-specific, not global, so create one inside the campaign you're automating.
+  </Accordion>
+  <Accordion title="Can I put the video link in a LinkedIn connection request?">
+    No. Do not add the video link in connection requests. LinkedIn suppresses previews there and may flag it as spam. Only send the video as a follow-up message, and make sure you're already connected.
+  </Accordion>
+  <Accordion title="How does the video show up on LinkedIn?">
+    When Lemlist sends the message with the Sendspark link, LinkedIn unfurls the URL and the video preview/GIF appears automatically. It looks native and clean with no extra configuration needed.
+  </Accordion>
+  <Accordion title="What triggers the automation?">
+    In Sendspark's Agentic Workflows, the trigger is New Video Generated for your chosen dynamic video campaign. It fires every time a personalized video is generated, pushing the lead and video link to Lemlist.
+  </Accordion>
+  <Accordion title="How do I map the video link to Lemlist?">
+    In the workflow action, scroll to Lead Custom Field, type the exact custom variable name (for example `custom`), set the type to string, and map it to Video Link from Sendspark.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

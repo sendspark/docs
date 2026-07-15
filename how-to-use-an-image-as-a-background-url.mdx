@@ -1,7 +1,23 @@
 ---
 title: "How to Use an Image as a Background URL"
 description: "Use a custom image URL as your video background in Sendspark to create on-brand, personalized dynamic videos. Supports any publicly accessible image URL."
+keywords:
+  - image background url sendspark
+  - use image as dynamic video background
+  - google drive image link sendspark
+  - personalized image outreach
+  - dynamic video background image
 ---
+
+Yes, you can use an image instead of a video as your dynamic video background in Sendspark. Upload the image to Google Drive, set sharing to "Anyone with the link can view," then edit the share link into a direct format and paste it into the Background URL field. Personalization features still apply.
+
+## Key takeaways
+
+- Sendspark is built for dynamic videos, but you can still use its personalization features with a static image as the background.
+- The image must be publicly accessible: in Google Drive, set link access to "Anyone with the link can view."
+- For image files (PNG, JPG), rewrite the share link to the direct format `https://drive.google.com/uc?export=view&id=FILE_ID`.
+- For PDFs or other non-image files, change the end of the link from `/view` to `/preview` (you can't avoid seeing the zoom controls in this case).
+- Keep the public sharing link active for the whole time the campaign is running.
 
 Can I use an image instead of a video in a Sendspark dynamic video?
 
@@ -67,3 +83,27 @@ When editing the Background URL field, paste the copied public sharing URL from 
 ​
 
 By following these steps, you can create personalized image messages with Sendspark, adding a unique touch to your outreach campaigns
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Can I use an image instead of a video in a dynamic video campaign?">
+    Yes. While Sendspark is built for dynamic videos, you can still use its personalization features with an image. Set the image as your Background URL and personalize as you normally would.
+  </Accordion>
+  <Accordion title="Why does my image need to be publicly shared?">
+    Sendspark pulls the image from the URL you provide, so it has to be reachable without a login. In Google Drive, right-click the image, choose "Share," and set access to "Anyone with the link can view."
+  </Accordion>
+  <Accordion title="How do I format a Google Drive link for an image (PNG, JPG)?">
+    Remove the `file/d/xxxxx/view...` portion of the share link and replace it with `uc?export=view&id=` followed by the same file ID. For example, `https://drive.google.com/file/d/FILE_ID/view?usp=sharing` becomes `https://drive.google.com/uc?export=view&id=FILE_ID`.
+  </Accordion>
+  <Accordion title="What if my file is a PDF or another non-image file?">
+    Use the same share link but change the ending from `/view` to `/preview`. Note that with non-image files you can't avoid seeing the zoom controls in the background.
+  </Accordion>
+  <Accordion title="Do I need to keep the Google Drive link active during the campaign?">
+    Yes. Keep the public sharing link active on Google Drive for as long as the campaign is running, otherwise the background image won't load. Using a high-resolution image also gives the best results.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

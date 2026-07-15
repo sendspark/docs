@@ -1,7 +1,22 @@
 ---
 title: "GHL - Auto-Generate Video on Meeting Booking"
 description: "Learn how to automatically generate personalized Sendspark videos when someone books a meeting in GoHighLevel using webhooks and"
+keywords:
+  - gohighlevel auto generate video
+  - ghl meeting booking video
+  - ghl sendspark webhook
+  - dynamic video on appointment booked
+  - ghl custom webhook sendspark
 ---
+
+To auto-generate a Sendspark video when someone books a meeting in GoHighLevel, build a GHL workflow with a **Customer Booked Appointment** trigger, then add a **Custom Webhook** action that calls Sendspark's Add Single Prospect endpoint. Sendspark creates a personalized dynamic video for each booking automatically.
+
+## Key takeaways
+
+- The trigger is **Customer Booked Appointment** on the calendar linked to your booking form; the form's **Website** field feeds the video's background personalization.
+- Use a **Custom Webhook** action (not the standard one) pointing at Sendspark's **Add Single Prospect** endpoint, with `accept`, `key`, and `secret` headers taken from **Menu → API Credentials** in Sendspark.
+- The payload maps `firstName`, `email`, and the booking form's website URL. Required fields must be present or the webhook fails — leave unused fields like job title or company empty, and remove a background URL field entirely rather than leaving it blank.
+- Use `#&#123;&#123;contact.website&#125;&#125;` for the background, not `#&#123;&#123;contact.website_Url&#125;&#125;`. Test in Incognito mode and check the webhook execution log if no video appears.
 
 ## 🔄 Automatically Generate Videos in Sendspark When Someone Books a Meeting in GoHighLevel
 
@@ -158,3 +173,27 @@ Once everything is set up and tested:
 
 If anything’s unclear or doesn’t work as expected, reach out — we're happy to assist.  
 Thanks for following along!
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which trigger and action do I use in GoHighLevel?">
+    Use the **Customer Booked Appointment** trigger on your booking calendar, then add a **Custom Webhook** action (not the standard webhook). The custom webhook is what calls Sendspark to generate the video.
+  </Accordion>
+  <Accordion title="What URL and headers does the webhook need?">
+    Point the webhook at Sendspark's **Add Single Prospect** endpoint (found in the Help Center). Add the `accept`, `key`, and `secret` headers, which you get from **Menu → API Credentials** in Sendspark. This also works for bulk requests.
+  </Accordion>
+  <Accordion title="Why is my video not generating?">
+    Required fields must be present or the webhook fails. Confirm `firstName` and `email` are mapped, that the website URL comes from the booking form, and that unused fields (like a background URL you're not using) are removed rather than left empty. Then check the webhook execution log in GoHighLevel to confirm the payload was accepted.
+  </Accordion>
+  <Accordion title="Which website merge field should I use for the background?">
+    Use `#&#123;&#123;contact.website&#125;&#125;` only. Do not select `#&#123;&#123;contact.website_Url&#125;&#125;` — it won't personalize the background correctly.
+  </Accordion>
+  <Accordion title="How do I test the setup?">
+    Save all settings, save the action in GoHighLevel, and publish the workflow. Then test in Incognito mode: make a booking and check Sendspark for the video generation status, refreshing enrollment or logs if needed.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

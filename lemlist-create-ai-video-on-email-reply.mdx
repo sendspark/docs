@@ -1,7 +1,22 @@
 ---
 title: "Lemlist - Create AI Video on Email Reply"
 description: "Learn how to create AI video automation in Lemlist that generates personalized videos when recipients reply to your email campaigns."
+keywords:
+  - Lemlist AI video automation
+  - generate video on email reply
+  - Sendspark Lemlist automated workflow
+  - personalized video Lemlist campaign
+  - Lemlist emails replied trigger
 ---
+
+You can automatically generate and send a personalized video when someone replies "yes" to a Lemlist email. Set up a Sendspark automated workflow that triggers on Lemlist's "Emails Replied" event, generates a dynamic video for the lead, then adds them to a second Lemlist follow-up campaign that already contains your Sendspark video snippet.
+
+## Key takeaways
+
+- The setup uses three pieces: an outbound Lemlist campaign, a follow-up Lemlist campaign with a Sendspark video placeholder, and a Sendspark automated workflow that ties them together.
+- The Sendspark workflow trigger is **Lemlist → Emails Replied**, connected with a Lemlist API key pasted as the access token; filter by **Campaign Name contains** so only replies to the right campaign enter the automation.
+- The workflow then runs **Sendspark → Create dynamic video** (the email field is essential to match the right video to the right person) followed by **Lemlist → Add Lead to Campaign**.
+- Paste the Sendspark video snippet into the follow-up campaign via Lemlist's **code view** so each replying prospect receives the video made for them.
 
 Do you want to send out email campaign asking someone if they would like to see a video on how you can help them, and then automatically generate & send that video after they reply **"yes?"**
 
@@ -112,3 +127,25 @@ Save this step, and turn on the Sendspark automation, that is it!
 1. When a prospect replies to one Lemlist email sequence it, will trigger an automation in Sendspark
 2. In the automation in Sendspark, you'll generate a dynamic video, and then add the lead to a SECOND campaign in Lemlist
 3. In the second campaign, you have a Sendspark dynamic video snippet where you want the video to go, so when the prospect receives the email, they'll get a personalized video made for them!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What do I need to set up before building the automation?">
+    Do the prep work first: create your outbound Lemlist campaign, create your [dynamic video campaign in Sendspark](/dynamic-videos-make-videos-with-ai-introductions), create your follow-up Lemlist campaign, and add your Sendspark dynamic video snippet to that follow-up campaign.
+  </Accordion>
+  <Accordion title="How do I add the Sendspark video snippet to my Lemlist email?">
+    In Sendspark, click **Share Campaign**, search for **Lemlist**, and click it to copy the video placeholder. In your Lemlist email editor, click the 3 dots at the bottom, choose **code view**, and paste the snippet where you want the video to appear.
+  </Accordion>
+  <Accordion title="Which trigger connects Lemlist replies to Sendspark?">
+    In the Sendspark [automated workflow section](https://sendspark.com/automated-workflows), create a new automation and select the **Lemlist → Emails Replied** trigger. Connect it with a Lemlist API key (generated in your Lemlist integration settings) pasted as the access token.
+  </Accordion>
+  <Accordion title="How do I make sure only the right replies generate a video?">
+    Add a filter on the trigger by condition **Campaign Name contains**, set to whatever indicates the specific campaign you want to generate videos for. This keeps prospects from other campaigns out of the automation.
+  </Accordion>
+  <Accordion title="Why is the email field required in the Create dynamic video action?">
+    The email field is essential because it matches the right video to the right person in your follow-up Lemlist campaign. If you want a dynamic background, click **show all fields** to reveal the Sendspark background URL field.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

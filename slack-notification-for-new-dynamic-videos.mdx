@@ -1,7 +1,22 @@
 ---
 title: "Slack notification for new Dynamic Videos"
 description: "Set up automated Slack notifications for new Dynamic Video creation using SendSpark webhooks and Zapier integration step-by-step."
+keywords:
+  - Slack notification new dynamic video
+  - Sendspark webhook Slack
+  - Zapier catch hook Sendspark
+  - notify Slack video created
+  - dynamic video campaign webhook
 ---
+
+To get a Slack alert each time a new Dynamic Video is created, connect Sendspark to Slack through Zapier. Create a webhook in Sendspark, catch it with Zapier's Catch Hook trigger, paste the generated URL back into your Sendspark webhook, attach it to your Dynamic Video campaign, then add a Slack "Send a Message" action.
+
+## Key takeaways
+
+- This setup uses a Sendspark webhook paired with a Zapier Zap (Webhooks by Zapier → Slack).
+- In Sendspark, create and name a new webhook under **Menu → Webhooks**.
+- In Zapier, use the **Catch Hook** trigger, copy the generated URL, and paste it back into your Sendspark webhook.
+- Attach the webhook to your Dynamic Video campaign, then add Slack's **Send a Message** action and choose your channel.
 
 <iframe src="https://www.youtube.com/embed/rCpH7lqb8Zs?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -48,3 +63,22 @@ Related topics:
 - Customize the message.
 - Click on **Continue** and confirm the notification in Slack. ![Zapier notification confirmation page with Continue button](/images/9483231/b3ed2e0e-image.png)
 - **DONE!!**
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I create the webhook in Sendspark?">
+    Go to **Menu**, select **Webhooks**, create a new webhook, and give it a name. You'll paste the Zapier URL into this webhook in a later step.
+  </Accordion>
+  <Accordion title="Which Zapier trigger connects to the Sendspark webhook?">
+    In Zapier, create a new Zap, click **Trigger**, search for **Webhooks by Zapier**, and select **Catch Hook**. Continue, then copy the generated URL and paste it into the webhook you created in Sendspark.
+  </Accordion>
+  <Accordion title="How does the webhook know which videos to report?">
+    After creating a Dynamic Video campaign, go to the **Webhooks** section and select that campaign. This attaches your webhook so it fires for new videos in that campaign.
+  </Accordion>
+  <Accordion title="How do I send the notification to Slack?">
+    In Zapier, click **Test Trigger**, then search for **Slack** and select **Send a Message**. Continue, choose your Slack channel, customize the message, and confirm the notification in Slack.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

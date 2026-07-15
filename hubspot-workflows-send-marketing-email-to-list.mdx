@@ -1,7 +1,22 @@
 ---
 title: "HubSpot Workflows: Send Marketing Email to List"
 description: "Step-by-step guide to sending HubSpot marketing emails automatically when contacts are added to a list using Sendspark workflows."
+keywords:
+  - hubspot workflow sendspark video
+  - automate marketing email to list
+  - hubspot dynamic video automation
+  - sendspark agentic workflow hubspot
+  - send personalized video hubspot list
 ---
+
+You can automate personalized Sendspark videos with HubSpot two ways: **HubSpot Workflows** (HubSpot-driven) or **Sendspark Agentic Workflows** (Sendspark-driven). In the HubSpot method, a Segment Membership trigger runs a Sendspark action to create a dynamic video, then sends an automated marketing email that embeds it — so contacts added to a list receive their video automatically.
+
+## Key takeaways
+
+- Two approaches: keep automation in HubSpot (Workflows) or move it to Sendspark (Agentic Workflows) — choose where you want the logic to live.
+- HubSpot method: enrollment trigger **Segment Membership** → **Sendspark** action **Create a dynamic video** (both mandatory checkboxes required) → **Send Email** with the video embedded.
+- Video generation needs the **Dynamic Campaign ID** plus API credentials (Workspace ID, API Key, Secret Key), and you must map **First Name** (not Full Name) to Contact Name.
+- Embed the video by copying the **HubSpot Marketing Hub** HTML from **Share Campaign** into an HTML block in an **Automated** (not Regular) marketing email.
 
 ## 🎬 How to Automate Sendspark Videos with HubSpot
 
@@ -126,3 +141,27 @@ This method shifts automation control to **Sendspark**, using sequences and trig
 - Use the field selector to search and match HubSpot properties correctly
 
 ⚠️ Make sure all required fields are mapped, or the workflow will fail silently.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What are the two ways to automate Sendspark videos with HubSpot?">
+    Method 1 keeps everything in HubSpot using HubSpot Workflows (HubSpot-driven). Method 2 uses Sendspark Agentic Workflows, which shifts automation control to Sendspark using sequences and triggers synced with HubSpot. Choose the option that fits where you want the automation logic to live.
+  </Accordion>
+  <Accordion title="What triggers the HubSpot workflow?">
+    In a Contact-based workflow, set the enrollment trigger to **Segment Membership** (formerly "List membership") and select the list or segment that should start the automation, for example when a contact is added to a specific list.
+  </Accordion>
+  <Accordion title="What do I need to configure the Sendspark video generation step?">
+    Add the Sendspark action **Create a dynamic video** (the native Sendspark app must be installed from the HubSpot Marketplace), check both mandatory checkboxes, then provide the Dynamic Campaign ID, your API credentials (Workspace ID, API Key, Secret Key), and the dynamic data mapping. Always map First Name, not Full Name.
+  </Accordion>
+  <Accordion title="How do I embed the video in the marketing email?">
+    Create an **Automated** email (not Regular). In Sendspark, open your Dynamic Campaign, click **Share Campaign**, select **HubSpot Marketing Hub**, and copy the HTML. In the HubSpot email editor, drag an HTML block and paste the code — it acts as a dynamic placeholder that resolves to the correct video for each contact.
+  </Accordion>
+  <Accordion title="Why is my Sendspark Agentic Workflow failing silently?">
+    All required fields must be mapped. Use the field selector to search and match HubSpot properties correctly (for example, Contact ID). If a required field isn't mapped, the workflow fails silently.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

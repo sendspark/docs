@@ -1,7 +1,22 @@
 ---
 title: "Automate video sharing through Zapier"
 description: "Connect Sendspark with Zapier to automate video sharing. Set up webhooks to trigger CRM or email actions every time a video is created."
+keywords:
+  - sendspark zapier integration
+  - automate video sharing zapier
+  - sendspark webhook
+  - video created webhook
+  - zapier catch hook sendspark
 ---
+
+Connect Sendspark to Zapier with a webhook so every new video automatically triggers an action in your platform of choice. Create a "Webhooks by Zapier" Catch Hook trigger, copy its webhook URL into Sendspark's Webhooks menu, connect it to your Dynamic Video Campaign on the Video Created event, then build any Zapier action you like.
+
+## Key takeaways
+
+- Start the Zap with a "Webhooks by Zapier" trigger using the Catch Hook event, then copy the webhook URL from the Test step.
+- Create your Dynamic Video Campaign in Sendspark first, but do not generate any videos until the webhook is connected.
+- In Sendspark's Webhooks menu, create a webhook with the Zapier URL, select the Video Created event, and connect it to your campaign.
+- Once connected, the webhook fires with all of the video's information, letting you trigger actions in thousands of Zapier apps.
 
 ## Sendspark + Zapier + Your Platform
 
@@ -38,3 +53,22 @@ description: "Connect Sendspark with Zapier to automate video sharing. Set up we
 ## 8. Back to Zappier, you are now free to create an action and event based on your app of choice. There are thousands of apps! Look for yours :)
 
 ![Apps](/images/9682359/514510a7-image.png)
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which Zapier trigger do I use?">
+    Use the "Webhooks by Zapier" trigger with the Catch Hook event, then copy the webhook URL from the Test step.
+  </Accordion>
+  <Accordion title="Should I create videos before setting up the webhook?">
+    No. Create your Dynamic Video Campaign first but do not generate any videos yet. Set up and connect the webhook, then create videos so each one fires the webhook.
+  </Accordion>
+  <Accordion title="Which event makes the webhook fire?">
+    Expand the webhook in Sendspark and select the Video Created event. Every time a video is created, the webhook captures all of that video's information.
+  </Accordion>
+  <Accordion title="What can I connect the webhook to?">
+    Anything Zapier supports. After the Catch Hook receives the data, you can build an action for any of the thousands of apps available in Zapier, such as your CRM or email tool.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

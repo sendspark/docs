@@ -1,7 +1,22 @@
 ---
 title: "Trigger Sendspark Videos from SalesLoft and Send Them via Apollo Sequences"
 description: "Automate video outreach by triggering Sendspark video creation from SalesLoft and sending personalized emails via Apollo sequences."
+keywords:
+  - salesloft apollo video automation
+  - trigger sendspark video from salesloft
+  - apollo sequence dynamic video
+  - salesloft to apollo workflow
+  - automated video outreach
 ---
+
+This guide sets up an automation where a new user created in SalesLoft automatically generates a personalized Sendspark video and sends it through an Apollo email sequence. The flow: trigger on SalesLoft User Created, create a dynamic video in Sendspark, find the contact in Apollo, then add that contact to an Apollo sequence with the video embedded in the template.
+
+## Key takeaways
+
+- The flow has four steps: SalesLoft **User Created** trigger, Sendspark **Create a Video**, Apollo **Find Contact**, and Apollo **Add Contact to a Sequence**.
+- Map **First Name** and **Contact Email** from SalesLoft into the Sendspark action; optionally crop the email at the `@` symbol to extract the domain for a dynamic background URL.
+- Apollo's Find Contact step returns the **Contact ID** you need to enroll the person in a sequence, even for newly created contacts.
+- Paste the Sendspark snippet into an Apollo **email template** (not directly into the sequence body), then load that template into your sequence.
 
 ## 🎥 How to Automate Video Emails: SalesLoft → Apollo Workflow
 
@@ -124,3 +139,22 @@ Now, whenever a new user is created in SalesLoft:
 - The email (with embedded dynamic video) is sent automatically
 
 Your video outreach is now fully automated and scalable.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What triggers this automation?">
+    The trigger is the **User Created** event in SalesLoft. You can add optional filtering conditions so the automation only runs for specific users, for example based on role, company, or email domain.
+  </Accordion>
+  <Accordion title="How do I add the prospect's website as a dynamic background?">
+    Add a **Data Cropping** tool step before the Sendspark action, select the email address field, and crop by the `@` symbol to extract the domain (for example, `dan@sendspark.com` becomes `sendspark.com`). Map that result to the Background URL field in Sendspark.
+  </Accordion>
+  <Accordion title="Why do I need the Find Contact step in Apollo?">
+    You need the Contact ID that Find Contact returns to add the person to a sequence in the next action, even when the contact was just created.
+  </Accordion>
+  <Accordion title="Where do I paste the Sendspark video code in Apollo?">
+    Go to Apollo → Emails → Templates and paste the snippet into a template, then load that template into the sequence used in the workflow.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

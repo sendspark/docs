@@ -1,7 +1,22 @@
 ---
 title: "Webhooks - Properties in Sendspark Webhooks"
 description: "Discover all properties included in Sendspark webhooks for dynamic video campaigns including campaign IDs, contact info, and links."
+keywords:
+  - sendspark webhook properties
+  - dynamic video webhook
+  - campaignId webhook
+  - video_mp4_ready webhook
+  - contactInfo webhook
 ---
+
+Sendspark webhooks send a payload of properties whenever a subscribed event fires for your dynamic video campaigns, letting you automate actions based on user interactions or system events. Every webhook includes core properties like `campaignId`, `contactInfo`, `videoLink`, and `workspaceId`, plus additional event-specific properties for CTA clicks, watch percentage, and video-ready-to-download events.
+
+## Key takeaways
+
+- Every webhook payload includes core properties such as `campaignId`, `campaignName`, `contactInfo`, `creatorId`, `dynamicCampaignId`, `videoLink`, `embedLink`, `thumbnailUrl`, and `workspaceId`.
+- `campaignId` refers to the individual generated video, which is different from the Dynamic Video Campaign ID (`dynamicCampaignId`) that covers all videos created from the campaign.
+- Some events add extra properties: **Video CTA Clicked** adds `ctaText` and `ctaLink`; **Video Watched %** adds `watchPercentage`.
+- The **Video Ready to Download** (`video_mp4_ready`) webhook adds download links in low, medium, and high quality, plus an `emailDownloadLink` and a `downloadVideoLinks` array.
 
 Webhooks in Sendspark allow you to subscribe to specific events from a video events for your dynamic video campaigns. By integrating webhooks, you can automate actions based on user interactions or system events within your Sendspark account.
 
@@ -76,3 +91,25 @@ Properties for ALL webhooks:
 | Name ​ | Type ​ | Description ​ |
 | --- | --- | --- |
 | eventType ​ | string ​ | The event type that triggered the webhook (e.g., video_mp4_ready, video_generated_dv, etc.). ​ |
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What's the difference between campaignId and dynamicCampaignId?">
+    `campaignId` identifies the individual dynamic video that was created for a single contact. `dynamicCampaignId` identifies the parent dynamic campaign that all of those videos were created from.
+  </Accordion>
+  <Accordion title="What information is included in contactInfo?">
+    The `contactInfo` object holds details about the prospect the video was created for, including `contactEmail` and `contactFirstName`, plus `jobTitle`, `company`, `backgroundUrl`, and a `fields` object with any custom fields.
+  </Accordion>
+  <Accordion title="Which extra properties come with the Video Ready to Download webhook?">
+    The `video_mp4_ready` webhook adds `emailDownloadLink`, download links for low, medium, and high quality (`downloadVideoLinkLow`, `downloadVideoLinkMedium`, `downloadVideoLinkHigh`), and a `downloadVideoLinks` array with all available links.
+  </Accordion>
+  <Accordion title="How do I know which event triggered a webhook?">
+    Check the `eventType` property, which names the event that fired the webhook (for example, `video_mp4_ready` or `video_generated_dv`).
+  </Accordion>
+  <Accordion title="Where do I set up webhooks in the first place?">
+    Before using these properties, review the guide on [how to create webhooks in Sendspark](/webhooks-how-to-create-webhooks-in-sendspark).
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

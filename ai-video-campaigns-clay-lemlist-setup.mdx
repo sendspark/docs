@@ -1,7 +1,23 @@
 ---
 title: "AI Video Campaigns: Clay + Lemlist Setup"
 description: "Learn how to automate AI personalized video email campaigns using Clay, Lemlist, and Sendspark with dynamic video templates and"
+keywords:
+  - ai personalized video lemlist
+  - clay lemlist sendspark automation
+  - dynamic video clay enrichment
+  - lemlist video snippet
+  - automated video email campaign
 ---
+
+To automate AI-personalized video emails with Lemlist and Clay: build a dynamic video campaign in Sendspark as your template, paste Sendspark's Lemlist snippet into your Lemlist email through code view, then run Clay's Sendspark enrichment to generate each video and Clay's Lemlist enrichment to enroll contacts once their video is ready.
+
+## Key takeaways
+
+- Three tools work together: Sendspark creates the personalized video, Clay generates the videos and enrolls contacts, and Lemlist sends the emails.
+- Paste the Sendspark snippet into Lemlist through **code view** (click "more rich," then "code view"), then switch back out of code view to finish editing.
+- In Clay, add a **"video link"** column so you can confirm videos generated successfully before adding contacts into the Lemlist campaign.
+- Set Clay's Lemlist enrichment to only add contacts after their videos have generated, so no one is emailed before their video is ready.
+- No Clay? Run the same automation through [Sendspark Automated Workflows](https://help.sendspark.com/en/collections/11908106-automated-workflows) to use fewer tools.
 
 To see how this works, either watch this full tutorial, or follow the steps below:
 
@@ -50,3 +66,22 @@ You can hit "preview" to preview the video email as it will look for your contac
 ## Additional Notes
 
 This guide is assuming that you are currently use Clay, and want to run your automation through them! If you do not use Clay, you can run this automation through [Sendspark Automated Workflows](https://help.sendspark.com/en/collections/11908106-automated-workflows) instead to use fewer tools.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Do I need Clay to send AI personalized videos through Lemlist?">
+    No. This guide runs the automation through Clay, but if you don't use Clay you can run the same automation through [Sendspark Automated Workflows](https://help.sendspark.com/en/collections/11908106-automated-workflows) to use fewer tools.
+  </Accordion>
+  <Accordion title="Where do I paste the Sendspark snippet in Lemlist?">
+    In your Lemlist email template, click **"more rich"** and then **"code view,"** paste the Sendspark snippet directly into the email, then switch back out of code view to finish editing.
+  </Accordion>
+  <Accordion title="How do I make sure contacts are only enrolled after their video is ready?">
+    In Clay, add a **"video link"** column so you can verify videos generated successfully, then set the Lemlist enrichment's run setting to only add contacts after their videos have generated.
+  </Accordion>
+  <Accordion title="How does the correct video show up for each contact?">
+    The placeholder snippet stays in your Lemlist email and updates with the correct video when the email sends — the same way #&#123;&#123;firstName&#125;&#125; and #&#123;&#123;companyName&#125;&#125; get updated with the correct data. You can hit "preview" to see the video email as it will look for your contacts.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

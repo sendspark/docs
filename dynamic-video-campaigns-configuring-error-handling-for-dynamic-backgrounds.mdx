@@ -1,7 +1,22 @@
 ---
 title: "Dynamic Video Campaigns: Configuring Error Handling for Dynamic Backgrounds"
 description: "Configure error handling for dynamic backgrounds in Sendspark dynamic video campaigns so your videos still render reliably when a background fails to load."
+keywords:
+  - dynamic background error handling
+  - dynamic video fallback data
+  - fallback video Sendspark
+  - dynamic campaign error
+  - background failed to generate
 ---
+
+When a Dynamic Background fails to generate in a Dynamic Video Campaign, Sendspark's error handling controls what happens next. By default it uses your fallback data and continues generating the video. You can also choose to stop, show an error, and update the information before trying again. Configure both from the campaign's three-dot menu in Step 1.
+
+## Key takeaways
+
+- Backgrounds can fail when the URL is inaccessible, the site blocks automated requests, API calls, or bot traffic, or security settings prevent Sendspark from retrieving the page.
+- Open error-handling settings from the **⋮ (three-dot menu)** in Step 1 of your campaign.
+- Two options: generate the video using fallback data (the default), or do not generate, show an error, and let you update the information first.
+- Videos that used fallback content are easy to spot afterward by their orange status indicator and orange play button.
 
 ## 📖 Overview
 
@@ -67,3 +82,27 @@ Look for:
 These indicators show that the video was generated using fallback content rather than the intended Dynamic Background.
 
 ![Arrow pointing to an orange play button marking a fallback video in the prospect list](/images/15402070/bba717ae-image.png)
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What happens by default when a Dynamic Background fails?">
+    By default, Sendspark uses the fallback content configured in your campaign and continues generating the video, so your campaign isn't held up by a single failed background.
+  </Accordion>
+  <Accordion title="Why would a Dynamic Background fail to generate?">
+    Common causes are that the background URL is inaccessible, the website blocks automated requests, API calls, or bot traffic, or the site's security settings prevent Sendspark from retrieving the page content.
+  </Accordion>
+  <Accordion title="How do I know which videos used fallback content?">
+    After videos are generated, any video that used fallback content shows an orange status indicator and an orange play button.
+  </Accordion>
+  <Accordion title="Where do I set up my fallback content?">
+    Configure it directly in Step 1 of your Dynamic Video Campaign. You can set a one-time fallback or a default one that applies to all future campaigns.
+  </Accordion>
+  <Accordion title="Can I stop videos from generating when a background fails?">
+    Yes. Choose "Do not generate, show an error, and let me update information" in Error Handling. Sendspark will display an error so you can review and update the details before trying again.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

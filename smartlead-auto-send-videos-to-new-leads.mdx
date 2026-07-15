@@ -1,7 +1,22 @@
 ---
 title: "Smartlead - Auto-Send Videos to New Leads"
 description: "Learn how to automatically create AI-personalized Sendspark videos for Smartlead leads using agentic workflows and campaign triggers."
+keywords:
+  - Smartlead Sendspark integration
+  - auto-send video to new leads
+  - Smartlead agentic workflow
+  - AI personalized video Smartlead
+  - Smartlead lead status trigger
 ---
+
+This integration automatically creates AI-personalized Sendspark videos when leads enter your Smartlead sequences. Build a Sendspark Agentic Workflow triggered by "Smartlead: Lead moved to specified status," set the status to In Progress, then add a Create Dynamic Video step and map the lead fields — including email — so each new lead gets their own video.
+
+## Key takeaways
+
+- The workflow auto-generates a personalized video whenever a lead moves to a chosen status in your Smartlead campaign.
+- Add your Sendspark video placeholder to the **2nd Smartlead email or a later step**, so the video has time to generate before it sends.
+- Trigger the Sendspark Agentic Workflow with **"Smartlead: Lead moved to specified status,"** set to the **In Progress** status.
+- In the Create Dynamic Video step, map the lead fields and be sure to **map the email field** — it matches the right video to the right lead.
 
 In this article, you'll learn how to automatically create AI-personalized videos for leads when they get added into Smartlead sequences.
 
@@ -66,3 +81,25 @@ That's it! Your entire automation should look something like this, where...
 ![Complete Agentic Workflow automation showing trigger, video creation, and email steps](/images/12133944/4dd3dfb5-image.png)
 
 When you're ready, hit **"start"**and begin adding leads to your campaign in Smartlead!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why should the video placeholder go on the 2nd email or later?">
+    You add the Sendspark video placeholder to the 2nd email in Smartlead (or a later step) to ensure the video has enough time to generate before the video email sends.
+  </Accordion>
+  <Accordion title="Which trigger do I use in the Sendspark Agentic Workflow?">
+    Select **Smartlead** and then **"Lead moved to specified status"** as the trigger. Connect your Smartlead account and specify the Smartlead email campaign you're using.
+  </Accordion>
+  <Accordion title="Which status triggers the video creation?">
+    Set the status to **"In Progress."** When leads get updated to this status in your chosen Smartlead campaign, it triggers the automation in Sendspark to create the video.
+  </Accordion>
+  <Accordion title="Why is mapping the email field essential?">
+    In the Create Dynamic Video step, you map the Smartlead fields you want to use. Mapping the email field is essential because it's what matches the right video to the right lead in Smartlead.
+  </Accordion>
+  <Accordion title="Where do I get the Sendspark video placeholder for Smartlead?">
+    Get your Sendspark video placeholder from the [Smartlead dynamic video integration](/smartlead-send-dynamic-videos) guide, then add it to your Smartlead email campaign.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

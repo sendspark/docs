@@ -1,7 +1,22 @@
 ---
 title: "Warmly: Create Videos from Visitors"
 description: "Learn how to create personalized videos for website visitors using Warmly Orchestrator and Sendspark with automated workflows."
+keywords:
+  - warmly sendspark video
+  - warmly orchestrator webhook
+  - personalized video for website visitors
+  - warmly dynamic video workflow
+  - automated video outreach
 ---
+
+You can automatically send personalized videos to website visitors by connecting Warmly's Orchestrator to a Sendspark Automated Workflow. When Warmly identifies a contact who visited your site, it fires a webhook to Sendspark, which generates a dynamic video and sends it by email. No manual recording is needed for each lead.
+
+## Key takeaways
+
+- The setup links two tools: a **Warmly Orchestrator** built for the "Identified contact visited website" trigger, and a **Sendspark Automated Workflow** triggered by a webhook.
+- Warmly's final workflow action sends a **webhook** to the URL provided by your Sendspark automation, which passes the visitor to Sendspark.
+- In Sendspark, add an action to create a [dynamic video](/dynamic-videos-make-videos-with-ai-introductions) linked to the campaign you want to use, then a follow-up action to send that video by email.
+- The whole flow is automated, so identified visitors receive a personalized video without you recording one per person.
 
 You can automatically send personalized videos to anonymous website visitors using Warmly and Sendspark.
 
@@ -30,3 +45,22 @@ Start by watching the video below, and referencing the steps for additional cont
 5. Add a follow up action to send this video out in email. Note that there are many ways you can send [videos in email](https://help.sendspark.com/en/collections/12626407-automatically-send-videos) after they are generated.
 
 Let us know if you need any help with this setup!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What triggers the video to be sent?">
+    In Warmly, the Orchestrator is set up for the "Identified contact visited website" trigger. When an identified contact visits your site, the workflow runs and, at the end, sends a webhook to Sendspark to kick off the video.
+  </Accordion>
+  <Accordion title="How does Warmly connect to Sendspark?">
+    Warmly connects through a webhook. You create an Automated Workflow in Sendspark that uses "Webhook" as its trigger, then add the webhook URL Sendspark provides to the action at the end of your Warmly Orchestrator.
+  </Accordion>
+  <Accordion title="Which video does each visitor receive?">
+    In your Sendspark automation you add an action to create a dynamic video and link it to the Dynamic Video Campaign you want to use. Every identified visitor that comes through the webhook gets a personalized video from that campaign.
+  </Accordion>
+  <Accordion title="How is the video delivered to the visitor?">
+    After the video is generated, you add a follow-up action to send it out by email. There are several ways to send videos in email once they are generated, so you can choose the method that fits your workflow.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

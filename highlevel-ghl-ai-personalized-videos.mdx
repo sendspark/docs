@@ -1,7 +1,22 @@
 ---
 title: "HighLevel (GHL) - AI Personalized Videos"
 description: "Create AI-personalized videos in HighLevel (GHL) workflows using Sendspark. Automate personalized video outreach inside your GHL CRM and marketing funnels."
+keywords:
+  - HighLevel AI personalized videos
+  - GHL Sendspark integration
+  - GHL workflow video automation
+  - LeadConnector video snippet
+  - send personalized video GHL SMS
 ---
+
+To send AI-personalized videos in HighLevel (GHL), create a Dynamic Video campaign in Sendspark, then use a GHL workflow with a custom webhook to generate a video for each contact, and a second workflow with an inbound webhook to send each finished video by email, SMS, or WhatsApp. Sendspark now also offers a direct HighLevel integration as an easier alternative.
+
+## Key takeaways
+
+- Sendspark now has a [direct HighLevel integration](/highlevel-create-share-videos) — an easier alternative to the webhook method below.
+- Step 1: build a Dynamic Video campaign in Sendspark, using the placeholder word "Watermelon" where the viewer's first name should go.
+- Step 2: a GHL workflow with a **POST** custom webhook (API Key and Secret Key in the headers) generates a video for each contact.
+- Step 3: a second GHL workflow triggered by an **inbound webhook** sends each finished video via email (LeadConnector snippet), SMS, or WhatsApp using the `videoLink` variable.
 
 In this tutorial, we’ll walk through how to generate and send AI-personalized videos in GHL Automated Workflows.
 
@@ -111,3 +126,25 @@ Here is a video to walk you through it:
 - And that will let you use the unique video link created for that person in the message
 
 That’s it! Turn on your Workflow and you’re all set!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Is there an easier way to connect HighLevel and Sendspark?">
+    Yes. Sendspark now has a [direct HighLevel integration](/highlevel-create-share-videos), which is simpler than the custom-webhook method described here. This webhook approach still works if you prefer full control over the workflow.
+  </Accordion>
+  <Accordion title="Where do I find my workspaceId and dynamicId for the webhook URL?">
+    Your workspaceId is in your [API Credentials tab](https://sendspark.com/settings/api-credentials), alongside your API Key and Secret Key. Your dynamicId is in the URL of your dynamic video campaign.
+  </Accordion>
+  <Accordion title="How does HighLevel know when a video is ready to send?">
+    In Sendspark's Webhooks section, create a webhook using the URL from a GHL inbound-webhook workflow and link it to your dynamic video campaign. Every time a video is created from that campaign, the webhook enrolls that person in your HighLevel workflow so you can send it.
+  </Accordion>
+  <Accordion title="Can I send the video by SMS or WhatsApp instead of email?">
+    Yes. In your inbound-webhook workflow, add a Send SMS action and select **Custom Values &gt; Inbound Webhook Trigger &gt; videoLink** to insert that person's unique video link into the message.
+  </Accordion>
+  <Accordion title="What placeholder do I use for personalization?">
+    Use the word "Watermelon" in your video wherever you want the viewer's first name to appear. You can also toggle on Voice Cloning for a custom spoken intro like "Hi First Name."
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

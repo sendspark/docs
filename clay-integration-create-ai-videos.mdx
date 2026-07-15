@@ -1,7 +1,22 @@
 ---
 title: "Clay Integration: Create AI Videos"
 description: "Integrate Clay with Sendspark to automatically create AI-personalized videos for every prospect in your list. Full step-by-step Clay + Sendspark setup guide."
+keywords:
+  - Clay Sendspark integration
+  - create AI videos in Clay
+  - Clay video enrichment
+  - Add Prospect To Video Campaign
+  - personalized video Clay outreach
 ---
+
+Integrating Clay with Sendspark lets you create an AI-personalized video for every contact in your Clay table. Build a table of contacts, create a Sendspark Dynamic Video campaign with "watermelon" as the name placeholder, then run the "Add Prospect To Video Campaign" Clay enrichment. Sendspark generates each video and returns the links back into Clay.
+
+## Key takeaways
+
+- You need two things: a Clay table of contacts and a Sendspark Dynamic Video campaign that acts as the single template.
+- Record your template video saying "watermelon" wherever the viewer's first name should go.
+- Generate videos using Clay's Sendspark enrichment, "Add Prospect To Video Campaign," authenticated with your API Key and Secret Key from Sendspark's API credentials.
+- Once generated, Clay shows a ✅ Success status and returns the Video Link, Embed Link, and Thumbnail URL for use in the rest of your automation.
 
 ## How to Generate AI Videos in Clay:
 
@@ -88,3 +103,24 @@ We have also put together some guides for the best ways to share videos in Smart
 - [How to Send Videos in La Growth Machine from Clay](/send-ai-videos-on-linkedin-via-clay-lgm)
 
 Let us know if you have any questions or need any help!
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I connect Clay to Sendspark?">
+    In Clay, use the Sendspark enrichment "Add Prospect To Video Campaign." Add your API Key and Secret Key (both found in the [API credentials section](https://sendspark.com/settings/api-credentials) of Sendspark), select your workspace, select your Dynamic Campaign ID, and map your contact fields.
+  </Accordion>
+  <Accordion title="Where do I put the viewer's name in the video?">
+    Say the word "watermelon" while recording, wherever you want the viewer's first name to appear. Sendspark replaces it with each contact's name when the personalized videos are generated.
+  </Accordion>
+  <Accordion title="Which fields does Sendspark return to Clay?">
+    After videos finish generating, click the ✅ Success cell to see all returned fields. The most popular are the Video Link (your video share page), the Embed Link (for embedding on a website), and the Thumbnail URL (the GIF preview image, often used with the Video Link to embed video in email).
+  </Accordion>
+  <Accordion title="Can I preview a video before running the whole table?">
+    Yes. In the Contacts section of your Dynamic Video campaign you can add yourself or another test contact to preview your AI video, though most contacts are added through the Clay integration.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

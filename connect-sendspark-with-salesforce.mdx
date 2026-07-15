@@ -1,7 +1,22 @@
 ---
 title: "Connect Sendspark with Salesforce"
 description: "Integrate Sendspark with Salesforce to send personalized video emails directly from your CRM. Complete setup guide for connecting your Salesforce account."
+keywords:
+  - connect Sendspark with Salesforce
+  - Sendspark Salesforce webhook
+  - video engagement data Salesforce
+  - Salesforce video analytics
+  - Sendspark CRM integration
 ---
+
+You can connect Sendspark to Salesforce to push video engagement data (views, plays, watch percentage, and CTA clicks) into your Salesforce records. Sendspark is not on the Salesforce AppExchange, so the integration uses webhooks: create a webhook URL in Salesforce to receive the data, then add that URL in Sendspark's webhook settings and select which events you want to send.
+
+## Key takeaways
+
+- The integration sends Sendspark video events into Salesforce so you can report on engagement, see influenced deals, and follow up.
+- Sendspark is not on the Salesforce AppExchange; you connect the two using webhooks.
+- Events you can send include Video Created, Video CTA Clicked, Video Liked, Video Played, Video Viewed, and Video Watched %.
+- Setup is two-sided: create a webhook URL in Salesforce (via APEX or the Declarative Webhooks app), then add it in Sendspark's webhook settings and select events. Matching relies on the viewer's email address being known.
 
 ## Why Connect Sendspark with Salesforce?
 
@@ -79,3 +94,25 @@ For this reason, we recommend you install your Marketing Cloud tracking code on 
 You can see more information on [connecting Salesforce Marketing Cloud to Sendspark here](/how-to-set-up-sendspark-for-salesforce).
 
 ​
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Is Sendspark on the Salesforce AppExchange?">
+    No, Sendspark is not on the Salesforce AppExchange at this time. You send data from Sendspark to Salesforce using webhooks instead.
+  </Accordion>
+  <Accordion title="What video events can I send to Salesforce?">
+    You can send Video Created (a new Dynamic Video is created for a contact), Video CTA Clicked, Video Liked, Video Played, Video Viewed, and Video Watched %. When connected, you can select which Salesforce object to associate the data with.
+  </Accordion>
+  <Accordion title="How do I create the webhook URL in Salesforce?">
+    In Salesforce you can create webhooks with APEX calls. For a no-code option, use the Declarative Webhooks app from the AppExchange: create an inbound call template, choose your HTTP method, set the request body format to JSON, map the actions to take when a callback is received, and leave the response blank. You'll then get a URL to connect with Sendspark.
+  </Accordion>
+  <Accordion title="Where do I add the webhook in Sendspark?">
+    Go to your Sendspark webhook settings, add a title and the webhook URL, keep it as a "global" webhook to receive data for all events in your workspace, and select the checkboxes for the events you want to receive.
+  </Accordion>
+  <Accordion title="What's required for the data to match a Salesforce record?">
+    Because data is mapped based on the viewer's email address, the integration requires the viewer's email address to be known. We recommend installing your Marketing Cloud tracking code on Sendspark website pages so you can track video page views the same way as other pages.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

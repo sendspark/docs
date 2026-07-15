@@ -1,7 +1,22 @@
 ---
 title: "Bulk Video Downloads with Agentic Workflows"
 description: "Learn how to download multiple videos at once using Agentic Workflows, Google Sheets, and JDownloader2 for bulk video campaigns."
+keywords:
+  - bulk download Sendspark videos
+  - download dynamic video campaign
+  - agentic workflow video download
+  - JDownloader2 Sendspark
+  - export videos to Google Sheet
 ---
+
+To download every video in a Dynamic Video campaign at once, set up an Agentic Workflow that writes each video's download links to a Google Sheet, then use a download manager like JDownloader2 to grab them in bulk. You trigger on the VIDEO READY TO DOWNLOAD event, map the high, medium, and low resolution links, and start generating videos.
+
+## Key takeaways
+
+- You'll need a Dynamic Video campaign, an Agentic Workflow, a Google Sheet, and a download manager such as JDownloader2.
+- The trigger is **Sendspark → VIDEO READY TO DOWNLOAD - SPECIFIC CAMPAIGN**, pointed at your chosen Dynamic Campaign.
+- Include all three resolution columns (high, medium, low) in your Google Sheet so you always get a usable output regardless of camera quality.
+- Once the links are in the sheet, copy the download-link column into JDownloader2, which auto-detects them and downloads every file.
 
 If you're running a dynamic video campaign and want to download multiple videos at once, this guide will walk you through a simple way to do it using **Zapier** and a download manager like **JDownloader2**.
 
@@ -52,3 +67,22 @@ If you're running a dynamic video campaign and want to download multiple videos 
 ## ❓Need Help?
 
 If you run into issues or have any questions, feel free to reach out to our support team. We’re happy to help!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What do I need before I start?">
+    You'll need a Dynamic Video campaign (with non-generated videos), an Agentic Workflow, a Google Sheet with the right headers, and a download manager such as [JDownloader2](http://jdownloader.org/).
+  </Accordion>
+  <Accordion title="Which trigger should I use in the Agentic Workflow?">
+    Search for **Sendspark** and select the event **VIDEO READY TO DOWNLOAD - SPECIFIC CAMPAIGN**, then choose your Dynamic Campaign so the workflow fires as each video finishes generating.
+  </Accordion>
+  <Accordion title="Why do I need three resolution columns in my sheet?">
+    Depending on the quality of your camera and the type of video you produce, Sendspark creates different resolution levels. Mapping all three (high, medium, and low) ensures you always have at least one usable download link for every video.
+  </Accordion>
+  <Accordion title="How does JDownloader2 pick up the links?">
+    Once your links are in the Google Sheet, select and copy the entire column of download links. Open JDownloader2 and it auto-detects the links from your clipboard and lists them; then click **Start Download** to fetch every file automatically.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

@@ -1,7 +1,23 @@
 ---
 title: "Snov.io — Send Dynamic Videos (Custom Field Setup)"
 description: "Set up dynamic videos in Snov.io with custom email fields for personalized outreach. Map Sendspark variables to Snov.io custom fields for automation."
+keywords:
+  - Snov.io dynamic video
+  - Snov.io custom email field
+  - email2 custom field Sendspark
+  - send dynamic video Snov.io
+  - Sendspark Snov.io integration
 ---
+
+To send dynamic videos through Snov.io, first create a custom text field called "email2" in Snov.io, since Snov.io needs a unique email field to connect with Sendspark. Then create your campaign in Sendspark, share it to Snov.io as "Email Only," paste the snippet into your Snov.io email template, and upload a prospect list that includes the matching "email2" column.
+
+## Key takeaways
+
+- Snov.io requires a unique email field to connect with Sendspark, so add a custom text field titled "email2" in the Leads app under Manage Custom Fields.
+- In Sendspark, go to Share Campaign, select Snov.io, choose "Email Only," and copy the snippet code into your Snov.io email template.
+- Your uploaded prospect list must include an additional email column titled "email2" that exactly matches the custom field.
+- Map both the "email" and "email2" columns correctly when uploading in Snov.io.
+- Use Preview and Test under the email step to review each contact's dynamic elements like personalized backgrounds and voice cloning before sending.
 
 <iframe src="https://www.youtube.com/embed/cthYGnI0AoI?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
@@ -52,3 +68,25 @@ description: "Set up dynamic videos in Snov.io with custom email fields for pers
 2. **Review Each Contact Preview** with dynamic elements like personalized backgrounds and voice cloning.
 
 **That's it! Let us know if you have any questions.**
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why do I need to create an “email2” custom field?">
+    Snov.io requires a unique email field to connect with Sendspark. Adding a text field titled "email2" is essential for linking the correct video with the right recipient.
+  </Accordion>
+  <Accordion title="Where do I create the custom field in Snov.io?">
+    Open Snov.io, navigate to the Leads app, click the three dots and select "Manage Custom Fields," add the new "email2" text field, and save the configuration.
+  </Accordion>
+  <Accordion title="Which snippet option do I copy from Sendspark?">
+    In Sendspark, go to Share Campaign and select Snov.io, choose "Email Only," and copy the provided snippet code. Then paste it into your Snov.io email template.
+  </Accordion>
+  <Accordion title="How should I format and map my prospect list?">
+    Format the file with an additional email column titled "email2" that exactly matches your custom field. When uploading, make sure both the "email" and "email2" columns are correctly mapped in Snov.io.
+  </Accordion>
+  <Accordion title="How do I check the videos before sending?">
+    In Sequences, select Preview and Test under the email step, then review each contact's preview with dynamic elements like personalized backgrounds and voice cloning.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

@@ -1,7 +1,22 @@
 ---
 title: "GHL - Create Video on Meeting Booking"
 description: "Create automated videos in HighLevel when someone schedules a meeting using Sendspark workflow integration. Send personalized booking confirmation videos."
+keywords:
+  - HighLevel Sendspark automation
+  - GHL create video workflow
+  - HighLevel dynamic video
+  - Sendspark webhook HighLevel
+  - GHL form submission video
 ---
+
+You can automatically create a personalized Sendspark video whenever someone submits a form or books a meeting in HighLevel (GHL). Connect the two with your HighLevel API key, build a Sendspark automation that catches a webhook from a HighLevel workflow, then add a Create a Dynamic Video action and map the contact fields. This example uses the Form Submission trigger.
+
+## Key takeaways
+
+- Connect HighLevel to Sendspark using your HighLevel sub-account API key (Settings → create API below Business Profile Settings).
+- The flow relies on a webhook: Sendspark provides a WebHook Catcher URL that you add as a POST webhook step in your HighLevel workflow.
+- In HighLevel, this example uses Form Submission as the trigger, plus Create Contact and Webhook steps in the workflow.
+- In Sendspark's Action step, choose Create a Dynamic Video, paste your Campaign ID (found in the campaign URL), turn off Light View, and map each field.
 
 In this article, we'll help you get started with your Sendspark-Highlevel workflow automation. As an example, we'll use the Form Submission method to create a workflow  
   
@@ -96,3 +111,22 @@ Turn OFF the Light View and map each field correctly by selecting the correct te
 ![Map your fields with arrows to turn off Light view and expand the value dropdown](/images/10840573/97e76428-image.png)
 
 Click on SAVE and your Workflow will be ready to test!
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Where do I find my HighLevel API key?">
+    In HighLevel, select your Sub-Account and click Settings. Create your API with the blue button right below the Business Profile Settings, then copy the API key. You'll paste it into Sendspark the first time you connect HighLevel.
+  </Accordion>
+  <Accordion title="What trigger does this example use?">
+    This example uses the Form Submission trigger in HighLevel. There are a number of different ways to trigger the workflow, but Form Submission is used here — you add a filter and select the form you created.
+  </Accordion>
+  <Accordion title="How does HighLevel send the data to Sendspark?">
+    Through a webhook. Sendspark provides a WebHook Catcher URL that you copy, then add as a Webhook step in your HighLevel workflow using the POST method and that URL. The HighLevel workflow completes with Create Contact and Webhook steps.
+  </Accordion>
+  <Accordion title="How do I connect the video campaign in the Sendspark Action step?">
+    In Sendspark's Action step, select Create a Dynamic Video and your account. Create a new Dynamic Video Campaign (or use an existing one) and copy the Campaign ID from its URL. Paste the ID into the Action Step window, turn off Light View, and map each field to the correct term.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

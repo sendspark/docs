@@ -1,7 +1,22 @@
 ---
 title: "How Merge Tag Fallbacks Work"
 description: "Learn how merge tag fallbacks work in Sendspark to display default text when viewer information is unavailable for video"
+keywords:
+  - merge tag fallbacks
+  - Sendspark fallback text
+  - personalize videos at scale
+  - default merge tag values
+  - video placeholders fallback
 ---
+
+Merge tag fallbacks are the default text Sendspark shows when a viewer's information is unknown. Sendspark includes built-in fallbacks: First Name becomes "there", Company Name becomes "your company", and Job Title becomes "professional". You can also overwrite the fallback per video without affecting your other videos.
+
+## Key takeaways
+
+- Merge tags let you personalize videos at scale with placeholders for First Name, Company Name, and Job Title, usually pulled from your email sending platform.
+- When viewer information is unknown, Sendspark shows the **fallback text** instead of leaving a blank.
+- Built-in fallbacks: First Name → **"there"**, Company Name → **"your company"**, Job Title → **"professional"**.
+- You can overwrite a fallback on the video you're editing; this does not affect fallbacks on your past or future videos.
 
 Sendspark lets you add **merge tag**s to personalize your videos at scale.
 
@@ -39,3 +54,24 @@ So, if you are to use a title like, "Hi #&#123;&#123;Name&#125;&#125;, as a #&#1
 You are also able to overwrite these for each video if you would like to use a different fallback for that context.
 
 When you overwrite the fallback variables, this does NOT affect the fallback videos on your past or future videos. It only affects the video that you are presently editing.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What is a merge tag fallback?">
+    It's the default text Sendspark displays when it can't access a viewer's information. Instead of showing a blank where a placeholder would go, the fallback text appears.
+  </Accordion>
+  <Accordion title="What are Sendspark's built-in fallbacks?">
+    First Name falls back to **"there"**, Company Name falls back to **"your company"**, and Job Title falls back to **"professional"**. So an unknown viewer might see "Hey there, as a professional at your company..."
+  </Accordion>
+  <Accordion title="Where does the personalized information come from?">
+    Sendspark is usually able to pull the correct First Name, Company Name, and Job Title from your email sending platform, such as HubSpot or Outreach. The fallback is used only when that information isn't available.
+  </Accordion>
+  <Accordion title="Can I change the fallback text?">
+    Yes. You can overwrite the fallback variables for the video you're currently editing. Doing so only affects that video, not the fallbacks on your past or future videos.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

@@ -1,7 +1,22 @@
 ---
 title: "Website Visit - Create Video from Trigger"
 description: "Learn how to automatically create personalized videos for website visitors using RB2B, Warmly, Vector or CRM triggers with Sendspark."
+keywords:
+  - website visit video trigger
+  - RB2B video automation
+  - warmly video automation
+  - create video from website visitor
+  - sendspark automated workflow
 ---
+
+This guide shows how to automatically create and send a personalized video when someone visits your website, using RB2B, Warmly, Vector, or another de-anonymization tool. Create a new automation in Sendspark, add a website-visit trigger (a webhook or a qualified-leads CRM list), add the Create Dynamic Video action, then send the video by email, LinkedIn, or text.
+
+## Key takeaways
+
+- Works with RB2B, Warmly, Vector, or any other website de-anonymization tool.
+- The simplest trigger is a webhook from your de-anonymization tool; it fires every time a visitor is identified.
+- For more control, trigger from a CRM list or property of "qualified recipients" to avoid unqualified visitors or existing customers.
+- Add the Sendspark **Create Dynamic Video** action, map fields such as first name and email, then add a send action (email, LinkedIn, or text) or enroll the lead in an automated campaign.
 
 In this guide, we'll walk through how to automatically create and send a video when someone videos your website.
 
@@ -49,3 +64,25 @@ Add another action to send your video out. You can send your video directly in a
 You can also add your lead into an automated email or LinkedIn campaign
 
 (read more guides on s[haring automated video campaign here](https://help.sendspark.com/en/collections/12626407-automatically-send-videos)!).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which website visitor tools does this work with?">
+    This works with RB2B, Warmly, Vector, or another website de-anonymization tool of your choice.
+  </Accordion>
+  <Accordion title="What's the simplest way to set up the trigger?">
+    Add a webhook from your website de-anonymization tool as the trigger. Every time that webhook fires (a visitor is identified), it triggers the workflow.
+  </Accordion>
+  <Accordion title="How do I avoid making videos for unqualified visitors or existing customers?">
+    Use the more advanced approach: create a list or property in your CRM for "qualified recipients" and use that as the trigger instead of the raw webhook.
+  </Accordion>
+  <Accordion title="What fields should I map into the video?">
+    Map the fields from the previous step that you want to use in the video, such as first name and email.
+  </Accordion>
+  <Accordion title="How do I send the video after it's created?">
+    Add a send action to deliver the video by email, LinkedIn message, or text message, or add the lead into an automated email or LinkedIn campaign.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

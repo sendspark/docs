@@ -1,7 +1,22 @@
 ---
 title: "Create Dynamic Video Backgrounds from Email Domains"
 description: "Learn how to automatically create personalized dynamic video backgrounds in Sendspark using recipient email domains for B2B outreach."
+keywords:
+  - dynamic video background from email domain
+  - data cropping sendspark
+  - personalized video background
+  - agentic workflow background url
+  - b2b video personalization
 ---
+
+You can turn any recipient's email address into a personalized video background using a Sendspark agentic workflow. Add a Data Cropping step that extracts the domain after the "@" (for example, dan@sendspark.com becomes sendspark.com), then feed that domain into the Background URL field of your Dynamic Video Campaign to generate branded backgrounds automatically.
+
+## Key takeaways
+
+- A three-part workflow powers this: a **trigger**, a **Data Cropping** step, and a **Dynamic Video Campaign** step.
+- The **Data Cropping** tool extracts everything after the **"@"** in an email field — for example, `dan@sendspark.com` becomes `sendspark.com`.
+- You insert that cropped domain into the **Background URL** field of your Dynamic Video Campaign step so the background becomes dynamic per contact.
+- Any trigger works (a meeting booked, a form submission, a new contact created), making personalization at scale fully automated with no manual editing.
 
 Turn any email address into a personalized background URL using agentic workflows.
 
@@ -81,3 +96,22 @@ By adding a **Data Cropping** step between your trigger and your video campaign,
 - Extract the email domain
 - Convert it into a usable variable
 - Power dynamic backgrounds automatically
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What does the Data Cropping step do?">
+    You add it by clicking the ➕ between steps and selecting Tool → Data Cropping. It takes an email field and extracts everything after the "@", giving you a clean domain you can reuse dynamically. For example, dan@sendspark.com becomes sendspark.com.
+  </Accordion>
+  <Accordion title="Where do I use the extracted domain?">
+    In your Dynamic Video Campaign step, go to the Background URL field and insert the output from the Data Cropping step. Your background then becomes dynamic based on each contact's email domain.
+  </Accordion>
+  <Accordion title="What triggers can I use?">
+    You can start with any trigger — for example a meeting booked, a form submission, or a new contact created. The workflow works with any trigger.
+  </Accordion>
+  <Accordion title="What does this look like in practice?">
+    If your contact is john@nike.com the background could be Nike-themed, and sarah@shopify.com could be Shopify-themed. This creates a more personalized and relevant video experience automatically, with no manual editing.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._
