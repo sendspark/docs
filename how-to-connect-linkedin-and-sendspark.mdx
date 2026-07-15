@@ -1,0 +1,57 @@
+---
+title: "How to Connect LinkedIn and Sendspark"
+description: "Learn how to connect your LinkedIn account to Sendspark by adding your li_at cookie value, plus daily video generation limits and troubleshooting tips."
+---
+
+Sendspark makes it easy to generate dynamic videos of you speaking over LinkedIn profiles.
+
+This can save you a lot of time. Instead of manually recording thousands of videos, you can just shoot one video of yourself, and automatically place it over each of your prospects' LinkedIn profiles by adding the LinkedIn URL in the Background URL field
+
+## How to Add LinkedIn Credentials to Sendspark
+
+<iframe src="https://www.youtube.com/embed/yPxn9nwDFTE?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+In your Dynamic Video campaign, go to the area where you add contacts. Then click the **Connect Social Account**button**.**
+
+![Sendspark Dynamic Video campaign contact area with Connect Social Account button](/images/9189896/98770383-image.png)
+
+In the popup that appears, next to LinkedIn, click **Connect**and add your **LinkedIn Cookie li_at value** into the input field.
+
+![LinkedIn connection popup with Connect button and li_at value input field](/images/9189896/78125e1d-image.png)
+
+To find your **LinkedIn Cookie li_at value**, head to your LinkedIn profile and access your inspect tools:
+
+- Open LinkedIn in a Chrome Browser
+- Right click on the page and then select**Inspect** in Chrome Developer Tools
+
+![Chrome browser right-click context menu with Inspect option highlighted](/images/9189896/221c9f28-image.png)
+
+- In the Dev tools, click into **Application &gt;&gt; Cookies &gt;&gt; [https://www.linkedin.com](https://www.linkedin.com/) &gt;&gt; li_at**
+  - If you don't see "Application" right away, click the**&gt;&gt;** on the top menu to see more options: ​![Chrome Developer Tools menu with double arrow icon to expand additional options](/images/9189896/47469776-image.png)
+- Copy your**li_at value**, and paste it into Sendspark.
+
+**This is the expanded view of what you should be seeing:**
+
+![Chrome Developer Tools Application tab showing Cookies folder and li_at cookie value](/images/9189896/07e94966-image.png)
+
+## LinkedIn Background Video Generation Limits
+
+When generating videos using LinkedIn profile backgrounds, there are important limits to be aware of.
+
+LinkedIn may temporarily block requests if too many profile fetches are made in a short period of time. This can cause video generation attempts to fail or be rejected.
+
+**Best practices:**
+
+- Limit video generation to **20–30 videos per day** when using LinkedIn profile backgrounds.
+- Avoid sending large batches all at once.
+
+**If videos fail or are rejected:**
+
+- Wait **24–48 hours** before attempting again.
+- After this waiting period, **reset your cookie/session** before retrying.
+
+Following these guidelines helps ensure consistent video generation and prevents temporary blocks from LinkedIn.
+
+For more information, check this help article.
+
+[LinkedIn profile background won't create video](/linkedin-profile-background-won-t-create-video)

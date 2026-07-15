@@ -1,0 +1,114 @@
+---
+title: "Zapier — Create Dynamic Videos via Integration"
+description: "Connect Zapier with Sendspark to automatically create dynamic, AI-personalized videos at scale. Step-by-step guide to setting up your integration."
+---
+
+The Sendspark Zapier integration lets you automatically generate videos based on nearly any trigger you can imagine.
+
+This is incredibly powerful if you want to automatically generate videos when…
+
+- Prospects are added to a list in Salesforce, Outreach, etc
+- Leads fill out forms or take actions on your website
+- New users sign up for your platform
+- Customers take specific actions in your product
+- And more!
+
+In this article, we’ll walk through how to use Zapier to automatically generate dynamic videos when users fill out a HubSpot form. However, you should be able to apply these steps to other triggers.
+
+**Related articles:**
+
+- [How To Make a Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions)
+- [Use Webhooks to Automatically Send Video Emails](/webhooks-for-dynamic-video-notifications)
+
+---
+
+## How to Automatically Generate Sendspark Dynamic Videos with Zapier
+
+<iframe src="https://www.youtube.com/embed/Bzu6pvOolgo?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## Install the Sendspark Zapier Integration
+
+Before you get started, [install the Sendspark Zapier Integration](https://zapier.com/apps/sendspark/integrations)!
+
+Get Sendspark Zapier Integration
+
+## 1. Make Your Zap
+
+To start, make your Zap in Zapier!
+
+![Make Zap in Zapier](/images/9110134/0a4b5f1d-k2mLPN2s32y_c7-Ewfp2WKyDzEcs6DgwQo76JXdcmr4lEu1Najy41wrqHFFYRk1T7Z8s5kgVLFfDHvyK-rJs180axf621cvArQh14ciw6oUntyxLcZrVUvXQ9vG4CMmPeEP2qtkdVBSg3zDrh5bqEyg.png)
+
+The Zap has 2 components that we’ll go through in the next steps:
+
+1. **Trigger:**this is the event that should trigger this workflow to start (contact is added to CRM, schedules a meeting, fills out a form, etc)
+2. **Action:**this is what you want to happen next — in this case, generate a dynamic video with Sendspark.
+
+## 2. Set Your Trigger: Fills Out Form
+
+The trigger can be ANY trigger in Zapier that indicates now is time to generate a dynamic video.
+
+In this example, we’ll use this HubSpot form, “Get a Sendspark Video (Zapier Automation)”
+
+![Trigger to start Zapier workflow](/images/9110134/d020b5a0-SyB-FMmkaTGSRaozI3p6MKlWpxMzYFogJHan5lDglN1AzbqNfbTCiNP6uXKR0iSG6YxNP-NMqFMcbPqrsV16o7drzfjsqMtbbuVuGfZzRz_vJZ47wmbJ_MytL9A7FzuR13ymrKB2fQmGVBkfcl4Wkb0.png)
+
+This means that whenever someone fills out this form, they will be enrolled in this Zap.
+
+To set this trigger, in Zapier, we can…
+
+- Click into **“Trigger”**
+- Select **“HubSpot”**
+- As the event, select **“New Form Submission”**
+- Click **“continue”**
+- Follow the next few steps to connect to HubSpot, select that specific form, and test
+
+You’ll know it’s working when you see the green checkmark on your trigger.
+
+![Test that trigger is working in Zapier](/images/9110134/5e574a61-7EbJYar7euRtio8W4ljrt11xrmT94lwT-bEezhcL-7R56iYz2ACEVm6CFtIAm061Ygd1lvKb6Yu22ioAnjcazw5QTZlxNmx_WUo8egWrMvDLsgyG_DmuCBft6Oi6UQWfhHGKp8Jqq4LuXhgRi2OYZ5o.png)
+
+## 3. Set Your Action: Generate Dynamic Video
+
+Now, you want to set your “Action” to be to generate a Sendspark Dynamic Video.
+
+- Click into**“Action”**
+- Search for**“Sendspark”**
+- As the action, select **“Create Dynamic Video”**
+
+![Create Sendspark Video via Zapier](/images/9110134/c4a34b40-lQps3KZyin0aZhpeODgekhN8RgE2BOPwmx12R4B8N4a2MxBIzUg9wRxOhj5ZzUZ_fg7qtb9xSB6wb5nAq9f_EGoQR9rCmlUoGwczs9ytXgitVXd-c7z5CF3HKt09jbP-8TjgyPHItuQohQL9acLWDj0.png)
+
+You’ll be asked to authenticate to Sendspark with your API key & secret.
+
+- You can find both in the [API Credentials section](https://sendspark.com/settings/api-credentials) in Sendspark.
+
+You’ll be asked to select the data you want to use in the dynamic video that will be generated.
+
+### How to Find Data Fields:
+
+- **Workspace ID:**this is the unique identifier for your workspace. You can find it in your [workspace settings](https://sendspark.com/settings/workspace). ​![Find your Sendspark workspace ID](/images/9110134/f5adf4a1-image.png)
+- **Dynamic Campaign ID:** this is the unique identifier for the dynamic video campaign that we should enroll this contact in. You can find this of the URL of your dynamic video campaign, between the 2 slashes ​![Find your Sendspark Dynamic Video Campaign ID](/images/9110134/76287433-image.png)
+- **Name:**This is the first name of the contact you are creating the video for. We will use this both in the voice cloning in the video (to replace the word “watermelon”) and on the page to replace the “first name” variable
+- **Email:**This is the email address for the contact you are creating the video for. We will use this as the unique identifier to link this video with the contact in your email sending platform in future steps.
+- **Company Name (Optional):**This is the name of the company for your contact. We will use this to replace the “Company name” variable in Sendspark.
+- **Job Title (Optional):**This is the job title for your contact. We will use this to replace the “job title” variable in Sendspark.
+- **Website URL:** this is any public URL that you would like to use as the “background” of your video. In the final dynamic video, it will like like your camera bubble is recording over this website.
+
+When you are actually setting this up in Zapier, you might want to use the data from your first step in Zapier to customize the dynamic videos for each contact. Ensure that each variable used in your dynamic video is accurately named and configured to match the naming conventions described in the Sendspark platform.
+
+You’ll see these from a dropdown when you click in to edit:
+
+![Select data for Sendspark dynamic videos in Zapier](/images/9110134/0f5efe26-P0duUmstEKAybdSTBBe-PeQI_tIOdVYhKLP_fUzeoOBtwj_diXiMtb4UH39XSmM6_LvYwsgAdoxKECWG6sPLShUuCxpzR9MZ8UvMmhlGkGAjWXkvlcEZgYv6C9ZSBo4QDWPna-68NHfNmkO-O_tn_2c.png)
+
+To make sure everything is working, click **“Test Step”**
+
+If you then go back to your Dynamic Video in Sendspark, you should now see a video generating for this contact in the queue:
+
+![Test Sendspark dynamic video creation via Zapier](/images/9110134/baebf7e4-GoScmd37RCCJDff9oOZHF38QKtTE5GGeT21JMNcwusPku6tSe3rn6SdaGZh2LOV9Z_rDEl_NkCwQEYMBVTpGJWUbUCIrArOERCuxk4Ml437WS1Iz7HnJjyEv0w0sNQoIIAo9xGDR-uBlhVOBm1FcCL0.png)
+
+Give the video a few minutes to generate – and then preview it to make sure that everything looks correct before publishing your Zap to create videos at scale.
+
+Congratulations! This is all you need to generate AI-personalized videos through automation.
+
+## Next Steps: Automatically Send Video Email
+
+Now that you are automatically generating videos via automation, you might want to **automatically send the videos in email.**
+
+See this article on [how to use webhooks in Zapier](/webhooks-for-dynamic-video-notifications)to know when videos have successfully generated in order to trigger a new Zapier campaign to send the video emails.

@@ -1,0 +1,77 @@
+---
+title: "Klaviyo - Auto Send Videos for New Lists"
+description: "Learn how to automatically generate and send personalized videos in Klaviyo when contacts are added to lists using Sendspark"
+---
+
+<iframe src="https://www.youtube.com/embed/fH7YVNoWHuk?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 🟦 Step 1: Set Up the **Video Campaign** in Sendspark
+
+1. 🎬 **Create a New Video Campaign** Create a new campaign in Sendspark (e.g., *"Klaviyo tutorial"*).
+2. 📹 **Select the Video Content** Record a new video, choose an existing one, or select a sample.
+3. 🎨 **Choose the Presentation Style** Pick your video template or effects (e.g., *Spotlight* for intro animation).
+4. 🌐 **Configure the Landing Page** Select the landing page template that the viewer will see after clicking the GIF.
+5. ⚡ **Generate a Placeholder Video** Use a fast option like the *voice‑only model* to proceed.
+6. 🔗 **Copy the Embed Code** Once the campaign is accepted, go to **Share campaign** and copy the snippet.
+
+---
+
+## 🟩 Step 2: Build the **Flow** in Klaviyo
+
+1. 📋 **Create a New List** In *Lists & Segments*, create a list (e.g., *"December."*).
+2. 🔄 **Create a New Flow** Go to *Flows* → *Build your own*.
+3. ⏱️ **Set the Trigger** Choose **Added to List** and select your list.
+4. 🕒 **Add a Time Delay** Add a delay (e.g., 1 day) to give Sendspark time to generate the video.
+5. ✉️ **Add an Email Action** Drag an email block into the flow.
+6. 🧱 **Create the Email Using HTML** Do **not** use the text block. Use the **HTML** block instead.
+7. 🧩 **Paste the Snippet** Delete all default HTML and paste the embed code from Sendspark.
+8. ✅ **Review and Activate** Turn the flow **Live**.
+
+---
+
+## 🟨 Step 3: Set Up the **Automation Workflow** in Sendspark
+
+1. ⚙️ **Create a New Automation** Go to *Automations* and create one.
+2. 🔔 **Choose Klaviyo as the Trigger** Select **Klaviyo → Added profiles to list**.
+3. 🗂️ **Select the Same List** Use the same list from Step 2 (e.g., *"December period"*).
+4. 🎞️ **Add “Create a Dynamic Video” Step**
+5. 🧭 **Map the Contact Data**
+  - **Dynamic Video Campaign ID:** the campaign you created (e.g., *"Klaviyo tutorials"*)
+  - **Contact Name:** First Name
+  - **Contact Email:** Email
+
+---
+
+## 🟧 Advanced Mapping: Generate Background URL Using Data Cropping
+
+Useful when you want the video background to match the contact’s company domain.
+
+🔎 Works mainly for business emails (not Gmail/Outlook).
+
+1. ✂️ **Add a Data Cropping Step** Insert *Data cropping* before the Dynamic Video step.
+2. 📨 **Process the Email Field** Select **Email** as the input.
+3. 🔤 **Crop Using the “@” Character**
+4. ➡️ **Choose “Crop to the End”** Example: *dan@senspark.com → senspark.com*
+5. 🔄 **Map the Result** In the Dynamic Video step, map **Background URL** to the cropping result.
+6. 🚀 **Save and Start the Automation**
+
+---
+
+## 🟪 Verification & Testing
+
+⏳ **API calls may take 5–10 minutes.**
+
+## 🗂️ Check Automation History in Sendspark
+
+- Look for ✔️ statuses such as:
+  - *Added profiles to list*
+  - *Data cropping*
+  - *Create dynamic video*
+
+## 🎥 Check the Video Campaign
+
+- Open the campaign and confirm the video was processed.
+
+## 👤 Run a Self-Test
+
+- Add your own email to the Klaviyo list and trigger the flow.

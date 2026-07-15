@@ -1,0 +1,98 @@
+---
+title: "GHL - Create Video on Meeting Booking"
+description: "Create automated videos in HighLevel when someone schedules a meeting using Sendspark workflow integration. Send personalized booking confirmation videos."
+---
+
+In this article, we'll help you get started with your Sendspark-Highlevel workflow automation. As an example, we'll use the Form Submission method to create a workflow  
+  
+First, we'll retrieve your API key from HighLevel to connect your account to Sendspark:
+
+Select your Sub-Account and click on Settings:
+
+![](/images/10840573/2c54a6ed-image.png)
+
+Create your API with the blue button right below the BUSINESS PROFILE SETTINGS and copy the API key
+
+![](/images/10840573/3cce6f48-image.png)
+
+Now, let's head to Sendspark Automated-Workflows section and click on CREATE A NEW AUTOMATION: [https://sendspark.com/automated-workflows](https://sendspark.com/automated-workflows)  
+  
+In the TRIGGER step, we'll make these selections and then we'll hit continue
+
+![](/images/10840573/9c3463e6-image.png)
+
+If you are connecting HighLevel for the first time, you'll be asked to provide that API key we just copied before:
+
+![](/images/10840573/aa592eb1-image.png)
+
+The system will now provide a WebHook Catcher. Please copy the URL
+
+![](/images/10840573/63b4bcb9-image.png)
+
+Back in HighLevel, Click on SITES -- &gt; Forms --&gt; Form Builder:
+
+![](/images/10840573/646535da-image.png)
+
+Add a new Form:
+
+![](/images/10840573/5ad4d7a5-image.png)
+
+By dragging and dropping the options given on the left panel, we'll be able to create a simple form:
+
+![](/images/10840573/8e534f4e-image.png)
+
+After hitting the SAVE button on the top right-hand side corner, go back, head to AUTOMATION, and click on CREATE WORKFLOW:
+
+![](/images/10840573/a63568e3-image.png)
+
+Double-click on ADD NEW TRIGGER to open the list of options to the right:
+
+![](/images/10840573/462e4d43-image.png)
+
+There are a number of different ways to go, but we'll follow the FORM SUBMISSION in this example. Please click this option
+
+![](/images/10840573/254152d3-image.png)
+
+Then click on ADD FILTER:
+
+![](/images/10840573/21bc2741-image.png)
+
+Select the name of the form you just created:
+
+![](/images/10840573/2baf0c5c-image.png)
+
+We'll complete the workflow with these steps: CREATE CONTACT and WEBHOOK.
+
+The Create Contact step will have the same fields we used in the form so we can map it and retain the same details:
+
+![](/images/10840573/19eaaae5-image.png)
+
+The WEBHOOK step will need the POST method and the URL we copied from Sendspark
+
+![](/images/10840573/cce064a1-image.png)
+
+Now back to Sendspark: We'll need set up the ACTION step by clicking it:
+
+![](/images/10840573/f3bb158c-image.png)
+
+Select Sendspark - Create a Dynamic Video - and Your Account and hit continue:
+
+![](/images/10840573/0d3c0004-image.png)
+
+You'll now need to create a new Dynamic Video Campaign or simply use one you had before, and copy the Campaign ID. Something you can extract from its URL:
+
+![](/images/10840573/64f12fa7-image.png)
+
+Only this section:
+
+![](/images/10840573/e759d104-image.png)
+
+Paste the ID in the Action Step window:
+
+![](/images/10840573/8260f810-image.png)
+
+Turn OFF the Light View and map each field correctly by selecting the correct term for the correct field:  Contact NAME --&gt; FIRST SAME and so on
+
+![](/images/10840573/97e76428-image.png)
+
+Click on SAVE and your Workflow will be ready to test!

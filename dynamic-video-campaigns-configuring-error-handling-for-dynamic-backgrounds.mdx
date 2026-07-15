@@ -1,0 +1,69 @@
+---
+title: "Dynamic Video Campaigns: Configuring Error Handling for Dynamic Backgrounds"
+description: "Configure error handling for dynamic backgrounds in Sendspark dynamic video campaigns so your videos still render reliably when a background fails to load."
+---
+
+## 📖 Overview
+
+When generating videos in a Dynamic Video Campaign, it's possible that some videos using Dynamic Backgrounds may fail to generate.
+
+Common reasons include:
+
+- 🌐 The background URL is inaccessible.
+- 🔒 The website blocks automated requests, API calls, or bot traffic.
+- 🛡️ Security settings prevent Sendspark from retrieving the page content.
+
+By default, Sendspark will use fallback data and continue generating the video.
+
+---
+
+## ⚙️ Configure Error Handling
+
+## 1️⃣ Open the Campaign Options
+
+In the first step of your Dynamic Video Campaign, click the **⋮ (three-dot menu)**.
+
+![](/images/15402070/fc43bce1-image.png)
+
+## 2️⃣ Open Error Handling
+
+Select **Error Handling** from the dropdown menu.
+
+## 3️⃣ Choose How Sendspark Should Handle Failures
+
+You'll see two options:
+
+## ✅ Generate video using fallback data
+
+If the Dynamic Background cannot be generated, Sendspark will use the fallback content configured in your campaign and continue generating the video.
+
+## 🚫 Do not generate, show an error, and let me update information
+
+If the Dynamic Background cannot be generated, the video will not be created.
+
+Instead, Sendspark will display an error so you can review and update the information before trying again.
+
+![](/images/15402070/185b9e46-image.png)
+
+## 🎨 Configure Your Fallback Content
+
+You can configure the fallback content directly in Step 1 of your Dynamic Video Campaign.
+
+![](/images/15402070/09a0d845-image.png)
+
+Set up a one-time fallback or a default one for all future campaigns
+
+![](/images/15402070/7a46335b-image.png)
+
+## 🟠 How to Identify Fallback Videos
+
+After videos are generated, any video that used fallback content will be easy to identify.
+
+Look for:
+
+- 🟠 An orange status indicator
+- ▶️ An orange play button
+
+These indicators show that the video was generated using fallback content rather than the intended Dynamic Background.
+
+![](/images/15402070/bba717ae-image.png)

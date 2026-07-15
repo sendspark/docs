@@ -1,0 +1,93 @@
+---
+title: "Connect AI Apps MCP"
+---
+
+## Connect Sendspark to your AI assistant (MCP)
+
+You can connect Sendspark to AI assistants that support MCP (Model Context Protocol) — like Claude, ChatGPT, Mistral Le Chat, Perplexity, or Grok — so you can ask about your Dynamic Videos, prospects, and analytics in plain language, right from your assistant.
+
+⏳ **Heads up — temporary setup.**
+
+Right now this connection has to be added manually. We're working on getting Sendspark listed in the official connector marketplaces of the main AI providers. Once that's live, you'll be able to add Sendspark in one click and this manual step won't be needed.
+
+---
+
+## Before you start
+
+✅ A Sendspark account with an active subscription on the Growth, Business, or Scale plan. Other plans (including Free and trials) don’t have access to the MCP integration.
+
+✅ An AI assistant that supports custom (remote) MCP connectors (e.g. Claude, ChatGPT, Mistral Le Chat, Perplexity, Grok).
+
+✅ The Sendspark MCP URL:
+
+```
+https://apiv2.sendspark.com/api/mcp
+```
+
+---
+
+## How to connect
+
+In your AI assistant, add a custom (remote) MCP connector and paste the Sendspark MCP URL above. Your assistant will then open a Sendspark sign-in page — log in and approve access. There are no API keys or tokens to copy, and the connection stays linked to your account until you remove it.
+
+💡 The exact steps differ slightly per provider and change often, so follow their official guide (these stay up to date):
+
+| Provider | Official guide |
+| --- | --- |
+| Claude (web & desktop) | [Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) |
+| ChatGPT | [Developer mode & full MCP connectors (beta)](https://help.openai.com/en/articles/12584461-developer-mode-apps-and-full-mcp-connectors-in-chatgpt-beta) |
+| Mistral Le Chat | [Using my MCP connectors with Le Chat](https://www.perplexity.ai/help-center/en/articles/13915507-adding-custom-remote-connectors) |
+| Perplexity | [Adding custom remote connectors](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/custom-mcp-server/set-up-custom-mcp-server) |
+| Grok (xAI) | [Grok connectors](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent) |
+
+ℹ️ **Availability and exact steps vary by provider and plan**
+
+For example, ChatGPT custom MCP connectors require Developer Mode on an eligible plan, and Claude's Free plan allows one custom connector. Check the linked guide for current details.
+
+---
+
+## What information your assistant can access
+
+🔒 The connection is read-only — your assistant can look things up but cannot create, edit, or delete anything. It only sees data in the workspaces you belong to (and that are active). Specifically:
+
+| Area | What it can read |
+| --- | --- |
+| Workspaces | The workspaces you're a member of and your role in each. |
+| Dynamic Video campaigns | Campaign name, status, settings, and share-page setup (title, message, layout, CTA buttons, calendar). |
+| Prospects | Per prospect: name, email, company, job title, status/processing state, and (for completed ones) the share/embed links and engagement stats. |
+| Prospect status | Detailed per-prospect state — generation/validation steps and why a prospect may be invalid or still processing. |
+| Analytics | Lifetime engagement for a Dynamic Video: visits, plays, CTA clicks, and thumbs-up, plus a visitor breakdown (location, device, watch %). (Full engagement analytics — including the per-visitor breakdown — are available on the Growth, Business, and Scale plans.) |
+
+🚫 It does not access billing details, passwords, other users' private data, or workspaces you're not part of.
+
+---
+
+## Example prompts
+
+💬
+
+- "List my Sendspark workspaces."
+- "Show the dynamic campaigns in my workspace."
+- "How is my '[campaign name]' dynamic video performing?"
+- "What's the status of the prospect [john@acme.com](mailto:john@acme.com) in that campaign?"
+
+---
+
+## Managing or removing access
+
+⚙️ You can disconnect Sendspark at any time from your AI client's connector/MCP settings. Revoking there immediately stops the assistant from accessing your data.
+
+---
+
+## Good to know
+
+ℹ️ Access requires a workspace with an active subscription on the Growth, Business, or Scale plan. Workspaces on any other plan (or without an active subscription) won’t have their data available through the assistant.
+
+---
+
+## **Privacy & support**
+
+#### Your data stays private. The Sendspark connector gives your AI assistant read-only access to your own workspaces, Dynamic Video campaigns, prospects, and analytics — it can’t create, edit, or delete anything, and it only ever sees data in workspaces you belong to. Access is granted through a secure OAuth login, with no API keys or tokens to share, and you can revoke it at any time from your AI client’s settings.
+
+#### For details on how we collect, use, store, and share data, see our [Privacy Policy](https://www.sendspark.com/privacy)  
+Need help? Contact our team at [support@sendspark.com](mailto:support@sendspark.com).

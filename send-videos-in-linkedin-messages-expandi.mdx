@@ -1,0 +1,82 @@
+---
+title: "Send Videos in LinkedIn Messages (Expandi)"
+description: "Learn how to send personalized Sendspark videos in LinkedIn messages after connection acceptance using Expandi automation workflow."
+---
+
+<iframe src="https://www.youtube.com/embed/Ds4rseN6sdo?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+This guide shows you how to set up an automated workflow that sends personalized Sendspark videos to LinkedIn prospects only after they accept your connection request. This two-step approach increases both connection acceptance rates and video response rates.
+
+## Prerequisites
+
+- Active Expandi account
+- Sendspark account with dynamic video campaign set up
+- Sendspark integration enabled in Expandi
+
+## Setting Up Your Expandi Workflow
+
+## Step 1: Configure Initial Steps
+
+1. Create a new campaign in Expandi
+2. Add a **Visit Profile** step as your first action (recommended by Expandi to appear less suspicious)
+3. Add a **Check if Connected** logic step to avoid sending requests to existing connections
+
+## Step 2: Send Connection Request
+
+1. Add a **Send Connection Request** step
+2. Leave the connection request message empty to increase acceptance rates
+
+**Tip:** Statistics from LinkedIn automation platforms show that empty connection requests have higher acceptance rates than personalized ones.
+
+## Step 3: Wait for Acceptance
+
+1. Add another **Check if Connected** step
+2. Expandi will monitor for connection acceptance for up to two weeks
+3. Once accepted, prospects automatically move to the next step
+
+## Step 4: Send Personalized Video Message
+
+1. Add a **Send Message** step
+2. Set a time delay (recommended: 15 minutes) to avoid appearing overly automated
+3. Craft your message template using Expandi's dynamic fields
+
+## Creating Your Message Template
+
+Here's an example message structure:
+
+"Hey [First Name], not sure if you've had a chance to look at our company, but we help [describe your service]. Here's a quick video to show how it works: [Sendspark Video Link]"
+
+## Adding Sendspark Video Integration
+
+1. In your message template, click where you want to insert the video
+2. Select the Sendspark integration option
+3. Choose your desired dynamic video campaign from the dropdown
+4. Click the green checkmark to add the video placeholder
+
+## Setting Up Your Sendspark Dynamic Campaign
+
+Your dynamic video campaign should include:
+
+- **Base video:** Your main recorded content
+- **AI voice cloning:** For personalized name mentions
+- **Dynamic backgrounds:** Show prospect's website (optional)
+- **Landing page:** Custom page for each prospect with booking options
+- **Integrations:** Connect with your CRM for seamless follow-up
+
+## How It Works in Practice
+
+Once your workflow is live:
+
+1. Expandi sends connection requests to your prospect list
+2. When prospects accept, they automatically receive your personalized video message after the delay period
+3. Sendspark creates individual videos for each prospect using AI personalization
+4. Videos appear in LinkedIn messages as rich previews with animated thumbnails, not just plain links
+
+**Tip:** The video links will unfurl in LinkedIn messages, showing an animated GIF preview that makes your message more engaging and clickable.
+
+## Best Practices
+
+- Keep your initial video recording concise and valuable
+- Use the time delay feature to maintain a natural conversation flow
+- Monitor your campaign performance and adjust messaging as needed
+- Ensure your dynamic video campaign has enough personalization elements to stand out

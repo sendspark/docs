@@ -1,0 +1,54 @@
+---
+title: "Bulk Video Downloads with Agentic Workflows"
+description: "Learn how to download multiple videos at once using Agentic Workflows, Google Sheets, and JDownloader2 for bulk video campaigns."
+---
+
+If you're running a dynamic video campaign and want to download multiple videos at once, this guide will walk you through a simple way to do it using **Zapier** and a download manager like **JDownloader2**.
+
+---
+
+## 🛠️ What You’ll Need
+
+- A Dynamic Video Campaign (with *non-generated* videos)
+- An Agentic Workflow
+- A **Google Sheet** with headers: `email` and `download link`
+- A download manager (e.g., [JDownloader2](http://jdownloader.org/))
+
+---
+
+## ✅ Step-by-Step Instructions
+
+## 1. Set Up a Generate Video Trigger
+
+1. Go to [Agentic Workflows](https://sendspark.com/agentic-workflows) and create a new Automation.
+2. **Trigger** → Search for **Sendspark --&gt; Select Event: VIDEO READY TO DOWNLOAD - SPECIFIC CAMPAIGN**
+3. Choose **your Dynamic Campaign**.
+
+![Agentic Workflows trigger setup showing VIDEO READY TO DOWNLOAD event selection](/images/12132936/5c3b1e53-image.png)
+
+## 2. Add an action to follow that Trigger
+
+1. Create Google Sheets file and add, at least, the following headers: First name, Email, High resolution, Medium resolution, Low resolution. (Depending on the quality of your camera and the type of video you produce, it will create different levels of resolution, so it's important to have all three available to make sure you always get an output)
+2. Go back to Agentic Workflows and on the second step, look for Google Sheets
+3. Select your Google Sheet file, and select the option ADD/UPDATE A ROW: ![Google Sheets action panel with ADD UPDATE A ROW option selected](/images/12132936/b4c2a5a8-image.png)
+4. Map each column accordingly. Remember to include all 3 Video qualities: ![Column mapping interface displaying First name Email and video quality resolution fields](/images/12132936/4240d801-image.png)
+5. START the Agentic Workflow.
+6. Start to generate videos in the dynamic video campaign
+
+---
+
+## 2. Bulk Download via JDownloader2
+
+1. Once links are in your Google Sheet:
+  - Select and **copy** the entire column of download links.
+2. Open **JDownloader2**:
+  - It will auto-detect the links and list them.
+3. Click **Start Download**.
+
+🎉 That’s it! All your video files will begin downloading automatically.
+
+---
+
+## ❓Need Help?
+
+If you run into issues or have any questions, feel free to reach out to our support team. We’re happy to help!

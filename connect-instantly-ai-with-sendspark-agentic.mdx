@@ -1,0 +1,68 @@
+---
+title: "Connect Instantly.ai with Sendspark Agentic"
+description: "Learn how to connect Instantly.ai with Sendspark Agentic Workflows using API keys and webhooks for automated email campaigns."
+---
+
+<iframe src="https://www.youtube.com/embed/SaSLJVDbg6c?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 🔑 Step 1: Add the Instantly API Key
+
+1. Go to **[Agentic Workflows](https://sendspark.com/agentic-workflows)** → **Apps** → **Add Connection**.
+2. Select **Instantly**.
+3. Enter a connection name (e.g. *"Dan Help Article"*) or leave description blank if not needed.
+4. You’ll be prompted for an **API key**. To get it:
+  - Log in to **[Instantly](https://instantly.ai)**.
+  - Go to **Settings** → **Integrations** → **API Keys**.
+  - Click **Create API Key** → name it → select **All scopes** (recommended).
+  - Click **Create** → copy the generated key.
+5. Return to Sendspark and paste the API key.
+6. Save the connection.
+
+![Sendspark Add Connection dialog with Instantly selected and API key input field](/images/12141064/ea102c7b-image.png)
+
+👉 At this point, the connection will process and link Instantly to Sendspark.
+
+---
+
+## 🌐 Step 2: Configure the Instantly Webhook
+
+1. After the connection is created, Sendspark will display a **Webhook URL**.
+2. Copy the URL.
+3. In Instantly, go to **Settings → Integrations → Webhooks**
+4. Click **Add Webhook** → paste the URL.
+5. Under **Event Types**, select **All Events**to send all possible webhook events to Sendspark.
+6. Select **All Campaigns** to ensure that this connection will work for all campaigns in your Instantly account
+7. Click **Save**.
+
+![Instantly Settings page showing Webhooks section with Add Webhook button and Event Types options](/images/12141064/b70ed958-image.png)
+
+---
+
+## 🤔 Can't Find your Webhook URL?
+
+If your webhook URL does not show up right away when connecting Instantly, or if you've already closed that screen, find this URL by...
+
+- Click on **Instantly** **Connection Settings.**
+
+![Sendspark Instantly Connection Settings panel displaying the webhook URL](/images/12141064/bd1bf746-image.png)
+
+- Copy the Webhook URL from here
+
+![Sendspark Instantly Connection Settings panel with webhook URL highlighted for copying](/images/12141064/f1dce55c-image.png)
+
+- Paste it into Instantly webhook as described in the step above
+
+---
+
+## ⚡ Using Instantly in Automations
+
+Once connected, you can:
+
+- Go to **Agentic Workflows** → **New Automation**.
+- Select **Instantly** as the trigger.
+- Choose an event (e.g., *Email Sent*).
+- Add actions in Sendspark or other connected apps.
+
+![Sendspark Agentic Workflows automation builder showing Instantly trigger and action setup](/images/12141064/d4ea9795-image.png)
+
+Your automations will now run automatically based on Instantly events. 🚀

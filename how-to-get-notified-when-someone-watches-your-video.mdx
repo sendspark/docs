@@ -1,0 +1,57 @@
+---
+title: "How to Get Notified When Someone Watches Your Video"
+description: "Learn how to get notified when someone watches your Sendspark video via email, Slack alerts, and webhooks for real-time engagement."
+---
+
+With Sendspark, you can stay on top of video engagement by receiving notifications when someone watches your content. Here’s how you can track views and what type of information you’ll get.
+
+It's important to mention that if you want to see **exact engagement details** — such as the **percentage of the video watched**, total view time, play rate, and click-throughs — you’ll need to open your **Dynamic Video Campaign dashboard**.
+
+👉 This is the only place where you can see how much of the video was watched:
+
+![Sendspark Dynamic Video Campaign dashboard displaying video watch percentage and engagement metrics](/images/12132848/8c2daade-image.png)
+
+---
+
+## Email Notifications
+
+By default, you’ll receive an **email notification** when the first lead clicks and watches your video. No setup required.
+
+---
+
+## Slack Notifications
+
+If you want real-time team alerts, you can connect Sendspark with Slack:
+
+We have a specific [Help Article for that right here](/slack-notifications-for-video-views)
+
+1. Go to **Agentic Workflows**
+2. Click **New Automation**
+3. Add the trigger: **Sendspark: New Video Watched – All Campaigns**
+4. Add the action: **Slack → Send a message to a public channel**
+5. Connect your Slack account and pick the channel where you want updates
+
+Now your team will see view notifications instantly in Slack.
+
+---
+
+## Webhooks and Automation Notifications
+
+If you want to send notifications into another system (CRM, custom app, etc.), you can use **webhooks** with the **New Video Watched** trigger.
+
+**Important:** Webhooks only send two types of events:
+
+- **Video Played** → someone clicked play (even if they only watched a few seconds).
+- **Video Watched 100%**→ someone watched the video all the way through.
+
+That means if you rely on webhook notifications, you’ll only know if a video was started or fully completed. For detailed watch percentages, you’ll still need to check the campaign analytics.
+
+[Here's a Help Article to show you how to use Webhooks in Sendspark](/webhooks-how-to-create-webhooks-in-sendspark)
+
+---
+
+## Summary
+
+- **Email & Slack** → quick notifications when someone watches.
+- **Dashboard analytics** → see exact percentage watched and other engagement stats.
+- **Webhooks** → great for automation, but limited to “played” or “fully played” events.

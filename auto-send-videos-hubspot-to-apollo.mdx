@@ -1,0 +1,61 @@
+---
+title: "Auto-Send Videos: HubSpot to Apollo"
+description: "Learn how to automatically send personalized videos from HubSpot to Apollo sequences using Sendspark workflows for scalable engagement."
+---
+
+This workflow lets you automatically create personalized videos for every contact in a HubSpot list and push them directly into an Apollo sequence. It’s a powerful way to get all the engagement benefits of video at scale, without spending extra time recording manually.
+
+Watch the video, or follow the steps below:
+
+<iframe src="https://www.youtube.com/embed/z9EKiQFaRwg?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+---
+
+## Step 1: Create Your Dynamic Video Campaign in Sendspark
+
+1. Log into [Sendspark](https://sendspark.com) and create a new **[Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions)**.
+2. Set up your video with the personalization variables you’d like to use (e.g., first name, company, role).
+
+---
+
+## Step 2: Add the Sendspark Placeholder to Apollo
+
+1. From your Sendspark dynamic video campaign, click **Share Campaign**.
+2. Select the **Apollo** option and copy the provided snippet.
+3. Paste this snippet directly into your Apollo sequence email, exactly where you want the personalized video to appear.
+
+---
+
+## Step 3: Build the Automation in Sendspark Agentic Workflows
+
+1. In Sendspark, go to **Agentic Workflows** and create a new automation.
+2. **Set the Trigger:**
+  - Choose **HubSpot: Added to List**.
+  - Select the HubSpot list you’d like to use for this workflow.
+3. **Add an Action:**
+  - Select **Sendspark: Create Dynamic Video**.
+  - Map all the personalization fields from HubSpot to the video variables in Sendspark.
+  - Make sure to add the **email** field to ensure the integration connection runs smoothly
+4. **Find the Contact in Apollo:**
+  - Add an action for **Apollo: Find Contact**.
+  - Look up the contact using their email address.
+5. **Add to Apollo Sequence:**
+  - Add an **HTTP Request** action.
+  - Configure this step to enroll the contact in your desired Apollo sequence. (Refer to [this help article](/auto-send-personalized-video-emails-in-apollo) for the exact API request details)
+
+<iframe src="https://www.youtube.com/embed/zDyMHJYcS9w?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+---
+
+## Step 4: Turn On Your Workflow
+
+1. **Start** your automation in Sendspark.
+2. Begin adding contacts to your HubSpot list.
+3. Each time a contact is added, Sendspark will generate a personalized video and automatically send it to Apollo. (Keep in mind it could take up to 5 minutes for new contacts to appear in Sendspark)
+4. Apollo will then deliver your emails with the correct video embedded for each contact.
+
+---
+
+## Final Result
+
+Once set up, this workflow runs seamlessly in the background. All you need to do is add contacts to your HubSpot list, and they’ll automatically receive personalized Sendspark videos through Apollo sequences, giving you maximum engagement with zero manual effort.

@@ -1,122 +1,2349 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Sendspark Help Center",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#6140FF",
+    "light": "#AC70FF",
+    "dark": "#432CB2"
+  },
+  "background": {
+    "color": {
+      "light": "#FEFAF5",
+      "dark": "#100B2B"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Lexend"
+    },
+    "body": {
+      "family": "Inter"
+    }
   },
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/logo.svg",
+    "dark": "/logo/logo-white.svg",
+    "href": "https://www.sendspark.com"
+  },
+  "appearance": {
+    "default": "light"
+  },
+  "styling": {
+    "eyebrows": "section"
+  },
+  "seo": {
+    "metatags": {
+      "canonical": "https://help.sendspark.com"
+    },
+    "indexing": "navigable"
+  },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "ai-video-templates-scripts-teleprompter",
+          "add-and-save-templates-in-dynamic-campaigns",
+          "getting-started-guide-dynamic-videos",
+          "getting-started-guide-record-a-video",
+          "how-to-create-and-activate-a-new-workspace",
+          "how-to-use-the-teleprompter",
+          "sendspark-for-agencies-video-prospecting",
+          "video-recording-best-practices-in-sendspark",
+          "tips-from-sendspark-s-csm",
           {
-            "group": "Getting started",
+            "group": "Set Up Your Account",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "how-to-record-a-watermelon-video",
+              "install-sendspark-recorder",
+              "invite-team-members",
+              "remove-sendspark-branding-whitelabel",
+              "sendspark-floating-menu",
+              "sendspark-onboarding-checklist",
+              "set-global-styles",
+              "use-a-custom-domain-for-videos"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "group": "Dynamic Video",
+        "pages": [
+          "how-to-use-lip-cloning",
+          "how-to-turn-voice-cloning-s-personalization-off",
+          "unreachable-background-urls-in-dynamic-videos",
+          "using-facebook-backgrounds-in-dynamic-videos",
           {
-            "group": "API documentation",
+            "group": "Create Dynamic Video Campaign",
             "pages": [
-              "api-reference/introduction"
+              "dynamic-videos-how-are-minutes-measured",
+              "dynamic-videos-make-videos-with-ai-introductions",
+              "face-recording-vs-both-recording-in-dynamic-videos",
+              "toggle-voice-cloning-on-off"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Import Contacts with Integrations",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "clay-instantly-personalized-videos-old",
+              "clay-integration-create-ai-videos",
+              "highlevel-ghl-ai-personalized-videos",
+              "hubspot-workflows-sendspark-marketing-email",
+              "make-com-auto-create-ai-personalized-videos",
+              "zapier-reply-auto-create-send-ai-videos",
+              "zapier-create-dynamic-videos-via-integration"
+            ]
+          },
+          {
+            "group": "Share Dynamic Videos",
+            "pages": [
+              "gmass-send-dynamic-videos",
+              "grinfi-send-dynamic-videos",
+              "highlevel-leadconnector-vs-marketing-snippet",
+              "lemlist-send-personalized-videos-via-linkedin",
+              "mixmax-send-dynamic-videos",
+              "reachinbox-send-dynamic-videos",
+              "salesforge-auto-generate-dynamic-videos",
+              "sendgrid-send-dynamic-videos",
+              {
+                "group": "Auto-Send Videos After Generation",
+                "pages": [
+                  "ai-video-campaigns-clay-lemlist-setup",
+                  "hubspot-sendpark-app-send-videos-in-workflows",
+                  "klaviyo-auto-send-videos-for-new-lists",
+                  "send-ai-videos-in-instantly-clay-sendspark",
+                  "webhooks-for-dynamic-video-notifications"
+                ]
+              },
+              {
+                "group": "Email Automation — Send Dynamic Videos in Bulk",
+                "pages": [
+                  "activecampaign-send-dynamic-videos",
+                  "amplemarket-send-dynamic-videos",
+                  "apollo-send-dynamic-videos",
+                  "brevo-send-personalized-videos-at-scale",
+                  "close-send-dynamic-videos",
+                  "constant-contact-send-dynamic-videos",
+                  "convertkit-send-dynamic-videos",
+                  "go-high-level-send-dynamic-videos",
+                  "highlevel-ghl-generate-a-video-with-any-trigger",
+                  "hubspot-marketing-emails-send-dynamic-videos",
+                  "hubspot-sales-sequences-send-dynamic-videos",
+                  "instantly-send-dynamic-videos",
+                  "klaviyo-send-dynamic-videos",
+                  "la-growth-machine-send-dynamic-videos",
+                  "leadconnector-send-dynamic-videos",
+                  "lemlist-send-dynamic-videos",
+                  "mailchimp-send-dynamic-videos",
+                  "mailshake-send-dynamic-videos",
+                  "outreach-send-dynamic-videos",
+                  "pipedrive-send-dynamic-videos",
+                  "quickmail-send-dynamic-videos",
+                  "reply-send-dynamic-videos",
+                  "salesforce-send-dynamic-videos",
+                  "salesloft-send-dynamic-videos",
+                  "send-ai-videos-in-smartlead-clay-sendspark",
+                  "sharpspring-send-dynamic-videos",
+                  "smartlead-send-dynamic-videos",
+                  "snov-io-send-dynamic-videos-custom-field-setup",
+                  "snov-io-send-dynamic-videos-template-method",
+                  "trigger-sendspark-videos-from-salesloft-and-send-them-via-apollo-sequences",
+                  "woodpecker-send-dynamic-videos",
+                  "zoho-send-dynamic-videos",
+                  "zoominfo-engage-send-dynamic-videos"
+                ]
+              },
+              {
+                "group": "LinkedIn Automation — Send Dynamic Videos in Bulk",
+                "pages": [
+                  "ai-personalized-videos-in-linkedin-automation",
+                  "connect-expandi-with-sendspark-for-the-first-time",
+                  "customize-thumbnails-in-linkedin-messages",
+                  "expandi-integration-ai-personalized-videos",
+                  "heyreach-send-dynamic-videos",
+                  "la-growth-machine-linkedin-automation",
+                  "lemlist-linkedin-automation-auto-messages",
+                  "linked-helper-send-dynamic-videos",
+                  "linkedin-automation-send-videos-at-scale",
+                  "linkedin-automation-platform-compatibility",
+                  "send-ai-videos-on-linkedin-via-clay-lgm",
+                  "send-videos-in-linkedin-messages-expandi",
+                  "skylead-send-dynamic-videos"
+                ]
+              }
             ]
           }
         ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
+      },
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "group": "Installations & Integrations",
+        "pages": [
+          "how-to-connect-sendspark-and-salesforge",
+          {
+            "group": "CRM & Data Integrations",
+            "pages": [
+              "connect-sendspark-with-salesforce",
+              "constant-contact-sharpspring-integration",
+              "how-sendspark-tracking-snippets-work",
+              "how-to-set-up-sendspark-for-hubspot-crm-integration",
+              "how-to-set-up-sendspark-for-pipedrive",
+              "how-to-set-up-sendspark-for-salesforce",
+              "how-to-set-up-sendspark-for-zoho"
+            ]
+          },
+          {
+            "group": "Connect Sendspark Apps for Automated Workflows",
+            "pages": [
+              "automate-video-follow-ups-intercom-hubspot",
+              "automatically-generate-dynamic-videos-from-google-sheets",
+              "connect-instantly-ai-with-sendspark-agentic",
+              "set-hubspot-admin-permissions-for-workflows"
+            ]
+          },
+          {
+            "group": "Connected Apps",
+            "pages": [
+              "3-ways-to-share-videos-in-hubspot",
+              "hubspot-app-basic-installation-and-testing",
+              "hubspot-guide",
+              "sendspark-aligned-deal-room-integration"
+            ]
+          },
+          {
+            "group": "Instant Integrations",
+            "pages": [
+              "hubspot-instant-integration-chrome-extension",
+              "instant-integration-close-crm",
+              "instant-integration-gmail",
+              "instant-integration-intercom",
+              "instant-integration-linkedin",
+              "instant-integration-outreach",
+              "instant-integration-zendesk",
+              "salesforce-integration-record-videos",
+              "sendspark-instant-integrations-how-they-work",
+              "zoominfo-create-personalized-video-emails"
+            ]
+          },
+          {
+            "group": "Use the Sendspark Chrome Extension",
+            "pages": [
+              "chrome-extension-recording-options-types",
+              "flip-camera-bubble",
+              "how-to-pin-a-chrome-extension",
+              "how-to-record-a-video-without-sound"
+            ]
+          },
+          {
+            "group": "Use the Sendspark Desktop App",
+            "pages": [
+              "how-to-use-the-sendspark-desktop-application"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Automated Workflows",
+        "pages": [
+          "auto-generate-videos-from-skylead-campaign",
+          "create-dynamic-video-backgrounds-from-email-domains",
+          "highlevel-ghl-using-tags-to-trigger-actions",
+          "hubspot-workflows-send-marketing-email-to-list",
+          "leadconnector-ghl-agentic-workflow-automation",
+          "sendspark-automated-workflows-beginner-s-guide",
+          {
+            "group": "Automatically Send Videos",
+            "pages": [
+              "auto-send-ai-personalized-videos",
+              "auto-send-personalized-video-emails-in-apollo",
+              "gmail-automatically-send-ai-personalized-videos",
+              "hubspot-workflows-video-marketing-email-automation",
+              "hubspot-workflows-sendspark-sequences",
+              "outlook-automatically-send-ai-personalized-videos",
+              "outreach-auto-send-ai-personalized-videos",
+              "salesloft-ai-personalized-videos-in-cadences"
+            ]
+          },
+          {
+            "group": "Create Videos From CRM Properties",
+            "pages": [
+              "auto-send-videos-hubspot-to-apollo",
+              "ghl-auto-generate-video-on-meeting-booking",
+              "highlevel-create-share-videos"
+            ]
+          },
+          {
+            "group": "Create Videos from Email Replies",
+            "pages": [
+              "auto-email-video-watchers-instantly",
+              "lemlist-create-ai-video-on-email-reply"
+            ]
+          },
+          {
+            "group": "Create Videos from Email Sequences",
+            "pages": [
+              "auto-send-videos-when-leads-join-campaigns",
+              "gong-engage-send-automated-videos-in-email-flows",
+              "outreach-ai-video-for-new-sequence-leads",
+              "salesloft-auto-ai-videos-for-cadence",
+              "smartlead-auto-send-videos-to-new-leads"
+            ]
+          },
+          {
+            "group": "Create Videos from Triggers",
+            "pages": [
+              "form-triggers-auto-create-videos",
+              "ghl-create-video-on-meeting-booking",
+              "hubspot-send-a-video-when-a-meeting-is-booked",
+              "meeting-booked-create-video-calendly",
+              "rb2b-integration-ai-videos-for-visitors",
+              "warmly-create-videos-from-visitors",
+              "website-visit-create-video-from-trigger"
+            ]
+          },
+          {
+            "group": "Video Notifications",
+            "pages": [
+              "slack-notifications-for-video-views"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Advanced Skills",
+        "pages": [
+          "ai-voice-cloning-how-to-get-the-best-results",
+          "ai-personalized-videos-in-multiple-languages",
+          "automate-video-sharing-through-zapier",
+          "automations-for-notifications",
+          "camera-effects-blur-virtual-backgrounds",
+          "camera-or-microphone-not-detected-no-inputs",
+          "can-autoplay-videos-include-sound",
+          "connect-ai-apps-mcp",
+          "connect-linkedin-for-dynamic-videos",
+          "custom-domain-migration",
+          "hide-chrome-bookmarks-bar-when-recording",
+          "how-enable-disable-the-like-button",
+          "how-to-create-and-use-multiple-workspaces",
+          "how-to-delete-a-video",
+          "how-to-remove-team-members",
+          "how-to-adjust-the-thumbnail-s-size-in-lemlist",
+          "how-to-brand-your-recording-toolbar",
+          "how-to-bulk-delete-videos",
+          "how-to-change-your-email-address-and-password",
+          "how-to-connect-linkedin-and-sendspark",
+          "how-to-create-api-keys",
+          "how-to-create-sub-accounts-for-agencies",
+          "how-to-create-a-dynamic-video-campaign",
+          "how-to-download-videos-in-bulk-using-zapier",
+          "how-to-embed-calendars-with-videos",
+          "how-to-make-dynamic-videos-with-linkedin-profiles",
+          "how-to-make-videos-with-dynamic-backgrounds",
+          "how-to-make-an-ai-generated-video-script",
+          "how-to-modify-shortcuts-on-share-modal",
+          "how-to-recover-videos-desktop-app",
+          "how-to-rename-a-video",
+          "how-to-replace-a-video-while-keeping-the-same-link",
+          "how-to-trim-videos-in-sendspark",
+          "how-to-understand-video-analytics",
+          "how-to-upload-a-custom-video-thumbnail",
+          "how-to-use-autoplay-on-sendspark",
+          "how-to-use-camera-spotlight",
+          "how-to-use-templates",
+          "how-to-use-the-sendspark-countdown-timer",
+          "how-to-use-an-image-as-a-background-url",
+          "how-to-enable-or-disable-captions",
+          "languages-supported-in-dynamic-videos",
+          "make-longer-videos-use-less-dynamic-video-minutes",
+          "missing-thumbnail-emails-in-spam-folder",
+          "move-videos-between-personal-and-team-libraries",
+          "multiple-variables-in-dynamic-videos",
+          "pitch-deck-videos-with-google-slides",
+          "record-screen-and-computer-audio",
+          "recording-missing-when-switching-chrome-tabs",
+          "regenerate-videos-edit-variables",
+          "salesforce-company-variable-missing-workaround",
+          "sendspark-recording-shortcuts-and-hotkeys",
+          "simulate-scrolling-a-webpage-in-dynamic-video",
+          "slack-notification-for-new-dynamic-videos",
+          "supported-email-automation-platforms",
+          "the-correct-recording-method-for-dynamic-videos",
+          "tips-for-sending-videos-over-linkedin-messages",
+          "touch-up-your-appearance",
+          "track-who-has-watched-your-videos",
+          "use-merge-tags-to-personalize-videos-at-scale",
+          "use-a-combined-video-in-a-dynamic-video-campaign",
+          "using-apollo-stage-ids-in-sendspark-automations",
+          "video-analytics-vs-email-open-rates",
+          "voice-cloning-with-multiple-languages",
+          "webhook-payload-ghl",
+          "webhooks-how-to-create-webhooks-in-sendspark",
+          {
+            "group": "Edit Videos",
+            "pages": [
+              {
+                "group": "Calls-to -Action",
+                "pages": [
+                  "use-a-call-to-action-calendar-link",
+                  "use-a-call-to-action-phone-number",
+                  "use-a-call-to-action-text-message",
+                  "use-a-call-to-action-url-link"
+                ]
+              },
+              {
+                "group": "Edit Video Landing Pages",
+                "pages": [
+                  "customize-your-video-landing-page"
+                ]
+              },
+              {
+                "group": "Edit Video Thumbnails",
+                "pages": [
+                  "edit-thumbnail-caption-colors",
+                  "how-to-edit-video-thumbnails"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Embed Calendars with Videos",
+            "pages": [
+              "embed-calendly-calendar-with-videos",
+              "embed-chili-piper-calendar-with-videos",
+              "embed-google-calendar-with-videos",
+              "embed-highlevel-ghl-calendar-with-videos",
+              "embed-hubspot-calendar-with-videos",
+              "embed-lemcal-calendar-with-videos",
+              "embed-mixmax-calendar-with-videos",
+              "embed-outreach-calendar-with-videos",
+              "embed-salesloft-calendar-with-videos",
+              "embed-youcanbookme-calendar-with-videos",
+              "embed-a-paperform-in-your-sendspark-video-landing-page"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Public API and Webhooks",
+        "pages": [
+          "api-automatically-create-dynamic-videos-via-api",
+          "webhooks-properties-in-sendspark-webhooks"
+        ]
+      },
+      {
+        "group": "FAQ & Troubleshooting",
+        "pages": [
+          "ai-voice-cloning-faqs",
+          "agentic-workflows-add-variable-fallbacks",
+          "automatically-download-files-with-your-cta-button",
+          "bulk-video-downloads-with-agentic-workflows",
+          "can-i-use-the-request-video-link-multiple-times",
+          "can-you-send-emails-from-sendspark",
+          "dynamic-video-campaign-limits",
+          "dynamic-video-campaigns-configuring-error-handling-for-dynamic-backgrounds",
+          "dynamic-video-length",
+          "dynamic-videos-2026",
+          "edit-landing-page-in-dynamic-video-campaign",
+          "fallback-websites-in-dynamic-video-feature",
+          "give-the-chrome-extension-permission-to-record",
+          "how-to-clear-site-data",
+          "how-to-create-a-free-trial",
+          "how-to-enable-disable-hardware-acceleration",
+          "how-to-get-notified-when-someone-watches-your-video",
+          "how-to-hide-the-sendspark-recording-toolbar",
+          "how-to-pause-resume-videos",
+          "how-to-record-system-audio-in-sendspark",
+          "how-to-remove-breakpoints-from-combined-videos",
+          "how-to-remove-hubspot-s-hubl-code-warning-message",
+          "how-to-review-and-pay-our-invoices",
+          "how-to-set-or-change-your-logo",
+          "how-to-update-your-payment-method",
+          "how-to-adjust-the-logo-size",
+          "how-to-avoid-triggering-spam-filters",
+          "how-to-find-your-workspace-id",
+          "how-to-fix-black-recording-with-sendspark",
+          "how-to-record-in-powerpoint-in-full-screen",
+          "how-to-record-videos-over-pdf-files-chrome-extension",
+          "hubspot-auto-send-videos-from-different-sales-reps",
+          "linkedin-background-video-generation-limits",
+          "linkedin-profile-background-won-t-create-video",
+          "locked-out-of-my-account-lost-account-access",
+          "log-in-issues-troubleshoot",
+          "mac-app-blocked-by-apple-security-check",
+          "multiple-variables-guideline",
+          "my-download-is-slow",
+          "optimize-ai-voice-output-in-dynamic-videos",
+          "permissions-missing",
+          "record-over-powerpoint-pdfs-applications",
+          "share-dynamic-videos-without-sales-email-tools",
+          "solo-growth-team-plan-features",
+          "third-party-platform-limitations",
+          "troubleshooting-recording-issues-chrome-extension",
+          "use-prospect-website-for-email-not-gmail",
+          "using-sendspark-with-multiple-screens",
+          "variables-and-placeholders-in-sendspark-videos",
+          "watch-videos-in-fullscreen",
+          "what-are-dynamic-video-minutes-credits",
+          "what-video-formats-can-i-upload-to-sendspark",
+          "what-to-do-when-video-processing-is-taking-too-long",
+          "why-is-my-video-washed-out-after-uploading-it",
+          "why-isn-t-my-camera-working",
+          "why-your-card-doesn-t-support-this-payment",
+          "why-is-my-audio-video-out-of-sync",
+          "why-is-my-video-uploading-slowly",
+          "why-is-the-chrome-extension-not-working",
+          "why-is-there-no-audio-on-my-video",
+          "how-to-create-a-video-email-signature",
+          {
+            "group": "Sendspark Partner Program",
+            "pages": [
+              "become-a-sendspark-integration-partner",
+              "become-a-sendspark-partner"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Regular Videos",
+        "pages": [
+          {
+            "group": "Record Videos",
+            "pages": [
+              "record-both-your-face-and-screen-together",
+              "record-your-screen",
+              "record-yourself",
+              "upload-a-video-to-sendspark"
+            ]
+          },
+          {
+            "group": "Request Videos",
+            "pages": [
+              "how-to-customize-your-request-video-pages",
+              "how-to-request-a-testimonial-with-sendspark",
+              "request-videos-for-customer-support-in-intercom"
+            ]
+          },
+          {
+            "group": "Share Videos",
+            "pages": [
+              "general-overview-how-to-share-sendspark-videos",
+              "linkedin-sales-navigator-scale-videos",
+              "whatsapp-how-to-send-videos-at-scale",
+              {
+                "group": "Download",
+                "pages": [
+                  "download-videos-as-mp4-files"
+                ]
+              },
+              {
+                "group": "Email (Quick Share)",
+                "pages": [
+                  "apple-mail-send-video-emails",
+                  "campaign-monitor-send-video-emails",
+                  "constant-contact-embed-videos-with-custom-code",
+                  "constant-contact-send-video-emails-as-image-links",
+                  "customer-io-send-video-emails",
+                  "giveffect-send-video-emails",
+                  "gmail-send-video-emails",
+                  "hubspot-embed-videos-in-emails-as-images",
+                  "hubspot-static-videos-marketing-hub",
+                  "intercom-send-video-emails",
+                  "klaviyo-send-video-emails",
+                  "mailchimp-send-video-emails",
+                  "outlook-send-video-emails",
+                  "pipedrive-send-video-emails",
+                  "thunderbird-send-video-emails"
+                ]
+              },
+              {
+                "group": "Email (Share with Personalization)",
+                "pages": [
+                  "activecampaign-send-personalized-videos-at-scale",
+                  "apollo-send-static-videos-at-scale",
+                  "aweber-send-personalized-videos-at-scale",
+                  "constant-contact-send-personalized-videos",
+                  "convertkit-send-personalized-videos-at-scale",
+                  "emma-send-personalized-videos-at-scale",
+                  "expandi-send-personalized-videos-at-scale",
+                  "go-high-level-send-personalized-videos-at-scale",
+                  "growth-x-send-personalized-videos-at-scale",
+                  "highlevel-ghl-send-personalized-videos-at-scale",
+                  "hubspot-static-videos-sales-hub",
+                  "instantly-send-personalized-videos-at-scale",
+                  "klaviyo-send-personalized-videos-at-scale",
+                  "klenty-send-personalized-videos-at-scale",
+                  "lemlist-send-personalized-videos-at-scale",
+                  "mailchimp-send-personalized-videos-at-scale",
+                  "mailerlite-send-personalized-videos-at-scale",
+                  "mailshake-send-personalized-videos-at-scale",
+                  "marketo-send-personalized-videos-at-scale",
+                  "mixmax-send-personalized-videos-at-scale",
+                  "outreach-send-personalized-videos-at-scale",
+                  "platformly-send-personalized-videos-at-scale",
+                  "reply-send-personalized-videos-at-scale",
+                  "salesloft-send-personalized-videos-at-scale",
+                  "salesforce-send-personalized-videos-at-scale",
+                  "sendfox-send-personalized-videos-at-scale",
+                  "skylead-send-personalized-videos-at-scale",
+                  "smartlead-send-personalized-videos-at-scale",
+                  "snov-io-send-personalized-videos-at-scale",
+                  "vbout-send-personalized-videos-at-scale",
+                  "woodpecker-send-personalized-videos-at-scale",
+                  "zendesk-send-personalized-videos-at-scale",
+                  "zoho-send-personalized-videos-at-scale",
+                  "zoominfo-engage-send-personalized-videos"
+                ]
+              },
+              {
+                "group": "Email Embed",
+                "pages": [
+                  "embed-videos-in-email-that-play-in-email"
+                ]
+              },
+              {
+                "group": "Social",
+                "pages": [
+                  "facebook-messenger-how-to-share-videos",
+                  "linkedin-video-comments-show-gif-thumbnails",
+                  "linkedin-how-to-share-videos",
+                  "slack-how-to-share-videos"
+                ]
+              },
+              {
+                "group": "Text Message",
+                "pages": [
+                  "text-videos-to-clients-sms"
+                ]
+              },
+              {
+                "group": "Website Embed",
+                "pages": [
+                  "embed-your-video-on-a-web-page",
+                  "how-to-embed-a-video-on-a-hubspot-blog-post"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "More Guides",
+        "pages": [
+          "analytics-update-implications-for-videos-recorded-before-jan-19-2022",
+          "analytics-update-percentage-watched",
+          "bridger-send-personalized-videos-at-scale",
+          "change-camera-microphone-source",
+          "close-send-personalized-videos-at-scale",
+          "create-contacts-in-apollo-if-they-don-t-already-exist",
+          "delete-a-folder",
+          "filter-videos-by-creators",
+          "filter-videos-by-plays-likes-and-cta-clicked",
+          "get-started-with-sendspark-solo-plan",
+          "getting-started-with-sendspark-starter",
+          "greenhouse-recruiting",
+          "groove",
+          "growbots",
+          "how-merge-tag-fallbacks-work",
+          "how-to-understand-sendspark-video-analytics",
+          "how-to-add-salesloft-tracking-snippet-to-sendspark",
+          "how-to-cancel-sendspark",
+          "how-to-create-a-folder-in-sendspark",
+          "how-to-edit-your-linkedin-messages",
+          "how-to-move-videos-between-folders",
+          "how-to-request-a-video",
+          "how-to-search-videos-in-sendspark",
+          "how-to-add-google-tag-manager-to-sendspark",
+          "keep-send-ai-personalized-video-emails",
+          "leadconnector-send-personalized-videos-at-scale",
+          "leadsimple",
+          "microsoft-dynamics-crm",
+          "multilead-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
+          "phoneburner-send-personalized-videos-at-scale",
+          "podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
+          "rename-a-folder",
+          "reorder-videos",
+          "salesforce-cadences-send-personalized-videos-at-scale",
+          "salesforce-marketing-cloud-send-personalized-videos-at-scale",
+          "saleshandy",
+          "save-default-meeting-links",
+          "sendspark-desktop-application-for-macos",
+          "upload-avatars",
+          "uptics-integration",
+          "vincere"
+        ]
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ]
   },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+  "redirects": [
+    {
+      "source": "/en/articles/15879611-*",
+      "destination": "/permissions-missing"
+    },
+    {
+      "source": "/en/articles/15645864-*",
+      "destination": "/connect-ai-apps-mcp"
+    },
+    {
+      "source": "/en/articles/15655253-*",
+      "destination": "/how-to-create-a-free-trial"
+    },
+    {
+      "source": "/en/articles/12109242-*",
+      "destination": "/using-apollo-stage-ids-in-sendspark-automations"
+    },
+    {
+      "source": "/en/articles/9804097-*",
+      "destination": "/log-in-issues-troubleshoot"
+    },
+    {
+      "source": "/en/articles/9682359-*",
+      "destination": "/automate-video-sharing-through-zapier"
+    },
+    {
+      "source": "/en/articles/9611795-*",
+      "destination": "/recording-missing-when-switching-chrome-tabs"
+    },
+    {
+      "source": "/en/articles/9583515-*",
+      "destination": "/track-who-has-watched-your-videos"
+    },
+    {
+      "source": "/en/articles/9553068-*",
+      "destination": "/pitch-deck-videos-with-google-slides"
+    },
+    {
+      "source": "/en/articles/9478441-*",
+      "destination": "/make-com-auto-create-ai-personalized-videos"
+    },
+    {
+      "source": "/en/articles/9472428-*",
+      "destination": "/how-to-set-or-change-your-logo"
+    },
+    {
+      "source": "/en/articles/9425533-*",
+      "destination": "/clay-integration-create-ai-videos"
+    },
+    {
+      "source": "/en/articles/9261302-*",
+      "destination": "/how-to-adjust-the-logo-size"
+    },
+    {
+      "source": "/en/articles/9211984-*",
+      "destination": "/embed-google-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/9204268-*",
+      "destination": "/pipedrive-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9203564-*",
+      "destination": "/how-to-adjust-the-thumbnail-s-size-in-lemlist"
+    },
+    {
+      "source": "/en/articles/9189896-*",
+      "destination": "/how-to-connect-linkedin-and-sendspark"
+    },
+    {
+      "source": "/en/articles/9186828-*",
+      "destination": "/webhooks-how-to-create-webhooks-in-sendspark"
+    },
+    {
+      "source": "/en/articles/9146071-*",
+      "destination": "/zoominfo-engage-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9145342-*",
+      "destination": "/linkedin-automation-send-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/9110152-*",
+      "destination": "/webhooks-for-dynamic-video-notifications"
+    },
+    {
+      "source": "/en/articles/9110134-*",
+      "destination": "/zapier-create-dynamic-videos-via-integration"
+    },
+    {
+      "source": "/en/articles/9034805-*",
+      "destination": "/how-to-embed-calendars-with-videos"
+    },
+    {
+      "source": "/en/articles/8987558-*",
+      "destination": "/3-ways-to-share-videos-in-hubspot"
+    },
+    {
+      "source": "/en/articles/8874862-*",
+      "destination": "/hubspot-sendpark-app-send-videos-in-workflows"
+    },
+    {
+      "source": "/en/articles/8869736-*",
+      "destination": "/amplemarket-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8838998-*",
+      "destination": "/snov-io-send-dynamic-videos-template-method"
+    },
+    {
+      "source": "/en/articles/8695153-*",
+      "destination": "/dynamic-videos-how-are-minutes-measured"
+    },
+    {
+      "source": "/en/articles/8690724-*",
+      "destination": "/hubspot-guide"
+    },
+    {
+      "source": "/en/articles/8690692-*",
+      "destination": "/hubspot-app-basic-installation-and-testing"
+    },
+    {
+      "source": "/en/articles/8554225-*",
+      "destination": "/dynamic-videos-make-videos-with-ai-introductions"
+    },
+    {
+      "source": "/en/articles/8513753-*",
+      "destination": "/record-screen-and-computer-audio"
+    },
+    {
+      "source": "/en/articles/8513396-*",
+      "destination": "/sendspark-for-agencies-video-prospecting"
+    },
+    {
+      "source": "/en/articles/8511040-*",
+      "destination": "/mailshake-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8505636-*",
+      "destination": "/getting-started-guide-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8504993-*",
+      "destination": "/embed-videos-in-email-that-play-in-email"
+    },
+    {
+      "source": "/en/articles/8500986-*",
+      "destination": "/reply-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8498573-*",
+      "destination": "/hubspot-marketing-emails-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8496409-*",
+      "destination": "/ai-voice-cloning-how-to-get-the-best-results"
+    },
+    {
+      "source": "/en/articles/8490790-*",
+      "destination": "/smartlead-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8490267-*",
+      "destination": "/how-to-use-the-sendspark-desktop-application"
+    },
+    {
+      "source": "/en/articles/8458228-*",
+      "destination": "/getting-started-guide-record-a-video"
+    },
+    {
+      "source": "/en/articles/8404555-*",
+      "destination": "/mailchimp-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8403716-*",
+      "destination": "/smartlead-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/8392439-*",
+      "destination": "/zoho-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8375180-*",
+      "destination": "/apollo-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8370568-*",
+      "destination": "/leadconnector-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8349725-*",
+      "destination": "/salesforce-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8047942-*",
+      "destination": "/lemlist-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/7957258-*",
+      "destination": "/camera-effects-blur-virtual-backgrounds"
+    },
+    {
+      "source": "/en/articles/7888040-*",
+      "destination": "/instant-integration-close-crm"
+    },
+    {
+      "source": "/en/articles/7206761-*",
+      "destination": "/woodpecker-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/7192161-*",
+      "destination": "/how-to-make-an-ai-generated-video-script"
+    },
+    {
+      "source": "/en/articles/7192095-*",
+      "destination": "/how-to-make-videos-with-dynamic-backgrounds"
+    },
+    {
+      "source": "/en/articles/6963943-*",
+      "destination": "/apollo-send-static-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6963928-*",
+      "destination": "/marketo-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6676528-*",
+      "destination": "/instantly-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6676500-*",
+      "destination": "/convertkit-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6649438-*",
+      "destination": "/klenty-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6637559-*",
+      "destination": "/highlevel-ghl-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6621950-*",
+      "destination": "/how-to-trim-videos-in-sendspark"
+    },
+    {
+      "source": "/en/articles/6609597-*",
+      "destination": "/snov-io-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6604954-*",
+      "destination": "/aweber-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6604952-*",
+      "destination": "/go-high-level-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6604948-*",
+      "destination": "/mixmax-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6604945-*",
+      "destination": "/growth-x-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6604944-*",
+      "destination": "/skylead-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6602694-*",
+      "destination": "/zoominfo-engage-send-personalized-videos"
+    },
+    {
+      "source": "/en/articles/6503935-*",
+      "destination": "/klaviyo-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6503887-*",
+      "destination": "/mailchimp-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6503886-*",
+      "destination": "/sendfox-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6497080-*",
+      "destination": "/vbout-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6497079-*",
+      "destination": "/platformly-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6496183-*",
+      "destination": "/reply-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6496063-*",
+      "destination": "/zendesk-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6465050-*",
+      "destination": "/how-to-modify-shortcuts-on-share-modal"
+    },
+    {
+      "source": "/en/articles/6457173-*",
+      "destination": "/outreach-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6354462-*",
+      "destination": "/use-merge-tags-to-personalize-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6337900-*",
+      "destination": "/hubspot-static-videos-sales-hub"
+    },
+    {
+      "source": "/en/articles/6226849-*",
+      "destination": "/why-is-my-audio-video-out-of-sync"
+    },
+    {
+      "source": "/en/articles/6226815-*",
+      "destination": "/why-is-my-video-uploading-slowly"
+    },
+    {
+      "source": "/en/articles/6040365-*",
+      "destination": "/how-to-use-camera-spotlight"
+    },
+    {
+      "source": "/en/articles/5970988-*",
+      "destination": "/how-sendspark-tracking-snippets-work"
+    },
+    {
+      "source": "/en/articles/5970885-*",
+      "destination": "/how-to-set-up-sendspark-for-zoho"
+    },
+    {
+      "source": "/en/articles/5970758-*",
+      "destination": "/how-to-set-up-sendspark-for-hubspot-crm-integration"
+    },
+    {
+      "source": "/en/articles/5970577-*",
+      "destination": "/how-to-set-up-sendspark-for-salesforce"
+    },
+    {
+      "source": "/en/articles/5965724-*",
+      "destination": "/how-to-use-templates"
+    },
+    {
+      "source": "/en/articles/5963256-*",
+      "destination": "/how-to-use-the-sendspark-countdown-timer"
+    },
+    {
+      "source": "/en/articles/5809352-*",
+      "destination": "/hubspot-instant-integration-chrome-extension"
+    },
+    {
+      "source": "/en/articles/5809245-*",
+      "destination": "/instant-integration-zendesk"
+    },
+    {
+      "source": "/en/articles/5809228-*",
+      "destination": "/instant-integration-intercom"
+    },
+    {
+      "source": "/en/articles/5782806-*",
+      "destination": "/why-is-there-no-audio-on-my-video"
+    },
+    {
+      "source": "/en/articles/5781288-*",
+      "destination": "/general-overview-how-to-share-sendspark-videos"
+    },
+    {
+      "source": "/en/articles/5777490-*",
+      "destination": "/thunderbird-send-video-emails"
+    },
+    {
+      "source": "/en/articles/5776653-*",
+      "destination": "/mailerlite-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/5776480-*",
+      "destination": "/giveffect-send-video-emails"
+    },
+    {
+      "source": "/en/articles/5759047-*",
+      "destination": "/activecampaign-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/5724793-*",
+      "destination": "/instant-integration-outreach"
+    },
+    {
+      "source": "/en/articles/5717802-*",
+      "destination": "/instant-integration-linkedin"
+    },
+    {
+      "source": "/en/articles/5697812-*",
+      "destination": "/pipedrive-send-video-emails"
+    },
+    {
+      "source": "/en/articles/5648721-*",
+      "destination": "/instant-integration-gmail"
+    },
+    {
+      "source": "/en/articles/5566746-*",
+      "destination": "/become-a-sendspark-partner"
+    },
+    {
+      "source": "/en/articles/5461398-*",
+      "destination": "/request-videos-for-customer-support-in-intercom"
+    },
+    {
+      "source": "/en/articles/5171294-*",
+      "destination": "/how-to-understand-video-analytics"
+    },
+    {
+      "source": "/en/articles/5152208-*",
+      "destination": "/chrome-extension-recording-options-types"
+    },
+    {
+      "source": "/en/articles/4984944-*",
+      "destination": "/embed-your-video-on-a-web-page"
+    },
+    {
+      "source": "/en/articles/4874742-*",
+      "destination": "/remove-sendspark-branding-whitelabel"
+    },
+    {
+      "source": "/en/articles/4396835-*",
+      "destination": "/customer-io-send-video-emails"
+    },
+    {
+      "source": "/en/articles/4292692-*",
+      "destination": "/record-your-screen"
+    },
+    {
+      "source": "/en/articles/3703840-*",
+      "destination": "/how-to-embed-a-video-on-a-hubspot-blog-post"
+    },
+    {
+      "source": "/en/articles/3388387-*",
+      "destination": "/why-isn-t-my-camera-working"
+    },
+    {
+      "source": "/en/articles/3377661-*",
+      "destination": "/gmail-send-video-emails"
+    },
+    {
+      "source": "/en/articles/15402266-*",
+      "destination": "/automatically-generate-dynamic-videos-from-google-sheets"
+    },
+    {
+      "source": "/en/articles/14123409-*",
+      "destination": "/mixmax-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/14122587-*",
+      "destination": "/automations-for-notifications"
+    },
+    {
+      "source": "/en/articles/14022634-*",
+      "destination": "/embed-a-paperform-in-your-sendspark-video-landing-page"
+    },
+    {
+      "source": "/en/articles/13920350-*",
+      "destination": "/how-to-record-a-watermelon-video"
+    },
+    {
+      "source": "/en/articles/13762258-*",
+      "destination": "/trigger-sendspark-videos-from-salesloft-and-send-them-via-apollo-sequences"
+    },
+    {
+      "source": "/en/articles/13753670-*",
+      "destination": "/how-to-create-a-video-email-signature"
+    },
+    {
+      "source": "/en/articles/13673611-*",
+      "destination": "/hubspot-workflows-sendspark-sequences"
+    },
+    {
+      "source": "/en/articles/13641888-*",
+      "destination": "/hubspot-workflows-send-marketing-email-to-list"
+    },
+    {
+      "source": "/en/articles/13215878-*",
+      "destination": "/add-and-save-templates-in-dynamic-campaigns"
+    },
+    {
+      "source": "/en/articles/12947382-*",
+      "destination": "/highlevel-ghl-generate-a-video-with-any-trigger"
+    },
+    {
+      "source": "/en/articles/12947246-*",
+      "destination": "/reachinbox-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/12844805-*",
+      "destination": "/lemlist-linkedin-automation-auto-messages"
+    },
+    {
+      "source": "/en/articles/12822471-*",
+      "destination": "/highlevel-leadconnector-vs-marketing-snippet"
+    },
+    {
+      "source": "/en/articles/12822028-*",
+      "destination": "/sendspark-floating-menu"
+    },
+    {
+      "source": "/en/articles/12701050-*",
+      "destination": "/connect-linkedin-for-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/12621809-*",
+      "destination": "/lemlist-send-personalized-videos-via-linkedin"
+    },
+    {
+      "source": "/en/articles/12534232-*",
+      "destination": "/grinfi-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/12511171-*",
+      "destination": "/sendgrid-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/12267916-*",
+      "destination": "/share-dynamic-videos-without-sales-email-tools"
+    },
+    {
+      "source": "/en/articles/12178551-*",
+      "destination": "/auto-send-personalized-video-emails-in-apollo"
+    },
+    {
+      "source": "/en/articles/12161614-*",
+      "destination": "/highlevel-ghl-using-tags-to-trigger-actions"
+    },
+    {
+      "source": "/en/articles/12161365-*",
+      "destination": "/fallback-websites-in-dynamic-video-feature"
+    },
+    {
+      "source": "/en/articles/12133944-*",
+      "destination": "/smartlead-auto-send-videos-to-new-leads"
+    },
+    {
+      "source": "/en/articles/12133851-*",
+      "destination": "/auto-send-videos-when-leads-join-campaigns"
+    },
+    {
+      "source": "/en/articles/12082407-*",
+      "destination": "/outreach-auto-send-ai-personalized-videos"
+    },
+    {
+      "source": "/en/articles/12060743-*",
+      "destination": "/highlevel-create-share-videos"
+    },
+    {
+      "source": "/en/articles/12054990-*",
+      "destination": "/edit-landing-page-in-dynamic-video-campaign"
+    },
+    {
+      "source": "/en/articles/12054838-*",
+      "destination": "/optimize-ai-voice-output-in-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/12035976-*",
+      "destination": "/multiple-variables-in-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/12034781-*",
+      "destination": "/dynamic-video-length"
+    },
+    {
+      "source": "/en/articles/11726880-*",
+      "destination": "/zoominfo-create-personalized-video-emails"
+    },
+    {
+      "source": "/en/articles/11427959-*",
+      "destination": "/linkedin-automation-platform-compatibility"
+    },
+    {
+      "source": "/en/articles/11427537-*",
+      "destination": "/ghl-auto-generate-video-on-meeting-booking"
+    },
+    {
+      "source": "/en/articles/11420366-*",
+      "destination": "/linkedin-sales-navigator-scale-videos"
+    },
+    {
+      "source": "/en/articles/11420066-*",
+      "destination": "/whatsapp-how-to-send-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/11400066-*",
+      "destination": "/salesloft-auto-ai-videos-for-cadence"
+    },
+    {
+      "source": "/en/articles/11178712-*",
+      "destination": "/unreachable-background-urls-in-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/11178503-*",
+      "destination": "/how-to-use-the-teleprompter"
+    },
+    {
+      "source": "/en/articles/11173982-*",
+      "destination": "/form-triggers-auto-create-videos"
+    },
+    {
+      "source": "/en/articles/11172985-*",
+      "destination": "/sendspark-automated-workflows-beginner-s-guide"
+    },
+    {
+      "source": "/en/articles/11155409-*",
+      "destination": "/ai-video-campaigns-clay-lemlist-setup"
+    },
+    {
+      "source": "/en/articles/11139044-*",
+      "destination": "/sharpspring-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/11115902-*",
+      "destination": "/send-ai-videos-in-instantly-clay-sendspark"
+    },
+    {
+      "source": "/en/articles/11055981-*",
+      "destination": "/lemlist-create-ai-video-on-email-reply"
+    },
+    {
+      "source": "/en/articles/10771148-*",
+      "destination": "/how-to-avoid-triggering-spam-filters"
+    },
+    {
+      "source": "/en/articles/10769516-*",
+      "destination": "/slack-notifications-for-video-views"
+    },
+    {
+      "source": "/en/articles/10721594-*",
+      "destination": "/outlook-automatically-send-ai-personalized-videos"
+    },
+    {
+      "source": "/en/articles/10705958-*",
+      "destination": "/outreach-ai-video-for-new-sequence-leads"
+    },
+    {
+      "source": "/en/articles/10684596-*",
+      "destination": "/sendspark-onboarding-checklist"
+    },
+    {
+      "source": "/en/articles/10657416-*",
+      "destination": "/face-recording-vs-both-recording-in-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/10619230-*",
+      "destination": "/webhooks-properties-in-sendspark-webhooks"
+    },
+    {
+      "source": "/en/articles/10594707-*",
+      "destination": "/send-videos-in-linkedin-messages-expandi"
+    },
+    {
+      "source": "/en/articles/10552029-*",
+      "destination": "/become-a-sendspark-integration-partner"
+    },
+    {
+      "source": "/en/articles/10254324-*",
+      "destination": "/how-to-use-lip-cloning"
+    },
+    {
+      "source": "/en/articles/10223502-*",
+      "destination": "/connect-expandi-with-sendspark-for-the-first-time"
+    },
+    {
+      "source": "/en/articles/10193673-*",
+      "destination": "/automatically-download-files-with-your-cta-button"
+    },
+    {
+      "source": "/en/articles/10185095-*",
+      "destination": "/zapier-reply-auto-create-send-ai-videos"
+    },
+    {
+      "source": "/en/articles/10155620-*",
+      "destination": "/klaviyo-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/10077385-*",
+      "destination": "/expandi-integration-ai-personalized-videos"
+    },
+    {
+      "source": "/en/articles/10059496-*",
+      "destination": "/snov-io-send-dynamic-videos-custom-field-setup"
+    },
+    {
+      "source": "/en/articles/11115719-*",
+      "destination": "/send-ai-videos-in-smartlead-clay-sendspark"
+    },
+    {
+      "source": "/en/articles/9921973-*",
+      "destination": "/linkedin-profile-background-won-t-create-video"
+    },
+    {
+      "source": "/en/articles/9800636-*",
+      "destination": "/ai-personalized-videos-in-multiple-languages"
+    },
+    {
+      "source": "/en/articles/9658445-*",
+      "destination": "/la-growth-machine-linkedin-automation"
+    },
+    {
+      "source": "/en/articles/9658103-*",
+      "destination": "/send-ai-videos-on-linkedin-via-clay-lgm"
+    },
+    {
+      "source": "/en/articles/9615477-*",
+      "destination": "/tips-for-sending-videos-over-linkedin-messages"
+    },
+    {
+      "source": "/en/articles/9615378-*",
+      "destination": "/make-longer-videos-use-less-dynamic-video-minutes"
+    },
+    {
+      "source": "/en/articles/9614413-*",
+      "destination": "/connect-sendspark-with-salesforce"
+    },
+    {
+      "source": "/en/articles/9591974-*",
+      "destination": "/how-to-rename-a-video"
+    },
+    {
+      "source": "/en/articles/9583536-*",
+      "destination": "/supported-email-automation-platforms"
+    },
+    {
+      "source": "/en/articles/9552587-*",
+      "destination": "/how-to-use-an-image-as-a-background-url"
+    },
+    {
+      "source": "/en/articles/9478400-*",
+      "destination": "/highlevel-ghl-ai-personalized-videos"
+    },
+    {
+      "source": "/en/articles/9467353-*",
+      "destination": "/what-are-dynamic-video-minutes-credits"
+    },
+    {
+      "source": "/en/articles/9389226-*",
+      "destination": "/la-growth-machine-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9278059-*",
+      "destination": "/how-to-recover-videos-desktop-app"
+    },
+    {
+      "source": "/en/articles/9208476-*",
+      "destination": "/use-a-combined-video-in-a-dynamic-video-campaign"
+    },
+    {
+      "source": "/en/articles/9052008-*",
+      "destination": "/embed-chili-piper-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/8940461-*",
+      "destination": "/how-to-enable-or-disable-captions"
+    },
+    {
+      "source": "/en/articles/8935515-*",
+      "destination": "/ai-personalized-videos-in-linkedin-automation"
+    },
+    {
+      "source": "/en/articles/8813812-*",
+      "destination": "/voice-cloning-with-multiple-languages"
+    },
+    {
+      "source": "/en/articles/8545689-*",
+      "destination": "/how-to-make-dynamic-videos-with-linkedin-profiles"
+    },
+    {
+      "source": "/en/articles/8513549-*",
+      "destination": "/hide-chrome-bookmarks-bar-when-recording"
+    },
+    {
+      "source": "/en/articles/8513410-*",
+      "destination": "/how-to-bulk-delete-videos"
+    },
+    {
+      "source": "/en/articles/8460728-*",
+      "destination": "/instantly-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8420966-*",
+      "destination": "/lemlist-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8337859-*",
+      "destination": "/constant-contact-send-personalized-videos"
+    },
+    {
+      "source": "/en/articles/8177467-*",
+      "destination": "/how-to-create-sub-accounts-for-agencies"
+    },
+    {
+      "source": "/en/articles/6891741-*",
+      "destination": "/how-to-hide-the-sendspark-recording-toolbar"
+    },
+    {
+      "source": "/en/articles/6676512-*",
+      "destination": "/mailshake-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/5898638-*",
+      "destination": "/how-to-upload-a-custom-video-thumbnail"
+    },
+    {
+      "source": "/en/articles/5776349-*",
+      "destination": "/slack-how-to-share-videos"
+    },
+    {
+      "source": "/en/articles/5568771-*",
+      "destination": "/constant-contact-send-video-emails-as-image-links"
+    },
+    {
+      "source": "/en/articles/5548720-*",
+      "destination": "/linkedin-how-to-share-videos"
+    },
+    {
+      "source": "/en/articles/4430976-*",
+      "destination": "/klaviyo-send-video-emails"
+    },
+    {
+      "source": "/en/articles/4422405-*",
+      "destination": "/mailchimp-send-video-emails"
+    },
+    {
+      "source": "/en/articles/4408138-*",
+      "destination": "/hubspot-static-videos-marketing-hub"
+    },
+    {
+      "source": "/en/articles/4384415-*",
+      "destination": "/intercom-send-video-emails"
+    },
+    {
+      "source": "/en/articles/4287760-*",
+      "destination": "/download-videos-as-mp4-files"
+    },
+    {
+      "source": "/en/articles/3377335-*",
+      "destination": "/hubspot-embed-videos-in-emails-as-images"
+    },
+    {
+      "source": "/en/articles/13609805-*",
+      "destination": "/why-your-card-doesn-t-support-this-payment"
+    },
+    {
+      "source": "/en/articles/12930542-*",
+      "destination": "/how-to-connect-sendspark-and-salesforge"
+    },
+    {
+      "source": "/en/articles/12701549-*",
+      "destination": "/can-you-send-emails-from-sendspark"
+    },
+    {
+      "source": "/en/articles/12309834-*",
+      "destination": "/agentic-workflows-add-variable-fallbacks"
+    },
+    {
+      "source": "/en/articles/12268069-*",
+      "destination": "/how-to-record-system-audio-in-sendspark"
+    },
+    {
+      "source": "/en/articles/12141064-*",
+      "destination": "/connect-instantly-ai-with-sendspark-agentic"
+    },
+    {
+      "source": "/en/articles/12132936-*",
+      "destination": "/bulk-video-downloads-with-agentic-workflows"
+    },
+    {
+      "source": "/en/articles/12132848-*",
+      "destination": "/how-to-get-notified-when-someone-watches-your-video"
+    },
+    {
+      "source": "/en/articles/12116804-*",
+      "destination": "/auto-send-ai-personalized-videos"
+    },
+    {
+      "source": "/en/articles/12114727-*",
+      "destination": "/salesloft-ai-personalized-videos-in-cadences"
+    },
+    {
+      "source": "/en/articles/12099743-*",
+      "destination": "/how-to-remove-breakpoints-from-combined-videos"
+    },
+    {
+      "source": "/en/articles/12064378-*",
+      "destination": "/rb2b-integration-ai-videos-for-visitors"
+    },
+    {
+      "source": "/en/articles/12059896-*",
+      "destination": "/automate-video-follow-ups-intercom-hubspot"
+    },
+    {
+      "source": "/en/articles/12007211-*",
+      "destination": "/sendspark-aligned-deal-room-integration"
+    },
+    {
+      "source": "/en/articles/11997015-*",
+      "destination": "/auto-email-video-watchers-instantly"
+    },
+    {
+      "source": "/en/articles/11887180-*",
+      "destination": "/regenerate-videos-edit-variables"
+    },
+    {
+      "source": "/en/articles/11573045-*",
+      "destination": "/how-to-remove-hubspot-s-hubl-code-warning-message"
+    },
+    {
+      "source": "/en/articles/11390100-*",
+      "destination": "/embed-lemcal-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/11382818-*",
+      "destination": "/warmly-create-videos-from-visitors"
+    },
+    {
+      "source": "/en/articles/11382784-*",
+      "destination": "/gong-engage-send-automated-videos-in-email-flows"
+    },
+    {
+      "source": "/en/articles/11176283-*",
+      "destination": "/hubspot-send-a-video-when-a-meeting-is-booked"
+    },
+    {
+      "source": "/en/articles/10829786-*",
+      "destination": "/tips-from-sendspark-s-csm"
+    },
+    {
+      "source": "/en/articles/15402070-*",
+      "destination": "/dynamic-video-campaigns-configuring-error-handling-for-dynamic-backgrounds"
+    },
+    {
+      "source": "/en/articles/9034118-*",
+      "destination": "/hubspot-workflows-sendspark-marketing-email"
+    },
+    {
+      "source": "/en/articles/14323098-*",
+      "destination": "/linkedin-background-video-generation-limits"
+    },
+    {
+      "source": "/en/articles/14458422-*",
+      "destination": "/custom-domain-migration"
+    },
+    {
+      "source": "/en/articles/14199753-*",
+      "destination": "/toggle-voice-cloning-on-off"
+    },
+    {
+      "source": "/en/articles/14323370-*",
+      "destination": "/third-party-platform-limitations"
+    },
+    {
+      "source": "/en/articles/14463226-*",
+      "destination": "/leadconnector-ghl-agentic-workflow-automation"
+    },
+    {
+      "source": "/en/articles/14788333-*",
+      "destination": "/how-to-record-videos-over-pdf-files-chrome-extension"
+    },
+    {
+      "source": "/en/articles/14841360-*",
+      "destination": "/create-dynamic-video-backgrounds-from-email-domains"
+    },
+    {
+      "source": "/en/articles/11403716-*",
+      "destination": "/webhook-payload-ghl"
+    },
+    {
+      "source": "/en/articles/12224875-*",
+      "destination": "/auto-send-videos-hubspot-to-apollo"
+    },
+    {
+      "source": "/en/articles/12194598-*",
+      "destination": "/create-contacts-in-apollo-if-they-don-t-already-exist"
+    },
+    {
+      "source": "/en/articles/11173898-*",
+      "destination": "/website-visit-create-video-from-trigger"
+    },
+    {
+      "source": "/en/articles/11158045-*",
+      "destination": "/meeting-booked-create-video-calendly"
+    },
+    {
+      "source": "/en/articles/10771229-*",
+      "destination": "/ai-video-templates-scripts-teleprompter"
+    },
+    {
+      "source": "/en/articles/10573626-*",
+      "destination": "/why-is-my-video-washed-out-after-uploading-it"
+    },
+    {
+      "source": "/en/articles/10470178-*",
+      "destination": "/linked-helper-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/10472190-*",
+      "destination": "/hubspot-auto-send-videos-from-different-sales-reps"
+    },
+    {
+      "source": "/en/articles/10290891-*",
+      "destination": "/uptics-integration"
+    },
+    {
+      "source": "/en/articles/10470112-*",
+      "destination": "/heyreach-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/10254553-*",
+      "destination": "/brevo-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/10254493-*",
+      "destination": "/constant-contact-sharpspring-integration"
+    },
+    {
+      "source": "/en/articles/9566220-*",
+      "destination": "/saleshandy"
+    },
+    {
+      "source": "/en/articles/9479221-*",
+      "destination": "/activecampaign-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9279882-*",
+      "destination": "/sendspark-recording-shortcuts-and-hotkeys"
+    },
+    {
+      "source": "/en/articles/9261802-*",
+      "destination": "/salesloft-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9196896-*",
+      "destination": "/use-prospect-website-for-email-not-gmail"
+    },
+    {
+      "source": "/en/articles/9172411-*",
+      "destination": "/growbots"
+    },
+    {
+      "source": "/en/articles/9163890-*",
+      "destination": "/clay-instantly-personalized-videos-old"
+    },
+    {
+      "source": "/en/articles/9145326-*",
+      "destination": "/skylead-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9141642-*",
+      "destination": "/quickmail-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9052061-*",
+      "destination": "/embed-salesloft-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/9052083-*",
+      "destination": "/embed-youcanbookme-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/9052037-*",
+      "destination": "/embed-mixmax-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/9052044-*",
+      "destination": "/embed-outreach-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/9052029-*",
+      "destination": "/embed-hubspot-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/9051985-*",
+      "destination": "/embed-calendly-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/9051823-*",
+      "destination": "/api-automatically-create-dynamic-videos-via-api"
+    },
+    {
+      "source": "/en/articles/8852193-*",
+      "destination": "/microsoft-dynamics-crm"
+    },
+    {
+      "source": "/en/articles/8788234-*",
+      "destination": "/groove"
+    },
+    {
+      "source": "/en/articles/8712792-*",
+      "destination": "/leadsimple"
+    },
+    {
+      "source": "/en/articles/8781145-*",
+      "destination": "/simulate-scrolling-a-webpage-in-dynamic-video"
+    },
+    {
+      "source": "/en/articles/8706242-*",
+      "destination": "/how-to-add-google-tag-manager-to-sendspark"
+    },
+    {
+      "source": "/en/articles/8706245-*",
+      "destination": "/how-to-add-salesloft-tracking-snippet-to-sendspark"
+    },
+    {
+      "source": "/en/articles/8695130-*",
+      "destination": "/vincere"
+    },
+    {
+      "source": "/en/articles/8608384-*",
+      "destination": "/woodpecker-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8638970-*",
+      "destination": "/keep-send-ai-personalized-video-emails"
+    },
+    {
+      "source": "/en/articles/8557654-*",
+      "destination": "/emma-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/8520731-*",
+      "destination": "/phoneburner-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/8505212-*",
+      "destination": "/record-over-powerpoint-pdfs-applications"
+    },
+    {
+      "source": "/en/articles/8502124-*",
+      "destination": "/how-to-brand-your-recording-toolbar"
+    },
+    {
+      "source": "/en/articles/8498580-*",
+      "destination": "/outreach-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8466424-*",
+      "destination": "/sendspark-desktop-application-for-macos"
+    },
+    {
+      "source": "/en/articles/8409511-*",
+      "destination": "/greenhouse-recruiting"
+    },
+    {
+      "source": "/en/articles/8220892-*",
+      "destination": "/bridger-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/8103250-*",
+      "destination": "/close-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/8124648-*",
+      "destination": "/salesforce-integration-record-videos"
+    },
+    {
+      "source": "/en/articles/7998923-*",
+      "destination": "/how-to-cancel-sendspark"
+    },
+    {
+      "source": "/en/articles/7978135-*",
+      "destination": "/podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages"
+    },
+    {
+      "source": "/en/articles/7996513-*",
+      "destination": "/salesforce-cadences-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/7955838-*",
+      "destination": "/salesforce-marketing-cloud-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/7955184-*",
+      "destination": "/how-to-use-autoplay-on-sendspark"
+    },
+    {
+      "source": "/en/articles/7955832-*",
+      "destination": "/constant-contact-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/7887983-*",
+      "destination": "/sendspark-instant-integrations-how-they-work"
+    },
+    {
+      "source": "/en/articles/7207876-*",
+      "destination": "/what-to-do-when-video-processing-is-taking-too-long"
+    },
+    {
+      "source": "/en/articles/7854815-*",
+      "destination": "/zoho-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6963930-*",
+      "destination": "/salesloft-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6891756-*",
+      "destination": "/how-to-pause-resume-videos"
+    },
+    {
+      "source": "/en/articles/6778818-*",
+      "destination": "/multilead-tutorial-send-personalized-videos-at-scale-in-linkedin-messages"
+    },
+    {
+      "source": "/en/articles/6619481-*",
+      "destination": "/how-to-clear-site-data"
+    },
+    {
+      "source": "/en/articles/6616251-*",
+      "destination": "/leadconnector-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6604941-*",
+      "destination": "/expandi-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/6299981-*",
+      "destination": "/reorder-videos"
+    },
+    {
+      "source": "/en/articles/6326161-*",
+      "destination": "/how-merge-tag-fallbacks-work"
+    },
+    {
+      "source": "/en/articles/6299939-*",
+      "destination": "/filter-videos-by-plays-likes-and-cta-clicked"
+    },
+    {
+      "source": "/en/articles/6299956-*",
+      "destination": "/filter-videos-by-creators"
+    },
+    {
+      "source": "/en/articles/6299816-*",
+      "destination": "/how-to-move-videos-between-folders"
+    },
+    {
+      "source": "/en/articles/6299854-*",
+      "destination": "/how-to-search-videos-in-sendspark"
+    },
+    {
+      "source": "/en/articles/6299790-*",
+      "destination": "/rename-a-folder"
+    },
+    {
+      "source": "/en/articles/6299801-*",
+      "destination": "/delete-a-folder"
+    },
+    {
+      "source": "/en/articles/6255804-*",
+      "destination": "/how-to-fix-black-recording-with-sendspark"
+    },
+    {
+      "source": "/en/articles/6299776-*",
+      "destination": "/how-to-create-a-folder-in-sendspark"
+    },
+    {
+      "source": "/en/articles/5951428-*",
+      "destination": "/how-to-request-a-testimonial-with-sendspark"
+    },
+    {
+      "source": "/en/articles/5949263-*",
+      "destination": "/change-camera-microphone-source"
+    },
+    {
+      "source": "/en/articles/5899246-*",
+      "destination": "/analytics-update-implications-for-videos-recorded-before-jan-19-2022"
+    },
+    {
+      "source": "/en/articles/5949152-*",
+      "destination": "/analytics-update-percentage-watched"
+    },
+    {
+      "source": "/en/articles/5837253-*",
+      "destination": "/text-videos-to-clients-sms"
+    },
+    {
+      "source": "/en/articles/5759031-*",
+      "destination": "/how-to-understand-sendspark-video-analytics"
+    },
+    {
+      "source": "/en/articles/5568925-*",
+      "destination": "/facebook-messenger-how-to-share-videos"
+    },
+    {
+      "source": "/en/articles/5569060-*",
+      "destination": "/apple-mail-send-video-emails"
+    },
+    {
+      "source": "/en/articles/5568246-*",
+      "destination": "/can-i-use-the-request-video-link-multiple-times"
+    },
+    {
+      "source": "/en/articles/5566769-*",
+      "destination": "/get-started-with-sendspark-solo-plan"
+    },
+    {
+      "source": "/en/articles/5566759-*",
+      "destination": "/getting-started-with-sendspark-starter"
+    },
+    {
+      "source": "/en/articles/5566693-*",
+      "destination": "/use-a-call-to-action-text-message"
+    },
+    {
+      "source": "/en/articles/5566704-*",
+      "destination": "/use-a-call-to-action-url-link"
+    },
+    {
+      "source": "/en/articles/5566679-*",
+      "destination": "/use-a-call-to-action-calendar-link"
+    },
+    {
+      "source": "/en/articles/5566692-*",
+      "destination": "/use-a-call-to-action-phone-number"
+    },
+    {
+      "source": "/en/articles/5566669-*",
+      "destination": "/record-yourself"
+    },
+    {
+      "source": "/en/articles/5566677-*",
+      "destination": "/watch-videos-in-fullscreen"
+    },
+    {
+      "source": "/en/articles/5560417-*",
+      "destination": "/record-both-your-face-and-screen-together"
+    },
+    {
+      "source": "/en/articles/5566661-*",
+      "destination": "/upload-a-video-to-sendspark"
+    },
+    {
+      "source": "/en/articles/5548709-*",
+      "destination": "/outlook-send-video-emails"
+    },
+    {
+      "source": "/en/articles/5548696-*",
+      "destination": "/upload-avatars"
+    },
+    {
+      "source": "/en/articles/5548707-*",
+      "destination": "/install-sendspark-recorder"
+    },
+    {
+      "source": "/en/articles/5548680-*",
+      "destination": "/set-global-styles"
+    },
+    {
+      "source": "/en/articles/5512835-*",
+      "destination": "/move-videos-between-personal-and-team-libraries"
+    },
+    {
+      "source": "/en/articles/5545115-*",
+      "destination": "/save-default-meeting-links"
+    },
+    {
+      "source": "/en/articles/5501259-*",
+      "destination": "/customize-your-video-landing-page"
+    },
+    {
+      "source": "/en/articles/5485193-*",
+      "destination": "/use-a-custom-domain-for-videos"
+    },
+    {
+      "source": "/en/articles/5434346-*",
+      "destination": "/my-download-is-slow"
+    },
+    {
+      "source": "/en/articles/5413254-*",
+      "destination": "/campaign-monitor-send-video-emails"
+    },
+    {
+      "source": "/en/articles/5410554-*",
+      "destination": "/invite-team-members"
+    },
+    {
+      "source": "/en/articles/5273305-*",
+      "destination": "/how-to-remove-team-members"
+    },
+    {
+      "source": "/en/articles/5208425-*",
+      "destination": "/how-to-request-a-video"
+    },
+    {
+      "source": "/en/articles/5163116-*",
+      "destination": "/how-to-delete-a-video"
+    },
+    {
+      "source": "/en/articles/5113587-*",
+      "destination": "/edit-thumbnail-caption-colors"
+    },
+    {
+      "source": "/en/articles/5138313-*",
+      "destination": "/flip-camera-bubble"
+    },
+    {
+      "source": "/en/articles/4651449-*",
+      "destination": "/give-the-chrome-extension-permission-to-record"
+    },
+    {
+      "source": "/en/articles/4873966-*",
+      "destination": "/how-to-create-and-use-multiple-workspaces"
+    },
+    {
+      "source": "/en/articles/4387524-*",
+      "destination": "/constant-contact-embed-videos-with-custom-code"
+    },
+    {
+      "source": "/en/articles/4293049-*",
+      "destination": "/why-is-the-chrome-extension-not-working"
+    },
+    {
+      "source": "/en/articles/4324798-*",
+      "destination": "/how-to-customize-your-request-video-pages"
+    },
+    {
+      "source": "/en/articles/4292727-*",
+      "destination": "/how-to-pin-a-chrome-extension"
+    },
+    {
+      "source": "/en/articles/4293032-*",
+      "destination": "/how-to-record-a-video-without-sound"
+    },
+    {
+      "source": "/en/articles/3544885-*",
+      "destination": "/how-to-edit-video-thumbnails"
+    },
+    {
+      "source": "/en/articles/3351022-*",
+      "destination": "/what-video-formats-can-i-upload-to-sendspark"
+    },
+    {
+      "source": "/en/articles/9483231-*",
+      "destination": "/slack-notification-for-new-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9203993-*",
+      "destination": "/camera-or-microphone-not-detected-no-inputs"
+    },
+    {
+      "source": "/en/articles/12089294-*",
+      "destination": "/solo-growth-team-plan-features"
+    },
+    {
+      "source": "/en/articles/8349693-*",
+      "destination": "/close-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/10486484-*",
+      "destination": "/dynamic-videos-2026"
+    },
+    {
+      "source": "/en/articles/8856714-*",
+      "destination": "/how-to-update-your-payment-method"
+    },
+    {
+      "source": "/en/articles/8425340-*",
+      "destination": "/how-to-find-your-workspace-id"
+    },
+    {
+      "source": "/en/articles/8179439-*",
+      "destination": "/how-to-edit-your-linkedin-messages"
+    },
+    {
+      "source": "/en/articles/10840573-*",
+      "destination": "/ghl-create-video-on-meeting-booking"
+    },
+    {
+      "source": "/en/articles/8114147-*",
+      "destination": "/touch-up-your-appearance"
+    },
+    {
+      "source": "/en/articles/11390041-*",
+      "destination": "/how-to-turn-voice-cloning-s-personalization-off"
+    },
+    {
+      "source": "/en/articles/11407318-*",
+      "destination": "/how-to-create-api-keys"
+    },
+    {
+      "source": "/en/articles/12121288-*",
+      "destination": "/gmass-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/12930662-*",
+      "destination": "/salesforge-auto-generate-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/13310440-*",
+      "destination": "/customize-thumbnails-in-linkedin-messages"
+    },
+    {
+      "source": "/en/articles/13483966-*",
+      "destination": "/troubleshooting-recording-issues-chrome-extension"
+    },
+    {
+      "source": "/en/articles/9460326-*",
+      "destination": "/mac-app-blocked-by-apple-security-check"
+    },
+    {
+      "source": "/en/articles/9565499-*",
+      "destination": "/the-correct-recording-method-for-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9590392-*",
+      "destination": "/how-to-change-your-email-address-and-password"
+    },
+    {
+      "source": "/en/articles/13651392-*",
+      "destination": "/hubspot-workflows-video-marketing-email-automation"
+    },
+    {
+      "source": "/en/articles/10032847-*",
+      "destination": "/hubspot-sales-sequences-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9460546-*",
+      "destination": "/locked-out-of-my-account-lost-account-access"
+    },
+    {
+      "source": "/en/articles/8337855-*",
+      "destination": "/salesforce-send-personalized-videos-at-scale"
+    },
+    {
+      "source": "/en/articles/8038588-*",
+      "destination": "/linkedin-video-comments-show-gif-thumbnails"
+    },
+    {
+      "source": "/en/articles/13006674-*",
+      "destination": "/klaviyo-auto-send-videos-for-new-lists"
+    },
+    {
+      "source": "/en/articles/11510761-*",
+      "destination": "/auto-generate-videos-from-skylead-campaign"
+    },
+    {
+      "source": "/en/articles/11048080-*",
+      "destination": "/variables-and-placeholders-in-sendspark-videos"
+    },
+    {
+      "source": "/en/articles/10922558-*",
+      "destination": "/set-hubspot-admin-permissions-for-workflows"
+    },
+    {
+      "source": "/en/articles/10323375-*",
+      "destination": "/missing-thumbnail-emails-in-spam-folder"
+    },
+    {
+      "source": "/en/articles/8098414-*",
+      "destination": "/how-enable-disable-the-like-button"
+    },
+    {
+      "source": "/en/articles/8346292-*",
+      "destination": "/salesforce-company-variable-missing-workaround"
+    },
+    {
+      "source": "/en/articles/8444340-*",
+      "destination": "/how-to-record-in-powerpoint-in-full-screen"
+    },
+    {
+      "source": "/en/articles/8843739-*",
+      "destination": "/how-to-set-up-sendspark-for-pipedrive"
+    },
+    {
+      "source": "/en/articles/8340825-*",
+      "destination": "/how-to-create-a-dynamic-video-campaign"
+    },
+    {
+      "source": "/en/articles/8856645-*",
+      "destination": "/how-to-review-and-pay-our-invoices"
+    },
+    {
+      "source": "/en/articles/8035971-*",
+      "destination": "/how-to-enable-disable-hardware-acceleration"
+    },
+    {
+      "source": "/en/articles/8499990-*",
+      "destination": "/convertkit-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/9546315-*",
+      "destination": "/can-autoplay-videos-include-sound"
+    },
+    {
+      "source": "/en/articles/9565406-*",
+      "destination": "/how-to-replace-a-video-while-keeping-the-same-link"
+    },
+    {
+      "source": "/en/articles/9713099-*",
+      "destination": "/video-analytics-vs-email-open-rates"
+    },
+    {
+      "source": "/en/articles/8858578-*",
+      "destination": "/ai-voice-cloning-faqs"
+    },
+    {
+      "source": "/en/articles/11723474-*",
+      "destination": "/languages-supported-in-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/11165792-*",
+      "destination": "/gmail-automatically-send-ai-personalized-videos"
+    },
+    {
+      "source": "/en/articles/12034617-*",
+      "destination": "/using-sendspark-with-multiple-screens"
+    },
+    {
+      "source": "/en/articles/11497968-*",
+      "destination": "/how-to-download-videos-in-bulk-using-zapier"
+    },
+    {
+      "source": "/en/articles/9171109-*",
+      "destination": "/go-high-level-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/12542414-*",
+      "destination": "/multiple-variables-guideline"
+    },
+    {
+      "source": "/en/articles/9511387-*",
+      "destination": "/embed-highlevel-ghl-calendar-with-videos"
+    },
+    {
+      "source": "/en/articles/12745581-*",
+      "destination": "/using-facebook-backgrounds-in-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/13159896-*",
+      "destination": "/dynamic-video-campaign-limits"
+    },
+    {
+      "source": "/en/articles/11799235-*",
+      "destination": "/how-to-create-and-activate-a-new-workspace"
+    },
+    {
+      "source": "/en/articles/13456122-*",
+      "destination": "/video-recording-best-practices-in-sendspark"
+    },
+    {
+      "source": "/en/articles/11060750-*",
+      "destination": "/customer-io-send-video-emails"
+    },
+    {
+      "source": "/en/articles/8896005-*",
+      "destination": "/gong-engage-send-automated-videos-in-email-flows"
+    },
+    {
+      "source": "/en/articles/9573208-*",
+      "destination": "/gmass-send-dynamic-videos"
+    },
+    {
+      "source": "/en/articles/8900621-*",
+      "destination": "/zapier-create-dynamic-videos-via-integration"
+    },
+    {
+      "source": "/en/collections/:slug*",
+      "destination": "/"
     }
-  }
+  ]
 }

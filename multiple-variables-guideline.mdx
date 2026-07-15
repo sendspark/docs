@@ -1,0 +1,64 @@
+---
+title: "Multiple Variables Guideline"
+description: "Learn how to create effective dynamic videos with multiple variables using best practices for audio, lighting, and positioning."
+---
+
+## What to do and what not to do when creating a Dynamic Video for Multiple Variables:
+
+1) Pause slightly after the replacement word: Briefly pause after saying the word that you may want to replace. This creates a clean audio boundary, making the replacement seamless. (It doesn't have to be an unnatural pause)
+
+2) Minimize sudden movements: Avoid moving abruptly, turning your head quickly, or shifting the camera during the beginning and end of the target word. Smooth and steady posture improves lip-sync accuracy.
+
+3) Face the camera: Looking directly into the camera produces better lip alignment.
+
+4) Keep the background stable: A static background enhances realism. Moving backgrounds (cars, people, shaky footage) can reduce quality.
+
+5) Ensure audio is present: Silent videos cannot be processed. Speak clearly and avoid heavy background noise.
+
+6) Video length: Keep videos under 1 minute for best processing speed and reliability (Max length allowed: 2 minutes)
+
+7) Lighting: Use good lighting on your face to improve lip-sync precision. Natural or front-facing light works best.
+
+8) Maintain consistency: Use the same tone, speed, and pauses in your recording to improve alignment when replacements are made.
+
+9) Pause between sentences should be balanced: not too short (to avoid linking them together) and not too long (to prevent unexpected effects).
+
+​
+
+## **Other elements to keep in mind**
+
+## **Mispronunciation of Proper Nouns:**
+
+When writing scripts, try to use relatively short sentences. The system depends on sentence boundaries when dynamically replacing variables, so the placement of proper nouns matters. In particular, avoid putting proper nouns in the same sentence as variables—this can lower the accuracy of the replacement and lead to mispronunciations.  
+​  
+​**Bad Practice:**  
+​*“Hi, there. My name is Gracie and I noticed that your team over at your company is already using Restream. That’s great news. My job is to help you learn a little bit more about the tool. I’d love to meet and spend a few minutes walking through all of our capabilities and just chatting through all of our options with you. So feel free to book some time with me and can’t wait to chat.”*  
+​  
+At first glance, the phrase *“Hi, there”* may look like a standalone sentence. However, very short phrases (under ~20 characters) often get automatically merged with the following sentence during generation. That means the final rendered phrase could be:  
+​  
+​*“Hi, watermelon. My name is Gracie and I noticed that your team over at your company is already using Restream.”*  
+​  
+In this scenario, the variable "there" is embedded within a longer sentence that includes proper nouns. This increases the chance of pronunciation errors or transcription mistakes, since the system may not handle the proper noun as intended.  
+​  
+​**Best practice:**  
+Keep the placeholder variable in a self-contained phrase that flows naturally, but is long enough to stand alone. For example:  
+​
+
+- Placeholder phrase: *“Hi, watermelon, I hope you’re doing well.”*
+- Next phrase: *“My name is Gracie and I noticed that your team over at your company is already using Restream. That’s great news. My job is to help you learn a little bit more about the tool. I’d love to meet and spend a few minutes walking through all of our capabilities and just chatting through all of our options with you. So feel free to book some time with me—I can’t wait to chat.”*
+
+This approach ensures proper nouns are pronounced correctly, while still keeping the message natural and engaging.  
+​
+
+## **Video fully generated without retaining real parts**
+
+Make sure to pause long enough between sentences. This allows us to seamlessly merge scenes where we clone dynamic words with those where your original recording remains intact.  
+​  
+​**Word Replacement**
+
+When recording speech, it’s important to leave a placeholder with roughly the same length as the word or phrase you plan to replace later. This helps maintain natural timing and pacing in the generated video.  
+​  
+For example:
+
+- If you record *“Hi, watermelon…”* but later replace *“watermelon”* with a full name plus surname, the replacement will sound rushed or unnatural because the original placeholder was too short.
+- A better approach would be to record something like *“Hi, watermelon watermelon…”* or any two placeholder words. This gives enough space for the replacement name, making the final video sound smoother and more natural.

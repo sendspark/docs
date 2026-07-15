@@ -1,0 +1,90 @@
+---
+title: "Use a Custom Domain for Videos"
+description: "Set up a custom domain for Sendspark videos to improve deliverability, bypass firewalls, and create a white-label experience."
+---
+
+If you want to share videos from your own domain URLs,you can connect your domain to Sendspark. This will give Sendspark permission to use your domain for your video share pages and video request pages.
+
+Connecting your domain will also help your videos get through firewalls and provide a more consistent, white-label experience for your customers.
+
+---
+
+**Important Considerations:**
+
+1. Once you set up CNAME, it will be hard to remove or update it. Please be absolutely sure of the subdomain you want to use before setting it up.
+2. If you have already set up a Custom Domain and you want to remove it so that you can add a new one, please contact support
+3. Subdomains are set on a per-workspace basis. If you are [using multiple workspaces](/how-to-create-and-use-multiple-workspaces) with Sendspark, you must add a new, unique subdomain for each workspace.
+
+---
+
+<iframe src="https://www.youtube.com/embed/WvxEWoVhAbs?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+To start the domain connection process...
+
+- In your Sendspark account, go to [workspace settings](https://sendspark.com/settings/workspace)
+- Scroll to the bottom of the page, where it says **Custom Domain**
+
+![Add custom domain](/images/5485193/b2bb9796-image.png)
+
+## Enter your subdomain
+
+- Enter the subdomain you want to use with Sendspark (e.g. *videos.yourdomain.com*)
+
+- Click **Next Step**
+
+## Access your DNS Settings
+
+In a separate tab, please access your DNS settings:
+
+- Log in to your DNS provider where you purchased your domain (i.e. name.com)
+- Locate the records for the domain you want to use
+- Go to **DNS Settings**
+
+## Add Sendspark to your DNS Records
+
+- Back in Sendspark, click "I've done this, let's start" on the modal that's popped up. This will generate the **Type**, **Host**, and **Value**for you. ![Get your custom domain information](/images/5485193/508bd02a-image.png)
+- Please copy and paste the values you see for **Type**, **Host**, and **Value** into your DNS records.
+
+![Add Sendspark to DNS Records](/images/5485193/0ad9262a-image.png)
+
+**Note:** Use A record values from [sendspark.com/settings/workspace](https://sendspark.com/settings/workspace). The values above are sample data.
+
+---
+
+## Important Notes
+
+1. You might need to modify the **value** based on your DNS provider. For example, in **GoDaddy** and **Cloudflare**, you will only paste the subdomain ("**video"**) and not the root domain ("**yoursite.com"**).
+2. For **Cloudflare**, the Proxy Status should be**"DNS Only"** (so you will need to change the default, which is "Proxied")
+
+![Proxies](/images/5485193/044eca25-Screen_Shot_2023-01-13_at_1.27.17_PM.png)
+
+Here are the help documentation pages for common DNS providers:
+
+- [1and1.com](https://www.ionos.com/help/domains/dns-settings/#acc2685)
+- [Bluehost](https://my.bluehost.com/hosting/help/dns-management-add-edit-or-delete-dns-entries)
+- [Google Domains](https://support.google.com/a/answer/47283?hl=en)
+- [Domain.com](https://www.domain.com/help/article/dns-management-how-to-update-dns-records)
+- [eNom](https://help.enom.com/hc/en-us/articles/115000474012-How-to-Change-DNS-Host-Records)
+- [GoDaddy](https://www.godaddy.com/help/manage-dns-records-680)
+- [Name.com](https://www.name.com/support/articles/115004893508-Adding-an-A-record)
+- [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/434/2237/how-do-i-set-up-host-records-for-a-domain/)
+
+---
+
+## Verify your Domain
+
+- Back in Sendspark, click **Test Connection**
+
+![Verify Custom Domain](/images/5485193/4afe3040-image.png)
+
+- If your domain is connected, you will see a green dot, and the word **Connected.**Way to go -- you're all set! 🥳
+
+![Custom Domain is Connected](/images/5485193/2fae8b3f-image.png)
+
+- If you're still seeing **Unverified**, no worries! It can take up to 24 hours to update your DNS records. Please pour yourself some coffee, and try again in a bit. ☕️
+
+---
+
+## Twitter Validation
+
+**Please note,** after you set up your custom domain, you may have to run the new URL through Twitter Card Validator to get video previews to show up when you share Sendspark links on Twitter. [Validate Twitter cards here](https://cards-dev.twitter.com/validator).

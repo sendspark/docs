@@ -1,0 +1,113 @@
+---
+title: "HighLevel (GHL) - AI Personalized Videos"
+description: "Create AI-personalized videos in HighLevel (GHL) workflows using Sendspark. Automate personalized video outreach inside your GHL CRM and marketing funnels."
+---
+
+In this tutorial, we’ll walk through how to generate and send AI-personalized videos in GHL Automated Workflows.
+
+This guide will be broken down into 3 steps:
+
+1. [Create dynamic video campaign in Sendspark](#h_70aae5a4cd)
+2. [Automatically Generate Videos in HighLevel](#h_8ce9924795)
+3. [Automatically send videos in HighLevel](#h_701a729134)
+
+Feel free to jump ahead as needed!
+
+---
+
+## Update: Sendspark has a direct integration with HighLevel
+
+We have an easier way to connect GHL and Sendspark! Please reference this guide to use the [new HighLevel integration](/highlevel-create-share-videos).
+
+---
+
+## How to Create AI-Personalized Videos in HighLevel
+
+Watch the video or follow the steps below!
+
+<iframe src="https://www.youtube.com/embed/Rkr__YXhAC0?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 1. Create Dynamic Video Campaign
+
+Before you get started, you will want to have your Dynamic Video Campaign set up in Sendspark.
+
+To create a dynamic video campaign….
+
+1. Go to the [Dynamic Video Section](https://sendspark.com/dynamic-videos) of Sendspark
+2. Record, upload, or select a video. Remember to use the placeholder word “Watermelon” for where you want your viewer’s first name to go
+3. Customize the “scroll” effect as you’d like.
+4. Toggle on “Voice Cloning” if you want to use a custom intro, (ex: “Hi First Name”) for each of your viewers
+5. Customize a page template for what you want to appear on your video page alongside the video.
+
+Before you set up the automation in the next few steps, I would recommend adding a few test contacts and previewing videos. Make sure that you’re happy with the AI voice cloning and all of the settings.
+
+If things don’t look good, check out these tips to [improve AI voice cloning quality](/ai-voice-cloning-how-to-get-the-best-results).
+
+## 2. Automatically Generate Videos in HighLevel
+
+In this step, we are going to show how you can automatically generate videos in Make.
+
+1. In HighLevel, go to **“Automations”** and then click **“Create Workflow”** ​![HighLevel Automations page with Create Workflow button highlighted](/images/9478400/54576ffd-image.png)
+2. You can use **any trigger** to start your automation.
+3. To automatically create Sendspark videos, add a "**Custom Webhook"**
+4. Fill use this information:
+  1. Change the method to **POST**
+  2. Use this **URL**: **[https://api-gw.sendspark.com/v1/workspaces/&#123;workspaceId&#125;/dynamics/&#123;dynamicId&#125;/prospect](https://api-gw.sendspark.com/v1/workspaces/%7BworkspaceId%7D/dynamics/%7BdynamicId%7D/prospect)**
+    1. You can find the workspaceId from your [API Credentials tab](https://sendspark.com/settings/api-credentials)
+    2. You can find your dynamicId from the URL of your dynamic video campaign ​![Sendspark dynamic video campaign URL showing dynamicId parameter location](/images/9478400/1e38fa06-image.png)
+  3. **Headers:**You’ll need two (for your **API Key and Secret Key**)
+    1. You can find these both from your [API credentials tab](https://sendspark.com/settings/api-credentials)
+  4. **Body:** Copy and paste this snippet. Note: here we are mapping contact variables from HighLevel into Sendspark. ​`{ "processAndAuthorizeCharge": true, "prospectDepurationConfig": { "forceCreation": true,"payloadDepurationStrategy": "keep-last-valid" }, "prospect": { "contactName":"#########{{contact.first_name}}", "contactEmail":"#########{{contact.email}}", "company":"#########{{contact.company_name}}", "backgroundUrl":"#########{{contact.website}}"}}`
+
+In the end, your API call should look like this (but using your real API Key & API Secret)
+
+![HighLevel Custom Webhook configuration with POST method and API headers](/images/9478400/230daf43-AD_4nXcxlfyEYM2D5OGZ8Xde41-5F55voLXFfGKvVC3ZijjLitAbwNpHVMSO5EpqUJpa2fuaoOAjW7I7QrZLATNR02O1Ma0-lgN0POWuQ2U1KSjFg_eSGLCUy5OmyJguKuN8M98XlfZiSdEjYUFw__C_YpAbCCs.png)
+
+Test, and make sure you see (1) the “Request success with status: 200” in Highlevel, and (2) that you see your sample contact in your Sendspark dynamic video campaign:
+
+You’ll see a spinner and the message **“Videos are Generating”**
+
+![HighLevel workflow showing Videos are Generating spinner and status message](/images/9478400/56373d62-AD_4nXdp0txJwuFgJTY8f5JMEauoHpph2h9BjBs6qj1Gw7lE1WQj3WlEjR__NVdszBGDyaNaVJk9poYk1j4lSQ9XlOvyXogE2WTYIqVS195EaBwXLHBABE2wJgKMQfePI1k8dNck4R8E5l65EKvfH8wUE57ANluM.png)
+
+Boom! Now you are automatically creating AI videos. In the next step, we’ll cover how to automatically send the AI videos in email once they generate.
+
+## 3. Automatically Send Video Emails
+
+For this last step of this automation, we’ll use a webhook to know when AI videos have successfully generated, and are ready to send to contacts.
+
+1. In HighLevel, create a new Workflow. Use **“Inbound Webhook”** as a trigger.
+2. Copy the URL HighLevel provides to your clipboard
+3. In Sendspark, go to the **[Webhooks Section](https://sendspark.com/settings/webhooks)**
+4. **Create a webhook** (using the URL HighLevel provided) ​![Sendspark Webhooks section with Create Webhook button and URL field](/images/9478400/3b55d5b9-image.png)
+5. Link it to your dynamic video campaign. This will make it so every time a video is “created” from this dynamic video campaign, a webhook sends into your HighLevel Workflow. ​![Sendspark webhook linked to dynamic video campaign in settings panel](/images/9478400/971c2ffa-image.png)
+6. Create a few dynamic videos in Sendspark so that you can have some sample webhooks to work with. ​![Sendspark dynamic videos list showing multiple generated video entries](/images/9478400/6f55a86a-image.png)
+7. Click **“Save Trigger,”** and let’s continue!
+
+Great job! Now every time a Sendspark Dynamic Video generates for a person, that person will be enrolled in your HighLevel Workflow.
+
+Now, let’s set up a step to **automatically send the video via email.**
+
+## Send Email
+
+1. Add an action to your workflow: **“Send Email”**
+2. In that email, add the placeholder from your Sendspark video
+  1. From Sendspark, click “Share Campaign”
+  2. Copy the snippet for “LeadConnector”
+  3. Paste directly into the email draft ​![Sendspark Share Campaign panel with LeadConnector code snippet copied](/images/9478400/6da9eded-image.png)
+3. Send yourself a test email. It should look something like this…​
+
+![Sample email preview showing personalized video embedded in message](/images/9478400/9052b02a-image.png)
+
+## Send WhatsApp or SMS Message
+
+You can also send videos in WhatsApp or SMS text messages by using the "videoLink" variable returned in the webhook.
+
+Here is a video to walk you through it:
+
+<iframe src="https://www.youtube.com/embed/ZiOFurk809w?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+- In your workflow (using the Inbound Webhook as a trigger), add action: **Send SMS**
+- In your message, select**Custom Values &gt; Inbound Webhook Trigger &gt; videoLink** ​![HighLevel Send SMS action with Custom Values and videoLink variable selected](/images/9478400/5a2d333e-image.png)
+- And that will let you use the unique video link created for that person in the message
+
+That’s it! Turn on your Workflow and you’re all set!

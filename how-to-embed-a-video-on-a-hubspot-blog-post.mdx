@@ -1,0 +1,46 @@
+---
+title: "How to Embed a Video on a Hubspot Blog Post"
+description: "Learn how to embed responsive videos on HubSpot blog posts by manually setting dimensions and removing auto-crop formatting issues."
+---
+
+When you embed a video on Hubspot, it automatically forces the video to a 16x9 ratio. This can cause an unfortunate crop or scroll effect on your video.
+
+To embed a responsive video on your Hubspot blog, you have to manually set the video height and width yourself.
+
+100% width will not work!
+
+## Here's how to make your video display correctly on Hubspot
+
+1. Copy the video embed code from the share modal **Copy Code Snippet**
+
+![Embed tab on share modal](/images/3703840/fb2be1ae-image.png)
+
+2. Paste the code into an embed field in your blog.
+
+![Hubspot Embed option](/images/3703840/3a7fc240-image.png)
+
+3. If you preview now, you'll notice that your video is forced to a 16x9 ratio, no matter what the actual video size is. Not pretty! 😬
+
+4. Go back to your blog editor, and click **advanced** and then click **source code.**
+
+![Advanced Hubspot](/images/3703840/7d9fce22-image.png)
+
+5. Remove the**&lt;div&gt;&lt;/div**&gt; around your video iframe
+
+6. Manually set the **height** and **width** of your video within the iframe to the correct size of your video. Here are some common ratios for video: vertical videos: 9x16, videos recorded from macbooks: 4x3, "normal" videos: 16x9.
+
+7. Remove the **position**, **left**, and **top** attributes. Your code should look something like this:
+
+```
+<p>...</p><iframe style="border-radius: 6px; margin: 0px auto; display: block;" xml="lang" src="https://app.sendspark.com/embed/0rq5z0pi6or4lvwuuqxbhwfl2b3qwdnp" width="400" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe><p>...</p>
+```
+
+7. That's it! Your responsive video should be displaying beautifully on your blog. 👏
+
+## Additional resources
+
+As a Hubspot user, you might appreciate these additional resources:
+
+1. [How to send hyper-personalized videos in Hubspot Marketing Hub emails](/how-to-set-up-sendspark-for-hubspot-crm-integration)
+2. [How to send hyper-personalized videos in Hubspot Sales Hub emails](/hubspot-static-videos-sales-hub)
+3. [How to connect the Hubspot CRM](/how-to-set-up-sendspark-for-hubspot-crm-integration)

@@ -1,0 +1,20 @@
+---
+title: "Unreachable Background URLs in Dynamic Videos"
+description: "Learn how to handle unreachable background URLs in Dynamic Videos with fallback options and troubleshooting rejected leads."
+---
+
+## Learn how to handle background URLs the right way:
+
+## There are a few different scenarios that can happen whenever you are rendering videos in Sendspark.
+
+When using dynamic video campaigns, here’s how the system handles leads based on their website URL status:
+
+- **No Website URL Provided:** If a lead does **not** include a website URL (i.e., the URL field is left completely empty), the system will automatically use a **fallback background** for the video. This ensures that the video is still generated and usable. To activate this option, simply create a new Dynamic Video Campaign and follow these steps: 1) Set up the Fallback URL you want to use when your lead has no data included: ![Dynamic Video Campaign setup form with Fallback URL field highlighted](/images/11178712/e4bdeb76-image.png) 2) Once you reach the 3rd step: Contacts, you'll need to click on the Settings wheel on the right-hand side to display the ERROR HANDLING panel. From there, make sure the first option is selected: **Generate Video Using Fallback Data:**
+
+![Contacts step settings panel with Generate Video Using Fallback Data option selected](/images/11178712/a3a707e4-image.png)
+
+And that's it! The system will automatically complete the video rendering process using the most suitable parameters available. Additional tips and insights for managing missing fields are provided below.
+
+- **Invalid or Unloadable Website URL:** If a website URL is provided but **fails to load or render properly**, the video generation will be **rejected**. ![Error message indicating invalid or unloadable website URL rejection notification](/images/11178712/978de147-image.png) You can review these rejected leads in the **Contacts** section of your dynamic video campaign: ![Contacts section of dynamic video campaign showing rejected leads list](/images/11178712/5dbf75f1-image.png) Once in **Contacts,**edit the URL that failed: ![Contact edit form with URL field ready for correction and resubmission](/images/11178712/408f5c05-image.png)
+
+And that's it! Let us know if you have any questions :)

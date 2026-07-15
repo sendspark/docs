@@ -1,0 +1,15 @@
+---
+title: "Create Contacts in Apollo If They Don't Already Exist"
+description: "Learn how to create contacts in Apollo when they don't exist using Router steps and conditional workflows for seamless automation."
+---
+
+Sometimes the contact may not exist in Apollo yet. You can account for this:
+
+1. Add a **Router step** to check if the lead exists in Apollo.
+2. If the lead is missing, create a new step: **Create Lead in Apollo**.
+3. After creating the lead, run the same HTTP request step again, but reference the newly created lead’s ID instead of the one from “Find Lead.”
+4. Add a break between the two possible paths (existing lead vs. new lead).
+
+This ensures that no matter what, every contact ends up enrolled in your Apollo video sequence. The flow should look something like this:
+
+![](/images/12194598/3340933d-image.png)

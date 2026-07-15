@@ -1,0 +1,59 @@
+---
+title: "Skylead - Send Dynamic Videos"
+description: "Learn how to integrate Sendspark with Skylead to send AI-personalized dynamic videos in LinkedIn automation campaigns step-by-step."
+---
+
+Use Sendspark and Skylead together to send AI-personalized videos in LinkedIn automation.
+
+<iframe src="https://www.youtube.com/embed/RrgN9M-JuMU?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## How to Send AI-Personalized Videos in Skylead
+
+### 1. Create Dynamic Video Campaign
+
+First, you want to create a [Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions) in Sendspark.
+
+In your dynamic video campaign, you will be able to select one video, and use AI to automatically personalize each video for each viewer.
+
+### 2. Import Contacts into Sendspark
+
+You can import contacts to dynamic video campaigns by typing their information out manually, importing a CSV, or setting up a Zapier or API integration.
+
+One tip: it will be easier to share videos in Skylead if you import the "profileUrl" field into Sendspark. We don't have a specific field for "profileUrl," but you can import it into a field that you are not using (like "Job Title") so it's easy to find when you export your CSV.
+
+### 3. Generate Dynamic Videos
+
+Just click the "Generate Videos" button to generate AI-personalized videos for your contact list.
+
+### 4. Download CSV
+
+Now, you want to download the CSV of your contacts from Sendspark to import into Skylead. This will be similar to the original CSV you imported, with one big addition: "Video Link"
+
+Video link is the link to the dynamic video generated for each of your viewers. This is what you want to send out in your LinkedIn Connect Requests and Messages!
+
+### 5. Import CSV into Skylead
+
+You'll need to rename the columns of your CSV to match the Skylead fields in order to import your CSV into Skylead.
+
+These are the column names in Sendspark, and how they should be written to import into Skylead:
+
+- First Name - **firstName**
+- Email - **email**
+- Company Name - **currentCompany**
+- Job Title - **profileLink**
+- Background Url - **website**
+- Video Link - **videoLink &lt;-- this is the dynamic video we made in Sendspark!**
+
+![Sendspark Video CSV to Import into Skylead](/images/9145326/2b6ad6e0-image.png)
+
+## 6. Create Sequence in Skylead
+
+Now, you can create your LinkedIn automation campaign in Skylead, and just use the #&#123;&#123;videoLink&#125;&#125; dynamic field where you want your video to go in your connection request or message.
+
+![Create AI Video Sequence in Skylead](/images/9145326/b5c9d340-image.png)
+
+When you send the video link in your LinkedIn messages, it will unfurl into an animated preview, and look something like this:
+
+![How AI Video Looks in LinkedIn](/images/9145326/dc68faa2-image.png)
+
+That's it! Happy connecting!

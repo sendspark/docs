@@ -1,0 +1,41 @@
+---
+title: "How Merge Tag Fallbacks Work"
+description: "Learn how merge tag fallbacks work in Sendspark to display default text when viewer information is unavailable for video"
+---
+
+Sendspark lets you add **merge tag**s to personalize your videos at scale.
+
+On your video pages, you can add placeholders for these terms:
+
+- First Name
+- Company Name
+- Job Title
+
+When you send out your videos, the viewer's information will be automatically added to your video.
+
+![Video Merge Tags](/images/6326161/9f82c221-image.png)
+
+We are usually able to access the correct information from your email sending platform (Hubspot, Outreach, etc.).
+
+## But, what happens if we cannot access the correct information?
+
+This is where **merge tag fallbacks**come in.
+
+If the viewer information is unknown, we will show the fallback text.
+
+![Video Merge Tag Fallbacks](/images/6326161/15abb0e0-image.png)
+
+Sendspark has built-in fallbacks to make your life easier:
+
+- First Name → **"there"**
+- Company Name →**"your company"**
+- Job Title → **"professional"**
+
+So, if you are to use a title like, "Hi #&#123;&#123;Name&#125;&#125;, as a #&#123;&#123;job title&#125;&#125; at #&#123;&#123;company&#125;&#125;..." that could turn into one of these 2 scenarios:
+
+- **Information is known:** "Hey Jeff, as a founder at Amazon..."
+- **Information is unknown:**"Hey there, as a professional at your company..."
+
+You are also able to overwrite these for each video if you would like to use a different fallback for that context.
+
+When you overwrite the fallback variables, this does NOT affect the fallback videos on your past or future videos. It only affects the video that you are presently editing.

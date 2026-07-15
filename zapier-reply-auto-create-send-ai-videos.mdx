@@ -1,0 +1,45 @@
+---
+title: "Zapier & Reply - Auto Create & Send AI Videos"
+description: "Learn how to automatically create and send personalized AI videos using Zapier, Reply, and Sendspark with this step-by-step setup"
+---
+
+<iframe src="https://www.youtube.com/embed/7dAhZKLyhSA?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## How to Automatically Generate Videos Using Sendspark, Reply, and Zapier
+
+This guide will walk you through the process of setting up an automated workflow to generate personalized dynamic videos based on contacts in Reply. You will use Sendspark, Reply, and Zapier to make this happen.
+
+## 1. Set Up Trigger in Zapier
+
+- **Log into Zapier** and create a new Zap.
+- In the "Trigger" section, search for **Reply** and select it.
+- Choose the **Trigger Event** as **"Add or Update Contact"**. This will trigger the workflow whenever a new contact is added or an existing contact is updated in Reply.
+- Connect your **Reply account** to Zapier. If you haven't done this before, you will need to enter your **API Key**. To get this, log into your Reply account, go to **Settings** &gt; **API**, and copy the key.
+
+## 2. Set Up "Action" in Zapier (Sendspark)
+
+- Once your trigger is set, the next step is to create the action. Search for **Sendspark** and choose the **"Create Dynamic Video"** action.
+- Connect your **Sendspark account** to Zapier. You’ll be prompted to enter your **API Key** and **API Secret**. To find these, log into your Sendspark account, go to **Manage Workspace** &gt; **Webhooks & API**. Here, you can generate new keys if needed.
+- Once the API keys are entered, select the appropriate **workspace** and **dynamic video campaign** that you want to use.
+
+## 3. Create a Dynamic Video Campaign in Sendspark
+
+- If you don’t have a dynamic video campaign set up, you’ll need to create one. Go to your Sendspark account and create a new **Dynamic Video Campaign**.
+- Select a **template** (e.g., a basic template for testing). You can customize this video with your preferred voice, language, and other settings.
+- After setting up the campaign, return to Zapier and select the campaign you created.
+
+## 4. Map Reply Fields to Sendspark Video
+
+- In Zapier, you’ll now map the contact information from Reply to the video fields in Sendspark:
+  - **First Name**: Map this to the first name field in Sendspark (do not use full name or last name).
+  - **Email**: Map this to the email field in Sendspark.
+  - **Company Name**: Use the "company" field.
+  - **Job Title**: Use the job title field.
+  - **Domain**: This will automatically be pulled from the contact's email domain and can be used as the background URL for the dynamic video.
+
+This ensures that each video is personalized with the correct contact information.
+
+## 5. Test the Trigger and Action
+
+- After mapping the fields, click on **Test & Continue** in Zapier. This will test the connection and verify that the dynamic video is successfully generated and queued in Sendspark.
+- If everything is set up correctly, you should see a notification that the dynamic video was successfully created.

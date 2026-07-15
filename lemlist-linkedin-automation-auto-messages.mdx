@@ -1,0 +1,134 @@
+---
+title: "Lemlist LinkedIn Automation: Auto Messages"
+description: "Learn how to automate personalized LinkedIn messages using Lemlist and Sendspark with dynamic videos in a fully autopilot workflow."
+---
+
+## 📘 Overview
+
+This guide explains how to automate personalized LinkedIn outreach using **Lemlist** and **Sendspark**.  
+When a dynamic video is generated in Sendspark, it’s automatically pushed into Lemlist and sent as a LinkedIn follow-up message — with the GIF preview unfurled.
+
+You end up with a fully **autopilot** workflow.
+
+<iframe src="https://www.youtube.com/embed/di1SuYcm_To?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+---
+
+## 🧰 Before You Start
+
+Make sure you already have:
+
+- A Lemlist campaign
+- Your Sendspark dynamic video campaign
+- Lemlist API key connected to Sendspark
+- A custom variable inside your Lemlist campaign to receive the video link
+
+---
+
+## 📝 Step 1 — Create a Custom Variable in Lemlist
+
+Lemlist requires a custom variable to store the video link.
+
+1. Open your Lemlist campaign.
+2. When adding a list, scroll to the end.
+3. Click **Add** to create a new field.
+4. Name it something simple (example: `custom`).
+  - Custom variables are **campaign-specific**, not global.
+
+---
+
+## ⚙️ Step 2 — Configure Your Lemlist Campaign
+
+## 🚀 A. Enable Auto-Launch
+
+1. Send at least one test message.
+2. Open the **three dots** menu in your campaign.
+3. Click **Auto Launch**.
+4. The campaign stays active and only sends when you add a new lead.
+
+---
+
+## 💬 B. Add the Message That Will Use the Video
+
+1. Add a **Chat Message** step.
+2. Write something simple, like: *“Hey! I recorded a video for you 👇”*
+3. Click **Add personalization**.
+4. Select your custom variable (`custom`).
+5. Save.
+
+This ensures the Sendspark video link appears inside the message.
+
+---
+
+## 🤖 Step 3 — Create the Sendspark Automation Workflow
+
+Open **Agentic Workflows** in Sendspark and create a new workflow.
+
+---
+
+## 🔔 A. Set the Trigger
+
+1. Choose **Sendspark** as the trigger.
+2. Select **New Video Generated**.
+3. Pick the dynamic video campaign you want to automate.
+
+This fires every time a personalized video is generated.
+
+---
+
+## 🔗 B. Set the Action (Send Lead to Lemlist)
+
+1. Choose **Add a lead to a campaign**.
+2. Select your Lemlist API connection.
+3. Choose the Lemlist campaign.
+
+## 📨 Map Standard Fields
+
+- Email → Email
+- First Name → First Name
+- LinkedIn URL → LinkedIn lead URL
+
+## 🎬 Map the Video Link
+
+1. Scroll to **Lead Custom Field**.
+2. Type the **exact** custom variable name (`custom`).
+3. Set type to **string**.
+4. Map it to **Video Link** from Sendspark.
+5. Save.
+
+---
+
+## 🖼️ How the Video Appears on LinkedIn
+
+When Lemlist sends a message with the Sendspark link:
+
+- LinkedIn **unfurls** the URL
+- The video preview/GIF appears automatically
+- No extra configuration needed
+
+It looks native and clean.
+
+---
+
+## ⚠️ Important LinkedIn Limitations
+
+To avoid being blocked:
+
+- ❌ **Do NOT add the video link in connection requests** LinkedIn suppresses previews and may flag it as spam.
+- ✔️ Only send the video as a **follow-up message**
+- ✔️ Make sure you’re already connected
+
+This keeps your automation compliant and safe.
+
+---
+
+## 🔄 Final Workflow Summary
+
+Once everything is set up:
+
+1. Sendspark generates a personalized video.
+2. Trigger fires: **New Video Generated**.
+3. Sendspark pushes lead + video link to Lemlist.
+4. Lemlist adds the lead to your campaign.
+5. Video link fills your custom variable.
+6. LinkedIn message is sent automatically with GIF preview.

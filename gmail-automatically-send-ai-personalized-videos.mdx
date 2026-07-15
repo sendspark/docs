@@ -1,0 +1,78 @@
+---
+title: "Gmail - Automatically Send AI Personalized  Videos"
+description: "Set up automated Gmail workflows to send AI personalized videos at scale using Sendspark's dynamic campaigns and HTML formatting."
+---
+
+<iframe src="https://www.youtube.com/embed/9Vcwnyh7DPw?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 🚫 The Problem with Gmail and HTML
+
+By default, **Gmail doesn't support HTML embeds** when sending mass emails. This means adding dynamic GIFs or HTML elements manually isn't scalable. Until now, bulk sending dynamic video emails was clunky or required third-party platforms.
+
+---
+
+## ✅ The New Solution: Sendspark + Gmail (via Automated Workflows)
+
+With our **new "Automated Workflows"** feature, you can now trigger dynamic video emails to send automatically through Gmail every time a new video is generated.
+
+---
+
+## 🔧 Step-by-Step Setup
+
+## 1. **Create a Dynamic Campaign**
+
+- Head to **Campaigns** in Sendspark.
+- Create a new **Dynamic Campaign**. In this example, we named it `Gmail Mass Campaign`.
+
+## 2. **Set Up an Automation**
+
+- Go to **Automated Workflows**.
+- Click **“+ New Workflow”** and give it a name.
+- For the **Trigger**, select:
+  - **App**: Sendspark
+  - **Event**: *New Video Generated*
+
+## 3. **Add the Action – Send Email via Gmail**
+
+- Click **+ Add Action**
+- App: **Gmail**
+- Action: **Send an Email**
+- Connect your Gmail account if you haven't already.
+
+## 4. **Customize Your Email Body (with HTML formatting)**
+
+Since we're injecting a dynamic video and Gmail lacks native line breaks in raw HTML, you'll need to use simple HTML tags: (you can review this in the video)
+
+```
+Hey <First Name tag>,<br><br> Check this out!<p><Email Embed HTML>
+```
+
+**Tips:**
+
+- Use `<br>` for line breaks.
+- Use `<p>` for paragraph spacing.
+- Insert the **Email Embed HTML** block to add the dynamic GIF/video.
+- Format: **HTML**
+- To: `#{{contact.email}}`
+- Subject: Customize as needed (e.g., "Here’s Your Personalized Video!")
+
+## 5. **Start the Workflow**
+
+- Click **Save** and **Start Automation**.
+- Add your contacts or generate videos to trigger the workflow.
+
+---
+
+## ✅ Result: Personalized Video Emails, Sent Automatically
+
+Each recipient gets:
+
+- Their own **personalized video is embedded** in the email.
+- Clean formatting (line breaks, custom names).
+- Delivery through **your Gmail account** — nothing else required.
+
+---
+
+## 💬 Questions?
+
+If you run into any issues or have questions about setup, reach out to our tech support team. We’re here to help.

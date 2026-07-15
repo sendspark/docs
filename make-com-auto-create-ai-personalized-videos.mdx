@@ -1,0 +1,131 @@
+---
+title: "Make.com - Auto Create AI Personalized Videos"
+description: "Automate AI-personalized video creation using Make.com and Sendspark. Build workflows that generate unique video intros for each prospect automatically."
+---
+
+In this tutorial, we’ll walk through how to generate and send AI-personalized videos in Make automations.
+
+This guide will be broken down into 3 steps:
+
+1. [Create dynamic video campaign](#h_ebe7641ff4)
+2. [Automatically Generate Videos in Make](#h_f7166d3546)
+3. [Automatically send videos](#h_836bcef623)
+
+Read the guide, or watch the video below.
+
+## How to Create AI-Personalized Videos in Make
+
+<iframe src="https://www.youtube.com/embed/QHMf_OpXNiI?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+## 1. Create Dynamic Video Campaign
+
+Before you get started, you will want to have your Dynamic Video Campaign set up in Sendspark.
+
+To create a dynamic video campaign….
+
+1. Go to the [Dynamic Video Section](https://sendspark.com/dynamic-videos) of Sendspark
+2. Record, upload, or select a video. Remember to use the placeholder word “Watermelon” for where you want your viewer’s first name to go
+3. Customize the “scroll” effect as you’d like.
+4. Toggle on “Voice Cloning” if you want to use a custom intro, (ex: “Hi First Name”) for each of your viewers
+5. Customize a page template for what you want to appear on your video page alongside the video.
+
+Before you set up the automation in the next few steps, I would recommend adding a few test contacts and previewing videos. Make sure that you’re happy with the AI voice cloning and all of the settings.
+
+If things don’t look good, check out these tips to [improve AI voice cloning quality](/ai-voice-cloning-how-to-get-the-best-results).
+
+## Benefits of AI-Personalized Videos
+
+- **Improved Engagement**: Tailored content helps capture and retain the viewer's attention.
+- **Ease of Implementation**: With proper setup, personalization can be applied to numerous videos efficiently.
+- **Scalability**: The automation process allows you to personalize videos for hundreds or thousands of recipients with minimal manual effort.
+
+## 2. Automatically Generate Videos in Make
+
+In this step, we are going to show how you can automatically generate videos in Make.
+
+1. In Make, click “Create New Scenario”
+
+![Make.com interface showing Create New Scenario button highlighted](/images/9478441/f8029b79-AD_4nXeB-AjkVFHKC1bg9fiDKz6yASGUFoJu1gbaPIzXgJUhBiI8BsIy8p1EOMB9h-ZI2qifNIUV4te4aJ-izoE0vFYmCqkHQwB0M0-5tTTci0piAs0sapqbbEaL8nYppGkHLiUbRvaOgjOK1t6BiddsTEkGFQ5S.png)
+
+1. You can set any trigger to start your automation.
+2. To automatically create Sendspark videos, make an **HTTP Request** ​![Make.com HTTP Request module configuration panel](/images/9478441/d2c75321-image.png)
+3. Fill out the HTTP request with this information:
+  1. URL: **[https://api-gw.sendspark.com/v1/workspaces/&#123;workspaceId&#125;/dynamics/&#123;dynamicId&#125;/prospect](https://api-gw.sendspark.com/v1/workspaces/%7BworkspaceId%7D/dynamics/%7BdynamicId%7D/prospect)**
+    1. You can find the workspaceId from your [API Credentials tab](https://sendspark.com/settings/api-credentials)
+    2. You can find your dynamicId from the URL of your dynamic video campaign ​![Sendspark dynamic video campaign URL bar showing dynamicId location](/images/9478441/9f8b3cd6-image.png)Method: **POST**
+  2. Headers: You’ll need two (for your **API Key and Secret Key**)
+    1. You can find these both from your [API credentials tab](https://sendspark.com/settings/api-credentials)
+  3. Body: Use this data into the **body**. You can make the “prospect” fields dynamic by using data from your Make automation. ​`{ "processAndAuthorizeCharge": true, "prospectDepurationConfig": { "forceCreation": false,"payloadDepurationStrategy": "keep-last-valid" }, "prospect": { "contactName": "John", "contactEmail": "john@sendspark.com", "company": "Sendspark", "customfield": "", "backgroundUrl": "https://sendspark.com"}}`
+
+⚠️ **Note: it will NOT work to copy and paste the data above into Make**. To copy and paste, use a JSON validator, like [jsonlint.com](http://jsonlint.com/), to clear the formatting.
+
+In the end, your API key should look like this (but using your real API Key & API Secret)
+
+![Make.com HTTP Request filled with API credentials and body parameters](/images/9478441/a16ca44b-AD_4nXfcS8fnOeZI0v8N2YdlETTMyB9Ed0mJ1wXUO9q5HXVrFqPIjBeDGUYwj_d11cmwUBL8GtwmMITiRvePryPJUDkfE38bMiOgwphwKdO1qr4QAEg_Fm-PpgEfE2acyXXnyifTQ0sm-wYUOtCgKZhHUWxalaea.png)
+
+To test this, click **“Run once”** and make sure that you see your sample contact in your Sendspark dynamic video campaign:
+
+You’ll see a spinner and the message **“Videos are Generating”**
+
+![Sendspark dynamic video campaign showing Videos are Generating status message](/images/9478441/7aee1e13-AD_4nXfX8PszVj0vt-eKA5vTX9wTYYUkZ2-rTG_Grr-j0woOzJT_ni3bu4Rz6xOPSjSQEfVClBfavB77gnfbefTE5pDuDa-kM8F5g7CxJLMhnm1_6OqfFtulLYxDIQqwvBq70aOGTjM8gs_2fVjU9cSrLSzhOjtO.png)
+
+Boom! Now you are automatically creating AI videos. In the next step, we’ll cover how to automatically send the AI videos in email once they generate.
+
+## 3. Automatically Send Videos
+
+For the last step of this automation, we’ll create a webhook to know when AI videos have successfully generated, and are ready to send to contacts.
+
+1. In Make, create a new Scenario, using a “Custom Webhook”
+2. Copy the URL Make provides to your clipboard ​![Make.com Custom Webhook module with URL copy button displayed](/images/9478441/01ba71db-image.png)
+3. In Sendspark, go to the [Webhooks Section](https://sendspark.com/settings/webhooks)
+4. Create a webhook (using the URL Make provided) ​![Sendspark Webhooks section with Create Webhook form and URL field](/images/9478441/38c4fbb0-image.png)
+5. Link it to your dynamic video campaign. This will make it so every time a video is “created” from this dynamic video campaign, a webhook sends into Make. ​![Sendspark dynamic video campaign linked to webhook for video generation events](/images/9478441/5391cab3-image.png)
+
+Great job! Now every time a Sendspark Dynamic Video generates for a person, that person will be enrolled in your Make scenario.
+
+Now, let’s set up a step to **automatically send the video via email.**
+
+## Send a Direct Email
+
+This is how you can send your AI-personalized video to your recipient in a direct email (Gmail, Outlook, etc):
+
+1. Add an “Email” as a second step to your Make Scenario
+2. Use the information returned to you in the Sendspark webhook in your email like so:
+
+![Make.com Email module with Sendspark webhook variables contactEmail and videoLink](/images/9478441/ece833a6-image.png)
+
+**Notes:**
+
+- Make sure you are using the variable for **contactEmail** in the “to” field to send the video to the correct recipient.
+- In your email, you can use the variable **videoLink** to send the right video to the right person. If you do this, you will be emailing the video as a link
+- The advanced way to send the video is to embed it as an HTML snippet using both the **videoLink** AND the **thumbnailUrl**. This way, instead of appearing as just a link, your viewers will see an animated thumbnail of the video.
+
+If you want to do this, you can copy the HTML snippet here, just make sure to update the **videoLink** and **thumbnailUrl** variables so it looks like the screenshot above.
+
+```
+<a href="#######{{videoLink}}"><img src="#######{{thumbnailUrl}}" alt="Animated thumbnail for video" style="display:block;width:360px;margin:12px 0px" ></a>
+```
+
+## Using an Email Automation Platform
+
+If you’d like to use an email automation platform (Outreach, Smartlead, Instantly, etc.) you can do that too.
+
+Before you can set up the automation, you want to make sure that the Sendspark dynamic video placeholder is in the sequence you want to send. In this example, we’ll use Instantly as an email sending platform.
+
+This method will work similarly with most email sending platforms – you can find the[specific guide here](https://help.sendspark.com/en/collections/6113494-email-automation-send-dynamic-videos-in-bulk).
+
+**How to add Sendspark video placeholder to your email Sequence:**
+
+1. In your dynamic video campaign in Sendspark, click “Share Campaign”
+2. Select your email sending platform. This will copy a dynamic snippet to your clipboard.
+3. Follow the instructions in the Sendspark share modal to insert this into your email template where you want the video to go.
+4. When you do this, it will look like a placeholder snippet. However, when you enroll real contacts for whom you’ve generated Sendspark videos for, they will see the personalized videos made for them. You just want to make sure their email address in your email platform matches their email address in Sendspark.
+
+**Then, you can go back to Make to finalize your automation so….**
+
+1. when the webhook is received
+2. The contact is automatically enrolled in that email sequence.
+
+In this case, you do **not have to use any information from the webhook in the body of your email.**You just have to know that the webhook was received, which tells you that the video was generated and is safe to send, and then you can trust the video snippet you’ve placed in the body of your email will automatically update for each recipient.
+
+That’s it! Make sure to test your workflow before turning it on for everyone. And of course, let us know if you have any questions!

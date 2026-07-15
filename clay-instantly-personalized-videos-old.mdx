@@ -1,0 +1,145 @@
+---
+title: "Clay + Instantly: Personalized Videos (Old)"
+description: "Learn how to create personalized AI videos in Clay and automate email delivery through Instantly for enhanced outreach campaigns."
+---
+
+**We now have a direct Clay integration! We'd recommend you use the direct integration instead of the API for simplicity. Here's the [link to the new guide](/clay-integration-create-ai-videos).**
+
+Looking to use the Sendspark API to automatically generate & send videos?
+
+In this tutorial, we will walk you through how to do that using [Clay](https://clay.com) for automation and [Instantly](https://instantly.ai) to send emails.
+
+You should be able to swap out these platforms with other platforms (Make, HighLevel, etc. for automation and Smartlead, Apollo, Outreach, Salesloft, etc. for email sending).
+
+Let us know if you have any questions!
+
+These are the steps:
+
+1. [Create a list of qualified leads in Clay](#h_8ce5b90573)
+2. [Generate AI-personalized videos in Sendspark](#h_4d9e6f69bb)
+3. [Share videos in email sequences in Instantly](#h_fe951ea5e8)
+
+Let's dive in!
+
+---
+
+## How to Make AI Personalized Videos from Clay
+
+<iframe src="https://www.youtube.com/embed/EuGakvH3hEo?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+### 1. Create a list of qualified leads in Clay
+
+The first thing you want to do is create your list of leads in Clay.
+
+You can do this based on any criteria you would like. In this demo, I just made a simple list of contacts in our ideal customer persona.
+
+You can check out this tutorial for how to make a good lead list in Clay:
+
+<iframe src="https://www.youtube.com/embed/K11xVp0GCBI?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
+### 2. Generate AI-personalized videos in Sendspark
+
+To generate AI videos in Sendspark, first, you want to have created a Dynamic Video campaign:
+
+- From Sendspark, go to **[Dynamic Videos](https://sendspark.com/dynamic-videos)**
+- Click **"Create New Campaign"**
+- Follow the steps to **customize your campaign**
+
+![Sample Dynamic Video Campaign](/images/9163890/eb0cca57-image.png)
+
+---
+
+**Important notes for AI personalization:**
+
+- Record your video with the starter phrase,**"Hi Watermelon" 🍉**
+- Make sure to toggle voice cloning **"on"** ​![Toggle Sendspark Voice Cloning On](/images/9163890/fbc1d1ba-image.png)
+- Use a **better quality mic** for better quality AI!
+
+---
+
+Now, we want to automatically enroll contacts into the campaign using a Clay **HTTP API request:**
+
+![Use HTTP API Request to Create Video](/images/9163890/cdcd6c13-image.png)
+
+- From Clay, click **"Add Enrichment"**
+- Select **"HTTP API"**
+- Fill out fields with data fields with the data below:
+  - **Method:**
+    - POST
+  - **Endpoint:**
+    - **[https://api-gw.sendspark.com/v1/workspaces/[YOUR_WORKSPACE_ID]/dynamics/[YOUR_DYNAMIC_VIDEO_CAMPAIGN_ID]/prospect](https://api-gw.sendspark.com/v1/workspaces/%5BYOUR_WORKSPACE_ID%5D/dynamics/%5BYOUR_DYNAMIC_VIDEO_CAMPAIGN_ID%5D/prospect)**
+      - Find your workspace ID in your [API Credentials](https://sendspark.com/settings/api-credentials)![Find Sendspark Workspace ID](/images/9163890/19946ca2-image.png)
+      - Find your Dynamic Video Campaign ID in the URL of your dynamic video campaign, between the last 2 slashes ​![Find Sendspark Dynamic Video ID](/images/9163890/8f8883f8-image.png)
+  - **Body:**
+    - `{ "processAndAuthorizeCharge":true, "prospectDepurationConfig": { "forceCreation":true, "payloadDepurationStrategy":"keep-last-valid" }, "prospect":{ "contactName":"Bethany", "contactEmail":"b@sendspark.com", "company": "Sendspark", "jobTitle": "CEO", "backgroundUrl":"https://sendspark.com" } }`
+    - Make sure to replace the prospect fields with your Clay column titles, like so:![Send Clay Fields into Sendspark](/images/9163890/a392c4aa-image.png)
+  - **Headers**
+    - **x-api-key**
+      - your API key (found in your [API Credentials](/api-automatically-create-dynamic-videos-via-api))
+    - **x-api-secret**
+      - your API secret (also found in your [API Credentials](/api-automatically-create-dynamic-videos-via-api))
+    - ![Sendspark API Credentials](/images/9163890/eb282d6b-image.png)
+
+Altogether, it should looks something like this:
+
+![Sendspark HTTP API Request in Clay](/images/9163890/fb1e857f-image.png)
+
+Click **"Save and run first 10 rows"**
+
+You'll know it works if...
+
+1. You see**"200"** in the column in Clay
+  1. ![Successful API Request](/images/9163890/ffa05c33-image.png)
+2. You see that **videos are starting to generate** in your Sendspark campaign
+
+![Dynamically Generated Videos](/images/9163890/5e931e13-image.png)
+
+If all looks good, you can run for all of the rows that haven't run, or that have errors:
+
+![Run AI Personalized Video HTTP API Request in Clay](/images/9163890/fc493ce9-image.png)
+
+Alright, now the final step! Let's send these videos in Instantly.
+
+### 3. Share videos in email sequences in Instantly
+
+Before you can start enrolling contacts in your Instantly sequence, you need to add your Sendspark share snippet to the email:
+
+- From Sendspark, click **"share campaign"**
+- Click on **"Instantly"**to copy the code snippet to your clipboard ​![Share AI Video in Instantly](/images/11115902/8d24394d-image.png)
+- Go to your email in Instantly
+- Switch into**"Code View"**![Edit HTML Email in Instantly](/images/11115902/7f87d2e9-image.png)
+- Paste into your email where you want the video to be: ​![Paste AI Video in Instantly](/images/11115902/3bb13591-image.png)
+- Switch back out of Code View
+- You should see the Sendspark placeholder in your email now. ​![See AI Video Placeholder in Instantly](/images/11115902/21a41d68-image.png)
+- And, if you want to preview your video as a contact who's been added to your Sendspark campaign, you can**click "Preview"** and then **use their email** in the "email" variable:
+
+![Preview AI Video Email in Instantly](/images/9163890/52b38883-image.png)
+
+---
+
+**Important Note on Sending Video Emails**
+
+Use the video email in the **SECOND step in your sequence**. This helps for 2 reasons:
+
+1. Gives your video **time to generate** in Sendspark.
+  1. Videos should just take ~1 minute to generate, but if you're uploading a list of contacts, it will take a long time for the last video to generate
+2. **Helps deliverability**to just have plain text (no images & links) in the first email.
+
+---
+
+Now, the final step is to add a column in Clay to add your contact to the Instantly email sequence.
+
+- From Clay, click **"Add Enrichment"**
+- **Search for Instantly,** and select the **"Add Lead to Campaign"**option ​![Add AI Video to Instantly from Clay](/images/11115902/c000dc44-image.png)
+- Select your Campaign ID
+- Add the contact email, and any other data you want to send to Instantly![AI Video Data to Send to Clay](/images/11115902/9deca50f-image.png)
+
+You can save and run the workflow. And that's it! 🥳
+
+You've successfully...
+
+1. Found qualified leads
+2. Generated AI-personalized videos for them
+3. And enrolled them in an email sequence
+
+Congratulations!!!
