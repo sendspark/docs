@@ -92,6 +92,14 @@
       }
     ]
   },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-B5YN7FL1DM"
+    },
+    "intercom": {
+      "appId": "q9wd6k8e"
+    }
+  },
   "seo": {
     "metatags": {
       "canonical": "https://help.sendspark.com",
