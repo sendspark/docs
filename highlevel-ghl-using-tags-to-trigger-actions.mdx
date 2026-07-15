@@ -1,7 +1,22 @@
 ---
 title: "HighLevel (GHL) - Using Tags to Trigger Actions"
 description: "Learn how to use HighLevel tags to trigger automations and create workflows that update or create contacts with proper tagging."
+keywords:
+  - GoHighLevel tags trigger automation
+  - GHL apply tag to contact
+  - Sendspark HighLevel tag workflow
+  - GHL create or update contact
+  - GHL Agentic Workflows error handler
 ---
+
+In GoHighLevel, applying a tag to a contact can trigger automations like campaigns, emails, and SMS. To tag contacts from Sendspark, build an Agentic Workflow that triggers on Video Created, searches for the contact by email or phone, updates and tags them if they exist, and — using the Error Handler — creates and tags them if they don't. A Tool Break between the two paths prevents duplicate contacts.
+
+## Key takeaways
+
+- Tags are one of the most effective ways to trigger automations in GoHighLevel — applying a tag can launch campaigns, send emails, send SMS, and more.
+- The workflow triggers on **Dynamic Video Campaign → Video Created**, then searches for the contact by email or phone number.
+- **If the contact exists**, it's updated and tagged; a **Tool Break** then stops the flow to prevent a duplicate.
+- **If the contact doesn't exist**, the **Error Handler** passes control to a Create Contact step that creates and tags the new contact.
 
 Tags are one of the most effective ways to trigger automations in GoHighLevel. When a tag is applied to a contact, you can use it to launch campaigns, send emails, send SMS messages, and more.
 
@@ -24,6 +39,14 @@ This setup ensures that every contact receives the correct tag and is automatica
 ## Workflow Example: Updating or Creating a Contact with Tags
 
 Here’s how to build a workflow that ensures every contact gets the correct tag—whether the contact already exists or not.
+
+| Step | Action | Purpose |
+| --- | --- | --- |
+| 1 | Trigger: Dynamic Video Campaign → Video Created | Start the workflow when a video is generated |
+| 2 | Hubato: Search Contact by Email or Phone Number | Check whether the contact already exists |
+| 3 | Hubato: Update Contact | Apply the tag to the existing contact (uses the Contact ID from Step 2) |
+| 4 | Tool Break | Stop here if the contact was found and updated, preventing a duplicate |
+| 5 | Create Contact (Error Handler) | Runs only if no contact was found — create the contact and apply the tag |
 
 ## Step 1: Trigger
 
@@ -70,3 +93,22 @@ After the Tool Break, add the action **Create Contact**.
 - **If the contact doesn’t exist** → Search fails → Error Handler passes control → Create the contact → Apply tag.
 
 This setup guarantees that every video-triggered workflow results in a properly tagged contact, without duplicates.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do tags trigger automations in GoHighLevel?">
+    When a tag is applied to a contact, GoHighLevel can use it to launch campaigns, send emails, send SMS messages, and more — placing the contact into the right automation sequence.
+  </Accordion>
+  <Accordion title="How do I apply a tag when a Sendspark video is created?">
+    Build an Agentic Workflow that triggers on Dynamic Video Campaign → Video Created, searches for the contact by email or phone, and then updates and tags the contact (if they exist) or creates and tags them (if they don't).
+  </Accordion>
+  <Accordion title="How do I avoid creating duplicate contacts in GHL?">
+    Add a Tool Break after the Update Contact step. If the contact was found and updated, the Tool Break stops the workflow so it doesn't continue to the Create Contact step and make a duplicate.
+  </Accordion>
+  <Accordion title="What does the Error Handler do in this workflow?">
+    The Error Handler handles the case where the search finds no existing contact. When the search fails, it passes control to the Create Contact step, which creates the new contact and applies the tag.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

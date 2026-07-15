@@ -1,7 +1,34 @@
 ---
 title: "API — Automatically Create Dynamic Videos via API"
 description: "Learn how to automatically create dynamic AI-personalized videos using Sendspark API with step-by-step setup and endpoint guides."
+keywords:
+  - sendspark api
+  - create dynamic videos via api
+  - personalized video api
+  - dynamic video campaign endpoint
+  - add prospect api
 ---
+
+The Sendspark API lets you automatically create AI-personalized dynamic videos in response to any trigger, such as a form submission, a new list member, or an action in your product. You authenticate with an API key and secret, create a dynamic video campaign, then add prospects to it, and Sendspark generates a personalized video for each contact. All endpoints live under `https://api-gw.sendspark.com/v1`.
+
+## Key takeaways
+
+- You need two credentials: an **API Key** (scoped to your workspace) and an **API Secret** (scoped to your user profile). Pass both as `x-api-key` and `x-api-secret` headers on every request.
+- The core flow is: create a dynamic video campaign, then add one prospect (`/prospect`) or many (`/prospects/bulk`) to it. Sendspark generates a video per prospect.
+- Adding prospects requires `processAndAuthorizeCharge: true`, which acknowledges charges for videos generated above your plan limit.
+- Rate limits are 30 requests per minute for all endpoints, except `/prospects/bulk`, which is limited to 1 request per minute.
+
+### API endpoints at a glance
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `POST` | `/workspaces/{workspaceId}/dynamics` | Create a dynamic video campaign |
+| `GET` | `/workspaces/{workspaceId}/dynamics` | List dynamic video campaigns |
+| `GET` | `/workspaces/{workspaceId}/dynamics/{dynamicId}` | Get a dynamic campaign by ID |
+| `GET` | `/workspaces/{workspaceId}/dynamics/{dynamicId}/prospects/{email}` | Get prospect data by email |
+| `POST` | `/workspaces/{workspaceId}/dynamics/{dynamicId}/prospect` | Add a single prospect to a campaign |
+| `POST` | `/workspaces/{workspaceId}/dynamics/{dynamicId}/prospects/bulk` | Add and process multiple prospects |
+| `GET` | `/auth/health` | Check API health status |
 
 Sendspark lets you automatically generate [AI-personalized videos](/dynamic-videos-make-videos-with-ai-introductions) via our API. This is helpful when you want to create dynamic videos based on specific actions such as...
 
@@ -234,3 +261,25 @@ If you'd like to see where the Sendspark API has been implemented successfully, 
 - Expandi
 - Zapier
 - HubSpot Workflows
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I authenticate with the Sendspark API?">
+    Every request includes two headers: `x-api-key` (your workspace API Key) and `x-api-secret` (your user API Secret), plus `Accept: application/json`. Generate both in the API Credentials tab of your Sendspark settings. Note that an API Secret is shown only once, so store it securely when you generate it.
+  </Accordion>
+  <Accordion title="What's the difference between an API Key and an API Secret?">
+    An API Key is specific to your Sendspark workspace and lets other applications act on that workspace. An API Secret is specific to your individual user profile, so each member of a workspace can generate their own and take actions as themselves via automation.
+  </Accordion>
+  <Accordion title="How do I create a personalized video for a contact via the API?">
+    First create a dynamic video campaign with `POST /dynamics`. Then add the contact with `POST /dynamics/{dynamicId}/prospect` (or `/prospects/bulk` for many at once), including fields like contactName, contactEmail, company, jobTitle, and backgroundUrl. Sendspark generates a personalized video for each prospect you add.
+  </Accordion>
+  <Accordion title="Why do I need processAndAuthorizeCharge set to true?">
+    When adding prospects, `processAndAuthorizeCharge` must be `true` for the request to work. It confirms that you understand and authorize any charges associated with generating dynamic videos above your plan limit.
+  </Accordion>
+  <Accordion title="What are the API rate limits?">
+    All endpoints are limited to 30 requests per minute, except `/prospects/bulk`, which is limited to 1 request per minute.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

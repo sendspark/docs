@@ -1,7 +1,32 @@
 ---
 title: "Webhooks for Dynamic Video Notifications"
 description: "Set up Sendspark webhooks to receive real-time notifications when your dynamic videos are viewed. Trigger automations based on video engagement."
+keywords:
+  - sendspark webhook
+  - dynamic video notification
+  - webhook zapier trigger
+  - automatically send video email
+  - connect webhook to campaign
 ---
+
+Sendspark webhooks tell an outside tool, like Zapier, the exact moment a dynamic video finishes generating for a contact, so you can automatically send that contact their personalized video by email. You create a catch-hook in Zapier, add its URL as a new webhook in Sendspark, connect it to a dynamic video campaign, then add an email action that fires when the webhook is received.
+
+## Key takeaways
+
+- A webhook fires when a dynamic video is generated for a contact, which is the signal email automation needs to send the right video at the right time.
+- Setup is four steps: create a Zapier catch-hook, add the webhook URL in Sendspark, connect it to a dynamic video campaign, then test it.
+- Once connected, each contact with a generated video is enrolled into your Zapier workflow, where you add a "send email" action (for example, Add Lead to Campaign in Instantly).
+- You can map webhook data fields such as Contact Email, Contact First Name, and Video Link into the email so every recipient gets their own dynamic video.
+
+### Setup at a glance
+
+| Step | Where | What you do |
+| --- | --- | --- |
+| 1 | Zapier | Create a Zap using "Webhooks by Zapier" → "Catch Hook" and copy the webhook URL |
+| 2 | Sendspark | In webhook settings, select "New Webhook", name it, and paste the webhook URL |
+| 3 | Sendspark | Open the webhook, select "Connect Campaign", and add your dynamic video campaign |
+| 4 | Sendspark + Zapier | Generate a test video, then click "test" in Zapier to confirm contact data arrives |
+| 5 | Zapier | Add the next action (send email) that includes your Sendspark dynamic video snippet |
 
 Sendspark makes it easy to generate videos automatically through our HubSpot App, Zapier Integration, or API.
 
@@ -130,3 +155,24 @@ One note: when you are sending the video link in Gmail using “plain text,” l
 You would want to use one of our [email platform integrations](https://help.sendspark.com/en/collections/6113494-email-dynamic-videos) to embed the video thumbnail.
 
 That’s it – let us know if you have any questions!
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What triggers a Sendspark webhook?">
+    The webhook fires when a dynamic video is generated for a contact in a campaign that is connected to that webhook. That's the signal your automation uses to know the video is ready to send.
+  </Accordion>
+  <Accordion title="How do I connect a webhook to a dynamic video campaign?">
+    Click the dropdown arrow next to your webhook name, select "Connect Campaign" at the bottom right, choose the dynamic video campaign, and select "Add Dynamic Videos". You'll know it saved when the campaign appears under "associated campaigns" in the webhook information.
+  </Accordion>
+  <Accordion title="Can I send the video email automatically without an email automation platform?">
+    Yes, for quick testing you can add Gmail or Outlook as the next action in Zapier. However, we recommend an email automation platform because videos look better in email and you get more insights and analytics. Note that sending the video link in Gmail as plain text shows only the link, not the video thumbnail.
+  </Accordion>
+  <Accordion title="Which webhook data fields can I use in the follow-up email?">
+    You can use the fields passed from your webhook, such as Contact Email to know where to send, Contact First Name to address the contact, and Video Link to include that contact's dynamic video.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

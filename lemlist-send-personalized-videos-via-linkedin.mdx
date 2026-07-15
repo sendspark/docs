@@ -1,7 +1,22 @@
 ---
 title: "Lemlist- Send Personalized Videos via LinkedIn"
 description: "Learn how to send personalized video messages via LinkedIn using Lemlist to boost engagement and improve your outreach campaigns."
+keywords:
+  - send personalized videos LinkedIn Lemlist
+  - Lemlist dynamic video LinkedIn message
+  - Sendspark Lemlist integration
+  - LinkedIn video preview follow-up message
+  - video_link custom variable Lemlist
 ---
+
+To send personalized videos via LinkedIn with Lemlist, upload your CSV and map each lead's LinkedIn profile URL to the `unique ID` field, export the generated videos, add a `video_link` custom variable to your Lemlist message, then import the video CSV and launch. Send the video as a follow-up after the connection is accepted, because LinkedIn blocks previews in first messages to non-connections.
+
+## Key takeaways
+
+- Map the **LinkedIn Profile URL** to the `unique ID` field when uploading your CSV so each lead gets the right video.
+- After generating videos, click **Export Generated Videos** to download a CSV with a `video link` column, then re-import it and map `video_link` to your custom variable.
+- Insert the video with a custom variable in your message, e.g. `Hey [First Name], I created a video for you: #{{video_link}}`.
+- Only send the video as a **follow-up** after a connection is accepted — LinkedIn blocks previews and images in first messages to people you're not connected with.
 
 ## 📹 How to Send Dynamic Videos via LinkedIn Messages Using Lemlist
 
@@ -87,6 +102,30 @@ By following these steps, you can:
 
 ---
 
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I send a personalized video on LinkedIn using Lemlist?">
+    Upload your CSV to Lemlist and map the LinkedIn Profile URL to the `unique ID` field, click Export Generated Videos to download a CSV with a `video link` column, add a `video_link` custom variable to your message, then re-import the CSV and launch. Lemlist inserts the video link and LinkedIn generates a preview when the message sends.
+  </Accordion>
+  <Accordion title="Why isn't LinkedIn showing a video preview in my message?">
+    LinkedIn blocks previews and images in first messages to people you're not connected with. Send the video as a follow-up message after your connection request is accepted, and the preview will generate correctly.
+  </Accordion>
+  <Accordion title="Which field do I map the LinkedIn profile URL to in Lemlist?">
+    Map the LinkedIn Profile URL to the `unique ID` field during the CSV mapping step. You can optionally set a custom background using the LinkedIn profile or a custom image URL — just connect your LinkedIn account within Lemlist first.
+  </Accordion>
+  <Accordion title="How do I add the video link to my Lemlist message?">
+    In the campaign editor, click Add Variables → Custom Variable, name it something like `video_link`, and save. Then reference it in your message, for example: `Hey [First Name], I created a video for you. Be sure to check it out: #{{video_link}}`.
+  </Accordion>
+  <Accordion title="Can I send the video in my initial LinkedIn connection request?">
+    No. Do not send the video in your initial connection request. LinkedIn blocks previews and images in first messages to non-connections, so send it as a follow-up once the connection is accepted.
+  </Accordion>
+</AccordionGroup>
+
+---
+
 ## ❓Need Help?
 
 If you encounter any issues, consult the Lemlist Help Center or reach out to their support team.
+
+_Updated July 2026._

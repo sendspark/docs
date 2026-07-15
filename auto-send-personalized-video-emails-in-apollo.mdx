@@ -1,7 +1,22 @@
 ---
 title: "Auto-Send Personalized Video Emails in Apollo"
 description: "Learn how to automatically send AI-personalized Sendspark videos through Apollo sequences with step-by-step setup instructions."
+keywords:
+  - auto-send video emails in Apollo
+  - Apollo personalized video automation
+  - Sendspark Apollo sequence enrollment
+  - Apollo API add contact automation
+  - AI personalized video Apollo
 ---
+
+To auto-send personalized video emails in Apollo, create a Dynamic Video Campaign in Sendspark, paste a Sendspark placeholder into your Apollo sequence email, then build a Sendspark automation that triggers on "Sendspark Video Generated," finds the contact in Apollo, and calls the Apollo API to enroll them in your sequence. Each contact is added automatically once their video is ready.
+
+## Key takeaways
+
+- The setup has three parts: a **Dynamic Video Campaign** in Sendspark, a **Sendspark placeholder** in your Apollo sequence email, and a **Sendspark automation** that enrolls contacts in Apollo.
+- Use **"Sendspark Video Generated"** as the trigger so contacts only enroll once their personalized video is ready.
+- Enroll contacts by calling the Apollo API endpoint `https://api.apollo.io/api/v1/emailer_campaigns/{YOUR_CAMPAIGN_ID}/add_contact_ids` with a `POST` request.
+- Find your Apollo campaign ID in the URL of your Apollo sequence, and get your API key from Apollo's Developer Keys page.
 
 In this guide, you’ll learn how to automatically send AI-personalized Sendspark videos through Apollo sequences.
 
@@ -96,3 +111,34 @@ Then test your trigger and make sure that contacts are getting successfully enro
 ## Bonus: Create Contacts in Apollo If They Don't Already Exist
 
 For the most part, your contacts should already exist in Apollo (because they have a large database). However, if you believe that some contacts might not exist, then you can add logic to [create contacts in Apollo if they don't exist](/create-contacts-in-apollo-if-they-don-t-already-exist).
+
+## Apollo API request at a glance
+
+| Setting | Value |
+| --- | --- |
+| URL | `https://api.apollo.io/api/v1/emailer_campaigns/{YOUR_CAMPAIGN_ID}/add_contact_ids` |
+| Method | `POST` |
+| `contact_ids` | StringArray, inserted dynamically from the Apollo: Find Contact step |
+| `emailer_campaign_id` | Your Apollo campaign ID (found in the URL of your sequence) |
+| `send_email_from_email_account_id` | Your connected Apollo email account ID |
+| `X-Api-Key` header | Your Apollo API key from [Apollo Developer Keys](https://developer.apollo.io/keys) |
+| `Content-Type` header | `application/json` |
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I automatically send personalized video emails in Apollo?">
+    Create a Dynamic Video Campaign in Sendspark, paste a Sendspark placeholder into your Apollo sequence email, then build a Sendspark automation that triggers on "Sendspark Video Generated," finds the contact in Apollo by email, and calls the Apollo API to enroll them in your sequence. Contacts are added automatically once their video is ready.
+  </Accordion>
+  <Accordion title="What trigger should I use for the Sendspark automation?">
+    If you already have a trigger such as "Contact added to Apollo list" or "Contact added in HubSpot," use that. Otherwise use "Sendspark Video Generated" and connect the dynamic video campaign you want to use, so contacts enroll only after their video is ready.
+  </Accordion>
+  <Accordion title="Where do I find my Apollo campaign ID and API key?">
+    Your Apollo campaign ID appears in the URL of your Apollo sequence. Your API key comes from the [Apollo Developer Keys](https://developer.apollo.io/keys) page, and your connected email account ID is available from the [Apollo API docs](https://docs.apollo.io/reference/get-a-list-of-email-accounts).
+  </Accordion>
+  <Accordion title="What if some of my contacts don't already exist in Apollo?">
+    Most contacts will already exist because Apollo has a large database. If some might not, you can add logic to [create contacts in Apollo if they don't already exist](/create-contacts-in-apollo-if-they-don-t-already-exist) before enrolling them in the sequence.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._
