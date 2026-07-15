@@ -3,6 +3,15 @@ title: "Use a Custom Domain for Videos"
 description: "Set up a custom domain for Sendspark videos to improve deliverability, bypass firewalls, and create a white-label experience."
 ---
 
+To use a custom domain for your Sendspark videos, go to your workspace settings, scroll to Custom Domain, and enter the subdomain you want (e.g. videos.yourdomain.com). Then copy the Type, Host, and Value that Sendspark generates into your DNS provider's records, return to Sendspark, and click Test Connection to verify.
+
+## Key takeaways
+
+- A custom domain lets you serve your video share pages and video request pages from your own subdomain, which helps videos get through firewalls and gives customers a consistent, white-label experience.
+- Set your subdomain in Workspace Settings under Custom Domain, then copy the generated Type, Host, and Value into your DNS provider's records.
+- CNAME setup is hard to remove or update later, so be sure of your subdomain first; to swap domains, contact support. Subdomains are per-workspace, so each workspace needs its own unique subdomain.
+- DNS changes can take up to 24 hours to verify. In Cloudflare, set the Proxy Status to "DNS Only," and after setup run your new URL through the Twitter Card Validator so previews show on Twitter.
+
 If you want to share videos from your own domain URLs,you can connect your domain to Sendspark. This will give Sendspark permission to use your domain for your video share pages and video request pages.
 
 Connecting your domain will also help your videos get through firewalls and provide a more consistent, white-label experience for your customers.
@@ -88,3 +97,25 @@ Here are the help documentation pages for common DNS providers:
 ## Twitter Validation
 
 **Please note,** after you set up your custom domain, you may have to run the new URL through Twitter Card Validator to get video previews to show up when you share Sendspark links on Twitter. [Validate Twitter cards here](https://cards-dev.twitter.com/validator).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I set up a custom domain for my Sendspark videos?">
+    Go to your workspace settings, scroll to Custom Domain, and enter the subdomain you want to use (e.g. videos.yourdomain.com), then click Next Step. Copy the Type, Host, and Value that Sendspark generates into your DNS provider's records, then return to Sendspark and click Test Connection.
+  </Accordion>
+  <Accordion title="Can I change or remove my custom domain later?">
+    Once you set up the CNAME it is hard to remove or update, so be absolutely sure of the subdomain before setting it up. If you have already set up a custom domain and want to remove it so you can add a new one, contact support.
+  </Accordion>
+  <Accordion title="Do I need a separate subdomain for each workspace?">
+    Yes. Subdomains are set on a per-workspace basis, so if you use multiple workspaces with Sendspark, you must add a new, unique subdomain for each workspace.
+  </Accordion>
+  <Accordion title="Why is my domain still showing as Unverified?">
+    It can take up to 24 hours for DNS records to update, so try again a bit later. If you use Cloudflare, make sure the Proxy Status is set to "DNS Only" rather than the default "Proxied."
+  </Accordion>
+  <Accordion title="Do I need to do anything for video previews on Twitter?">
+    Yes. After setting up your custom domain, you may need to run the new URL through the Twitter Card Validator to get video previews to show up when you share Sendspark links on Twitter.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._

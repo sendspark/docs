@@ -3,6 +3,14 @@ title: "How to Embed a Video on a Hubspot Blog Post"
 description: "Learn how to embed responsive videos on HubSpot blog posts by manually setting dimensions and removing auto-crop formatting issues."
 ---
 
+To embed a responsive video on a HubSpot blog post, copy the embed code from Sendspark's share modal, paste it into an embed field in your blog, then open the blog editor's advanced source code, remove the wrapping `<div></div>` around the iframe, manually set the iframe's height and width to your video's ratio, and remove the position, left, and top attributes. Setting 100% width will not work.
+
+## Key takeaways
+
+- HubSpot automatically forces embedded videos to a 16x9 ratio, which can cause an unwanted crop or scroll effect, so you must set the video dimensions manually.
+- 100% width will not work; enter the actual height and width in the iframe using your video's ratio (9x16 for vertical, 4x3 for MacBook recordings, 16x9 for standard).
+- In the blog editor, use advanced then source code to remove the wrapping `<div></div>` and the position, left, and top attributes from the iframe.
+
 When you embed a video on Hubspot, it automatically forces the video to a 16x9 ratio. This can cause an unfortunate crop or scroll effect on your video.
 
 To embed a responsive video on your Hubspot blog, you have to manually set the video height and width yourself.
@@ -37,6 +45,23 @@ To embed a responsive video on your Hubspot blog, you have to manually set the v
 
 7. That's it! Your responsive video should be displaying beautifully on your blog. 👏
 
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why does my HubSpot video look cropped or squished?">
+    HubSpot automatically forces embedded videos to a 16x9 ratio no matter the actual video size, which can cause an unfortunate crop or scroll effect. To fix it, manually set the video's height and width in the iframe source code.
+  </Accordion>
+  <Accordion title="Can I just set the video width to 100% in HubSpot?">
+    No. 100% width will not work for embedding a responsive video on a HubSpot blog. You have to manually set the video height and width yourself.
+  </Accordion>
+  <Accordion title="What height and width should I use for my video?">
+    Set the iframe dimensions to match your video's ratio. Common ratios are 9x16 for vertical videos, 4x3 for videos recorded from MacBooks, and 16x9 for "normal" videos.
+  </Accordion>
+  <Accordion title="Where do I edit the video's source code in HubSpot?">
+    In your blog editor, click advanced and then source code. From there, remove the wrapping `<div></div>` around your video iframe and remove the position, left, and top attributes.
+  </Accordion>
+</AccordionGroup>
+
 ## Additional resources
 
 As a Hubspot user, you might appreciate these additional resources:
@@ -44,3 +69,5 @@ As a Hubspot user, you might appreciate these additional resources:
 1. [How to send hyper-personalized videos in Hubspot Marketing Hub emails](/how-to-set-up-sendspark-for-hubspot-crm-integration)
 2. [How to send hyper-personalized videos in Hubspot Sales Hub emails](/hubspot-static-videos-sales-hub)
 3. [How to connect the Hubspot CRM](/how-to-set-up-sendspark-for-hubspot-crm-integration)
+
+_Updated July 2026._

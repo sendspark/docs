@@ -3,6 +3,15 @@ title: "Gmail - Automatically Send AI Personalized  Videos"
 description: "Set up automated Gmail workflows to send AI personalized videos at scale using Sendspark's dynamic campaigns and HTML formatting."
 ---
 
+To automatically send AI personalized videos through Gmail, create a Dynamic Campaign in Sendspark, then build an Automated Workflow with a *New Video Generated* trigger and a Gmail *Send an Email* action. Add the Email Embed HTML block to the email body, save, and start the automation so each generated video sends on its own.
+
+## Key takeaways
+
+- By default, Gmail doesn't support HTML embeds for mass emails, so Sendspark's Automated Workflows feature triggers the sends automatically each time a new video is generated.
+- The workflow trigger is Sendspark's *New Video Generated* event, and the action is Gmail's *Send an Email*.
+- Insert the Email Embed HTML block in the email body, and use `<br>` for line breaks and `<p>` for paragraph spacing since Gmail lacks native line breaks in raw HTML.
+- Set the format to HTML and the To field to `#{{contact.email}}`; each recipient receives their own personalized video embedded in the email, delivered through your Gmail account.
+
 <iframe src="https://www.youtube.com/embed/9Vcwnyh7DPw?rel=0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
 
 ## 🚫 The Problem with Gmail and HTML
@@ -76,3 +85,27 @@ Each recipient gets:
 ## 💬 Questions?
 
 If you run into any issues or have questions about setup, reach out to our tech support team. We’re here to help.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How do I automatically send AI personalized videos through Gmail?">
+    Create a Dynamic Campaign in Sendspark, then set up an Automated Workflow with a *New Video Generated* trigger and a Gmail *Send an Email* action. Add the Email Embed HTML block to the email body, save, and start the automation.
+  </Accordion>
+  <Accordion title="What trigger and action does the workflow use?">
+    The trigger is the Sendspark app with the *New Video Generated* event, and the action is the Gmail app with *Send an Email*. Connect your Gmail account if you haven't already.
+  </Accordion>
+  <Accordion title="Why do I need HTML tags in the email body?">
+    Gmail lacks native line breaks in raw HTML, so use `<br>` for line breaks and `<p>` for paragraph spacing. Insert the Email Embed HTML block to add the dynamic GIF/video.
+  </Accordion>
+  <Accordion title="What should the To field be set to?">
+    Set the format to HTML and the To field to `#{{contact.email}}`, then customize the subject as needed.
+  </Accordion>
+  <Accordion title="Do I need anything besides my Gmail account?">
+    No. Each personalized video is delivered through your Gmail account with clean formatting, and nothing else is required.
+  </Accordion>
+</AccordionGroup>
+
+_Updated July 2026._
