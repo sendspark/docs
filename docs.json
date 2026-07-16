@@ -170,7 +170,6 @@
               {
                 "group": "Import Contacts with Integrations",
                 "pages": [
-                  "clay-instantly-personalized-videos-old",
                   "clay-integration-create-ai-videos",
                   "highlevel-ghl-ai-personalized-videos",
                   "hubspot-workflows-sendspark-marketing-email",
@@ -1944,7 +1943,11 @@
     },
     {
       "source": "/en/articles/9163890-*",
-      "destination": "/clay-instantly-personalized-videos-old"
+      "destination": "/clay-integration-create-ai-videos"
+    },
+    {
+      "source": "/clay-instantly-personalized-videos-old",
+      "destination": "/clay-integration-create-ai-videos"
     },
     {
       "source": "/en/articles/9145326-*",
