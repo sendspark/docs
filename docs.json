@@ -118,8 +118,8 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Help center",
-        "icon": "circle-question",
+        "tab": "Getting Started",
+        "icon": "rocket",
         "groups": [
           {
             "group": "Getting Started",
@@ -151,6 +151,31 @@
             ]
           },
           {
+            "group": "Getting started & plans",
+            "pages": [
+              "get-started-with-sendspark-business-plan",
+              "getting-started-with-sendspark-starter",
+              "how-to-cancel-sendspark",
+              "how-to-request-a-video"
+            ]
+          },
+          {
+            "group": "Account, team & workspaces",
+            "pages": [
+              "custom-domain-migration",
+              "how-to-change-your-email-address-and-password",
+              "how-to-create-and-use-multiple-workspaces",
+              "how-to-create-sub-accounts-for-agencies",
+              "how-to-remove-team-members"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Dynamic Videos",
+        "icon": "wand-magic-sparkles",
+        "groups": [
+          {
             "group": "Dynamic Video",
             "icon": "wand-magic-sparkles",
             "pages": [
@@ -177,88 +202,189 @@
                   "zapier-reply-auto-create-send-ai-videos",
                   "zapier-create-dynamic-videos-via-integration"
                 ]
+              }
+            ]
+          },
+          {
+            "group": "AI voice & language",
+            "pages": [
+              "ai-voice-cloning-how-to-get-the-best-results",
+              "ai-personalized-videos-in-multiple-languages",
+              "how-to-make-an-ai-generated-video-script",
+              "languages-supported-in-dynamic-videos",
+              "voice-cloning-with-multiple-languages"
+            ]
+          },
+          {
+            "group": "Dynamic video techniques",
+            "pages": [
+              "connect-linkedin-for-dynamic-videos",
+              "how-to-create-a-dynamic-video-campaign",
+              "how-to-make-dynamic-videos-with-linkedin-profiles",
+              "how-to-make-videos-with-dynamic-backgrounds",
+              "how-to-use-an-image-as-a-background-url",
+              "make-longer-videos-use-less-dynamic-video-minutes",
+              "multiple-variables-in-dynamic-videos",
+              "regenerate-videos-edit-variables",
+              "salesforce-company-variable-missing-workaround",
+              "simulate-scrolling-a-webpage-in-dynamic-video",
+              "the-correct-recording-method-for-dynamic-videos",
+              "use-merge-tags-to-personalize-videos-at-scale",
+              "use-a-combined-video-in-a-dynamic-video-campaign"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Recording & Managing",
+        "icon": "video",
+        "groups": [
+          {
+            "group": "Record Videos",
+            "pages": [
+              "record-both-your-face-and-screen-together",
+              "record-your-screen",
+              "record-yourself",
+              "upload-a-video-to-sendspark"
+            ]
+          },
+          {
+            "group": "Request Videos",
+            "pages": [
+              "how-to-customize-your-request-video-pages",
+              "how-to-request-a-testimonial-with-sendspark",
+              "request-videos-for-customer-support-in-intercom"
+            ]
+          },
+          {
+            "group": "Recording & camera",
+            "pages": [
+              "camera-effects-blur-virtual-backgrounds",
+              "camera-or-microphone-not-detected-no-inputs",
+              "hide-chrome-bookmarks-bar-when-recording",
+              "how-to-brand-your-recording-toolbar",
+              "how-to-use-camera-spotlight",
+              "pitch-deck-videos-with-google-slides",
+              "record-screen-and-computer-audio",
+              "recording-missing-when-switching-chrome-tabs",
+              "sendspark-recording-shortcuts-and-hotkeys",
+              "touch-up-your-appearance"
+            ]
+          },
+          {
+            "group": "Managing your video library",
+            "pages": [
+              "how-to-adjust-the-thumbnail-s-size-in-lemlist",
+              "how-to-bulk-delete-videos",
+              "how-to-delete-a-video",
+              "how-to-recover-videos-desktop-app",
+              "how-to-rename-a-video",
+              "how-to-replace-a-video-while-keeping-the-same-link",
+              "how-to-trim-videos-in-sendspark",
+              "how-to-upload-a-custom-video-thumbnail",
+              "how-to-use-templates",
+              "move-videos-between-personal-and-team-libraries"
+            ]
+          },
+          {
+            "group": "Playback & engagement",
+            "pages": [
+              "can-autoplay-videos-include-sound",
+              "how-enable-disable-the-like-button",
+              "how-to-embed-calendars-with-videos",
+              "how-to-enable-or-disable-captions",
+              "how-to-modify-shortcuts-on-share-modal",
+              "how-to-use-autoplay-on-sendspark",
+              "how-to-use-the-sendspark-countdown-timer",
+              "missing-thumbnail-emails-in-spam-folder"
+            ]
+          },
+          {
+            "group": "Edit Videos",
+            "pages": [
+              {
+                "group": "Calls-to -Action",
+                "pages": [
+                  "use-a-call-to-action-calendar-link",
+                  "use-a-call-to-action-phone-number",
+                  "use-a-call-to-action-text-message",
+                  "use-a-call-to-action-url-link"
+                ]
               },
               {
-                "group": "Share Dynamic Videos",
+                "group": "Edit Video Landing Pages",
                 "pages": [
-                  "gmass-send-dynamic-videos",
-                  "grinfi-send-dynamic-videos",
-                  "highlevel-leadconnector-vs-marketing-snippet",
-                  "lemlist-send-personalized-videos-via-linkedin",
-                  "mixmax-send-dynamic-videos",
-                  "reachinbox-send-dynamic-videos",
-                  "salesforge-auto-generate-dynamic-videos",
-                  "sendgrid-send-dynamic-videos",
-                  {
-                    "group": "Auto-Send Videos After Generation",
-                    "pages": [
-                      "ai-video-campaigns-clay-lemlist-setup",
-                      "hubspot-sendpark-app-send-videos-in-workflows",
-                      "klaviyo-auto-send-videos-for-new-lists",
-                      "send-ai-videos-in-instantly-clay-sendspark",
-                      "webhooks-for-dynamic-video-notifications"
-                    ]
-                  },
-                  {
-                    "group": "Email Automation — Send Dynamic Videos in Bulk",
-                    "pages": [
-                      "activecampaign-send-dynamic-videos",
-                      "amplemarket-send-dynamic-videos",
-                      "apollo-send-dynamic-videos",
-                      "brevo-send-personalized-videos-at-scale",
-                      "close-send-dynamic-videos",
-                      "constant-contact-send-dynamic-videos",
-                      "convertkit-send-dynamic-videos",
-                      "go-high-level-send-dynamic-videos",
-                      "highlevel-ghl-generate-a-video-with-any-trigger",
-                      "hubspot-marketing-emails-send-dynamic-videos",
-                      "hubspot-sales-sequences-send-dynamic-videos",
-                      "instantly-send-dynamic-videos",
-                      "klaviyo-send-dynamic-videos",
-                      "la-growth-machine-send-dynamic-videos",
-                      "leadconnector-send-dynamic-videos",
-                      "lemlist-send-dynamic-videos",
-                      "mailchimp-send-dynamic-videos",
-                      "mailshake-send-dynamic-videos",
-                      "outreach-send-dynamic-videos",
-                      "pipedrive-send-dynamic-videos",
-                      "quickmail-send-dynamic-videos",
-                      "reply-send-dynamic-videos",
-                      "salesforce-send-dynamic-videos",
-                      "salesloft-send-dynamic-videos",
-                      "send-ai-videos-in-smartlead-clay-sendspark",
-                      "sharpspring-send-dynamic-videos",
-                      "smartlead-send-dynamic-videos",
-                      "snov-io-send-dynamic-videos-custom-field-setup",
-                      "snov-io-send-dynamic-videos-template-method",
-                      "trigger-sendspark-videos-from-salesloft-and-send-them-via-apollo-sequences",
-                      "woodpecker-send-dynamic-videos",
-                      "zoho-send-dynamic-videos",
-                      "zoominfo-engage-send-dynamic-videos"
-                    ]
-                  },
-                  {
-                    "group": "LinkedIn Automation — Send Dynamic Videos in Bulk",
-                    "pages": [
-                      "ai-personalized-videos-in-linkedin-automation",
-                      "connect-expandi-with-sendspark-for-the-first-time",
-                      "customize-thumbnails-in-linkedin-messages",
-                      "expandi-integration-ai-personalized-videos",
-                      "heyreach-send-dynamic-videos",
-                      "la-growth-machine-linkedin-automation",
-                      "lemlist-linkedin-automation-auto-messages",
-                      "linked-helper-send-dynamic-videos",
-                      "linkedin-automation-send-videos-at-scale",
-                      "linkedin-automation-platform-compatibility",
-                      "send-ai-videos-on-linkedin-via-clay-lgm",
-                      "send-videos-in-linkedin-messages-expandi",
-                      "skylead-send-dynamic-videos"
-                    ]
-                  }
+                  "customize-your-video-landing-page"
+                ]
+              },
+              {
+                "group": "Edit Video Thumbnails",
+                "pages": [
+                  "edit-thumbnail-caption-colors",
+                  "how-to-edit-video-thumbnails"
                 ]
               }
             ]
           },
+          {
+            "group": "Embed Calendars with Videos",
+            "pages": [
+              "embed-calendly-calendar-with-videos",
+              "embed-chili-piper-calendar-with-videos",
+              "embed-google-calendar-with-videos",
+              "embed-highlevel-ghl-calendar-with-videos",
+              "embed-hubspot-calendar-with-videos",
+              "embed-lemcal-calendar-with-videos",
+              "embed-mixmax-calendar-with-videos",
+              "embed-outreach-calendar-with-videos",
+              "embed-salesloft-calendar-with-videos",
+              "embed-youcanbookme-calendar-with-videos",
+              "embed-a-paperform-in-your-sendspark-video-landing-page"
+            ]
+          },
+          {
+            "group": "Organizing your library",
+            "pages": [
+              "delete-a-folder",
+              "filter-videos-by-creators",
+              "filter-videos-by-plays-likes-and-cta-clicked",
+              "how-to-create-a-folder-in-sendspark",
+              "how-to-move-videos-between-folders",
+              "how-to-search-videos-in-sendspark",
+              "rename-a-folder",
+              "reorder-videos",
+              "save-default-meeting-links",
+              "upload-avatars"
+            ]
+          },
+          {
+            "group": "Recording & desktop app",
+            "pages": [
+              "change-camera-microphone-source",
+              "sendspark-desktop-application-for-macos"
+            ]
+          },
+          {
+            "group": "Use the Sendspark Chrome Extension",
+            "pages": [
+              "chrome-extension-recording-options-types",
+              "flip-camera-bubble",
+              "how-to-pin-a-chrome-extension",
+              "how-to-record-a-video-without-sound"
+            ]
+          },
+          {
+            "group": "Use the Sendspark Desktop App",
+            "pages": [
+              "how-to-use-the-sendspark-desktop-application"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations & Sending",
+        "icon": "puzzle-piece",
+        "groups": [
           {
             "group": "Installations & Integrations",
             "icon": "puzzle-piece",
@@ -308,24 +434,222 @@
                   "sendspark-instant-integrations-how-they-work",
                   "zoominfo-create-personalized-video-emails"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "group": "Share Dynamic Videos",
+            "pages": [
+              "gmass-send-dynamic-videos",
+              "grinfi-send-dynamic-videos",
+              "highlevel-leadconnector-vs-marketing-snippet",
+              "lemlist-send-personalized-videos-via-linkedin",
+              "mixmax-send-dynamic-videos",
+              "reachinbox-send-dynamic-videos",
+              "salesforge-auto-generate-dynamic-videos",
+              "sendgrid-send-dynamic-videos",
               {
-                "group": "Use the Sendspark Chrome Extension",
+                "group": "Auto-Send Videos After Generation",
                 "pages": [
-                  "chrome-extension-recording-options-types",
-                  "flip-camera-bubble",
-                  "how-to-pin-a-chrome-extension",
-                  "how-to-record-a-video-without-sound"
+                  "ai-video-campaigns-clay-lemlist-setup",
+                  "hubspot-sendpark-app-send-videos-in-workflows",
+                  "klaviyo-auto-send-videos-for-new-lists",
+                  "send-ai-videos-in-instantly-clay-sendspark",
+                  "webhooks-for-dynamic-video-notifications"
                 ]
               },
               {
-                "group": "Use the Sendspark Desktop App",
+                "group": "Email Automation — Send Dynamic Videos in Bulk",
                 "pages": [
-                  "how-to-use-the-sendspark-desktop-application"
+                  "activecampaign-send-dynamic-videos",
+                  "amplemarket-send-dynamic-videos",
+                  "apollo-send-dynamic-videos",
+                  "brevo-send-personalized-videos-at-scale",
+                  "close-send-dynamic-videos",
+                  "constant-contact-send-dynamic-videos",
+                  "convertkit-send-dynamic-videos",
+                  "go-high-level-send-dynamic-videos",
+                  "highlevel-ghl-generate-a-video-with-any-trigger",
+                  "hubspot-marketing-emails-send-dynamic-videos",
+                  "hubspot-sales-sequences-send-dynamic-videos",
+                  "instantly-send-dynamic-videos",
+                  "klaviyo-send-dynamic-videos",
+                  "la-growth-machine-send-dynamic-videos",
+                  "leadconnector-send-dynamic-videos",
+                  "lemlist-send-dynamic-videos",
+                  "mailchimp-send-dynamic-videos",
+                  "mailshake-send-dynamic-videos",
+                  "outreach-send-dynamic-videos",
+                  "pipedrive-send-dynamic-videos",
+                  "quickmail-send-dynamic-videos",
+                  "reply-send-dynamic-videos",
+                  "salesforce-send-dynamic-videos",
+                  "salesloft-send-dynamic-videos",
+                  "send-ai-videos-in-smartlead-clay-sendspark",
+                  "sharpspring-send-dynamic-videos",
+                  "smartlead-send-dynamic-videos",
+                  "snov-io-send-dynamic-videos-custom-field-setup",
+                  "snov-io-send-dynamic-videos-template-method",
+                  "trigger-sendspark-videos-from-salesloft-and-send-them-via-apollo-sequences",
+                  "woodpecker-send-dynamic-videos",
+                  "zoho-send-dynamic-videos",
+                  "zoominfo-engage-send-dynamic-videos"
+                ]
+              },
+              {
+                "group": "LinkedIn Automation — Send Dynamic Videos in Bulk",
+                "pages": [
+                  "ai-personalized-videos-in-linkedin-automation",
+                  "connect-expandi-with-sendspark-for-the-first-time",
+                  "customize-thumbnails-in-linkedin-messages",
+                  "expandi-integration-ai-personalized-videos",
+                  "heyreach-send-dynamic-videos",
+                  "la-growth-machine-linkedin-automation",
+                  "lemlist-linkedin-automation-auto-messages",
+                  "linked-helper-send-dynamic-videos",
+                  "linkedin-automation-send-videos-at-scale",
+                  "linkedin-automation-platform-compatibility",
+                  "send-ai-videos-on-linkedin-via-clay-lgm",
+                  "send-videos-in-linkedin-messages-expandi",
+                  "skylead-send-dynamic-videos"
                 ]
               }
             ]
           },
+          {
+            "group": "Share Videos",
+            "pages": [
+              "general-overview-how-to-share-sendspark-videos",
+              "linkedin-sales-navigator-scale-videos",
+              "whatsapp-how-to-send-videos-at-scale",
+              {
+                "group": "Download",
+                "pages": [
+                  "download-videos-as-mp4-files"
+                ]
+              },
+              {
+                "group": "Email (Quick Share)",
+                "pages": [
+                  "apple-mail-send-video-emails",
+                  "campaign-monitor-send-video-emails",
+                  "constant-contact-embed-videos-with-custom-code",
+                  "constant-contact-send-video-emails-as-image-links",
+                  "customer-io-send-video-emails",
+                  "giveffect-send-video-emails",
+                  "gmail-send-video-emails",
+                  "hubspot-embed-videos-in-emails-as-images",
+                  "hubspot-static-videos-marketing-hub",
+                  "intercom-send-video-emails",
+                  "klaviyo-send-video-emails",
+                  "mailchimp-send-video-emails",
+                  "outlook-send-video-emails",
+                  "pipedrive-send-video-emails",
+                  "thunderbird-send-video-emails"
+                ]
+              },
+              {
+                "group": "Email (Share with Personalization)",
+                "pages": [
+                  "activecampaign-send-personalized-videos-at-scale",
+                  "apollo-send-static-videos-at-scale",
+                  "aweber-send-personalized-videos-at-scale",
+                  "constant-contact-send-personalized-videos",
+                  "convertkit-send-personalized-videos-at-scale",
+                  "emma-send-personalized-videos-at-scale",
+                  "expandi-send-personalized-videos-at-scale",
+                  "go-high-level-send-personalized-videos-at-scale",
+                  "growth-x-send-personalized-videos-at-scale",
+                  "highlevel-ghl-send-personalized-videos-at-scale",
+                  "hubspot-static-videos-sales-hub",
+                  "instantly-send-personalized-videos-at-scale",
+                  "klaviyo-send-personalized-videos-at-scale",
+                  "klenty-send-personalized-videos-at-scale",
+                  "lemlist-send-personalized-videos-at-scale",
+                  "mailchimp-send-personalized-videos-at-scale",
+                  "mailerlite-send-personalized-videos-at-scale",
+                  "mailshake-send-personalized-videos-at-scale",
+                  "marketo-send-personalized-videos-at-scale",
+                  "mixmax-send-personalized-videos-at-scale",
+                  "outreach-send-personalized-videos-at-scale",
+                  "platformly-send-personalized-videos-at-scale",
+                  "reply-send-personalized-videos-at-scale",
+                  "salesloft-send-personalized-videos-at-scale",
+                  "salesforce-send-personalized-videos-at-scale",
+                  "sendfox-send-personalized-videos-at-scale",
+                  "skylead-send-personalized-videos-at-scale",
+                  "smartlead-send-personalized-videos-at-scale",
+                  "snov-io-send-personalized-videos-at-scale",
+                  "vbout-send-personalized-videos-at-scale",
+                  "woodpecker-send-personalized-videos-at-scale",
+                  "zendesk-send-personalized-videos-at-scale",
+                  "zoho-send-personalized-videos-at-scale",
+                  "zoominfo-engage-send-personalized-videos"
+                ]
+              },
+              {
+                "group": "Email Embed",
+                "pages": [
+                  "embed-videos-in-email-that-play-in-email"
+                ]
+              },
+              {
+                "group": "Social",
+                "pages": [
+                  "facebook-messenger-how-to-share-videos",
+                  "linkedin-video-comments-show-gif-thumbnails",
+                  "linkedin-how-to-share-videos",
+                  "slack-how-to-share-videos"
+                ]
+              },
+              {
+                "group": "Text Message",
+                "pages": [
+                  "text-videos-to-clients-sms"
+                ]
+              },
+              {
+                "group": "Website Embed",
+                "pages": [
+                  "embed-your-video-on-a-web-page",
+                  "how-to-embed-a-video-on-a-hubspot-blog-post"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integration guides",
+            "pages": [
+              "bridger-send-personalized-videos-at-scale",
+              "close-send-personalized-videos-at-scale",
+              "create-contacts-in-apollo-if-they-don-t-already-exist",
+              "greenhouse-recruiting",
+              "groove",
+              "growbots",
+              "how-merge-tag-fallbacks-work",
+              "how-to-add-salesloft-tracking-snippet-to-sendspark",
+              "how-to-add-google-tag-manager-to-sendspark",
+              "how-to-edit-your-linkedin-messages",
+              "keep-send-ai-personalized-video-emails",
+              "leadconnector-send-personalized-videos-at-scale",
+              "leadsimple",
+              "microsoft-dynamics-crm",
+              "multilead-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
+              "phoneburner-send-personalized-videos-at-scale",
+              "podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
+              "salesforce-cadences-send-personalized-videos-at-scale",
+              "salesforce-marketing-cloud-send-personalized-videos-at-scale",
+              "saleshandy",
+              "uptics-integration",
+              "vincere"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Automations & Workflows",
+        "icon": "gears",
+        "groups": [
           {
             "group": "Automated Workflows",
             "icon": "gears",
@@ -395,158 +719,20 @@
             ]
           },
           {
-            "group": "Advanced Skills",
-            "icon": "graduation-cap",
+            "group": "Automation, API & webhooks",
             "pages": [
-              {
-                "group": "Recording & camera",
-                "pages": [
-                  "camera-effects-blur-virtual-backgrounds",
-                  "camera-or-microphone-not-detected-no-inputs",
-                  "hide-chrome-bookmarks-bar-when-recording",
-                  "how-to-brand-your-recording-toolbar",
-                  "how-to-use-camera-spotlight",
-                  "pitch-deck-videos-with-google-slides",
-                  "record-screen-and-computer-audio",
-                  "recording-missing-when-switching-chrome-tabs",
-                  "sendspark-recording-shortcuts-and-hotkeys",
-                  "touch-up-your-appearance"
-                ]
-              },
-              {
-                "group": "AI voice & language",
-                "pages": [
-                  "ai-voice-cloning-how-to-get-the-best-results",
-                  "ai-personalized-videos-in-multiple-languages",
-                  "how-to-make-an-ai-generated-video-script",
-                  "languages-supported-in-dynamic-videos",
-                  "voice-cloning-with-multiple-languages"
-                ]
-              },
-              {
-                "group": "Dynamic video techniques",
-                "pages": [
-                  "connect-linkedin-for-dynamic-videos",
-                  "how-to-create-a-dynamic-video-campaign",
-                  "how-to-make-dynamic-videos-with-linkedin-profiles",
-                  "how-to-make-videos-with-dynamic-backgrounds",
-                  "how-to-use-an-image-as-a-background-url",
-                  "make-longer-videos-use-less-dynamic-video-minutes",
-                  "multiple-variables-in-dynamic-videos",
-                  "regenerate-videos-edit-variables",
-                  "salesforce-company-variable-missing-workaround",
-                  "simulate-scrolling-a-webpage-in-dynamic-video",
-                  "the-correct-recording-method-for-dynamic-videos",
-                  "use-merge-tags-to-personalize-videos-at-scale",
-                  "use-a-combined-video-in-a-dynamic-video-campaign"
-                ]
-              },
-              {
-                "group": "Managing your video library",
-                "pages": [
-                  "how-to-adjust-the-thumbnail-s-size-in-lemlist",
-                  "how-to-bulk-delete-videos",
-                  "how-to-delete-a-video",
-                  "how-to-recover-videos-desktop-app",
-                  "how-to-rename-a-video",
-                  "how-to-replace-a-video-while-keeping-the-same-link",
-                  "how-to-trim-videos-in-sendspark",
-                  "how-to-upload-a-custom-video-thumbnail",
-                  "how-to-use-templates",
-                  "move-videos-between-personal-and-team-libraries"
-                ]
-              },
-              {
-                "group": "Playback & engagement",
-                "pages": [
-                  "can-autoplay-videos-include-sound",
-                  "how-enable-disable-the-like-button",
-                  "how-to-embed-calendars-with-videos",
-                  "how-to-enable-or-disable-captions",
-                  "how-to-modify-shortcuts-on-share-modal",
-                  "how-to-use-autoplay-on-sendspark",
-                  "how-to-use-the-sendspark-countdown-timer",
-                  "missing-thumbnail-emails-in-spam-folder"
-                ]
-              },
-              {
-                "group": "Analytics & tracking",
-                "pages": [
-                  "how-to-understand-video-analytics",
-                  "track-who-has-watched-your-videos",
-                  "video-analytics-vs-email-open-rates"
-                ]
-              },
-              {
-                "group": "Account, team & workspaces",
-                "pages": [
-                  "custom-domain-migration",
-                  "how-to-change-your-email-address-and-password",
-                  "how-to-create-and-use-multiple-workspaces",
-                  "how-to-create-sub-accounts-for-agencies",
-                  "how-to-remove-team-members"
-                ]
-              },
-              {
-                "group": "Automation, API & webhooks",
-                "pages": [
-                  "automate-video-sharing-through-zapier",
-                  "automations-for-notifications",
-                  "connect-ai-apps-mcp",
-                  "how-to-connect-linkedin-and-sendspark",
-                  "how-to-create-api-keys",
-                  "how-to-download-videos-in-bulk-using-zapier",
-                  "slack-notification-for-new-dynamic-videos",
-                  "supported-email-automation-platforms",
-                  "tips-for-sending-videos-over-linkedin-messages",
-                  "using-apollo-stage-ids-in-sendspark-automations",
-                  "webhook-payload-ghl",
-                  "webhooks-how-to-create-webhooks-in-sendspark"
-                ]
-              },
-              {
-                "group": "Edit Videos",
-                "pages": [
-                  {
-                    "group": "Calls-to -Action",
-                    "pages": [
-                      "use-a-call-to-action-calendar-link",
-                      "use-a-call-to-action-phone-number",
-                      "use-a-call-to-action-text-message",
-                      "use-a-call-to-action-url-link"
-                    ]
-                  },
-                  {
-                    "group": "Edit Video Landing Pages",
-                    "pages": [
-                      "customize-your-video-landing-page"
-                    ]
-                  },
-                  {
-                    "group": "Edit Video Thumbnails",
-                    "pages": [
-                      "edit-thumbnail-caption-colors",
-                      "how-to-edit-video-thumbnails"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "Embed Calendars with Videos",
-                "pages": [
-                  "embed-calendly-calendar-with-videos",
-                  "embed-chili-piper-calendar-with-videos",
-                  "embed-google-calendar-with-videos",
-                  "embed-highlevel-ghl-calendar-with-videos",
-                  "embed-hubspot-calendar-with-videos",
-                  "embed-lemcal-calendar-with-videos",
-                  "embed-mixmax-calendar-with-videos",
-                  "embed-outreach-calendar-with-videos",
-                  "embed-salesloft-calendar-with-videos",
-                  "embed-youcanbookme-calendar-with-videos",
-                  "embed-a-paperform-in-your-sendspark-video-landing-page"
-                ]
-              }
+              "automate-video-sharing-through-zapier",
+              "automations-for-notifications",
+              "connect-ai-apps-mcp",
+              "how-to-connect-linkedin-and-sendspark",
+              "how-to-create-api-keys",
+              "how-to-download-videos-in-bulk-using-zapier",
+              "slack-notification-for-new-dynamic-videos",
+              "supported-email-automation-platforms",
+              "tips-for-sending-videos-over-linkedin-messages",
+              "using-apollo-stage-ids-in-sendspark-automations",
+              "webhook-payload-ghl",
+              "webhooks-how-to-create-webhooks-in-sendspark"
             ]
           },
           {
@@ -556,7 +742,35 @@
               "api-automatically-create-dynamic-videos-via-api",
               "webhooks-properties-in-sendspark-webhooks"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "Analytics",
+        "icon": "chart-line",
+        "groups": [
+          {
+            "group": "Analytics & tracking",
+            "pages": [
+              "how-to-understand-video-analytics",
+              "track-who-has-watched-your-videos",
+              "video-analytics-vs-email-open-rates"
+            ]
           },
+          {
+            "group": "Analytics",
+            "pages": [
+              "analytics-update-implications-for-videos-recorded-before-jan-19-2022",
+              "analytics-update-percentage-watched",
+              "how-to-understand-sendspark-video-analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Help & FAQ",
+        "icon": "life-ring",
+        "groups": [
           {
             "group": "FAQ & Troubleshooting",
             "icon": "life-ring",
@@ -662,202 +876,6 @@
                 "pages": [
                   "become-a-sendspark-integration-partner",
                   "become-a-sendspark-partner"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Regular Videos",
-            "icon": "video",
-            "pages": [
-              {
-                "group": "Record Videos",
-                "pages": [
-                  "record-both-your-face-and-screen-together",
-                  "record-your-screen",
-                  "record-yourself",
-                  "upload-a-video-to-sendspark"
-                ]
-              },
-              {
-                "group": "Request Videos",
-                "pages": [
-                  "how-to-customize-your-request-video-pages",
-                  "how-to-request-a-testimonial-with-sendspark",
-                  "request-videos-for-customer-support-in-intercom"
-                ]
-              },
-              {
-                "group": "Share Videos",
-                "pages": [
-                  "general-overview-how-to-share-sendspark-videos",
-                  "linkedin-sales-navigator-scale-videos",
-                  "whatsapp-how-to-send-videos-at-scale",
-                  {
-                    "group": "Download",
-                    "pages": [
-                      "download-videos-as-mp4-files"
-                    ]
-                  },
-                  {
-                    "group": "Email (Quick Share)",
-                    "pages": [
-                      "apple-mail-send-video-emails",
-                      "campaign-monitor-send-video-emails",
-                      "constant-contact-embed-videos-with-custom-code",
-                      "constant-contact-send-video-emails-as-image-links",
-                      "customer-io-send-video-emails",
-                      "giveffect-send-video-emails",
-                      "gmail-send-video-emails",
-                      "hubspot-embed-videos-in-emails-as-images",
-                      "hubspot-static-videos-marketing-hub",
-                      "intercom-send-video-emails",
-                      "klaviyo-send-video-emails",
-                      "mailchimp-send-video-emails",
-                      "outlook-send-video-emails",
-                      "pipedrive-send-video-emails",
-                      "thunderbird-send-video-emails"
-                    ]
-                  },
-                  {
-                    "group": "Email (Share with Personalization)",
-                    "pages": [
-                      "activecampaign-send-personalized-videos-at-scale",
-                      "apollo-send-static-videos-at-scale",
-                      "aweber-send-personalized-videos-at-scale",
-                      "constant-contact-send-personalized-videos",
-                      "convertkit-send-personalized-videos-at-scale",
-                      "emma-send-personalized-videos-at-scale",
-                      "expandi-send-personalized-videos-at-scale",
-                      "go-high-level-send-personalized-videos-at-scale",
-                      "growth-x-send-personalized-videos-at-scale",
-                      "highlevel-ghl-send-personalized-videos-at-scale",
-                      "hubspot-static-videos-sales-hub",
-                      "instantly-send-personalized-videos-at-scale",
-                      "klaviyo-send-personalized-videos-at-scale",
-                      "klenty-send-personalized-videos-at-scale",
-                      "lemlist-send-personalized-videos-at-scale",
-                      "mailchimp-send-personalized-videos-at-scale",
-                      "mailerlite-send-personalized-videos-at-scale",
-                      "mailshake-send-personalized-videos-at-scale",
-                      "marketo-send-personalized-videos-at-scale",
-                      "mixmax-send-personalized-videos-at-scale",
-                      "outreach-send-personalized-videos-at-scale",
-                      "platformly-send-personalized-videos-at-scale",
-                      "reply-send-personalized-videos-at-scale",
-                      "salesloft-send-personalized-videos-at-scale",
-                      "salesforce-send-personalized-videos-at-scale",
-                      "sendfox-send-personalized-videos-at-scale",
-                      "skylead-send-personalized-videos-at-scale",
-                      "smartlead-send-personalized-videos-at-scale",
-                      "snov-io-send-personalized-videos-at-scale",
-                      "vbout-send-personalized-videos-at-scale",
-                      "woodpecker-send-personalized-videos-at-scale",
-                      "zendesk-send-personalized-videos-at-scale",
-                      "zoho-send-personalized-videos-at-scale",
-                      "zoominfo-engage-send-personalized-videos"
-                    ]
-                  },
-                  {
-                    "group": "Email Embed",
-                    "pages": [
-                      "embed-videos-in-email-that-play-in-email"
-                    ]
-                  },
-                  {
-                    "group": "Social",
-                    "pages": [
-                      "facebook-messenger-how-to-share-videos",
-                      "linkedin-video-comments-show-gif-thumbnails",
-                      "linkedin-how-to-share-videos",
-                      "slack-how-to-share-videos"
-                    ]
-                  },
-                  {
-                    "group": "Text Message",
-                    "pages": [
-                      "text-videos-to-clients-sms"
-                    ]
-                  },
-                  {
-                    "group": "Website Embed",
-                    "pages": [
-                      "embed-your-video-on-a-web-page",
-                      "how-to-embed-a-video-on-a-hubspot-blog-post"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "group": "More Guides",
-            "icon": "book-open",
-            "pages": [
-              {
-                "group": "Getting started & plans",
-                "pages": [
-                  "get-started-with-sendspark-business-plan",
-                  "getting-started-with-sendspark-starter",
-                  "how-to-cancel-sendspark",
-                  "how-to-request-a-video"
-                ]
-              },
-              {
-                "group": "Organizing your library",
-                "pages": [
-                  "delete-a-folder",
-                  "filter-videos-by-creators",
-                  "filter-videos-by-plays-likes-and-cta-clicked",
-                  "how-to-create-a-folder-in-sendspark",
-                  "how-to-move-videos-between-folders",
-                  "how-to-search-videos-in-sendspark",
-                  "rename-a-folder",
-                  "reorder-videos",
-                  "save-default-meeting-links",
-                  "upload-avatars"
-                ]
-              },
-              {
-                "group": "Analytics",
-                "pages": [
-                  "analytics-update-implications-for-videos-recorded-before-jan-19-2022",
-                  "analytics-update-percentage-watched",
-                  "how-to-understand-sendspark-video-analytics"
-                ]
-              },
-              {
-                "group": "Recording & desktop app",
-                "pages": [
-                  "change-camera-microphone-source",
-                  "sendspark-desktop-application-for-macos"
-                ]
-              },
-              {
-                "group": "Integration guides",
-                "pages": [
-                  "bridger-send-personalized-videos-at-scale",
-                  "close-send-personalized-videos-at-scale",
-                  "create-contacts-in-apollo-if-they-don-t-already-exist",
-                  "greenhouse-recruiting",
-                  "groove",
-                  "growbots",
-                  "how-merge-tag-fallbacks-work",
-                  "how-to-add-salesloft-tracking-snippet-to-sendspark",
-                  "how-to-add-google-tag-manager-to-sendspark",
-                  "how-to-edit-your-linkedin-messages",
-                  "keep-send-ai-personalized-video-emails",
-                  "leadconnector-send-personalized-videos-at-scale",
-                  "leadsimple",
-                  "microsoft-dynamics-crm",
-                  "multilead-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
-                  "phoneburner-send-personalized-videos-at-scale",
-                  "podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages",
-                  "salesforce-cadences-send-personalized-videos-at-scale",
-                  "salesforce-marketing-cloud-send-personalized-videos-at-scale",
-                  "saleshandy",
-                  "uptics-integration",
-                  "vincere"
                 ]
               }
             ]
