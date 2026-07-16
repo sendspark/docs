@@ -126,6 +126,7 @@
             "icon": "rocket",
             "pages": [
               "index",
+              "sendspark-for-agencies",
               "ai-video-templates-scripts-teleprompter",
               "add-and-save-templates-in-dynamic-campaigns",
               "getting-started-guide-dynamic-videos",
