@@ -18,7 +18,7 @@ This is the raw JSON body you paste into your webhook or API call when firing a 
 
 This is the raw information you need to paste when you're firing a webhook or triggering an API towards Sendspark.
 
-```
+```json
 {  "processAndAuthorizeCharge": true,  "prospectDepurationConfig": {    "forceCreation": false,     "payloadDepurationStrategy": "keep-first-valid"  },  "prospect": {      "firstName": "#{{contact.first_name}}",      "contactEmail": "#{{contact.email}}",      "company": "#{{contact.company_name}}",      "customfield": "",      "backgroundUrl": "#{{contact.website}}"  }}
 ```
 
