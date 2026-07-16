@@ -136,19 +136,19 @@ If you are coming from the video (above), here's the information I promised:
 
 URL:
 
-```
+```text
 https://api-gw.sendspark.com/v1/workspaces/{WORKSPACE-ID}/dynamics/{CAMPAIGN-ID}/prospect
 ```
 
 Headers:
 
-```
+```text
 x-api-secret  xxxxxxxxxxxxxxxxx-api-key     xxxxxxxxxxxxxxxxAccept        application/json
 ```
 
 ​Payload:
 
-```
+```json
 {  "processAndAuthorizeCharge": true,  "prospectDepurationConfig": {    "forceCreation": false,     "payloadDepurationStrategy": "keep-first-valid"  },  "prospect": {      "contactName": "#{{contact.name}}",      "contactEmail": "#{{contact.email}}",      "company": "",      "jobTitle": "",      "backgroundUrl": "#{{contact.website}}"  }}
 ```
 
