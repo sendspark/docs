@@ -913,6 +913,10 @@
   },
   "redirects": [
     {
+      "source": "/en",
+      "destination": "/"
+    },
+    {
       "source": "/en/articles/15879611-*",
       "destination": "/permissions-missing"
     },
