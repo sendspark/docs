@@ -1,15 +1,10 @@
 ---
 title: "HubSpot+Sendpark App: Send Videos in Workflows"
 description: "Learn how to send personalized videos in HubSpot workflows using the Sendspark app. Automate video outreach and track view analytics in your CRM."
-keywords:
-  - HubSpot Sendspark workflow
-  - send video in HubSpot workflow
-  - dynamic video HubSpot email
-  - Dynamic Video Generated trigger
-  - AI personalized video HubSpot
+keywords: ["HubSpot Sendspark workflow", "send video in HubSpot workflow", "dynamic video HubSpot email", "Dynamic Video Generated trigger", "AI personalized video HubSpot"]
 ---
 
-The Sendspark + HubSpot App Integration lets you automatically send AI-personalized videos in HubSpot workflows. Create a dynamic video in Sendspark, then build a HubSpot workflow with the "Sendspark Dynamic Video Generated for Contact" trigger and an email containing your Sendspark share snippet. Contacts are enrolled and emailed automatically as soon as their video is generated.
+The Sendspark \+ HubSpot App Integration lets you automatically send AI-personalized videos in HubSpot workflows. Create a dynamic video in Sendspark, then build a HubSpot workflow with the "Sendspark Dynamic Video Generated for Contact" trigger and an email containing your Sendspark share snippet. Contacts are enrolled and emailed automatically as soon as their video is generated.
 
 ## Key takeaways
 
@@ -19,7 +14,7 @@ The Sendspark + HubSpot App Integration lets you automatically send AI-personali
 - Paste the share snippet (from Share Campaign → HubSpot Marketing Hub) into an HTML email module. It will look like a broken image, which is expected; preview with a contact to confirm videos render.
 - When publishing, choose "Yes, enroll existing contacts who meet the trigger as of now" to include contacts you already generated videos for.
 
-The [Sendspark + HubSpot App Integration](/hubspot-app-basic-installation-and-testing) makes it easy to automatically send AI-personalized videos in HubSpot emails.
+The [Sendspark \+ HubSpot App Integration](/hubspot-app-basic-installation-and-testing) makes it easy to automatically send AI-personalized videos in HubSpot emails.
 
 ## How to Automatically Send AI-Personalized in HubSpot Workflows
 
@@ -27,7 +22,7 @@ The [Sendspark + HubSpot App Integration](/hubspot-app-basic-installation-and-te
 
 Go to the [dynamic videos tab](https://sendspark.com/dynamic-videos) in Sendspark.
 
-Click on **"Create Dynamic Video,"**and follow the steps to create a dynamic video campaign.
+Click on **"Create Dynamic Video,"** and follow the steps to create a dynamic video campaign.
 
 Here's you'll be able to take one video and use placeholders (i.e. "contact first name") that will get updated when you import your contact information.
 
@@ -61,7 +56,7 @@ This basically means: when a contact has a video from that campaign generated fo
 
 **IV. Select “Dynamic Campaign Id”**
 
-Use the **Dynamic Video Campaign ID**of the campaign you just created. (You can find the Dynamic Video Campaign ID in the URL of your dynamic video campaign between the slashes after**“edit-v2”)**
+Use the **Dynamic Video Campaign ID**of the campaign you just created. (You can find the Dynamic Video Campaign ID in the URL of your dynamic video campaign between the slashes after “edit-v2”)
 
 ![HubSpot workflow showing Dynamic Campaign ID field selection in filter criteria](/images/8874862/f72c93d3-HGPmAtmj-O7X4MGYv3yVA75mOPrVj0FITqfCKPEvmyf6ntJEtlTD6YPQ6iFNd_lzRbrjFgAOwp9XRwT3ymXWDOxxpViDsEmiLveS8rFtPpNj0DCsE5KIH-G-BX-UduSnVDX6fm5bP3QvtVP2NpUuGFU.png)
 
@@ -85,7 +80,7 @@ You will need to click “more” and then “HTML - Email”
 
 **III. Add Sendspark Share Snippet to HubSpot email.**
 
-From Sendspark, click **“Share Campaign”**and then **“HubSpot Marketing Hub”**
+From Sendspark, click “Share Campaign” and then **“HubSpot Marketing Hub”**
 
 ![Sendspark Share Campaign menu with HubSpot Marketing Hub integration option highlighted](/images/8874862/d9cf8d31-5ej8jEuK0iCJzQC2WscVRjoVL_EVXVa21odRqssUY-HEuwgKG-qK3pEOxTyRQ37ej066KWu2aVvYTdS3fiuUMeKcmclHZVKRl8HcR49gg8LRudvQImDtLsZB75elvf5PcQEoPz59yuXSdpY4Y7K9YSk.png)
 
@@ -107,7 +102,7 @@ Go back to your workflow, add your email as a step.
 
 Now, you can **Review and Publish** your workflow.
 
-Make sure to use the option**"Yes, enroll existing contacts who meet the trigger as of now"** to include all of the contacts that you've already generated videos for in Sendspark.
+Make sure to use the option "Yes, enroll existing contacts who meet the trigger as of now" to include all of the contacts that you've already generated videos for in Sendspark.
 
 ![HubSpot workflow publish dialog with enrollment option for existing contacts selected](/images/8874862/51c9cc85-image.png)
 
@@ -119,15 +114,19 @@ Now, whenever you add a new contact to that campaign, they will automatically ge
   <Accordion title="What triggers the HubSpot workflow?">
     Use a "When filter criteria is met" trigger and select the Sendspark → Dynamic Video Generated for Contact properties. When a contact has a video from that campaign generated for them, they're enrolled in the workflow.
   </Accordion>
+
   <Accordion title="Where do I find my Dynamic Video Campaign ID?">
     You can find the Dynamic Video Campaign ID in the URL of your dynamic video campaign, between the slashes after "edit-v2". Paste that value into the Dynamic Campaign Id field in your HubSpot trigger.
   </Accordion>
+
   <Accordion title="How do I add the video to the HubSpot email?">
     Create a new marketing email, add an HTML module (click "more" then "HTML - Email"), then in Sendspark click "Share Campaign" and "HubSpot Marketing Hub" and paste that snippet into the HTML code block.
   </Accordion>
+
   <Accordion title="The pasted snippet shows a broken image. Is that a problem?">
     No, that's okay and expected. You can preview the email with one of the contacts from your dynamic video campaigns to make sure the videos are rendering correctly.
   </Accordion>
+
   <Accordion title="How do I include contacts I already generated videos for?">
     When you Review and Publish the workflow, use the option "Yes, enroll existing contacts who meet the trigger as of now" to include all the contacts you've already generated videos for in Sendspark.
   </Accordion>
