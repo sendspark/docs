@@ -1,11 +1,7 @@
 ---
 title: "Webhook payload (GHL)"
 description: "Learn how to configure GHL webhook payload for Sendspark API integration with proper JSON formatting and contact field mapping."
-keywords:
-  - GHL webhook payload
-  - HighLevel Sendspark webhook
-  - webhook raw body JSON
-  - trigger dynamic video GHL
+keywords: ["GHL webhook payload", "HighLevel Sendspark webhook", "webhook raw body JSON", "trigger dynamic video GHL"]
 ---
 
 This is the raw JSON body you paste into your webhook or API call when firing a request to Sendspark from GHL. In GHL, it goes in the **Raw Body** of a webhook action pointed at your Sendspark incoming webhook URL, and the `prospect` fields use GHL merge tags (for example `#{{contact.email}}`) so each contact's data is pulled in automatically.
@@ -18,8 +14,21 @@ This is the raw JSON body you paste into your webhook or API call when firing a 
 
 This is the raw information you need to paste when you're firing a webhook or triggering an API towards Sendspark.
 
-```json
-{  "processAndAuthorizeCharge": true,  "prospectDepurationConfig": {    "forceCreation": false,     "payloadDepurationStrategy": "keep-first-valid"  },  "prospect": {      "firstName": "#{{contact.first_name}}",      "contactEmail": "#{{contact.email}}",      "company": "#{{contact.company_name}}",      "customfield": "",      "backgroundUrl": "#{{contact.website}}"  }}
+```json lines wrap
+{
+  "processAndAuthorizeCharge": true,
+  "prospectDepurationConfig": {
+    "forceCreation": false,
+    "payloadDepurationStrategy": "keep-first-valid"
+  },
+  "prospect": {
+    "firstName": "{{contact.first_name}}",
+    "contactEmail": "{{contact.email}}",
+    "company": "{{contact.company_name}}",
+    "customfield": "",
+    "backgroundUrl": "{{contact.website}}"
+  }
+}
 ```
 
 ## Frequently asked questions
@@ -28,9 +37,11 @@ This is the raw information you need to paste when you're firing a webhook or tr
   <Accordion title="Where do I paste this payload in GHL?">
     In your GHL workflow, add an **Action → Webhook**, paste your Sendspark incoming webhook URL, and configure the **Raw Body** with this JSON. See [Generate a Video With Any Trigger](/highlevel-ghl-generate-a-video-with-any-trigger) for the full workflow.
   </Accordion>
+
   <Accordion title="How do I get the Sendspark webhook URL?">
     Create an incoming webhook in your Sendspark workflow (for example, Agentic Workflows): add a **Trigger → Webhook → Incoming**, set the step to wait for the webhook, and copy the webhook URL to paste into GHL.
   </Accordion>
+
   <Accordion title="What do the #{{contact...}} values mean?">
     They are GHL merge tags. When the webhook fires, GHL replaces each tag with that contact's data (such as their email or website) before sending the payload to Sendspark.
   </Accordion>
