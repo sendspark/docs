@@ -15,6 +15,7 @@ To let the Sendspark Chrome extension record, open its camera/microphone setting
 - Paste the settings link into your address bar rather than clicking it, then set **Camera** and **Microphone** to "Allow."
 - After granting permission, click the Sendspark icon in your browser to start recording.
 - If your camera or microphone still isn't detected, check that no other app is controlling it and that the correct device is selected.
+- If **Record** does nothing at all and the timer sits at 0:00, the block is at the operating system level rather than in Chrome. See [permissions missing](/permissions-missing).
 
 ## 1. Paste this link into your browser to access your Chrome settings:
 
@@ -33,6 +34,7 @@ chrome://settings/content/siteDetails?site=chrome-extension%3A%2F%2Fblimjkpadkhc
 ## **Explore related articles:**
 
 - **[Why Isn't My Camera Working?](/why-isn-t-my-camera-working)** ​
+- **[Permissions Missing](/permissions-missing)**, for when Record does nothing and the timer stays at 0:00
 
 ---
 
@@ -42,6 +44,9 @@ chrome://settings/content/siteDetails?site=chrome-extension%3A%2F%2Fblimjkpadkhc
   <Accordion title="Why do I need to paste the link instead of clicking it?">
     Chrome's camera and microphone settings page opens correctly when the link is pasted into the address bar. The same instruction applies when granting permissions to sendspark.com itself.
   </Accordion>
+  <Accordion title="I clicked Record and nothing happened. The timer stays at 0:00.">
+    That's a different problem from Chrome permissions. Your operating system has most likely revoked Chrome's camera and microphone access, so Chrome never gets as far as asking. Re-enable it at the OS level, following [permissions missing](/permissions-missing).
+  </Accordion>
   <Accordion title="The extension still can't detect my camera or microphone. What should I do?">
     Make sure no other application (such as OBS or Zoom) is controlling your camera or mic, connect the device directly to your computer rather than through a hub, and select the correct device in the extension's Settings. See [Camera or Microphone not detected / No Inputs](/camera-or-microphone-not-detected-no-inputs).
   </Accordion>
@@ -50,4 +55,4 @@ chrome://settings/content/siteDetails?site=chrome-extension%3A%2F%2Fblimjkpadkhc
   </Accordion>
 </AccordionGroup>
 
-_Updated July 2026._
+_Updated August 2026._

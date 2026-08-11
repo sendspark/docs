@@ -17,6 +17,7 @@ The Sendspark API lets you automatically create AI-personalized dynamic videos i
 - The core flow is: create a dynamic video campaign, then add one prospect (`/prospect`) or many (`/prospects/bulk`) to it. Sendspark generates a video per prospect.
 - Adding prospects requires `processAndAuthorizeCharge: true`, which acknowledges charges for videos generated above your plan limit.
 - Rate limits are 30 requests per minute for all endpoints, except `/prospects/bulk`, which is limited to 1 request per minute.
+- If you'd rather ask questions than write requests, [connect Sendspark to an AI assistant over MCP](/connect-ai-apps-mcp) and query your campaigns, prospects, and analytics in plain language.
 
 ### API endpoints at a glance
 
@@ -101,4 +102,4 @@ The credentials, headers, and campaign → prospect flow above apply to every en
   </Accordion>
 </AccordionGroup>
 
-_Updated July 2026._
+_Updated August 2026._
