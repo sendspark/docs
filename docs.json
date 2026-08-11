@@ -753,17 +753,13 @@
           {
             "group": "Analytics & tracking",
             "pages": [
+              "team-insights-dashboard",
               "how-to-understand-video-analytics",
+              "how-to-understand-sendspark-video-analytics",
               "track-who-has-watched-your-videos",
-              "video-analytics-vs-email-open-rates"
-            ]
-          },
-          {
-            "group": "Analytics",
-            "pages": [
-              "analytics-update-implications-for-videos-recorded-before-jan-19-2022",
               "analytics-update-percentage-watched",
-              "how-to-understand-sendspark-video-analytics"
+              "video-analytics-vs-email-open-rates",
+              "analytics-update-implications-for-videos-recorded-before-jan-19-2022"
             ]
           }
         ]
