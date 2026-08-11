@@ -27,6 +27,11 @@ BASELINE = os.path.join(DOCS, ".github", "orphan-baseline.txt")
 # Pages that are legitimately unreachable from a navigation group.
 NAV_EXEMPT = {"index"}  # the site root, rendered by the landing tab itself
 
+# Pages that cannot meaningfully carry inbound content links. The site root is
+# reached through the logo and the navigation chrome, never through prose, so
+# counting it as an orphan is noise rather than a finding.
+ORPHAN_EXEMPT = {"index"}
+
 # ]( /slug ) — internal links only, ignoring anchors, queries and externals.
 LINK = re.compile(r"\]\(/([a-z0-9][a-z0-9\-]*)")
 
@@ -82,7 +87,7 @@ def main():
         )
 
     counts = inbound_counts(all_slugs)
-    orphans = {s for s in in_nav if counts[s] == 0}
+    orphans = {s for s in in_nav if counts[s] == 0} - ORPHAN_EXEMPT
 
     baseline = set()
     if os.path.exists(BASELINE):

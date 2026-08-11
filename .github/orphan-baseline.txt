@@ -1,33 +1,56 @@
-# Pages with no inbound internal links, as of the day this ratchet was added.
-# check_docs_graph.py fails on any orphan NOT listed here, so this file is the
-# allowed backlog and never a target. When you give one of these an inbound
-# link, delete its line. The list should only ever get shorter.
-# Generated 2026-08-12 against main. Count: 165
+# Pages with no inbound internal links. check_docs_graph.py fails on any orphan
+# NOT listed here, so this file is the allowed backlog and never a target.
+# When you give one of these an inbound link, delete its line. It only shrinks.
+# Updated 2026-08-12. Total 129: 108 to fix, 21 deliberate.
+
+# ---------------------------------------------------------------------------
+# DELIBERATELY ORPHANED - do not link these from indexed pages.
+# Noindexed wrong-traffic pages and stubs. Linking them from indexed hubs
+# would pass equity to pages deliberately removed from the index, and would
+# surface wrong-traffic articles to users. Leave them unlinked.
+# ---------------------------------------------------------------------------
+bridger-send-personalized-videos-at-scale
+emma-send-personalized-videos-at-scale
+facebook-messenger-how-to-share-videos
+greenhouse-recruiting
+groove
+growbots
+hide-chrome-bookmarks-bar-when-recording
+how-to-add-google-tag-manager-to-sendspark
+how-to-add-salesloft-tracking-snippet-to-sendspark
+how-to-enable-disable-hardware-acceleration
+keep-send-ai-personalized-video-emails
+leadsimple
+microsoft-dynamics-crm
+multilead-tutorial-send-personalized-videos-at-scale-in-linkedin-messages
+phoneburner-send-personalized-videos-at-scale
+podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages
+salesforce-cadences-send-personalized-videos-at-scale
+saleshandy
+uptics-integration
+vincere
+why-is-my-audio-video-out-of-sync
+
+# ---------------------------------------------------------------------------
+# TO FIX - indexed pages that need an inbound contextual link.
+# ---------------------------------------------------------------------------
 3-ways-to-share-videos-in-hubspot
-activecampaign-send-dynamic-videos
 ai-personalized-videos-in-linkedin-automation
-apple-mail-send-video-emails
 auto-generate-videos-from-skylead-campaign
 auto-send-videos-when-leads-join-campaigns
 automate-video-follow-ups-intercom-hubspot
 automatically-download-files-with-your-cta-button
 automatically-generate-dynamic-videos-from-google-sheets
 automations-for-notifications
-aweber-send-personalized-videos-at-scale
 become-a-sendspark-integration-partner
 become-a-sendspark-partner
-brevo-send-personalized-videos-at-scale
-bridger-send-personalized-videos-at-scale
-campaign-monitor-send-video-emails
 can-autoplay-videos-include-sound
 can-you-send-emails-from-sendspark
 change-camera-microphone-source
 connect-ai-apps-mcp
 connect-linkedin-for-dynamic-videos
 connect-sendspark-with-salesforce
-convertkit-send-personalized-videos-at-scale
 custom-domain-migration
-customer-io-send-video-emails
 dynamic-video-campaign-limits
 dynamic-video-campaigns-configuring-error-handling-for-dynamic-backgrounds
 dynamic-video-length
@@ -36,27 +59,16 @@ edit-thumbnail-caption-colors
 embed-a-paperform-in-your-sendspark-video-landing-page
 embed-lemcal-calendar-with-videos
 embed-your-video-on-a-web-page
-emma-send-personalized-videos-at-scale
-facebook-messenger-how-to-share-videos
-giveffect-send-video-emails
 gong-engage-send-automated-videos-in-email-flows
-greenhouse-recruiting
 grinfi-send-dynamic-videos
-groove
-growbots
-growth-x-send-personalized-videos-at-scale
 heyreach-send-dynamic-videos
-hide-chrome-bookmarks-bar-when-recording
 how-enable-disable-the-like-button
-how-to-add-google-tag-manager-to-sendspark
-how-to-add-salesloft-tracking-snippet-to-sendspark
 how-to-bulk-delete-videos
 how-to-cancel-sendspark
 how-to-connect-linkedin-and-sendspark
 how-to-create-a-video-email-signature
 how-to-download-videos-in-bulk-using-zapier
 how-to-edit-your-linkedin-messages
-how-to-enable-disable-hardware-acceleration
 how-to-enable-or-disable-captions
 how-to-make-an-ai-generated-video-script
 how-to-pause-resume-videos
@@ -76,57 +88,30 @@ how-to-update-your-payment-method
 how-to-use-autoplay-on-sendspark
 how-to-use-the-sendspark-countdown-timer
 how-to-use-the-teleprompter
-index
-instantly-send-dynamic-videos
-instantly-send-personalized-videos-at-scale
-intercom-send-video-emails
-keep-send-ai-personalized-video-emails
 klaviyo-auto-send-videos-for-new-lists
-klenty-send-personalized-videos-at-scale
-la-growth-machine-send-dynamic-videos
 languages-supported-in-dynamic-videos
-leadsimple
 linked-helper-send-dynamic-videos
-linkedin-automation-platform-compatibility
 linkedin-background-video-generation-limits
 linkedin-sales-navigator-scale-videos
 linkedin-video-comments-show-gif-thumbnails
 mac-app-blocked-by-apple-security-check
-mailerlite-send-personalized-videos-at-scale
-mailshake-send-personalized-videos-at-scale
 make-com-auto-create-ai-personalized-videos
-marketo-send-personalized-videos-at-scale
 meeting-booked-create-video-calendly
-microsoft-dynamics-crm
 mixmax-send-dynamic-videos
-multilead-tutorial-send-personalized-videos-at-scale-in-linkedin-messages
 my-download-is-slow
-outlook-send-video-emails
 outreach-ai-video-for-new-sequence-leads
 outreach-auto-send-ai-personalized-videos
-outreach-send-dynamic-videos
 permissions-missing
-phoneburner-send-personalized-videos-at-scale
-pipedrive-send-dynamic-videos
-pipedrive-send-video-emails
 pitch-deck-videos-with-google-slides
-platformly-send-personalized-videos-at-scale
-podio-tutorial-send-personalized-videos-at-scale-in-linkedin-messages
-quickmail-send-dynamic-videos
 rb2b-integration-ai-videos-for-visitors
 record-screen-and-computer-audio
 rename-a-folder
 reorder-videos
-reply-send-dynamic-videos
 request-videos-for-customer-support-in-intercom
-salesforce-cadences-send-personalized-videos-at-scale
-saleshandy
 salesloft-ai-personalized-videos-in-cadences
 salesloft-auto-ai-videos-for-cadence
-salesloft-send-personalized-videos-at-scale
 save-default-meeting-links
 send-videos-in-linkedin-messages-expandi
-sendfox-send-personalized-videos-at-scale
 sendgrid-send-dynamic-videos
 sendspark-aligned-deal-room-integration
 sendspark-desktop-application-for-macos
@@ -136,35 +121,24 @@ sendspark-onboarding-checklist
 sendspark-recording-shortcuts-and-hotkeys
 set-hubspot-admin-permissions-for-workflows
 share-dynamic-videos-without-sales-email-tools
-sharpspring-send-dynamic-videos
 simulate-scrolling-a-webpage-in-dynamic-video
 slack-how-to-share-videos
 smartlead-auto-send-videos-to-new-leads
-snov-io-send-dynamic-videos-custom-field-setup
 text-videos-to-clients-sms
 third-party-platform-limitations
-thunderbird-send-video-emails
 tips-for-sending-videos-over-linkedin-messages
 tips-from-sendspark-s-csm
 unreachable-background-urls-in-dynamic-videos
 upload-avatars
-uptics-integration
 use-prospect-website-for-email-not-gmail
 using-facebook-backgrounds-in-dynamic-videos
 using-sendspark-with-multiple-screens
 variables-and-placeholders-in-sendspark-videos
-vbout-send-personalized-videos-at-scale
 video-analytics-vs-email-open-rates
-vincere
 warmly-create-videos-from-visitors
 watch-videos-in-fullscreen
 website-visit-create-video-from-trigger
 whatsapp-how-to-send-videos-at-scale
-why-is-my-audio-video-out-of-sync
 why-your-card-doesn-t-support-this-payment
 zapier-reply-auto-create-send-ai-videos
-zendesk-send-personalized-videos-at-scale
-zoho-send-personalized-videos-at-scale
 zoominfo-create-personalized-video-emails
-zoominfo-engage-send-dynamic-videos
-zoominfo-engage-send-personalized-videos
