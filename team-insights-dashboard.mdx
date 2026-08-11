@@ -48,10 +48,10 @@ If we hold less data than the range you asked for, the header names the range ac
 
 ## Focus the dashboard with filters
 
-Two filters sit next to the range control, and both narrow every widget at once:
+Two dropdowns sit in the toolbar, and both narrow every widget at once:
 
-- **Member** — shows only the campaigns that member created
-- **Campaign** — shows only that campaign
+- **All members** — pick a member to see only the campaigns they created
+- **All campaigns** — pick a campaign to see only that one
 
 You can apply one, both, or clear them independently. Filters are temporary: they reset when you leave the dashboard and are not stored inside a saved report.
 
@@ -103,9 +103,12 @@ Team Insights is deliberately strict about what counts, so the numbers hold up w
 
 ## Customize your dashboard
 
-- **Add widget** opens a drawer of everything available, grouped by category, with the recommended set called out. Your dashboard starts with KPI cards, Activity over time, Top performers, Member leaderboard, and Top videos.
-- **Drag** a widget by its header to move it, and drag its corner to resize. The grid reflows around it.
+- **Add widget** opens a drawer with everything available, grouped by category and led by the set recommended for your workspace. The drawer stays open so you can add several in a row, and it has a search box — press <kbd>/</kbd> to jump into it. Your dashboard starts with KPI cards, Activity over time, Top performers, Member leaderboard, and Top videos.
+- **Drag** a widget by the handle in its header to move it, and drag its bottom-right corner to resize. The grid reflows around it.
+- **Remove** a widget with the **✕** in its top-right corner. Adding it back later restores it with its default size.
 - **Reset layout** puts the recommended set back.
+
+Layout changes save on their own — the toolbar confirms with **All changes saved**.
 
 Some widgets are available on higher plans. Those appear in the drawer marked as locked so you can see what's included before upgrading.
 
@@ -117,7 +120,7 @@ These twelve widgets are reporting live data today:
 
 | Widget | What it shows |
 | --- | --- |
-| **KPI cards** | Headline metrics for the period at a glance |
+| **KPI cards** | Total views, engagement rate, conversion rate, watch completion, and CTA clicks for the period |
 | **Activity over time** | Plays and engagement plotted across the timeframe |
 | **Trend summary** | How the period compares with the one before it |
 | **Top performers** | The #1 member for each of four measures |
@@ -136,15 +139,15 @@ Because Team Insights is in beta, the drawer also lists widgets we're still buil
 
 A report is a named dashboard layout, so you can keep one view for your weekly team review and another for a single campaign.
 
-Open the reports menu in the header to:
+Open the **Report** dropdown in the header to switch between your reports, or to:
 
 - **New report** — save the current layout under a name
 - **Duplicate** — copy the report you're on as a starting point
 - **Rename** — rename the current report
-- **Set as default** — make it the report that opens first
-- **Delete** — remove a report you no longer need
 
-Every workspace starts with the **Default** report, which can be reset but not deleted. Reports are yours: saving one doesn't change what your teammates see.
+On any report other than Default you also get **Set as default**, to make it the one that opens first, and **Delete**. The **Default** report itself can be reset but never deleted, which is why those two actions don't appear while you're on it.
+
+Reports are yours: saving one doesn't change what your teammates see.
 
 {/* SCREENSHOT: the reports menu open, showing the Default report and the New report / Duplicate / Rename actions. */}
 
