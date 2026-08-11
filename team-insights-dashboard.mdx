@@ -12,6 +12,10 @@ keywords:
 
 Team Insights is your workspace-level analytics dashboard. Instead of opening one video at a time, you see how everyone's videos performed together — who sent the most videos, whose videos get watched, and which content earns the most clicks. Open it from **Team Insights** in the left sidebar.
 
+<Note>
+  **Team Insights is in beta.** The dashboard is live and its numbers are real, but we're still adding widgets and refining the experience — you'll see a **Beta** label next to it in the sidebar. Some widgets in the **Add widget** drawer are marked as coming soon; see [what's available today](#which-widgets-are-available) below.
+</Note>
+
 ## Key takeaways
 
 - Open **Team Insights** from the left sidebar. It's the workspace-wide view, separate from the per-video Analytics modal.
@@ -26,8 +30,10 @@ Team Insights is your workspace-level analytics dashboard. Instead of opening on
 Click **Team Insights** in the left sidebar. The dashboard loads with your saved layout and your last-used reporting period.
 
 <Note>
-  Team Insights replaces the old **Team Overview** entry in the sidebar. Everything Team Overview showed is available here, alongside the new widgets.
+  While Team Insights is in beta it **takes the place of Team Overview** in the sidebar, so you'll find your team's numbers here instead. If you're looking for a figure Team Overview used to show, it's on this dashboard — add the widget for it from **Add widget**.
 </Note>
+
+{/* SCREENSHOT: full Team Insights dashboard on the default layout, sidebar visible with the Beta label. */}
 
 ## Choose your reporting period
 
@@ -62,6 +68,8 @@ Four cards, each naming the **#1** member for one measure over the selected peri
 
 Each card is ranked on its own, so one member can lead every card or none of them. A card stays blank when nobody qualifies for that measure yet — for example, nobody can hold a CTA rate until their videos have been viewed. When the whole period has no activity, the widget shows a single empty state instead of four blank cards.
 
+{/* SCREENSHOT: the Top performers widget with all four cards populated. */}
+
 ## Member leaderboard
 
 The leaderboard lists your team members with four columns:
@@ -78,6 +86,8 @@ Teams of ten or fewer are shown in full, including members sitting at zero. In a
 <Note>
   The footnote **"Views count per video: one visit on two videos counts twice"** explains why the leaderboard's views can add up to more than the workspace total elsewhere on the dashboard. The leaderboard counts views per video, so one person who opens two of your videos is counted on both.
 </Note>
+
+{/* SCREENSHOT: the Member leaderboard sorted by Views, medals on the top three and the "you" chip visible. */}
 
 ## How each metric is counted
 
@@ -99,6 +109,29 @@ Team Insights is deliberately strict about what counts, so the numbers hold up w
 
 Some widgets are available on higher plans. Those appear in the drawer marked as locked so you can see what's included before upgrading.
 
+{/* SCREENSHOT: the Add widget drawer open, showing the Recommended group and a locked widget. */}
+
+## Which widgets are available
+
+These twelve widgets are reporting live data today:
+
+| Widget | What it shows |
+| --- | --- |
+| **KPI cards** | Headline metrics for the period at a glance |
+| **Activity over time** | Plays and engagement plotted across the timeframe |
+| **Trend summary** | How the period compares with the one before it |
+| **Top performers** | The #1 member for each of four measures |
+| **Member leaderboard** | Every member's videos, views, CTAs, and likes |
+| **Top videos** | Your best-performing videos, with detail |
+| **Content insights** | How your content is performing overall |
+| **Conversion rates** | Conversion ratios for the period |
+| **Geographic distribution** | Where your viewers are located |
+| **Device breakdown** | Viewers by device type |
+| **Browser breakdown** | Viewers by browser |
+| **OS breakdown** | Viewers by operating system |
+
+Because Team Insights is in beta, the drawer also lists widgets we're still building. You can add them to your layout, but they'll show a **coming soon** placeholder instead of data: Watch funnel, Conversion funnel, Engagement depth, Source breakdown, Top referrers & UTM, Engagement score distribution, Multi-stage funnel, AI insights, and Hot leads.
+
 ## Save dashboards as reports
 
 A report is a named dashboard layout, so you can keep one view for your weekly team review and another for a single campaign.
@@ -113,6 +146,8 @@ Open the reports menu in the header to:
 
 Every workspace starts with the **Default** report, which can be reset but not deleted. Reports are yours: saving one doesn't change what your teammates see.
 
+{/* SCREENSHOT: the reports menu open, showing the Default report and the New report / Duplicate / Rename actions. */}
+
 ## Export to PDF
 
 Click **Export PDF** to save the dashboard as it appears — the widgets, the reporting period, and any filters you applied are all named in the export, so the file still makes sense weeks later. Wait until the widgets have finished loading before exporting, so nothing lands in the file half-drawn.
@@ -122,6 +157,12 @@ Click **Export PDF** to save the dashboard as it appears — the widgets, the re
 ## Frequently asked questions
 
 <AccordionGroup>
+  <Accordion title="Why does a widget say “coming soon”?">
+    Team Insights is in beta and the **Add widget** drawer lists everything planned for the dashboard, including widgets we haven't finished. Adding one keeps its place in your layout and it will start reporting as soon as it ships — no need to add it again. See [which widgets are available](#which-widgets-are-available) for the current list.
+  </Accordion>
+  <Accordion title="Where did Team Overview go?">
+    While Team Insights is in beta it takes the place of Team Overview in the sidebar. Your team's numbers are all on this dashboard — if one you relied on isn't showing, add its widget from **Add widget**.
+  </Accordion>
   <Accordion title="Why does a member show videos but no views?">
     Videos counts what they created; views counts what recipients opened. A member who created videos that nobody has opened yet will show videos with zero views. It's the most common pattern for videos sent in the last day or two.
   </Accordion>
