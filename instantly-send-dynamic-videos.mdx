@@ -7,6 +7,7 @@ keywords:
   - instantly code view snippet
   - sendspark instantly integration
   - ai personalized video email
+  - instantly unibox video
 ---
 
 To send dynamic videos in Instantly, generate your AI-personalized videos in Sendspark, click Share Campaign, and select Instantly to copy the snippet. In your Instantly email, switch to Code View and paste the snippet where you want the video, then switch back. Every lead on your list receives a video personalized for them.
@@ -17,6 +18,7 @@ To send dynamic videos in Instantly, generate your AI-personalized videos in Sen
 - Paste it inside Instantly's **Code View** where you want the video, then switch back to the regular view (resize the placeholder if needed).
 - Use **Preview** and change the email address to see how the video renders for each lead.
 - Videos are matched by email, so use the **same lead list** in Instantly that you used in Sendspark and generate videos in advance.
+- **Unibox works differently.** The snippet's variables don't resolve there, so insert the thumbnail and hyperlink it by hand using the GIF URL and video link from your campaign's CSV export.
 
 Sendspark makes it easy to send AI personalized videos in Instantly emails.
 
@@ -39,9 +41,30 @@ If it doesn't look right, check...
 1. Did you generate the video for the email address that you're previewing in Sendspark? (If you haven't made a video for them in advance, there won't be anything to see here!)
 2. Are you using the same lead list in Instantly that you used in Sendspark?
 
+## Share a dynamic video in Instantly's Unibox
+
+Unibox needs a different approach. The snippet above relies on Instantly's sequence variables, and those don't resolve the same way in Unibox, so you place the video yourself using two columns from your campaign's CSV export.
+
+1. In Sendspark, open **Share Campaign** for your dynamic video campaign and **download the CSV file**.
+2. In the CSV, find the **GIF URL** column and copy the value for the lead you're writing to.
+3. In Instantly's Unibox, click **Insert image**, paste the GIF URL, and click **Insert**. The video thumbnail appears in your message.
+4. Back in the CSV, copy the **video link** for that same lead.
+5. Select the thumbnail you just inserted, click the **link** button, and hyperlink it to that video link.
+
+Step 5 isn't optional. Without the hyperlink the thumbnail is only an image, so recipients have nothing to click through to.
+
+<Note>
+  Unibox is built for replying to one person at a time, so this is a per-message process. To personalize across a whole list from a single paste, use the sequence method above instead.
+</Note>
+
+<iframe src="https://www.youtube.com/embed/TjSkF4op5eY?rel=0" title="How to share dynamic videos in Instantly's Unibox system" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+
 ## Frequently asked questions
 
 <AccordionGroup>
+  <Accordion title="Why doesn't the snippet work in Instantly's Unibox?">
+    Unibox doesn't resolve the sequence variables the snippet depends on. Insert the video by hand instead: paste the **GIF URL** from your campaign's CSV export as an image, then hyperlink that thumbnail to the **video link** from the same row. See [the Unibox steps above](#share-a-dynamic-video-in-instantlys-unibox).
+  </Accordion>
   <Accordion title="Where do I paste the Sendspark snippet in Instantly?">
     Open the email step in your Instantly sequence, switch to **Code View**, and paste the dynamic video snippet where you want the video to appear. Then switch back to the regular view, where you'll see the placeholder — it pastes a little large by default, so resize it as you like.
   </Accordion>
@@ -56,4 +79,4 @@ If it doesn't look right, check...
   </Accordion>
 </AccordionGroup>
 
-_Updated July 2026._
+_Updated August 2026._

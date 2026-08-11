@@ -1,0 +1,53 @@
+name: Docs checks
+
+# This repository had no CI. Every check below was previously run by hand, or not
+# at all, and `main` deploys straight to help.sendspark.com with no PR preview on
+# the Starter plan. A broken build or a stray page therefore reached production
+# before anyone could see it.
+#
+# Worth knowing what `mint validate` does NOT catch: it silently ignores unknown
+# top-level docs.json keys, so a passing run is not proof a config field works.
+# Verify field names against https://leaves.mintlify.com/schema/docs.json.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# A superseded run tells you nothing useful once a newer commit exists.
+concurrency:
+  group: docs-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Validate build, links, and page graph
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Major-pinned: patch releases carry fixes worth picking up, while a major
+      # bump can change validation behaviour and should be a deliberate edit.
+      - name: Install Mintlify CLI
+        run: npm install -g mint@4
+
+      - name: mint validate
+        run: mint validate
+
+      # Nav and redirect changes are the usual way internal links break, and this
+      # is the check most likely to catch a bad merge.
+      - name: mint broken-links
+        run: mint broken-links
+
+      # Reachability, which neither command above covers: every page file must be
+      # in a navigation group, and no page may newly lose all inbound links.
+      - name: Page graph (navigation coverage and orphan ratchet)
+        run: python3 .github/scripts/check_docs_graph.py
