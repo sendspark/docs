@@ -24,6 +24,8 @@ Team Insights is your workspace-level analytics dashboard. Instead of opening on
 - The **Member leaderboard** lists your team with Videos, Views, CTAs, and Likes. Click any column heading to rank by it.
 - Everything is attributed to the **member who created the campaign**, so a member's numbers follow the videos they made.
 - Build the dashboard you want: add and rearrange widgets, save layouts as named **reports**, and **export to PDF**.
+- Every plan can open Team Insights. **Solo** shows the recommended widget set, and **Growth** and above unlock every widget.
+- Figures are cached, so allow two to three minutes for a new video or a fresh view to appear.
 
 ## Open Team Insights
 
@@ -93,15 +95,20 @@ Teams of ten or fewer are shown in full, including members sitting at zero. In a
 
 ## How each metric is counted
 
-Team Insights is deliberately strict about what counts, so the numbers hold up when you share them:
+Team Insights is specific about what counts:
 
 - **Attribution follows the campaign creator.** A member's figures cover the campaigns they created, and never change hands afterwards.
+- **The period selects videos, not events.** A member's figures cover the videos they created inside the window you chose. Views that land later on an older video don't pull that video back into the report, which is why a longer period can show more views without anyone having watched anything new.
 - **Videos** counts what the member created, whether or not anyone watched. A member whose videos went unwatched still shows the videos they made.
 - **Views** counts video page opens, the same way the per-video [Analytics modal](/how-to-understand-video-analytics) does. Opening a page is not the same as playing the video.
 - **Likes** counts likes that are still in place. If a viewer likes a video and then removes the like, it doesn't count, and liking twice doesn't count twice.
 - **CTA rate** counts people, not clicks: the share of unique viewers who clicked a call-to-action. One viewer clicking twice is one conversion.
 - **Average watch** is weighted across every video and visit in the period, so in a busy workspace one fully-watched video can't outweigh hundreds that were watched most of the way through. Small samples still swing hard: a member with a single view that ran to the end shows 100% average watch.
 - **Rates are left blank, never zero,** when there's nothing to divide by. A member with no views yet shows an empty CTA rate rather than 0%.
+
+<Note>
+  Team Insights isn't real time. Figures pass through a few layers of caching, so give a new video or a fresh view two to three minutes to appear. If a member is missing from the leaderboard altogether, that usually means they have nothing in the period you've selected rather than that their numbers are lost.
+</Note>
 
 ## Customize your dashboard
 
@@ -111,6 +118,8 @@ Team Insights is deliberately strict about what counts, so the numbers hold up w
 - **Reset layout** puts the recommended set back.
 
 Layout changes save on their own. The toolbar confirms with **All changes saved**.
+
+Which widgets you can add depends on your plan. On **Solo** the dashboard shows the recommended set, and the rest of the widgets appear in the drawer marked as premium with an upgrade prompt, so you can see what's included before you move up. **Growth**, **Team**, and **Business** include every widget.
 
 ![The Add widget drawer open beside the dashboard, showing the recommended widgets for the workspace and the remaining ones grouped by category](/images/team-insights/add-widget-drawer.png)
 
@@ -147,7 +156,7 @@ Open the **Report** dropdown in the header to switch between your reports, or to
 
 On any report other than Default you also get **Set as default**, to make it the one that opens first, and **Delete**. The **Default** report itself can be reset but never deleted, which is why those two actions don't appear while you're on it.
 
-Reports are yours: saving one doesn't change what your teammates see.
+Reports save as you work, so treat them as shared rather than private. If another member opens the same report and rearranges it, their layout can replace yours. Private, per-member reports are on the roadmap. Until then, if you want an arrangement nobody else will disturb, save it under a name your team knows to leave alone.
 
 ![The Report dropdown open on the Default report, offering New report, Duplicate, and Rename](/images/team-insights/reports-menu.png)
 
@@ -167,6 +176,12 @@ Click **Export PDF** to save the dashboard as it appears. The widgets, the repor
   </Accordion>
   <Accordion title="Where did Team Overview go?">
     While Team Insights is in beta it takes the place of Team Overview in the sidebar. Your team's numbers are all on this dashboard, and if one you relied on isn't showing, add its widget from **Add widget**. Team Overview's all-time totals are the one exception: Team Insights reports on a period reaching back at most 180 days.
+  </Accordion>
+  <Accordion title="Which plans include Team Insights?">
+    All of them. On **Solo** the dashboard shows the recommended widget set, and the remaining widgets appear in the **Add widget** drawer marked as premium with an upgrade prompt. **Growth**, **Team**, and **Business** include every widget.
+  </Accordion>
+  <Accordion title="Why hasn't my latest video or view appeared yet?">
+    Team Insights isn't real time. Figures pass through a few layers of caching, so allow two to three minutes. If a member is missing from the leaderboard entirely, check the reporting period first: they may have created nothing inside the window you've selected.
   </Accordion>
   <Accordion title="Why does a member show videos but no views?">
     Videos counts what they created; views counts what recipients opened. A member who created videos that nobody has opened yet will show videos with zero views. It's the most common pattern for videos sent in the last day or two.
@@ -192,8 +207,8 @@ Click **Export PDF** to save the dashboard as it appears. The widgets, the repor
   <Accordion title="Does filtering by member change the leaderboard?">
     Yes. Every widget on the dashboard, including the leaderboard and Top performers, follows the filters and the reporting period you've set.
   </Accordion>
-  <Accordion title="Who can see my saved reports?">
-    Reports are per user. Creating, renaming, or deleting one only affects your own dashboard, so you can experiment without disrupting your team's view.
+  <Accordion title="Are my saved reports private to me?">
+    No, treat them as shared. If another member opens the same report and rearranges it, their layout can replace yours. Private, per-member reports are on the roadmap. Until then, keep a layout you rely on under a name your team knows to leave alone.
   </Accordion>
   <Accordion title="How is this different from a single video's analytics?">
     The per-video [Analytics modal](/how-to-understand-video-analytics) answers "who watched this video". Team Insights answers "how is the team doing" across every campaign in the period, broken down by the member who created it.
