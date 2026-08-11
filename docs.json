@@ -753,6 +753,7 @@
           {
             "group": "Analytics & tracking",
             "pages": [
+              "team-insights-dashboard",
               "how-to-understand-video-analytics",
               "track-who-has-watched-your-videos",
               "video-analytics-vs-email-open-rates"
