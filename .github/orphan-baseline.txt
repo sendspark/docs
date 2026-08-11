@@ -1,7 +1,7 @@
 # Pages with no inbound internal links. check_docs_graph.py fails on any orphan
 # NOT listed here, so this file is the allowed backlog and never a target.
 # When you give one of these an inbound link, delete its line. It only shrinks.
-# Updated 2026-08-12. Total 93: 72 to fix, 21 deliberate.
+# Updated 2026-08-12. Total 78: 57 to fix, 21 deliberate.
 
 # ---------------------------------------------------------------------------
 # DELIBERATELY ORPHANED - do not link these from indexed pages.
@@ -35,14 +35,10 @@ why-is-my-audio-video-out-of-sync
 # TO FIX - indexed pages that need an inbound contextual link.
 # ---------------------------------------------------------------------------
 3-ways-to-share-videos-in-hubspot
-ai-personalized-videos-in-linkedin-automation
-auto-generate-videos-from-skylead-campaign
 automate-video-follow-ups-intercom-hubspot
-automatically-download-files-with-your-cta-button
 automatically-generate-dynamic-videos-from-google-sheets
 become-a-sendspark-integration-partner
 become-a-sendspark-partner
-can-you-send-emails-from-sendspark
 change-camera-microphone-source
 connect-linkedin-for-dynamic-videos
 connect-sendspark-with-salesforce
@@ -53,13 +49,10 @@ embed-a-paperform-in-your-sendspark-video-landing-page
 embed-lemcal-calendar-with-videos
 embed-your-video-on-a-web-page
 grinfi-send-dynamic-videos
-heyreach-send-dynamic-videos
 how-to-cancel-sendspark
-how-to-create-a-video-email-signature
 how-to-edit-your-linkedin-messages
 how-to-make-an-ai-generated-video-script
 how-to-remove-breakpoints-from-combined-videos
-how-to-remove-hubspot-s-hubl-code-warning-message
 how-to-request-a-video
 how-to-set-up-sendspark-for-pipedrive
 how-to-turn-voice-cloning-s-personalization-off
@@ -67,21 +60,17 @@ how-to-update-your-payment-method
 how-to-use-the-teleprompter
 klaviyo-auto-send-videos-for-new-lists
 languages-supported-in-dynamic-videos
-linked-helper-send-dynamic-videos
 linkedin-background-video-generation-limits
 linkedin-sales-navigator-scale-videos
 linkedin-video-comments-show-gif-thumbnails
 mac-app-blocked-by-apple-security-check
 make-com-auto-create-ai-personalized-videos
-meeting-booked-create-video-calendly
 mixmax-send-dynamic-videos
 my-download-is-slow
 outreach-auto-send-ai-personalized-videos
 pitch-deck-videos-with-google-slides
-rb2b-integration-ai-videos-for-visitors
 request-videos-for-customer-support-in-intercom
 salesloft-ai-personalized-videos-in-cadences
-send-videos-in-linkedin-messages-expandi
 sendgrid-send-dynamic-videos
 sendspark-aligned-deal-room-integration
 sendspark-desktop-application-for-macos
@@ -90,18 +79,14 @@ sendspark-for-agencies
 sendspark-onboarding-checklist
 sendspark-recording-shortcuts-and-hotkeys
 set-hubspot-admin-permissions-for-workflows
-share-dynamic-videos-without-sales-email-tools
 simulate-scrolling-a-webpage-in-dynamic-video
 slack-how-to-share-videos
 text-videos-to-clients-sms
-third-party-platform-limitations
 tips-from-sendspark-s-csm
 unreachable-background-urls-in-dynamic-videos
 using-facebook-backgrounds-in-dynamic-videos
 video-analytics-vs-email-open-rates
-warmly-create-videos-from-visitors
 watch-videos-in-fullscreen
-website-visit-create-video-from-trigger
 whatsapp-how-to-send-videos-at-scale
 why-your-card-doesn-t-support-this-payment
 zapier-reply-auto-create-send-ai-videos
