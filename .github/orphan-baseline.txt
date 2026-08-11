@@ -1,7 +1,7 @@
 # Pages with no inbound internal links. check_docs_graph.py fails on any orphan
 # NOT listed here, so this file is the allowed backlog and never a target.
 # When you give one of these an inbound link, delete its line. It only shrinks.
-# Updated 2026-08-12. Total 129: 108 to fix, 21 deliberate.
+# Updated 2026-08-12. Total 121: 100 to fix, 21 deliberate.
 
 # ---------------------------------------------------------------------------
 # DELIBERATELY ORPHANED - do not link these from indexed pages.
@@ -63,7 +63,6 @@ gong-engage-send-automated-videos-in-email-flows
 grinfi-send-dynamic-videos
 heyreach-send-dynamic-videos
 how-enable-disable-the-like-button
-how-to-bulk-delete-videos
 how-to-cancel-sendspark
 how-to-connect-linkedin-and-sendspark
 how-to-create-a-video-email-signature
@@ -76,11 +75,8 @@ how-to-record-a-video-without-sound
 how-to-record-in-powerpoint-in-full-screen
 how-to-record-system-audio-in-sendspark
 how-to-record-videos-over-pdf-files-chrome-extension
-how-to-recover-videos-desktop-app
 how-to-remove-breakpoints-from-combined-videos
 how-to-remove-hubspot-s-hubl-code-warning-message
-how-to-rename-a-video
-how-to-replace-a-video-while-keeping-the-same-link
 how-to-request-a-video
 how-to-set-up-sendspark-for-pipedrive
 how-to-turn-voice-cloning-s-personalization-off
@@ -105,12 +101,9 @@ permissions-missing
 pitch-deck-videos-with-google-slides
 rb2b-integration-ai-videos-for-visitors
 record-screen-and-computer-audio
-rename-a-folder
-reorder-videos
 request-videos-for-customer-support-in-intercom
 salesloft-ai-personalized-videos-in-cadences
 salesloft-auto-ai-videos-for-cadence
-save-default-meeting-links
 send-videos-in-linkedin-messages-expandi
 sendgrid-send-dynamic-videos
 sendspark-aligned-deal-room-integration
@@ -129,7 +122,6 @@ third-party-platform-limitations
 tips-for-sending-videos-over-linkedin-messages
 tips-from-sendspark-s-csm
 unreachable-background-urls-in-dynamic-videos
-upload-avatars
 use-prospect-website-for-email-not-gmail
 using-facebook-backgrounds-in-dynamic-videos
 using-sendspark-with-multiple-screens
