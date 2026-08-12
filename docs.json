@@ -155,7 +155,7 @@
             "group": "Getting started & plans",
             "pages": [
               "get-started-with-sendspark-business-plan",
-              "getting-started-with-sendspark-starter",
+              "getting-started-with-sendspark-solo",
               "how-to-cancel-sendspark",
               "how-to-request-a-video"
             ]
@@ -908,6 +908,10 @@
     ]
   },
   "redirects": [
+    {
+      "source": "/getting-started-with-sendspark-starter",
+      "destination": "/getting-started-with-sendspark-solo"
+    },
     {
       "source": "/untitled-page",
       "destination": "/instantly-send-dynamic-videos"
