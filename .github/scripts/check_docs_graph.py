@@ -36,7 +36,14 @@ ORPHAN_EXEMPT = {"index"}
 # and externals. The slash is required: pages under a subdirectory (mcp/overview)
 # are addressed by path, and an earlier version of this pattern silently ignored
 # them along with every link pointing at them.
-LINK = re.compile(r"\]\(/([a-z0-9][a-z0-9\-]*(?:/[a-z0-9][a-z0-9\-]*)*)")
+#
+# href="/slug" is counted too. Mintlify pages route through JSX as well as
+# markdown, and index.mdx is a grid of <Card href="..."> with no markdown link
+# in it at all. Matching only ]( ) meant the site's main landing surface
+# contributed nothing to the graph, so pages it routes to were reported as
+# orphans and could sit in the baseline forever while being properly linked.
+SLUG = r"[a-z0-9][a-z0-9\-]*(?:/[a-z0-9][a-z0-9\-]*)*"
+LINK = re.compile(rf"""\]\(/({SLUG})|href=["']/({SLUG})["']""")
 
 
 def slugs():
@@ -75,7 +82,8 @@ def inbound_counts(all_slugs):
     counts = {s: 0 for s in all_slugs}
     for src in all_slugs:
         with open(os.path.join(DOCS, src + ".mdx"), encoding="utf-8") as fh:
-            for target in LINK.findall(fh.read()):
+            for markdown_target, href_target in LINK.findall(fh.read()):
+                target = markdown_target or href_target
                 # Self-links do not make a page reachable.
                 if target in counts and target != src:
                     counts[target] += 1

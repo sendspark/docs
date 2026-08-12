@@ -1,7 +1,7 @@
 # Pages with no inbound internal links. check_docs_graph.py fails on any orphan
 # NOT listed here, so this file is the allowed backlog and never a target.
 # When you give one of these an inbound link, delete its line. It only shrinks.
-# Updated 2026-08-12. Total 58: 37 to fix, 21 deliberate.
+# Updated 2026-08-12. Total 22: 1 to fix, 21 deliberate.
 
 # ---------------------------------------------------------------------------
 # DELIBERATELY ORPHANED - do not link these from indexed pages.
@@ -33,41 +33,11 @@ why-is-my-audio-video-out-of-sync
 
 # ---------------------------------------------------------------------------
 # TO FIX - indexed pages that need an inbound contextual link.
+#
+# Held back deliberately: this page duplicates salesloft-auto-ai-videos-for
+# -cadence (1001 words, in nav, already linked), which covers the same campaign,
+# snippet and workflow ground in more depth. It has no ranking keywords, no
+# traffic and no referring domains, so it is a merge-or-retire decision rather
+# than a missing link. Linking it would entrench the duplicate.
 # ---------------------------------------------------------------------------
-3-ways-to-share-videos-in-hubspot
-automate-video-follow-ups-intercom-hubspot
-automatically-generate-dynamic-videos-from-google-sheets
-become-a-sendspark-integration-partner
-become-a-sendspark-partner
-connect-sendspark-with-salesforce
-custom-domain-migration
-dynamic-video-campaign-limits
-edit-thumbnail-caption-colors
-embed-a-paperform-in-your-sendspark-video-landing-page
-embed-lemcal-calendar-with-videos
-grinfi-send-dynamic-videos
-how-to-cancel-sendspark
-how-to-edit-your-linkedin-messages
-how-to-remove-breakpoints-from-combined-videos
-how-to-request-a-video
-how-to-update-your-payment-method
-make-com-auto-create-ai-personalized-videos
-my-download-is-slow
-outreach-auto-send-ai-personalized-videos
-pitch-deck-videos-with-google-slides
-request-videos-for-customer-support-in-intercom
 salesloft-ai-personalized-videos-in-cadences
-sendgrid-send-dynamic-videos
-sendspark-aligned-deal-room-integration
-sendspark-floating-menu
-sendspark-for-agencies
-sendspark-onboarding-checklist
-set-hubspot-admin-permissions-for-workflows
-simulate-scrolling-a-webpage-in-dynamic-video
-tips-from-sendspark-s-csm
-unreachable-background-urls-in-dynamic-videos
-using-facebook-backgrounds-in-dynamic-videos
-video-analytics-vs-email-open-rates
-watch-videos-in-fullscreen
-why-your-card-doesn-t-support-this-payment
-zapier-reply-auto-create-send-ai-videos
