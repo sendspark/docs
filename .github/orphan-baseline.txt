@@ -1,7 +1,7 @@
 # Pages with no inbound internal links. check_docs_graph.py fails on any orphan
 # NOT listed here, so this file is the allowed backlog and never a target.
 # When you give one of these an inbound link, delete its line. It only shrinks.
-# Updated 2026-08-12. Total 59: 38 to fix, 21 deliberate.
+# Updated 2026-08-12. Total 58: 37 to fix, 21 deliberate.
 
 # ---------------------------------------------------------------------------
 # DELIBERATELY ORPHANED - do not link these from indexed pages.
@@ -51,7 +51,6 @@ how-to-edit-your-linkedin-messages
 how-to-remove-breakpoints-from-combined-videos
 how-to-request-a-video
 how-to-update-your-payment-method
-mac-app-blocked-by-apple-security-check
 make-com-auto-create-ai-personalized-videos
 my-download-is-slow
 outreach-auto-send-ai-personalized-videos

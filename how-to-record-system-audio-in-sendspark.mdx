@@ -1,6 +1,6 @@
 ---
 title: "How to Record System Audio in Sendspark"
-description: "Record your computer's system audio in Sendspark: the desktop app captures it automatically, and the Chrome Extension needs Record Tab with Share Tab Audio."
+description: "Record your computer's system audio in Sendspark: the desktop app captures it automatically, and the Chrome Extension needs a Chrome Tab or Entire Screen recording with the audio toggle on."
 keywords:
   - record system audio sendspark
   - capture tab audio
@@ -9,15 +9,15 @@ keywords:
   - record internal computer sound
 ---
 
-How you capture your computer's system audio depends on where you record. The **desktop app records it automatically**, with nothing to switch on. In the **Chrome Extension**, system audio is off by default, so to catch internal sounds like a YouTube video, webinar, or music you pick **Record Tab** and enable **Share Tab Audio**.
+How you capture your computer's system audio depends on where you record. The **desktop app records it automatically**, with nothing to switch on. In the **Chrome Extension**, system audio is off by default, so to catch internal sounds like a YouTube video, webinar, or music you pick the **Chrome Tab** or **Entire Screen** pane in Chrome's share window and turn its audio toggle on.
 
 ## Key takeaways
 
-- The **desktop app records system audio automatically**. There's no toggle to find.
-- In the **Chrome Extension**, use the **Record Tab** option and tick **Share Tab Audio**.
+- The **desktop app records system audio automatically**. There's no toggle to find. On Mac, grant it screen recording permission first.
+- In the **Chrome Extension**, pick the **Chrome Tab** pane and turn **Also share tab audio** on, or the **Entire Screen** pane and turn **Also share system audio** on.
 - By default the Chrome Extension captures microphone audio (and speaker audio your mic picks up from the room), but not the system audio stream.
-- The Record Tab route works only in Google Chrome. You can enable microphone plus tab audio together to capture your voice and the system sound at once.
-- For the per-platform detail, including what differs between Mac and Windows, see [record screen and computer audio](/record-screen-and-computer-audio).
+- This route works only in Google Chrome. You can enable microphone plus computer audio together to capture your voice and the system sound at once.
+- For the pane-by-pane detail and screenshots, see [record screen and computer audio](/record-screen-and-computer-audio).
 
 ## Which method to use
 
@@ -30,39 +30,46 @@ In the Chrome Extension, recordings capture:
 - **Microphone audio** (your voice).
 - **Speaker audio** (if your mic picks it up from the room).
 
-That does **not** include the actual **system audio stream** from your computer, so you need to ask for it explicitly using **Record Tab** and **Share Tab Audio**.
+That does **not** include the actual **system audio stream** from your computer, so you need to ask for it explicitly with the audio toggle in Chrome's share window.
 
 ## How to record system audio in the Chrome Extension
 
 1. [Click here to install the Chrome Extension](https://chromewebstore.google.com/detail/sendspark-video-and-scree/blimjkpadkhcpmkeboeknjcmiaogbkph)
 2. Open the Chrome tab that has the audio you want to record (e.g. YouTube, webinar, music).
 3. Click the **Sendspark Chrome Extension** icon.
-4. Choose **Record Tab** as your source.
-5. When prompted, check the box for **Share Tab Audio**.
-6. Start recording. Sendspark captures both the video of the tab and its system audio.
+4. Select **Screen** or **Both**, then hit **RECORD**.
+5. In Chrome's share window, select the **Chrome Tab** pane and pick your tab.
+6. Turn the **Also share tab audio** toggle on at the bottom of the window.
+7. Click **Share**. Sendspark captures both the video of the tab and its audio.
 
-![Sendspark Chrome Extension Record Tab dialog with Share Tab Audio checkbox option](/images/12268069/28c4097a-image.png)
+![Chrome's share window on the Chrome Tab pane, with a tab selected and the Also share tab audio toggle turned on](/images/12268069/28c4097a-image.png)
+
+To capture everything your computer plays rather than one tab's audio, select the **Entire Screen** pane instead and turn **Also share system audio** on. This is also the option to use if the recording needs to follow you between tabs and applications.
 
 ## Notes and limitations
 
-- The Record Tab route works only in **Google Chrome**.
-- The **desktop app** needs none of this, because it records system audio automatically.
-- You can also enable both **microphone + tab audio** if you want to record your voice *and* the system sound together.
+- This route works only in **Google Chrome**.
+- The **Window** pane has no audio toggle. Use Chrome Tab or Entire Screen.
+- The **desktop app** needs none of this, because it records system audio automatically. On Mac, grant it screen recording permission first.
+- You can also enable both **microphone and computer audio** if you want to record your voice *and* the system sound together.
 
 ## Frequently asked questions
 
 <AccordionGroup>
   <Accordion title="Can the desktop app record system audio?">
-    Yes, and it does so automatically, so there's nothing to enable. The Record Tab and Share Tab Audio steps on this page apply to the Chrome Extension, where system audio is off by default. See [record screen and computer audio](/record-screen-and-computer-audio).
+    Yes, and it does so automatically, so there's nothing to enable per recording. On Mac, grant the app screen recording permission first. The share-window steps on this page apply to the Chrome Extension, where system audio is off by default. See [record screen and computer audio](/record-screen-and-computer-audio).
   </Accordion>
   <Accordion title="How do I capture the sound from a YouTube video or webinar?">
-    In the Chrome Extension, open the tab with the audio, click the Sendspark Chrome Extension, choose Record Tab as your source, and check "Share Tab Audio" when prompted. Sendspark then captures both the tab's video and its system audio. In the desktop app, just record as usual.
+    In the Chrome Extension, open the tab with the audio, click the Sendspark Chrome Extension, select Screen or Both, then in Chrome's share window pick the Chrome Tab pane and turn "Also share tab audio" on. Sendspark then captures both the tab's video and its audio. In the desktop app, just record as usual.
+  </Accordion>
+  <Accordion title="What's the difference between tab audio and system audio?">
+    They're the same toggle under two names, and which one you see depends on the pane. The Chrome Tab pane shows "Also share tab audio" and captures sound from the one tab you selected. The Entire Screen pane shows "Also share system audio" and captures everything your computer plays.
   </Accordion>
   <Accordion title="Can I record my voice and the system audio together?">
-    Yes. You can enable both microphone and tab audio so your voice and the system sound are recorded at the same time.
+    Yes. You can enable both your microphone and the computer audio toggle so your voice and the system sound are recorded at the same time.
   </Accordion>
   <Accordion title="Which browser is required?">
-    The Record Tab method needs Google Chrome with the Sendspark Chrome Extension. If you'd rather not be tied to Chrome, the [desktop app](/how-to-use-the-sendspark-desktop-application) records system audio automatically.
+    This method needs Google Chrome with the Sendspark Chrome Extension. If you'd rather not be tied to Chrome, the [desktop app](/how-to-use-the-sendspark-desktop-application) records system audio automatically.
   </Accordion>
 </AccordionGroup>
 
