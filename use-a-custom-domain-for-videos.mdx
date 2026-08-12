@@ -9,8 +9,8 @@ To use a custom domain for your Sendspark videos, go to your workspace settings,
 
 - A custom domain lets you serve your video share pages and video request pages from your own subdomain, which helps videos get through firewalls and gives customers a consistent, white-label experience.
 - Set your subdomain in Workspace Settings under Custom Domain, then copy the generated Type, Host, and Value into your DNS provider's records.
-- CNAME setup is hard to remove or update later, so be sure of your subdomain first. If you do need to swap domains, follow [custom domain migration](/custom-domain-migration). Subdomains are per-workspace, so each workspace needs its own unique subdomain.
-- DNS changes can take up to 24 hours to verify. In Cloudflare, set the Proxy Status to "DNS Only," and after setup run your new URL through the Twitter Card Validator so previews show on Twitter.
+- A custom domain is hard to remove or update once set up, so be sure of your subdomain first. If you do need to swap domains, follow [custom domain migration](/custom-domain-migration). Subdomains are per-workspace, so each workspace needs its own unique subdomain.
+- DNS changes can take up to 48 hours to verify. In Cloudflare, set the Proxy Status to "DNS Only," and after setup run your new URL through the Twitter Card Validator so previews show on Twitter.
 
 If you want to share videos from your own domain URLs,you can connect your domain to Sendspark. This will give Sendspark permission to use your domain for your video share pages and video request pages.
 
@@ -20,7 +20,7 @@ Connecting your domain will also help your videos get through firewalls and prov
 
 **Important Considerations:**
 
-1. Once you set up CNAME, it will be hard to remove or update it. Please be absolutely sure of the subdomain you want to use before setting it up.
+1. Once your custom domain is set up, it will be hard to remove or update. Please be absolutely sure of the subdomain you want to use before setting it up.
 2. If you have already set up a Custom Domain and you want to remove it so that you can add a new one, please contact support
 3. Subdomains are set on a per-workspace basis. If you are [using multiple workspaces](/how-to-create-and-use-multiple-workspaces) with Sendspark, you must add a new, unique subdomain for each workspace.
 
@@ -84,13 +84,15 @@ Here are the help documentation pages for common DNS providers:
 
 - Back in Sendspark, click **Test Connection**
 
-![Verify Custom Domain](/images/5485193/4afe3040-image.png)
+![The DNS table showing a Type A record with Host, Value/Answer, a red Unverified status and a Test Connection link, above a note that propagation can take up to 48 hours](/images/5485193/4afe3040-image.png)
 
 - If your domain is connected, you will see a green dot, and the word **Connected.**Way to go -- you're all set! 🥳
 
-![Custom Domain is Connected](/images/5485193/2fae8b3f-image.png)
+![A custom domain reading https://video.yoursite.com with a green Connected status and a lock marked Owner Only](/images/5485193/2fae8b3f-image.png)
 
-- If you're still seeing **Unverified**, no worries! It can take up to 24 hours to update your DNS records. Please pour yourself some coffee, and try again in a bit. ☕️
+- If you're still seeing **Unverified**, no worries! It can take up to 48 hours to update your DNS records. Please pour yourself some coffee, and try again in a bit. ☕️
+
+Once connected, the domain carries an **Owner Only** lock, so it's the workspace owner who manages it from here.
 
 ---
 
@@ -105,13 +107,13 @@ Here are the help documentation pages for common DNS providers:
     Go to your workspace settings, scroll to Custom Domain, and enter the subdomain you want to use (e.g. videos.yourdomain.com), then click Next Step. Copy the Type, Host, and Value that Sendspark generates into your DNS provider's records, then return to Sendspark and click Test Connection.
   </Accordion>
   <Accordion title="Can I change or remove my custom domain later?">
-    Once you set up the CNAME it is hard to remove or update, so be absolutely sure of the subdomain before setting it up. If you have already set up a custom domain and want to remove it so you can add a new one, contact support.
+    Once your custom domain is set up it is hard to remove or update, so be absolutely sure of the subdomain before setting it up. If you have already set up a custom domain and want to remove it so you can add a new one, contact support.
   </Accordion>
   <Accordion title="Do I need a separate subdomain for each workspace?">
     Yes. Subdomains are set on a per-workspace basis, so if you use multiple workspaces with Sendspark, you must add a new, unique subdomain for each workspace.
   </Accordion>
   <Accordion title="Why is my domain still showing as Unverified?">
-    It can take up to 24 hours for DNS records to update, so try again a bit later. If you use Cloudflare, make sure the Proxy Status is set to "DNS Only" rather than the default "Proxied."
+    It can take up to 48 hours for DNS records to update, so try again a bit later. If you use Cloudflare, make sure the Proxy Status is set to "DNS Only" rather than the default "Proxied."
   </Accordion>
   <Accordion title="Do I need to do anything for video previews on Twitter?">
     Yes. After setting up your custom domain, you may need to run the new URL through the Twitter Card Validator to get video previews to show up when you share Sendspark links on Twitter.
