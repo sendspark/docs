@@ -32,12 +32,28 @@ NAV_EXEMPT = {"index"}  # the site root, rendered by the landing tab itself
 # counting it as an orphan is noise rather than a finding.
 ORPHAN_EXEMPT = {"index"}
 
-# ]( /slug ) — internal links only, ignoring anchors, queries and externals.
-LINK = re.compile(r"\]\(/([a-z0-9][a-z0-9\-]*)")
+# ]( /slug ) or ]( /dir/slug ) — internal links only, ignoring anchors, queries
+# and externals. The slash is required: pages under a subdirectory (mcp/overview)
+# are addressed by path, and an earlier version of this pattern silently ignored
+# them along with every link pointing at them.
+LINK = re.compile(r"\]\(/([a-z0-9][a-z0-9\-]*(?:/[a-z0-9][a-z0-9\-]*)*)")
 
 
 def slugs():
-    return {f[:-4] for f in os.listdir(DOCS) if f.endswith(".mdx")}
+    """Every page in the tree, keyed by its URL path.
+
+    Must walk recursively. os.listdir sees only the root, which hid the three
+    pages under mcp/ from both checks below: they could have been dropped from
+    navigation, or left with nothing linking to them, and this script would have
+    reported success."""
+    found = set()
+    for root, dirs, files in os.walk(DOCS):
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d != "node_modules"]
+        for f in files:
+            if f.endswith(".mdx"):
+                rel = os.path.relpath(os.path.join(root, f), DOCS)
+                found.add(rel[:-4].replace(os.sep, "/"))
+    return found
 
 
 def nav_pages(node, found):
@@ -57,11 +73,8 @@ def nav_pages(node, found):
 
 def inbound_counts(all_slugs):
     counts = {s: 0 for s in all_slugs}
-    for f in os.listdir(DOCS):
-        if not f.endswith(".mdx"):
-            continue
-        src = f[:-4]
-        with open(os.path.join(DOCS, f), encoding="utf-8") as fh:
+    for src in all_slugs:
+        with open(os.path.join(DOCS, src + ".mdx"), encoding="utf-8") as fh:
             for target in LINK.findall(fh.read()):
                 # Self-links do not make a page reachable.
                 if target in counts and target != src:
