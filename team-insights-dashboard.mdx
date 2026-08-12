@@ -52,8 +52,10 @@ If we hold less data than the range you asked for, the header names the range ac
 
 Two dropdowns sit in the toolbar, and both narrow every widget at once:
 
-- **All members**: pick a member to see only the campaigns they created
-- **All campaigns**: pick a campaign to see only that one
+- **All members**: pick a member to see only the campaigns they created. Members are listed alphabetically, and the list has a search box that matches first name, last name, or email address. Anyone without a name shows their email instead.
+- **All campaigns**: pick a campaign to see only that one. Search by the campaign's **current title**, the same name you see on the widgets. If you renamed a video, search for the new name, not the old one.
+
+Both searches ignore capitalisation. When a search matches more results than the dropdown can show at once, it asks you to refine your search rather than quietly cutting the list short, so type a little more of the name.
 
 You can apply one, both, or clear them independently. Filters are temporary: they reset when you leave the dashboard and are not stored inside a saved report.
 
@@ -208,6 +210,12 @@ Click **Export PDF** to save the dashboard as it appears. The widgets, the repor
   </Accordion>
   <Accordion title="Does filtering by member change the leaderboard?">
     Yes. Every widget on the dashboard, including the leaderboard and Top performers, follows the filters and the reporting period you've set.
+  </Accordion>
+  <Accordion title="I renamed a video and now I can't find it in the campaign filter">
+    Search for its **current** title, the one shown on the widgets. The old name no longer matches. If you've only just renamed it, give it a moment before searching.
+  </Accordion>
+  <Accordion title="How do I find someone on a large team?">
+    Type into the member dropdown's search box. It matches first name, last name, and email address, and the list is alphabetical, so you don't have to scroll to find anyone.
   </Accordion>
   <Accordion title="Are my saved reports private to me?">
     No, treat them as shared. Workspace owners and admins can see every member's saved reports, and if another member opens the same report and rearranges it, their layout can replace yours. Private, per-member reports are on the roadmap. Until then, keep a layout you rely on under a name your team knows to leave alone.
