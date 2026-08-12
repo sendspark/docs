@@ -2625,6 +2625,18 @@
     {
       "source": "/sendspark-for-agencies",
       "destination": "/sendspark-for-agencies-video-prospecting"
+    },
+    {
+      "source": "/en/articles/5985719-*",
+      "destination": "/record-your-screen"
+    },
+    {
+      "source": "/en/articles/9546893-*",
+      "destination": "/what-are-dynamic-video-minutes-credits"
+    },
+    {
+      "source": "/en/articles/11050696-*",
+      "destination": "/salesloft-auto-ai-videos-for-cadence"
     }
   ],
   "api": {
