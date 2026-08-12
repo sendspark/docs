@@ -1,13 +1,24 @@
 # Pages with no inbound internal links. check_docs_graph.py fails on any orphan
 # NOT listed here, so this file is the allowed backlog and never a target.
 # When you give one of these an inbound link, delete its line. It only shrinks.
-# Updated 2026-08-12. Total 22: 1 to fix, 21 deliberate.
+# Updated 2026-08-12. Total 21: 0 to fix, 21 deliberate.
+#
+# The TO FIX backlog is empty. Every indexed page now has at least one inbound
+# contextual link. If this file grows again, something regressed: the check
+# fails on any orphan not listed below, so a new entry means a page shipped
+# with no route in except the sidebar.
 
 # ---------------------------------------------------------------------------
 # DELIBERATELY ORPHANED - do not link these from indexed pages.
 # Noindexed wrong-traffic pages and stubs. Linking them from indexed hubs
 # would pass equity to pages deliberately removed from the index, and would
 # surface wrong-traffic articles to users. Leave them unlinked.
+#
+# Worth knowing before anyone "fixes" these: the two highest-traffic pages on
+# the whole help subdomain are in this list, hide-chrome-bookmarks-bar-when
+# -recording and how-to-enable-disable-hardware-acceleration. That traffic is
+# people looking for Chrome tips, not for video software. The noindex is
+# working as designed, and the traffic figure is not a reason to relink them.
 # ---------------------------------------------------------------------------
 bridger-send-personalized-videos-at-scale
 emma-send-personalized-videos-at-scale
@@ -30,14 +41,3 @@ saleshandy
 uptics-integration
 vincere
 why-is-my-audio-video-out-of-sync
-
-# ---------------------------------------------------------------------------
-# TO FIX - indexed pages that need an inbound contextual link.
-#
-# Held back deliberately: this page duplicates salesloft-auto-ai-videos-for
-# -cadence (1001 words, in nav, already linked), which covers the same campaign,
-# snippet and workflow ground in more depth. It has no ranking keywords, no
-# traffic and no referring domains, so it is a merge-or-retire decision rather
-# than a missing link. Linking it would entrench the duplicate.
-# ---------------------------------------------------------------------------
-salesloft-ai-personalized-videos-in-cadences

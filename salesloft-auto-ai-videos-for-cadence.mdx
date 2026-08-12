@@ -17,6 +17,7 @@ Adding Sendspark AI-personalized videos to Salesloft cadences helps you get more
 - Copy the Salesloft snippet from Share Campaign and paste it directly into your Salesloft cadence email where you want the video to appear.
 - Add the video on Day 2 or later of the cadence so each video has time to generate before the email sends, which also helps deliverability.
 - Build a Sendspark automated workflow (trigger: Salesloft "Person Updated," filtered to your cadence; action: Sendspark "Create Dynamic Video") so videos generate automatically on enrollment.
+- Finish the workflow with Salesloft **find person** and **update person** actions, which write the generated video back onto the lead's Salesloft record so the cadence snippet resolves to the right video. This assumes the lead already exists in Salesloft.
 
 Adding Sendspark AI-personalized videos to Salesloft cadences helps you get more replies without recording anything manually. Each prospect gets a message tailored to them, increasing engagement and making your emails stand out. It’s fast, scalable, and proven to drive 2–3x more replies.
 
@@ -98,7 +99,62 @@ Click into the **"Automated Log"** to get more insight into your automation:
 
 ---
 
+## 4. Write the video back to the Salesloft person record
+
+The steps above generate a video when someone is enrolled. This step sends the finished
+video back the other way, onto the lead's Salesloft record, so the snippet in your
+cadence email resolves to the right video for the right person.
+
+Add two more actions to the same automation, after Create Dynamic Video.
+
+**Find the person.** Back in your automation, click the **+** icon, choose **action**,
+search for Salesloft, pick **find person**, and connect your Salesloft account.
+
+![Sendspark automation workflow with plus icon to add Salesloft action](/images/12114727/a43f08e5-image.png)
+
+Map contact email into the **Email address** field, then save.
+
+![Sendspark action settings mapping contact email to Salesloft Email field](/images/12114727/3f86b4e0-image.png)
+
+**Update the person.** Click **+** again, choose **action**, search for Salesloft, and
+this time pick **update person**, connecting your Salesloft account again.
+
+![Sendspark automation workflow showing second action for Salesloft update person](/images/12114727/f37d59fe-image.png)
+
+Once you hit **continue**, map the fields as shown.
+
+![Sendspark field mapping interface for updating person in Salesloft](/images/12114727/c71fb9b2-image.png)
+
+The finished workflow should look like this. Click **save** at the bottom right, then
+**start**.
+
+![Sendspark completed automation workflow ready to start sending videos](/images/12114727/0f4aacb2-image.png)
+
+<Note>
+  These two actions assume the lead **already exists** in Salesloft. If the lead isn't
+  there yet, create it first, otherwise find person has nothing to match on.
+</Note>
+
+## 5. Test with a single contact
+
+With the workflow running, go back to your dynamic video campaign, add one test contact,
+and watch the result in the **history** section of your workflow.
+
+![Sendspark Dynamic Video Campaign history section tracking contact results](/images/12114727/b0b39cab-image.png)
+
 ## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which Salesloft actions connect the automation back to Salesloft?">
+    Two, added after Create Dynamic Video: **find person**, mapping the contact email to the Email address field, and **update person**, mapping the remaining fields. Connect your Salesloft account for each.
+  </Accordion>
+  <Accordion title="What if my lead doesn't exist in Salesloft yet?">
+    This flow assumes the lead already exists. If it isn't there, create the lead in Salesloft first, otherwise the find person action has nothing to match on.
+  </Accordion>
+  <Accordion title="How do I test that it's working?">
+    Add one test contact to your Dynamic Video Campaign, then track the result in the History section of your workflow before you enrol a real cadence.
+  </Accordion>
+</AccordionGroup>
 
 <AccordionGroup>
   <Accordion title="Where do I paste the Salesloft snippet?">

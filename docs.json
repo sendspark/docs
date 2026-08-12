@@ -126,7 +126,6 @@
             "icon": "rocket",
             "pages": [
               "index",
-              "sendspark-for-agencies",
               "ai-video-templates-scripts-teleprompter",
               "add-and-save-templates-in-dynamic-campaigns",
               "getting-started-guide-dynamic-videos",
@@ -670,8 +669,7 @@
                   "hubspot-workflows-video-marketing-email-automation",
                   "hubspot-workflows-sendspark-sequences",
                   "outlook-automatically-send-ai-personalized-videos",
-                  "outreach-auto-send-ai-personalized-videos",
-                  "salesloft-ai-personalized-videos-in-cadences"
+                  "outreach-auto-send-ai-personalized-videos"
                 ]
               },
               {
@@ -1806,7 +1804,7 @@
     },
     {
       "source": "/en/articles/12114727-*",
-      "destination": "/salesloft-ai-personalized-videos-in-cadences"
+      "destination": "/salesloft-auto-ai-videos-for-cadence"
     },
     {
       "source": "/en/articles/12099743-*",
@@ -2619,6 +2617,14 @@
     {
       "source": "/en/articles/12626407-*",
       "destination": "/dynamic-videos-make-videos-with-ai-introductions"
+    },
+    {
+      "source": "/salesloft-ai-personalized-videos-in-cadences",
+      "destination": "/salesloft-auto-ai-videos-for-cadence"
+    },
+    {
+      "source": "/sendspark-for-agencies",
+      "destination": "/sendspark-for-agencies-video-prospecting"
     }
   ],
   "api": {
