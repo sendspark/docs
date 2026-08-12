@@ -16,7 +16,7 @@ To migrate a custom domain in Sendspark: contact support to remove your current 
 - Follow the order: contact support to remove the old domain → add the new subdomain (this generates the IP) → create a fresh A record → set a 301 redirect → wait for propagation.
 - Keep the old domain live — the 301 permanent redirect from old to new links depends on it.
 - CAA records can block automatic SSL issuance; ask IT to allow Google's provider (`pki.goog`) or remove restrictive CAA settings.
-- DNS propagation can take up to 24 hours; don't launch new campaigns until the domain is fully propagated and verified in Sendspark.
+- DNS propagation can take up to 48 hours; don't launch new campaigns until the domain is fully propagated and verified in Sendspark.
 
 ## 🧩 What you need before starting
 
@@ -97,7 +97,7 @@ Mapping:
 
 ## 5️⃣ Wait for Propagation
 
-⏳ DNS propagation can take up to 24 hours.
+⏳ DNS propagation can take up to 48 hours.
 
 Once everything resolves, Sendspark will automatically verify your new domain.
 
@@ -147,7 +147,7 @@ Contact Sendspark support to start the process or if anything looks off during s
     Your domain may have CAA records set by your IT or security team that control which providers can issue SSL certificates. Ask IT to allow Google's certificate provider (`pki.goog`) or remove the restrictive CAA settings.
   </Accordion>
   <Accordion title="How long does the migration take to go live?">
-    DNS propagation can take up to 24 hours. Once everything resolves, Sendspark automatically verifies the new domain. Don't launch new campaigns until DNS is fully propagated and the domain is verified.
+    DNS propagation can take up to 48 hours. Once everything resolves, Sendspark automatically verifies the new domain. Don't launch new campaigns until DNS is fully propagated and the domain is verified.
   </Accordion>
 </AccordionGroup>
 
