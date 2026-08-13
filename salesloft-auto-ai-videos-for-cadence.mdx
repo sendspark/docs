@@ -17,7 +17,7 @@ Adding Sendspark AI-personalized videos to Salesloft cadences helps you get more
 - Copy the Salesloft snippet from Share Campaign and paste it directly into your Salesloft cadence email where you want the video to appear.
 - Add the video on Day 2 or later of the cadence so each video has time to generate before the email sends, which also helps deliverability.
 - Build a Sendspark automated workflow (trigger: Salesloft "Person Updated," filtered to your cadence; action: Sendspark "Create Dynamic Video") so videos generate automatically on enrollment.
-- Finish the workflow with Salesloft **find person** and **update person** actions, which write the generated video back onto the lead's Salesloft record so the cadence snippet resolves to the right video. This assumes the lead already exists in Salesloft.
+- Add a **second workflow**, triggered by Sendspark **New Video Generated**, with Salesloft **Find Person** then **Update Person** actions. That writes the generated video back onto the lead's Salesloft record so the cadence snippet resolves to the right video. It assumes the lead already exists in Salesloft.
 
 Adding Sendspark AI-personalized videos to Salesloft cadences helps you get more replies without recording anything manually. Each prospect gets a message tailored to them, increasing engagement and making your emails stand out. It’s fast, scalable, and proven to drive 2–3x more replies.
 
@@ -93,54 +93,63 @@ Test this by enrolling contacts in the Salesloft cadence. When you do that, you 
 
 (Just make sure to give a minute or 2 for the video to generate... and remember to send the video on Day 2 or later to give time for the videos to generate in your real compaigns).
 
-Click into the **"Automated Log"** to get more insight into your automation:
+Click into **Automation log** at the bottom of the builder to get more insight into your automation:
 
-![Sendspark Automated Log section showing workflow execution history and details](/images/11400066/79cca59c-image.png)
+![The workflow builder with Automation log selected, listing each run](/images/11400066/79cca59c-image.png)
 
 ---
 
-## 4. Write the video back to the Salesloft person record
+## 4. Build a second workflow to write the video back to Salesloft
 
-The steps above generate a video when someone is enrolled. This step sends the finished
-video back the other way, onto the lead's Salesloft record, so the snippet in your
-cadence email resolves to the right video for the right person.
+The workflow above generates a video when someone is enrolled. A **second, separate
+workflow** sends the finished video back the other way, onto the lead's Salesloft
+record, so the snippet in your cadence email resolves to the right video for the right
+person.
 
-Add two more actions to the same automation, after Create Dynamic Video.
+<Note>
+  This is a **new automation**, not more steps on the first one. It has to be, because
+  it can only run once the video exists, so it is triggered by the video being
+  generated rather than by the enrolment.
+</Note>
 
-**Find the person.** Back in your automation, click the **+** icon, choose **action**,
-search for Salesloft, pick **find person**, and connect your Salesloft account.
+**Trigger.** Create another automation and set its trigger to **Sendspark**, then
+**New Video Generated**, scoped to the campaign you built in step 1.
 
-![Sendspark automation workflow with plus icon to add Salesloft action](/images/12114727/a43f08e5-image.png)
+**Find the person.** Click the **+** icon, choose **action**, search for Salesloft, pick
+**Find Person**, and connect your Salesloft account.
 
-Map contact email into the **Email address** field, then save.
+![The action picker with Saleslot chosen and its actions listed: Update Person, Find Person, Create Person, Find User](/images/12114727/a43f08e5-image.png)
 
-![Sendspark action settings mapping contact email to Salesloft Email field](/images/12114727/3f86b4e0-image.png)
+Map the contact email from the trigger step into the **Email address** field, then save.
+
+![The Find Person field mapping, with the trigger step's Contact Email placed in the Email address field](/images/12114727/3f86b4e0-image.png)
 
 **Update the person.** Click **+** again, choose **action**, search for Salesloft, and
-this time pick **update person**, connecting your Salesloft account again.
+this time pick **Update Person**, connecting your Salesloft account again.
 
-![Sendspark automation workflow showing second action for Salesloft update person](/images/12114727/f37d59fe-image.png)
+![Adding a second Salesloft action to the workflow](/images/12114727/f37d59fe-image.png)
 
-Once you hit **continue**, map the fields as shown.
+Once you hit **continue**, map the fields as shown, using the Find Person step's output.
 
-![Sendspark field mapping interface for updating person in Salesloft](/images/12114727/c71fb9b2-image.png)
+![The Update Person field mapping, drawing Person ID, first name, last name and email from the Find Person step](/images/12114727/c71fb9b2-image.png)
 
-The finished workflow should look like this. Click **save** at the bottom right, then
-**start**.
+The finished second workflow has three steps: Sendspark **New Video Generated**, then
+Salesloft **Find Person**, then Salesloft **Update Person**. Click **Start** at the
+bottom right when you're ready.
 
-![Sendspark completed automation workflow ready to start sending videos](/images/12114727/0f4aacb2-image.png)
+![A three step workflow reading Sendspark New Video Generated, Saleslot Find Person, Saleslot Update Person, with Test and Start buttons](/images/12114727/0f4aacb2-image.png)
 
 <Note>
   These two actions assume the lead **already exists** in Salesloft. If the lead isn't
-  there yet, create it first, otherwise find person has nothing to match on.
+  there yet, create it first, otherwise Find Person has nothing to match on.
 </Note>
 
 ## 5. Test with a single contact
 
-With the workflow running, go back to your dynamic video campaign, add one test contact,
-and watch the result in the **history** section of your workflow.
+With both workflows running, go back to your dynamic video campaign, add one test
+contact, and watch the result in the **History** tab of the workflow.
 
-![Sendspark Dynamic Video Campaign history section tracking contact results](/images/12114727/b0b39cab-image.png)
+![The workflow's History tab showing an automation run logged as Success](/images/12114727/b0b39cab-image.png)
 
 ## Frequently asked questions
 
@@ -167,7 +176,7 @@ and watch the result in the **history** section of your workflow.
     Create a Sendspark automated workflow. For the trigger, select Salesloft, connect your account, and use "Person Updated," then refine it so "Most Recent Cadence" is the cadence where you added the video placeholder (using the cadence ID is most precise). For the action, select Sendspark and "Create Dynamic Video," then map the Salesloft fields to Sendspark and click Start.
   </Accordion>
   <Accordion title="How can I test the setup?">
-    Preview by making a Sendspark video for George (g.p.burdell@example.net), Salesloft's default test contact. You can also enroll a real contact in the cadence and watch the video begin generating in Sendspark, then check the Automated Log for details. Allow a minute or two for the video to generate.
+    Preview by making a Sendspark video for George (g.p.burdell@example.net), Salesloft's default test contact. You can also enroll a real contact in the cadence and watch the video begin generating in Sendspark, then check the **Automation log** for details. Allow a minute or two for the video to generate.
   </Accordion>
 </AccordionGroup>
 
