@@ -30,7 +30,7 @@ You can create automated workflows in the [automated workflow](https://sendspark
 
 Simply click **"New automation"** to create a new automation from scratch.
 
-Alternatively, you can click **"Create from Template"**to create an automated workflow from a template.
+Alternatively, you can click **"Create from template"**to create an automated workflow from a template.
 
 ![New automation and Create from template buttons in Sendspark](/images/11172985/613ac1cc-image.png)
 
@@ -71,10 +71,10 @@ There are 3 main categories:
 - **New Video CTA Clicked**— This fires when end-viewers click on the call-to-action button embedded next to your video.
 - **New Video Watched** — This fires when someone watches your video. Use this trigger when you want to create notifications when viewers engage with videos.
 
-Additionally, with each event, you can choose whether each event fires for "all campaigns" or "Specific campaigns"
+Additionally, scope is baked into the event name — the dropdown lists each event twice, once as **Specific Campaign/s** and once as **All Campaigns**
 
 - **All Campaigns**— means that events from ANY dynamic video campaign will trigger this automation. This is best to use when creating notifications.
-- **Specific Campaigns**— means that only one linked dynamic video campaign will trigger this automation. This is best to use when creating automations that automatically send videos after they are created.
+- **Specific Campaign/s**— means that only one linked dynamic video campaign will trigger this automation. This is best to use when creating automations that automatically send videos after they are created.
 
 ### Use Sendspark as an Action in Automations
 
@@ -104,11 +104,11 @@ In addition to triggers and actions, you can also add **tools** to your automati
 
 Tools can help with many things - from creating router logic to cropping data to adding time delays. Feel free to explore what's available!
 
-![Tool selection modal listing Router Table lookup and other tools](/images/11172985/26384b89-image.png)
+![Tool selection modal listing Router, Table lookup (Legacy) and other tools](/images/11172985/26384b89-image.png)
 
 ## Available Integrations
 
-We have many integrations available. Go to the **"Apps"**page and click**"Add a Connection"**to see all integrations.
+We have many integrations available. Go to the **"Apps"**page and click**"Add a connection"**to see all integrations.
 
 ![Select an app modal showing available integration icons on Apps page](/images/11172985/1eb00c6d-image.png)
 
@@ -135,16 +135,16 @@ Triggered by something a prospect does rather than by a sequence:
 
 <AccordionGroup>
   <Accordion title="How do I create an automated workflow?">
-    Go to the automated workflow section of Sendspark and click **New automation** to build one from scratch, or click **Create from Template** to start from a prebuilt template.
+    Go to the automated workflow section of Sendspark and click **New automation** to build one from scratch, or click **Create from template** to start from a prebuilt template.
   </Accordion>
   <Accordion title="What's the difference between a trigger and an action?">
     A **trigger** is the event or criteria that starts an automation (for example, a form filled or demo booked). An **action** is what happens automatically afterward (for example, generating a video or sending an email). Each automation needs one trigger and at least one action.
   </Accordion>
   <Accordion title="What Sendspark events can trigger an automation?">
-    There are three: **New Video Generated** (fires when dynamic videos are generated), **New Video CTA Clicked** (fires when viewers click the CTA next to your video), and **New Video Watched** (fires when someone watches your video). Each can fire for all campaigns or a specific campaign.
+    There are three: **New Video Generated** (fires when dynamic videos are generated), **New Video CTA Clicked** (fires when viewers click the CTA next to your video), and **New Video Watched** (fires when someone watches your video). Each appears twice in the list: once as Specific Campaign/s and once as All Campaigns.
   </Accordion>
-  <Accordion title="Should I choose 'All Campaigns' or 'Specific Campaigns'?">
-    Use **All Campaigns** when any dynamic video campaign should trigger the automation — best for notifications. Use **Specific Campaigns** to link one campaign — best for automations that send videos after they're created.
+  <Accordion title="Should I choose 'All Campaigns' or 'Specific Campaign/s'?">
+    Use **All Campaigns** when any dynamic video campaign should trigger the automation — best for notifications. Use **Specific Campaign/s** to link one campaign — best for automations that send videos after they're created.
   </Accordion>
   <Accordion title="Can Sendspark create videos as part of a workflow?">
     Yes. The one Sendspark action available is creating dynamic videos. When you create videos via automation, you can use their data — like Share Url, Email Embed HTML, and Embed Url — in later actions to share the video, such as embedding and sending it in Gmail or Outlook.

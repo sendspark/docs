@@ -43,7 +43,7 @@ It is possible to send these events from Sendspark into Salesforce:
 - **Video Viewed:**
   - This event is triggered when a viewer opens or accesses a video, regardless of whether they interact with the playback controls or watch the video in its entirety.
 - **Video Watched to the End**:
-  - This event tracks the percentage of the video that a viewer has watched before pausing or closing the playback.
+  - This event fires when a viewer reaches the end of the video.
 
 When you connect this data to Salesforce, you will be able to select the object in Salesforce you wish to associate it with.
 
@@ -108,7 +108,7 @@ You can see more information on [connecting Salesforce Marketing Cloud to Sendsp
     In Salesforce you can create webhooks with APEX calls. For a no-code option, use the Declarative Webhooks app from the AppExchange: create an inbound call template, choose your HTTP method, set the request body format to JSON, map the actions to take when a callback is received, and leave the response blank. You'll then get a URL to connect with Sendspark.
   </Accordion>
   <Accordion title="Where do I add the webhook in Sendspark?">
-    Go to your Sendspark webhook settings, add a title and the webhook URL, keep it as a "global" webhook to receive data for all events in your workspace, and select the checkboxes for the events you want to receive.
+    Go to your Sendspark webhook settings, fill in **Name** and **URL**, then click **Create Webhook**, keep it as a "global" webhook to receive data for all events in your workspace, and select the checkboxes for the events you want to receive.
   </Accordion>
   <Accordion title="What's required for the data to match a Salesforce record?">
     Because data is mapped based on the viewer's email address, the integration requires the viewer's email address to be known. We recommend installing your Marketing Cloud tracking code on Sendspark website pages so you can track video page views the same way as other pages.
