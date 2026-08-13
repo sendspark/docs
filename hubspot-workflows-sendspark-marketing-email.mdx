@@ -86,9 +86,9 @@ Here, we'll cover how to automatically send an email once a Dynamic Video has be
 
 **1. Create a New Workflow**
 
-Go into HubSpot and select Automation → Workflow. Create a new Workflow (from scratch). Make sure you are using a Contact-based Blank Workflow.
+Go into HubSpot and select Automation → Workflow. Create a new Workflow. Choose **Contact-based**, then **Blank workflow**.
 
-![Create HubSpot Workflow from Scratch](/images/9034118/8ea4309b-image.png)
+![HubSpot's workflow type picker with Contact-based selected and Blank workflow chosen](/images/9034118/8ea4309b-image.png)
 
 **2. Set Enrollment Trigger**
 
@@ -108,11 +108,11 @@ This means that whenever a dynamic video has been generated for a contact from t
 
 ![Add Dynamic Video Campaign ID](/images/9034118/cb8f4ffe-image.png)
 
-You can find this dynamic video campaign ID by looking at the URL on your Dynamic Video Campaign builder. It is between the 2 slashes at the end of the URL:
+You can find this dynamic video campaign ID by looking at the URL on your Dynamic Video Campaign builder. It sits between `/edit-v2/` and `/add`, so it is not the last segment of the URL. In `sendspark.com/dynamic-videos/edit-v2/**qf6mz…ljwe**/add`, the bold part is the ID:
 
 ![Sendspark Dynamic Video Campaign ID](/images/9034118/8febea6c-image.png)
 
-**4. Add an action, "Send Email"**
+**4. Add an action, "Send email"**
 
 Now, you'll select the email you want to send after dynamic videos have been generated for specific contacts in your HubSpot Workflow..
 
@@ -124,7 +124,7 @@ You can find this at the bottom of your dynamic video campaign builder:
 
 - Scroll to the bottom
 - Click **"Share Campaign"** ​<img src="/images/9034118/3d8a112b-image.png" alt="The Share Campaign button below a dynamic video campaign preview" />
-- Select "HubSpot Marketing Hub" to copy the share snippet to your clip board ​<img src="/images/9034118/7bf7f1cc-image.png" alt="Send Video Emails in HubSpot" />
+- Type **HubSpot Marketing Hub** into the search box, then click the result to copy the share snippet to your clipboard ​<img src="/images/9034118/7bf7f1cc-image.png" alt="The Share Dynamic Video modal with HubSpot Marketing Hub typed into its search box and matching as a result" />
 - In your HubSpot email, add an HTML block where you want your video to go
 - Paste in your snippet
 
@@ -150,7 +150,7 @@ That's it! Now when your contacts dynamic videos have generated, they will autom
   </Accordion>
 
   <Accordion title="Where do I find the Dynamic Video Campaign ID?">
-    Look at the URL of your Dynamic Video Campaign builder — the ID is the value between the two slashes at the end of the URL.
+    Look at the URL of your Dynamic Video Campaign builder. The ID sits between `/edit-v2/` and `/add`, so don't take the last segment, which is `add`.
   </Accordion>
 
   <Accordion title="What happens when I run out of dynamic video minutes?">
