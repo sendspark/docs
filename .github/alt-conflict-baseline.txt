@@ -1,0 +1,9 @@
+# Images described two different ways in the corpus.
+#
+# The same image file cannot honestly carry two different descriptions -- the
+# pixels do not change between pages. When it does, the usual cause is alt text
+# written from the adjacent sentence rather than from the image, which is the
+# failure mode that dominated the 2026-08 screenshot audit.
+#
+# This list is a ratchet: it may shrink, never grow. It is currently EMPTY --
+# all 20 conflicts found by the audit were reconciled. Keep it that way.
