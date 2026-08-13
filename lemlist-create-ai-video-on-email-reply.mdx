@@ -14,7 +14,7 @@ You can automatically generate and send a personalized video when someone replie
 ## Key takeaways
 
 - The setup uses three pieces: an outbound Lemlist campaign, a follow-up Lemlist campaign with a Sendspark video placeholder, and a Sendspark automated workflow that ties them together.
-- The Sendspark workflow trigger is **Lemlist → Emails Replied**, connected with a Lemlist API key pasted as the access token; filter by **Campaign Name contains** so only replies to the right campaign enter the automation.
+- The Sendspark workflow trigger is **Lemlist → Emails Replied**, connected with a Lemlist API key pasted as the access token; filter by ****Campaign name** contains** so only replies to the right campaign enter the automation.
 - The workflow then runs **Sendspark → Create dynamic video** (the email field is essential to match the right video to the right person) followed by **Lemlist → Add Lead to Campaign**.
 - Paste the Sendspark video snippet into the follow-up campaign via Lemlist's **code view** so each replying prospect receives the video made for them.
 
@@ -116,7 +116,7 @@ The video should be generated, and the placeholder should be in your email, so a
 
 **Add a new action in the Sendspark Agentic Workflow**
 
-Select **Lemlist**, and then **"Add Lead to Campaign,"**and then **map in the fields**from the previous steps into Lemlist.
+Select **lemlist**, and then **Add a lead to a campaign**. Pick the campaign under **Campaign ID for adding a lead** — it is required, and each lead's email must be unique to that campaign or it will not be insertedand then **map in the fields**from the previous steps into Lemlist.
 
 ![Lemlist Add a lead to a campaign field mapping](/images/11055981/24a6f68b-image.png)
 
@@ -141,7 +141,7 @@ Save this step, and turn on the Sendspark automation, that is it!
     In the Sendspark [automated workflow section](https://sendspark.com/agentic-workflows), create a new automation and select the **Lemlist → Emails Replied** trigger. Connect it with a Lemlist API key (generated in your Lemlist integration settings) pasted as the access token.
   </Accordion>
   <Accordion title="How do I make sure only the right replies generate a video?">
-    Add a filter on the trigger by condition **Campaign Name contains**, set to whatever indicates the specific campaign you want to generate videos for. This keeps prospects from other campaigns out of the automation.
+    Add a filter on the trigger by condition ****Campaign name** contains**, set to whatever indicates the specific campaign you want to generate videos for. This keeps prospects from other campaigns out of the automation.
   </Accordion>
   <Accordion title="Why is the email field required in the Create dynamic video action?">
     The email field is essential because it matches the right video to the right person in your follow-up Lemlist campaign. If you want a dynamic background, click **show all fields** to reveal the Sendspark background URL field.
