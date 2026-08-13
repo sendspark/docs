@@ -9,11 +9,11 @@ keywords:
   - map Reply fields to Sendspark
 ---
 
-Connect Reply and Sendspark in Zapier so a new or updated Reply contact automatically generates a personalized dynamic video. Set Reply's "Add or Update Contact" as the trigger, add Sendspark's "Create Dynamic Video" action, pick your workspace and campaign, map the contact fields, then test to confirm the video is queued.
+Connect Reply and Sendspark in Zapier so a new or updated Reply contact automatically generates a personalized dynamic video. Set Reply's "Add or Update Contact" as the trigger, add Sendspark's **Create dynamic video** action, pick your workspace and campaign, map the contact fields, then test to confirm the video is queued.
 
 ## Key takeaways
 
-- The trigger is Reply's **Add or Update Contact** event; the action is Sendspark's **Create Dynamic Video**.
+- The trigger is Reply's **Add or Update Contact** event; the action is Sendspark's **Create dynamic video**.
 - Reply's API key is under **Settings → API**; Sendspark's API Key and API Secret are under **Manage Workspace → Webhooks & API**.
 - You must have a [Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions) in Sendspark to select as the video template.
 - When mapping fields, use **First Name** (not full name or last name) and **Email**; the **Domain** is pulled automatically from the contact's email and can serve as the background URL.
@@ -33,7 +33,7 @@ This guide will walk you through the process of setting up an automated workflow
 
 ## 2. Set Up "Action" in Zapier (Sendspark)
 
-- Once your trigger is set, the next step is to create the action. Search for **Sendspark** and choose the **"Create Dynamic Video"** action.
+- Once your trigger is set, the next step is to create the action. Search for **Sendspark** and choose the **Create dynamic video** action.
 - Connect your **Sendspark account** to Zapier. You’ll be prompted to enter your **API Key** and **API Secret**. To find these, log into your Sendspark account, go to **Manage Workspace** &gt; **Webhooks & API**. Here, you can generate new keys if needed.
 - Once the API keys are entered, select the appropriate **workspace** and **dynamic video campaign** that you want to use.
 
@@ -66,7 +66,7 @@ This ensures that each video is personalized with the correct contact informatio
     For Reply, log in and go to **Settings → API** to copy your API Key. For Sendspark, go to **Manage Workspace → Webhooks & API** to find (or generate) your API Key and API Secret, which Zapier needs to connect your Sendspark account.
   </Accordion>
   <Accordion title="What trigger and action do I use in the Zap?">
-    Use Reply's **Add or Update Contact** as the trigger event, so the workflow runs whenever a contact is added or updated in Reply. Then add Sendspark's **Create Dynamic Video** action to generate the personalized video.
+    Use Reply's **Add or Update Contact** as the trigger event, so the workflow runs whenever a contact is added or updated in Reply. Then add Sendspark's **Create dynamic video** action to generate the personalized video.
   </Accordion>
   <Accordion title="Do I need a dynamic video campaign before setting up the Zap?">
     Yes. Create a Dynamic Video Campaign in Sendspark first (you can select a basic template for testing and customize voice, language, and other settings), then return to Zapier and choose that campaign in the Sendspark action.

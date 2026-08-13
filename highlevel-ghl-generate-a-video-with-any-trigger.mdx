@@ -16,7 +16,7 @@ To auto-generate Sendspark dynamic videos from any Go High Level trigger, first 
 - Any GHL trigger (like adding a **Contact Tag**) can fire a webhook that sends contact data to Sendspark, which instantly generates a personalized video.
 - You need a ready dynamic video campaign and access to workflows in both Sendspark and GHL.
 - In Sendspark, create an **Incoming Webhook** trigger and copy its URL; in GHL, add a **Webhook** action that posts the Raw Body payload (name, email, website) to that URL.
-- Set **force_creation: false** and **keep_first_valid: true** in the payload, map contact name, email, and background URL to **Create Dynamic Video**, then optionally add a Wait + Send Email step using the "lead connector" share snippet.
+- Set **force_creation: false** and **keep_first_valid: true** in the payload, map contact name, email, and background URL to **Create dynamic video**, then optionally add a Wait + Send Email step using the "lead connector" share snippet.
 
 ## ⚙️ Automating Dynamic Video Generation in Go High Level (GHL)
 

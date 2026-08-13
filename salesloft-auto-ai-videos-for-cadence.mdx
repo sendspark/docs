@@ -16,7 +16,7 @@ Adding Sendspark AI-personalized videos to Salesloft cadences helps you get more
 - Create one Dynamic Video campaign in Sendspark to act as the template for every AI-personalized video.
 - Copy the Salesloft snippet from Share Campaign and paste it directly into your Salesloft cadence email where you want the video to appear.
 - Add the video on Day 2 or later of the cadence so each video has time to generate before the email sends, which also helps deliverability.
-- Build a Sendspark automated workflow (trigger: Salesloft "Person Updated," filtered to your cadence; action: Sendspark "Create Dynamic Video") so videos generate automatically on enrollment.
+- Build a Sendspark automated workflow (trigger: Salesloft "Person Updated," filtered to your cadence; action: Sendspark **Create dynamic video**) so videos generate automatically on enrollment.
 - Add a **second workflow**, triggered by Sendspark **New Video Generated**, with Salesloft **Find Person** then **Update Person** actions. That writes the generated video back onto the lead's Salesloft record so the cadence snippet resolves to the right video. It assumes the lead already exists in Salesloft.
 
 Adding Sendspark AI-personalized videos to Salesloft cadences helps you get more replies without recording anything manually. Each prospect gets a message tailored to them, increasing engagement and making your emails stand out. It’s fast, scalable, and proven to drive 2–3x more replies.
@@ -53,13 +53,13 @@ We recommend adding the video to **Day 2 of the email cadenc**e, so you can ensu
 
 ![Sendspark video preview showing personalized video for George Burdell contact](/images/11400066/58a308cc-image.png)
 
-## 3. Create Automated Workflow to Create Dynamic Video When Someone Gets Added to Salesloft
+## 3. Create Agentic Workflow to Create Dynamic Video When Someone Gets Added to Salesloft
 
 Now, we want to make sure that whenever someone gets enrolled in this email sequence, their video automatically gets generated for them.
 
 Create a new [automated workflow](/sendspark-automated-workflows-beginner-s-guide) in Sendspark.
 
-![Sendspark dashboard with Create New Automated Workflow button option](/images/11400066/6918d998-image.png)
+![Sendspark dashboard with Create New Agentic Workflow button option](/images/11400066/6918d998-image.png)
 
 For the trigger, select**"Salesloft"** and connect your Salesloft account. Use the option **"Person Updated"**
 
@@ -77,7 +77,7 @@ Add either the cadence title or ID, depending on what you selected above. I woul
 
 ![Sendspark workflow field showing cadence ID input for automation trigger](/images/11400066/857ac5a9-image.png)
 
-For the action, select **"Sendspark"** and **"Create Dynamic Video"**
+For the action, select **"Sendspark"** and **Create dynamic video**
 
 ![Sendspark workflow action selection showing Create Dynamic Video option](/images/11400066/cc398d54-image.png)
 

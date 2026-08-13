@@ -9,22 +9,22 @@ keywords:
   - personalized video HubSpot
 ---
 
-To send a video automatically when a meeting is booked, create a Sendspark Automated Workflow that triggers on HubSpot's **"New Meeting Created"** event. Add a HubSpot **Find Contact** action to look up the booker by their guest email, create a Sendspark AI video with their details, then send it through Gmail, Outreach, or another channel.
+To send a video automatically when a meeting is booked, create a Sendspark Agentic Workflow that triggers on HubSpot's **"New Meeting Created"** event. Add a HubSpot **Find Contact** action to look up the booker by their guest email, create a Sendspark AI video with their details, then send it through Gmail, Outreach, or another channel.
 
 ## Key takeaways
 
 - The workflow uses HubSpot's **"New Meeting Created"** trigger, which fires any time someone books a meeting.
 - Add a **Find Contact** action (using **Guest Emails**) before creating the video, so you have the contact details needed to personalize it.
-- The **Create Dynamic Video** action lets you map in HubSpot contact fields to personalize each video.
+- The **Create dynamic video** action lets you map in HubSpot contact fields to personalize each video.
 - You can optionally filter the trigger by meeting ID or title so it only runs for specific meetings.
 
 ## 1. Create Automation
 
-Go to [Sendspark Automated Workflows](https://sendspark.com/automated-workflows).
+Go to [Sendspark Agentic Workflows](https://sendspark.com/agentic-workflows).
 
 Create a "new automation"
 
-![Sendspark Automated Workflows dashboard with new automation button](/images/11176283/c345e477-image.png)
+![Sendspark Agentic Workflows dashboard with new automation button](/images/11176283/c345e477-image.png)
 
 ## 2. Add Trigger: Meeting Booked
 
@@ -58,7 +58,7 @@ Use "Guest Emails" to find more information:
 
 ![Guest Emails field selection for HubSpot contact lookup](/images/11176283/44f9f496-image.png)
 
-And then, add an action to create your Sendspark video. Select **"Sendspark"**and **"Create Dynamic Video"**
+And then, add an action to create your Sendspark video. Select **"Sendspark"**and **Create dynamic video**
 
 ![Sendspark Create Dynamic Video action option in workflow](/images/11176283/ea712939-image.png)
 
