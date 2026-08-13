@@ -9,7 +9,7 @@ keywords:
   - agentic workflow dynamic video
 ---
 
-To auto-send videos when leads join an Instantly campaign, create a dynamic video campaign in Sendspark, add its placeholder to your Instantly email, then build an Agentic Workflow that triggers on "Instantly — Email Sent" and runs the "Sendspark — Create Dynamic Video" action. Each lead gets a personalized video matched by email.
+To auto-send videos when leads join an Instantly campaign, create a dynamic video campaign in Sendspark, add its placeholder to your Instantly email, then build an Agentic Workflow that triggers on "Instantly — Email Sent" and runs the "Sendspark: Create dynamic video" action. Each lead gets a personalized video matched by email.
 
 In this article, we'll walk through how to automatically create and send AI-personalized videos when leads get added to campaigns in Instantly.
 
@@ -20,7 +20,7 @@ You can use data fields in Instantly (like first name, company name, website URL
 - The flow has three pieces: a Sendspark dynamic video campaign, the Sendspark placeholder pasted into your Instantly email, and an Agentic Workflow that ties them together.
 - The workflow triggers on **"Instantly — Email Sent"**, so place your video placeholder in the 2nd (or later) step to give the video time to generate before it sends.
 - Filter the trigger by campaign ID and by first step so contacts don't re-enroll as later emails go out.
-- Always map the **email** field in the "Create Dynamic Video" action, since email is what updates the placeholder and ensures the right person receives the right video.
+- Always map the **email** field in the **Create dynamic video** action, since email is what updates the placeholder and ensures the right person receives the right video.
 
 ## How to Automatically Create Sendspark Videos When Leads Get Added to Instantly Campaigns
 
@@ -62,9 +62,9 @@ Navigate to the [Agentic Workflows](https://sendspark.com/agentic-workflows) sec
 - Select the **funnel** next to your trigger to filter it to only fire when you send an email from the right Instantly campaign ​![Sendspark workflow trigger funnel filter button for campaign matching](/images/12133851/b3c36982-image.png)
 - We'd recommend adding two filters here. One to make sure the campaign ID is the Instantly campaign you'd like to connect this automation to, and another to make sure this only fires on the first step, so that contacts do not re-enroll as you send them more emails ​![Sendspark workflow filter settings for campaign ID and email step](/images/12133851/cd0eaf75-image.png)
 
-## 6. Add Action "Sendspark - Create Dynamic Video"
+## 6. Add Action "Sendspark: Create dynamic video"
 
-Now, add an action for **"Sendspark - Create Dynamic Video"** to automatically create the AI-personalized videos when leads get added to the Instantly campaign.
+Now, add an action for **"Sendspark: Create dynamic video"** to automatically create the AI-personalized videos when leads get added to the Instantly campaign.
 
 ![Sendspark action selection menu for Create Dynamic Video option](/images/12133851/cbb4c1f8-image.png)
 

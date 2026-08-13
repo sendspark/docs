@@ -651,7 +651,7 @@
         "icon": "gears",
         "groups": [
           {
-            "group": "Automated Workflows",
+            "group": "Agentic Workflows",
             "icon": "gears",
             "pages": [
               "auto-generate-videos-from-skylead-campaign",
