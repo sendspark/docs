@@ -14,9 +14,9 @@ Sendspark webhooks tell an outside tool, like Zapier, the exact moment a dynamic
 ## Key takeaways
 
 - A webhook fires when a dynamic video is generated for a contact, which is the signal email automation needs to send the right video at the right time.
-- Setup is four steps: create a Zapier catch-hook, add the webhook URL in Sendspark, connect it to a dynamic video campaign, then test it.
+- Setup is five steps: create a Zapier catch-hook, add the webhook URL in Sendspark, connect it to a dynamic video campaign, then test it.
 - Once connected, each contact with a generated video is enrolled into your Zapier workflow, where you add a "send email" action (for example, Add Lead to Campaign in Instantly).
-- You can map webhook data fields such as Contact Email, Contact First Name, and Video Link into the email so every recipient gets their own dynamic video.
+- You can map webhook data fields such as Contact Email, Contact Info Contact First Name, and Video Link into the email so every recipient gets their own dynamic video.
 
 ### Setup at a glance
 
@@ -73,7 +73,7 @@ This is how to create a Zap with a webhook as a trigger:
 
 - In Zapier, create a new**“Zap”**
 - As a trigger, select **“Webhooks by Zapier”**
-- As the type of webhook, select **“Catch Hook”** ​
+- Under **Event**, select **Catch Hook** ​
 - Click**“continue”**
 - You can leave the next step “Pick off a Child Key” blank
 - Zapier will now provide you a webhook URL. **Copy that URL to your clipboard**, so we can use it in Sendspark to set up the connection. ​
@@ -146,7 +146,7 @@ However, for quick testing purposes, **you can also send an email in Gmail or Ou
 
 To send a video in Gmail, you could add **“Gmail”** as the next action.
 
-Then, when you are setting up the step, you can **use the data fields from your webhook**, such as “Contact Email” to know where to send the email, “Contact First Name” to know how to address the contact, and “Video Link” to send the link to the dynamic video for that contact
+Then, when you are setting up the step, you can **use the data fields from your webhook**, such as “Contact Email” to know where to send the email, “Contact Info Contact First Name” to know how to address the contact, and “Video Link” to send the link to the dynamic video for that contact
 
 ![Automatically Send a Video Email in Gmail](/images/9110152/f0a3392d-NK_N16N6efd5VgfLuDLYn0enNAM9SXmIxhXk9XT3Xw3BgJr0y_gDtx9merZeyxq1fM-gt1zLJAkr16oV7W84pFkQLaXjdFsKDUBaopoPIiZFWeWVGDjUJYTpv0YbWPmRSoVtftQSPZwqW2kzNIgLQCg.png)
 
@@ -171,7 +171,7 @@ That’s it – let us know if you have any questions!
     Yes, for quick testing you can add Gmail or Outlook as the next action in Zapier. However, we recommend an email automation platform because videos look better in email and you get more insights and analytics. Note that sending the video link in Gmail as plain text shows only the link, not the video thumbnail.
   </Accordion>
   <Accordion title="Which webhook data fields can I use in the follow-up email?">
-    You can use the fields passed from your webhook, such as Contact Email to know where to send, Contact First Name to address the contact, and Video Link to include that contact's dynamic video.
+    You can use the fields passed from your webhook, such as Contact Email to know where to send, Contact Info Contact First Name to address the contact, and Video Link to include that contact's dynamic video.
   </Accordion>
 </AccordionGroup>
 
