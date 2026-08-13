@@ -94,7 +94,7 @@ You’ll be asked to select the data you want to use in the dynamic video that w
 ### How to Find Data Fields:
 
 - **Workspace ID:** this is the unique identifier for your workspace. You can find it in your [workspace settings](https://sendspark.com/settings/workspace). ​<img src="/images/9110134/f5adf4a1-image.png" alt="Find your Sendspark workspace ID" />
-- **Dynamic Campaign ID:** this is the unique identifier for the dynamic video campaign that we should enroll this contact in. You can find this of the URL of your dynamic video campaign, between the 2 slashes ​<img src="/images/9110134/76287433-image.png" alt="Find your Sendspark Dynamic Video Campaign ID" />
+- **Dynamic Campaign ID:** this is the unique identifier for the dynamic video campaign that we should enroll this contact in. You can find this in the URL of your dynamic video campaign. It sits between `/edit-v2/` and the segment that follows it ​<img src="/images/9110134/76287433-image.png" alt="Find your Sendspark Dynamic Video Campaign ID" />
 - **Name:** This is the first name of the contact you are creating the video for. We will use this both in the voice cloning in the video (to replace the word “watermelon”) and on the page to replace the “first name” variable
 - **Email:** This is the email address for the contact you are creating the video for. We will use this as the unique identifier to link this video with the contact in your email sending platform in future steps.
 - **Company Name (Optional):** This is the name of the company for your contact. We will use this to replace the “Company name” variable in Sendspark.
@@ -107,7 +107,7 @@ You’ll see these from a dropdown when you click in to edit:
 
 ![Select data for Sendspark dynamic videos in Zapier](/images/9110134/0f5efe26-P0duUmstEKAybdSTBBe-PeQI_tIOdVYhKLP_fUzeoOBtwj_diXiMtb4UH39XSmM6_LvYwsgAdoxKECWG6sPLShUuCxpzR9MZ8UvMmhlGkGAjWXkvlcEZgYv6C9ZSBo4QDWPna-68NHfNmkO-O_tn_2c.png)
 
-To make sure everything is working, click **“Test Step”**
+To make sure everything is working, open the **Test** tab and run the step
 
 If you then go back to your Dynamic Video in Sendspark, you should now see a video generating for this contact in the queue:
 
@@ -143,7 +143,7 @@ See this article on [how to use webhooks in Zapier](/webhooks-for-dynamic-video-
   </Accordion>
 
   <Accordion title="How do I know the video was created?">
-    After clicking **Test Step**, return to your Dynamic Video in Sendspark and you should see a video generating for that contact in the queue. Give it a few minutes to generate, then preview it before publishing your Zap to create videos at scale.
+    After running the test, return to your Dynamic Video in Sendspark and you should see a video generating for that contact in the queue. Give it a few minutes to generate, then preview it before publishing your Zap to create videos at scale.
   </Accordion>
 </AccordionGroup>
 
