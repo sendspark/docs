@@ -9,11 +9,11 @@ keywords:
   - Lemlist emails replied trigger
 ---
 
-You can automatically generate and send a personalized video when someone replies "yes" to a Lemlist email. Set up a Sendspark automated workflow that triggers on Lemlist's "Emails Replied" event, generates a dynamic video for the lead, then adds them to a second Lemlist follow-up campaign that already contains your Sendspark video snippet.
+You can automatically generate and send a personalized video when someone replies "yes" to a Lemlist email. Set up a Sendspark Agentic Workflow that triggers on Lemlist's "Emails Replied" event, generates a dynamic video for the lead, then adds them to a second Lemlist follow-up campaign that already contains your Sendspark video snippet.
 
 ## Key takeaways
 
-- The setup uses three pieces: an outbound Lemlist campaign, a follow-up Lemlist campaign with a Sendspark video placeholder, and a Sendspark automated workflow that ties them together.
+- The setup uses three pieces: an outbound Lemlist campaign, a follow-up Lemlist campaign with a Sendspark video placeholder, and a Sendspark Agentic Workflow that ties them together.
 - The Sendspark workflow trigger is **Lemlist → Emails Replied**, connected with a Lemlist API key pasted as the access token; filter by ****Campaign name** contains** so only replies to the right campaign enter the automation.
 - The workflow then runs **Sendspark → Create dynamic video** (the email field is essential to match the right video to the right person) followed by **Lemlist → Add Lead to Campaign**.
 - Paste the Sendspark video snippet into the follow-up campaign via Lemlist's **code view** so each replying prospect receives the video made for them.
@@ -30,7 +30,7 @@ The automation that we we'll walk through here looks like this:
 
 1. You have an **outbound campaign** in Lemlist that you are sending out to people asking if they want to receive a video
 2. You have a **follow up campaign** in Lemlist on standby, with a video placeholder, that you will add contacts to if they reply to the first campaign
-3. You have an **automated workflow in Sendspark** that is waiting for leads to reply to the first campaign. If they do reply, this automation will generate their personalized video, and add them to the 2nd campaign.
+3. You have an **Agentic Workflow in Sendspark** that is waiting for leads to reply to the first campaign. If they do reply, this automation will generate their personalized video, and add them to the 2nd campaign.
 
 Alright, that is how it works at a high level. Now, let's set it up!
 
@@ -56,9 +56,9 @@ Alright, now that everything is prepped, let's create the automation!
 
 ## 1. Create Agentic Workflow for When Leads Reply to Lemlist Email Campaign
 
-Go to the [automated workflow section](https://sendspark.com/agentic-workflows) of Sendspark, and create a **new automation**.
+Go to the [Automations section](https://sendspark.com/agentic-workflows) of Sendspark, and create a **new automation**.
 
-![New automation button in Sendspark automated workflows](/images/11055981/91f55b21-image.png)
+![New automation button in Sendspark Agentic Workflows](/images/11055981/91f55b21-image.png)
 
 For the trigger, select **"Lemlist"** and then **"Emails Replied"**
 
@@ -138,7 +138,7 @@ Save this step, and turn on the Sendspark automation, that is it!
     In Sendspark, click **Share Campaign**, search for **Lemlist**, and click it to copy the video placeholder. In your Lemlist email editor, click the 3 dots at the bottom, choose **code view**, and paste the snippet where you want the video to appear.
   </Accordion>
   <Accordion title="Which trigger connects Lemlist replies to Sendspark?">
-    In the Sendspark [automated workflow section](https://sendspark.com/agentic-workflows), create a new automation and select the **Lemlist → Emails Replied** trigger. Connect it with a Lemlist API key (generated in your Lemlist integration settings) pasted as the access token.
+    In the Sendspark [Automations section](https://sendspark.com/agentic-workflows), create a new automation and select the **Lemlist → Emails Replied** trigger. Connect it with a Lemlist API key (generated in your Lemlist integration settings) pasted as the access token.
   </Accordion>
   <Accordion title="How do I make sure only the right replies generate a video?">
     Add a filter on the trigger by condition ****Campaign name** contains**, set to whatever indicates the specific campaign you want to generate videos for. This keeps prospects from other campaigns out of the automation.
