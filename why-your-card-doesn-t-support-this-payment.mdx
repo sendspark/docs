@@ -16,7 +16,7 @@ If your card shows "doesn't support this payment," it's usually an Indian bank e
 - Cause: RBI regulations require 3D Secure (OTP) authentication and manual approval; recurring charges don't trigger OTP, so Indian banks block them automatically.
 - It's most common when the merchant is outside India, an international provider processes the charge, or the payment is recurring or automatic.
 - This is a bank-level restriction that Sendspark cannot override.
-- Workaround: pay the unpaid invoice manually (Billing → Invoices → Pay Invoice) — it's treated as a one-time payment, so OTP is requested and allowed.
+- Workaround: pay the open invoice manually (**Plans & Billing → Billing History → View Invoice → Pay Invoice Online**), which is treated as a one-time payment, so OTP is requested and allowed.
 
 ## The Root Cause: 3D Secure (OTP) & Recurring Payments in India
 
@@ -49,10 +49,10 @@ The most reliable workaround is to **pay the invoice manually**, where OTP authe
 ## How to Pay Your Invoice Manually
 
 1. Log in to your account
-2. Go to **Billing**
-3. Open **Invoices**
-4. Select the **unpaid invoice**
-5. Click **Pay Invoice**
+2. Open **Plans & Billing** from your account settings
+3. Click **Billing History**
+4. Find the invoice with the status **open**, and click its **View Invoice** link
+5. Click **Pay Invoice Online**
 6. Complete the payment (OTP will be requested by your bank)
 
 This process works because:
@@ -71,9 +71,9 @@ Head to BILLING HISTORY:
 
 ![Sendspark billing history page showing list of past charges](/images/13609805/2b25cf65-image.png)
 
-Click on the VIEW INVOICE button that corresponds to the open billing:
+Click the **View Invoice** link on the row whose status reads **open**:
 
-![Billing history table with View Invoice button for unpaid invoice](/images/13609805/404afd64-image.png)
+![The billing history rows showing statuses of open, paid and voided, each with View Invoice and Download links](/images/13609805/404afd64-image.png)
 
 Use the PAY INVOICE ONLINE option
 
@@ -91,7 +91,7 @@ Use the PAY INVOICE ONLINE option
     No. This is a bank-level restriction driven by RBI (Reserve Bank of India) regulations, not something Sendspark can override.
   </Accordion>
   <Accordion title="How do I pay my invoice manually?">
-    Log in to your account, go to **Billing**, open **Invoices**, select the unpaid invoice, click **Pay Invoice**, and complete the payment. Your bank will request OTP, which is supported for one-time payments.
+    Log in to your account, open **Plans & Billing**, click **Billing History**, find the invoice whose status reads **open**, click **View Invoice**, then **Pay Invoice Online** and complete the payment. Your bank will request OTP, which is supported for one-time payments.
   </Accordion>
   <Accordion title="Why does paying manually work when automatic charges don't?">
     A manual invoice payment is treated as a one-time payment, where OTP authentication is allowed and you stay in full control of the transaction — so it isn't blocked the way an automatic recurring charge is.
