@@ -16,7 +16,7 @@ Set up a Sendspark Agentic Workflow so Instantly automatically emails each AI-pe
 - Your [Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions) acts as the template for every AI-personalized video created.
 - Add the Instantly snippet to your email template via **Share Campaign → Instantly**, pasting it where you want the video to appear. The same pattern works in other sequencers: see [Outreach](/outreach-auto-send-ai-personalized-videos) and [Salesloft](/salesloft-auto-ai-videos-for-cadence).
 - In the agentic workflow, map at least the **email** or **first name** field — both are used in later steps.
-- A **Router** on the "Search Lead" step's Lead ID (non-empty) sends existing leads straight to "Add Lead To Campaign" and new leads through "Create Lead" first; enable duplicate checking to avoid adding a lead twice.
+- A **Router** on the "Search Lead" step's Lead ID (non-empty) sends existing leads straight to "Add Lead to Campaign" and new leads through "Create Lead" first; enable duplicate checking to avoid adding a lead twice.
 
 Use these steps to have Instantly automatically send videos as soon as they're created through this automation.
 
@@ -75,22 +75,22 @@ Choose your Instantly campaign in the first step and choose contact e-mail and f
 
 ![Create lead form with campaign selection and contact fields mapped](/images/12116804/93c5fdf9-image.png)
 
-​We will add a router in the last step so if the lead exists, it will automatically go to step 6 and add leat to the campaign, if the lead doesn't exists, it will go to step 5 and create the lead first.  
+​We will add a router in the last step so if the lead exists, it will automatically go to step 5 and add the lead to the campaign; if the lead does not exist, it goes to step 4 and creates the lead first.  
 ​
 
-## 6. Add Lead To Campaign
+## 6. Add Lead to Campaign
 
-Add another step and choose "Add Lead To Campaign"
+Add another step and choose "Add Lead to Campaign"
 
-![Add Lead To Campaign action step in workflow builder](/images/12116804/62d47ff1-image.png)
+![Add Lead to Campaign action step in workflow builder](/images/12116804/62d47ff1-image.png)
 
-Map your Sendspark Campaign ID to "Lead IDs" section and your Instantly Campaign to the "To Campaign ID - ID" section and make sure to choose "yes" for the check duplicates in the campaigns to prevent duplicates. astlly click on save.
+Map your Sendspark Campaign ID to "Lead IDs" section and your Instantly Campaign to the **To campaign ID - ID** section and make sure to choose "yes" for the check duplicates in the campaigns to prevent duplicates. Lastly, click Save.
 
 ![Lead mapping interface with Sendspark Campaign ID and duplicate check](/images/12116804/6b1f9298-image.png)
 
 ## 7. Add A Router
 
-Click on the plus icon again and choose "tool" and Router under your second step which is "Instantly: Search Lead". Add "Lead ID" on the If section's field and choose "non-empty".
+Click on the plus icon again and choose "tool" and Router under your second step which is "Instantly: Search Lead". Add "Lead ID" on the If section's field and choose **Non-empty (with data)**.
 
 ![Router configuration with Lead ID field and non-empty condition](/images/12116804/514cc5a3-image.png)
 
@@ -101,7 +101,7 @@ What this means is, if your search finds a Lead ID, it will add that lead to the
 
 This is how your workflow look in the end. You can click on start button and add a prospect into your Dynamic Video Campaign and it will automatically do the all steps for you.
 
-![Completed agentic workflow showing all seven steps connected](/images/12116804/2f099b45-image.png)
+![The finished automation, showing its five connected steps](/images/12116804/2f099b45-image.png)
 
 ## Frequently asked questions
 
@@ -116,7 +116,7 @@ This is how your workflow look in the end. You can click on start button and add
     The Search Lead step checks whether the contact already exists in Instantly. The Router then uses the Lead ID: if it's non-empty (the lead exists), the flow adds that lead to the campaign; if it's empty, it creates the lead first and then adds it. This prevents duplicate leads.
   </Accordion>
   <Accordion title="How do I stop the same lead being added twice?">
-    In the **Add Lead To Campaign** step, choose "yes" for check duplicates in the campaigns. Combined with the Router logic, this keeps existing leads from being recreated or added again.
+    In the **Add Lead to Campaign** step, choose "yes" for check duplicates in the campaigns. Combined with the Router logic, this keeps existing leads from being recreated or added again.
   </Accordion>
   <Accordion title="Where does the video actually get inserted in the email?">
     You paste the Instantly snippet (from **Share Campaign → Instantly**) directly into your Instantly sequence where you want the video to appear. The snippet is replaced with each lead's personalized video when the email sends.

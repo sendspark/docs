@@ -17,7 +17,7 @@ Easily create and share videos in HighLevel workflows to send personalized video
 
 - Generate and share personalized videos automatically from any trigger event in HighLevel, using contact properties like first name and company name.
 - Pass data with a **Custom Webhook** (not the other **Webhook** field) — there are two webhook fields in HighLevel and only the Custom Webhook works here.
-- Create two custom contact fields in HighLevel — **Sendspark Share URL** (for SMS/WhatsApp) and **Sendspark Email HTML Snippet** (for email) — so Sendspark can push data back.
+- Create two custom contact fields in HighLevel — **Sendspark Video Link** (for SMS/WhatsApp) and **Sendspark Email Embed Snippet** (for email) — so Sendspark can push data back.
 - Add a time delay of roughly 15 minutes before sending, to give Sendspark enough time to generate the video.
 
 ## What You Can Do With HighLevel + Sendspark
@@ -51,16 +51,16 @@ Watch the video or follow along the steps below to create & share AI personalize
   3. This ensures that when the contact is enrolled in your HighLevel workflow, and hits the Custom Webhook stage, this personalized video will be generated for them
 6. The last step in the automation will be send the Sendspark video back into HighLevel for you to share it with prospective customers.
   1. Before you set up the automation, you need to create the custom contact fields in HighLevel. Go to HighLevel Contact Property settings, and create 2 new fields:
-    1. **Sendspark Share URL**— you'll be able to use this to send the videos in SMS or WhatsApp
-    2. **Sendspark Email Email HTML Snippet**— you'll be able to use this to send the video in email
+    1. **Sendspark Video Link**— you'll be able to use this to send the videos in SMS or WhatsApp
+    2. **Sendspark Email Embed Snippet**— you'll be able to use this to send the video in email
 7. Back in Sendspark, add a new action to your automation for **HighLevel: Update a Contact**
   1. Map in the **Contact ID** from your first HighLevel step ​![Sendspark automation step showing Contact ID field mapping from HighLevel](/images/12060743/ab5f4472-image.png)
-  2. Map in the custom fields that you just created in the previous step, so you can push the data from Sendspark back in HighLevel. If you don't see the fields, click "update" to refresh available fields ​![Sendspark action panel with custom field mapping for Sendspark Share URL and Email HTML](/images/12060743/1467cbb4-image.png)​
-8. Click **Save** and **Start** your automation! ​![Sendspark automation workflow with Save and Start buttons highlighted](/images/12060743/db1f2949-image.png)
+  2. Map in the custom fields that you just created in the previous step, so you can push the data from Sendspark back in HighLevel. If you don't see the fields, click "update" to refresh available fields ​![Sendspark action panel with custom field mapping for Sendspark Video Link and Email HTML](/images/12060743/1467cbb4-image.png)​
+8. Click **Test**, then **Start** your automation! ​![Sendspark automation workflow with its Test and Start controls](/images/12060743/db1f2949-image.png)
 9. In your HighLevel automation, you can now add steps for emails, SMS messages, or WhatsApp messages to share the personalized videos you're creating here.
-  1. Just make sure to use the **Sendspark Share URL** or **Sendspark Email HTML Embed** fields as placeholders where you want the video go.
-    1. Email: ​![HighLevel email template editor showing Sendspark Email HTML Embed field placeholder](/images/12060743/d6b21c5a-image.png)
-    2. SMS or WhatsApp:![HighLevel SMS or WhatsApp message template with Sendspark Share URL variable](/images/12060743/b1f7e2a1-image.png)
+  1. Just make sure to use the **Sendspark Video Link** or **Sendspark Email Embed Snippet** fields as placeholders where you want the video go.
+    1. Email: ​![HighLevel email template editor showing Sendspark Email Embed Snippet field placeholder](/images/12060743/d6b21c5a-image.png)
+    2. SMS or WhatsApp:![HighLevel SMS or WhatsApp message template with Sendspark Video Link variable](/images/12060743/b1f7e2a1-image.png)
   2. Also make sure you're adding time delays to give Sendspark enough time to generate the video (~15 minutes or so should be safe).
 10. Your entire automation in HighLevel should look something like this. When all looks good, save, hit publish, and start enrolling real contacts!![Complete HighLevel automation workflow diagram showing all integration steps connected](/images/12060743/36797027-image.png)
 
@@ -100,7 +100,7 @@ A: Click "Update" to make sure you're seeing all available HighLevel fields in S
     Sendspark supports contact email, contact first name, contact job title, company name, and a background URL (used behind your video when you're using a Dynamic Background). Send whichever fields you plan to use in your video.
   </Accordion>
   <Accordion title="How do I send the generated video back into HighLevel?">
-    Before setting up the automation, create two custom contact fields in HighLevel: **Sendspark Share URL** (for SMS or WhatsApp) and **Sendspark Email HTML Snippet** (for email). Then add a **HighLevel: Update a Contact** action in Sendspark, map in the Contact ID, and push those fields back.
+    Before setting up the automation, create two custom contact fields in HighLevel: **Sendspark Video Link** (for SMS or WhatsApp) and **Sendspark Email Embed Snippet** (for email). Then add a **HighLevel: Update a Contact** action in Sendspark, map in the Contact ID, and push those fields back.
   </Accordion>
   <Accordion title="Why aren't my HighLevel custom variables showing in Sendspark?">
     Click **Update** to refresh the available HighLevel fields in Sendspark. This applies both to the fields you send in and to the custom fields you create for pushing data back.

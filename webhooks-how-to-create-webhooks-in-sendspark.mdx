@@ -22,7 +22,7 @@ Webhooks in Sendspark allow you to trigger specific events from your dynamic vid
 
 Please note that at this time, **webhooks are only available for dynamic video campaigns**(not all videos in your Sendspark library).
 
-## How to Use Webooks in Sendspark
+## How to Use Webhooks in Sendspark
 
 Navigate to the Webhooks section within the Settings panel in your Sendspark account.
 
@@ -33,7 +33,7 @@ From there, you can...
 ## Create a New Webhook:
 
 - Click the **New Webhook** button in the top-right corner. The dialog that opens is titled **Create Webhook**.
-- Fill in all the necessary information, such as the Name and Webhook URL
+- Fill in all the necessary information, such as the **Name** and **URL**
 
 ![The Create Webhook dialog with required Name and URL fields and a Create Webhook button](/images/9186828/e476b50e-https-3A-2F-2Fprod-files-secure_s3_us-west-2_amazonaws_com-2Fee4c45d8-c21d-4300-b544-90937e250892-2F566b4ea3-ebdf-479a-9b68-694da4505258-2FScreenshot_2024-04-11_at_1_44_26_p_m_.png)
 
@@ -53,7 +53,7 @@ From there, you can...
   - **Video Viewed**:
     - This event is triggered when a viewer opens or accesses a video, regardless of whether they interact with the playback controls or watch the video in its entirety.
   - **Video Watched to the End**:
-    - This event tracks the percentage of the video that a viewer has watched before pausing or closing the playback.
+    - This event fires when a viewer reaches the end of the video.
   - **Video Ready to Download**
     - This fires when the video .mp4 is ready to download, which can take a few minutes longer than the "Video Created" event. You can use this webhook to get the .mp4 of the video to download or upload to another site.
   - **Video Failed to Generate**
