@@ -72,7 +72,7 @@ In this step, we are going to show how you can automatically generate videos in 
     2. You can find your dynamicId from the URL of your dynamic video campaign ​![Sendspark dynamic video campaign URL showing dynamicId parameter location](/images/9478400/1e38fa06-image.png)
   3. **Headers:**You’ll need two (for your **API Key and Secret Key**)
     1. You can find these both from your [API credentials tab](https://sendspark.com/settings/api-credentials)
-  4. **Body:** Copy and paste this snippet. Note: here we are mapping contact variables from HighLevel into Sendspark. ​`{ "processAndAuthorizeCharge": true, "prospectDepurationConfig": { "forceCreation": true,"payloadDepurationStrategy": "keep-last-valid" }, "prospect": { "contactName":"#########{{contact.first_name}}", "contactEmail":"#########{{contact.email}}", "company":"#########{{contact.company_name}}", "backgroundUrl":"#########{{contact.website}}"}}`
+  4. **Body:** Copy and paste this snippet. Note: here we are mapping contact variables from HighLevel into Sendspark. ​`{ "processAndAuthorizeCharge": true, "prospectDepurationConfig": { "forceCreation": true,"payloadDepurationStrategy": "keep-last-valid" }, "prospect": { "contactName":"{{contact.first_name}}", "contactEmail":"{{contact.email}}", "company":"{{contact.company_name}}", "backgroundUrl":"{{contact.website}}"}}`
 
 In the end, your API call should look like this (but using your real API Key & API Secret)
 

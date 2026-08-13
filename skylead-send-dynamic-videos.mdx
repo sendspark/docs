@@ -9,14 +9,14 @@ keywords:
   - videoLink Skylead CSV
 ---
 
-To send dynamic videos with Skylead, create a Dynamic Video Campaign in Sendspark, import your contacts, and generate the AI-personalized videos. Then download Sendspark's CSV, rename the columns to match Skylead's fields, import it into Skylead, and drop the #&#123;&#123;videoLink&#125;&#125; field into your LinkedIn connection request or message.
+To send dynamic videos with Skylead, create a Dynamic Video Campaign in Sendspark, import your contacts, and generate the AI-personalized videos. Then download Sendspark's CSV, rename the columns to match Skylead's fields, import it into Skylead, and drop the &#123;&#123;videoLink&#125;&#125; field into your LinkedIn connection request or message.
 
 ## Key takeaways
 
 - Build a [Dynamic Video Campaign](/dynamic-videos-make-videos-with-ai-introductions) in Sendspark, then import contacts by typing them in, uploading a CSV, or using Zapier/API.
 - Download Sendspark's CSV after generating videos — it adds the **Video Link** column, which is what you send in LinkedIn.
 - **Rename the CSV columns** to Skylead's field names before importing (for example, Video Link → **videoLink**).
-- In your Skylead sequence, use the **#&#123;&#123;videoLink&#125;&#125;** dynamic field where you want the video; it unfurls into an animated preview in LinkedIn messages.
+- In your Skylead sequence, use the **&#123;&#123;videoLink&#125;&#125;** dynamic field where you want the video; it unfurls into an animated preview in LinkedIn messages.
 
 Use Sendspark and Skylead together to send AI-personalized videos in LinkedIn automation.
 
@@ -55,7 +55,7 @@ These are the column names in Sendspark, and how they should be written to impor
 - First Name - **firstName**
 - Email - **email**
 - Company Name - **currentCompany**
-- Job Title - **profileLink**
+- Job Title - **profileUrl**
 - Background Url - **website**
 - Video Link - **videoLink &lt;-- this is the dynamic video we made in Sendspark!**
 
@@ -63,7 +63,7 @@ These are the column names in Sendspark, and how they should be written to impor
 
 ## 6. Create Sequence in Skylead
 
-Now, you can create your LinkedIn automation campaign in Skylead, and just use the #&#123;&#123;videoLink&#125;&#125; dynamic field where you want your video to go in your connection request or message.
+Now, you can create your LinkedIn automation campaign in Skylead, and just use the &#123;&#123;videoLink&#125;&#125; dynamic field where you want your video to go in your connection request or message.
 
 ![Create AI Video Sequence in Skylead](/images/9145326/b5c9d340-image.png)
 
@@ -86,10 +86,10 @@ That's it! Happy connecting!
     The **Video Link** column, added when you download the CSV after generating videos. It's the personalized dynamic video link for each viewer, and it's what you send in your LinkedIn connection requests and messages.
   </Accordion>
   <Accordion title="How do I rename columns to match Skylead's fields?">
-    Map them like this: First Name → firstName, Email → email, Company Name → currentCompany, Job Title → profileLink, Background Url → website, and Video Link → videoLink.
+    Map them like this: First Name → firstName, Email → email, Company Name → currentCompany, Job Title → profileUrl, Background Url → website, and Video Link → videoLink.
   </Accordion>
   <Accordion title="How does the video appear in a LinkedIn message?">
-    When you send the video link via the #&#123;&#123;videoLink&#125;&#125; field, it unfurls into an animated preview in the LinkedIn message.
+    When you send the video link via the &#123;&#123;videoLink&#125;&#125; field, it unfurls into an animated preview in the LinkedIn message.
   </Accordion>
 </AccordionGroup>
 
