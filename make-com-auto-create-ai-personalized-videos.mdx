@@ -104,8 +104,8 @@ For the last step of this automation, we’ll create a webhook to know when AI v
 1. In Make, create a new Scenario, using a “Custom Webhook”
 2. Copy the URL Make provides to your clipboard ​![Make.com Custom Webhook module with URL copy button displayed](/images/9478441/01ba71db-image.png)
 3. In Sendspark, go to the [Webhooks Section](https://sendspark.com/settings/webhooks)
-4. Create a webhook (using the URL Make provided) ​![Sendspark Webhooks section with Create Webhook form and URL field](/images/9478441/38c4fbb0-image.png)
-5. Link it to your dynamic video campaign. This will make it so every time a video is “created” from this dynamic video campaign, a webhook sends into Make. ​![Sendspark dynamic video campaign linked to webhook for video generation events](/images/9478441/5391cab3-image.png)
+4. Click **New Webhook**, then give it a **Name** and paste the URL Make provided into **URL**. Both are required. ​![The Create Webhook dialog with required Name and URL fields](/images/9478441/38c4fbb0-image.png)
+5. Open the webhook, tick the **Video Created** event, then use **Connect Campaign** to attach your dynamic video campaign. This makes it so every time a video is created from that campaign, a webhook sends into Make. ​![The webhook's event checkboxes with Video Created ticked, above an Associated Campaigns section and a Connect Campaign button](/images/9478441/5391cab3-image.png)
 
 Great job! Now every time a Sendspark Dynamic Video generates for a person, that person will be enrolled in your Make scenario.
 
