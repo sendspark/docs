@@ -9,13 +9,13 @@ keywords:
   - video played webhook trigger
 ---
 
-To create a webhook in Sendspark, open the **Webhooks** section in Settings, click **Add Webhook**, and enter a Name and Webhook URL. Then open the webhook to select which events fire it (such as Video Created, Video Played, or Video Viewed). Webhooks are available for dynamic video campaigns only.
+To create a webhook in Sendspark, open the **Webhooks** section in Settings, click **New Webhook**, and enter a Name and URL. Then open the webhook to select which events fire it (such as Video Created, Video Played, or Video Viewed). Webhooks are available for dynamic video campaigns only.
 
 ## Key takeaways
 
 - Webhooks are currently available for **dynamic video campaigns only**, not every video in your library.
-- Create one from **Settings → Webhooks → Add Webhook** by supplying a Name and Webhook URL.
-- After creating a webhook, click its name to choose events: Video Created, Video CTA Clicked, Video Liked, Video Played, Video Viewed, Video Watched %, Video Ready to Download, and Video Failed to Generate.
+- Create one from **Settings → Webhooks → New Webhook** by supplying a **Name** and **URL** in the Create Webhook dialog.
+- After creating a webhook, click its name to choose events: Video Created, Video CTA Clicked, Video Liked, Video Played, Video Viewed, Video Watched to the End, Video Ready to Download, and Video Failed to Generate.
 - By default a webhook is associated with **all** dynamic video campaigns in the workspace; use **Connect Campaign** to limit it to specific campaigns.
 
 Webhooks in Sendspark allow you to trigger specific events from your dynamic video campaigns. By integrating webhooks, you can automate actions based on user interactions or system events within your Sendspark account.
@@ -32,10 +32,10 @@ From there, you can...
 
 ## Create a New Webhook:
 
-- Click on the**“Add Webhook”**button located in the top-right corner.
+- Click the **New Webhook** button in the top-right corner. The dialog that opens is titled **Create Webhook**.
 - Fill in all the necessary information, such as the Name and Webhook URL
 
-![Add Webhook dialog form with Name and Webhook URL input fields](/images/9186828/e476b50e-https-3A-2F-2Fprod-files-secure_s3_us-west-2_amazonaws_com-2Fee4c45d8-c21d-4300-b544-90937e250892-2F566b4ea3-ebdf-479a-9b68-694da4505258-2FScreenshot_2024-04-11_at_1_44_26_p_m_.png)
+![The Create Webhook dialog with required Name and URL fields and a Create Webhook button](/images/9186828/e476b50e-https-3A-2F-2Fprod-files-secure_s3_us-west-2_amazonaws_com-2Fee4c45d8-c21d-4300-b544-90937e250892-2F566b4ea3-ebdf-479a-9b68-694da4505258-2FScreenshot_2024-04-11_at_1_44_26_p_m_.png)
 
 ## Configure Webhook Events:
 
@@ -52,7 +52,7 @@ From there, you can...
     - When a viewer initiates playback of a video, either by clicking the play button or auto-play functionality, this event is triggered.
   - **Video Viewed**:
     - This event is triggered when a viewer opens or accesses a video, regardless of whether they interact with the playback controls or watch the video in its entirety.
-  - **Video Watched %**:
+  - **Video Watched to the End**:
     - This event tracks the percentage of the video that a viewer has watched before pausing or closing the playback.
   - **Video Ready to Download**
     - This fires when the video .mp4 is ready to download, which can take a few minutes longer than the "Video Created" event. You can use this webhook to get the .mp4 of the video to download or upload to another site.
@@ -89,10 +89,10 @@ This can help you set up more precise automation, especially when you want to au
     No. Webhooks are currently available for dynamic video campaigns only, not for every video in your Sendspark library.
   </Accordion>
   <Accordion title="How do I create a webhook?">
-    Go to the Webhooks section in your Settings panel, click **Add Webhook** in the top-right corner, and fill in the Name and Webhook URL. Then click the webhook's name to select which events it should fire on.
+    Go to the Webhooks section in your Settings panel, click **New Webhook** in the top-right corner, and fill in the **Name** and **URL** in the Create Webhook dialog. Then click the webhook's name to select which events it should fire on.
   </Accordion>
   <Accordion title="Which events can trigger a webhook?">
-    You can select from Video Created, Video CTA Clicked, Video Liked, Video Played, Video Viewed, Video Watched %, Video Ready to Download, and Video Failed to Generate. Video Ready to Download can fire a few minutes after Video Created, once the .mp4 is ready.
+    You can select from Video Created, Video CTA Clicked, Video Liked, Video Played, Video Viewed, Video Watched to the End, Video Ready to Download, and Video Failed to Generate. Video Ready to Download can fire a few minutes after Video Created, once the .mp4 is ready.
   </Accordion>
   <Accordion title="Does a webhook apply to all my campaigns?">
     By default a new webhook is associated with all dynamic video campaigns in your workspace. To limit it, click **Connect Campaign** and associate it with specific campaigns only.

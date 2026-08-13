@@ -15,7 +15,7 @@ You can connect Sendspark to Salesforce to push video engagement data (views, pl
 
 - The integration sends Sendspark video events into Salesforce so you can report on engagement, see influenced deals, and follow up.
 - Sendspark is not on the Salesforce AppExchange; you connect the two using webhooks.
-- Events you can send include Video Created, Video CTA Clicked, Video Liked, Video Played, Video Viewed, and Video Watched %.
+- Events you can send include Video Created, Video CTA Clicked, Video Liked, Video Played, Video Viewed, and Video Watched to the End.
 - Setup is two-sided: create a webhook URL in Salesforce (via APEX or the Declarative Webhooks app), then add it in Sendspark's webhook settings and select events. Matching relies on the viewer's email address being known.
 
 ## Why Connect Sendspark with Salesforce?
@@ -42,7 +42,7 @@ It is possible to send these events from Sendspark into Salesforce:
   - This event occurs when a video starts to play on a video page, either because the “play” button was clicked, or because autoplay is enabled.
 - **Video Viewed:**
   - This event is triggered when a viewer opens or accesses a video, regardless of whether they interact with the playback controls or watch the video in its entirety.
-- **Video Watched %:**
+- **Video Watched to the End**:
   - This event tracks the percentage of the video that a viewer has watched before pausing or closing the playback.
 
 When you connect this data to Salesforce, you will be able to select the object in Salesforce you wish to associate it with.
@@ -79,7 +79,7 @@ Note: Sendspark is NOT on the Salesforce AppExchange at this time. You will be s
 **2. In Sendspark, create a webhook**
 
 - Navigate to your [Sendspark webhook settings](https://sendspark.com/settings/webhooks)
-- Add your title and webhook URL ​![Sendspark webhook settings page with title and URL input fields](/images/9614413/1d3aa595-AD_4nXd3K3MMcPe6iGh130sHgMjUP7wSVjaerK0eQ5x8DkmhuEbFlD-ZX1yByIg6ZER4OuX0EBfExMu1TY4J6OBseDunZxwQA2MOTgW5IOZ-dIjTCcIhtzY-vUrpwdUEpDiPf0LIRyQvBnsjVVETUy4xp7B1uycL.png)
+- Fill in **Name** and **URL** ​![The Create Webhook dialog with required Name and URL fields](/images/9614413/1d3aa595-AD_4nXd3K3MMcPe6iGh130sHgMjUP7wSVjaerK0eQ5x8DkmhuEbFlD-ZX1yByIg6ZER4OuX0EBfExMu1TY4J6OBseDunZxwQA2MOTgW5IOZ-dIjTCcIhtzY-vUrpwdUEpDiPf0LIRyQvBnsjVVETUy4xp7B1uycL.png)
 - Keep this as a “global” webhook to receive data for all events in your Sendspark workspace.
 - **Select the checkboxes** for which events you want to receive notifications for: ​![Sendspark event checkboxes for Video Created, Played, Viewed selections](/images/9614413/2fd3eecc-AD_4nXcPwPJOjwFe4M1Vu-QYENAd9AQ6UFAqVe-M6LsBztAFGtUizf908KcxCxHx6Nnch7pJyHQIQFDCEeMqcqONnd8aLa0UemEKZIvr1TSUPNzYMVDP8nBZpt6spAibiX8QFuq4gr3Ct-grUJJb4m8D2mdIbo4y.png)
 
@@ -102,7 +102,7 @@ You can see more information on [connecting Salesforce Marketing Cloud to Sendsp
     No, Sendspark is not on the Salesforce AppExchange at this time. You send data from Sendspark to Salesforce using webhooks instead.
   </Accordion>
   <Accordion title="What video events can I send to Salesforce?">
-    You can send Video Created (a new Dynamic Video is created for a contact), Video CTA Clicked, Video Liked, Video Played, Video Viewed, and Video Watched %. When connected, you can select which Salesforce object to associate the data with.
+    You can send Video Created (a new Dynamic Video is created for a contact), Video CTA Clicked, Video Liked, Video Played, Video Viewed, and Video Watched to the End. When connected, you can select which Salesforce object to associate the data with.
   </Accordion>
   <Accordion title="How do I create the webhook URL in Salesforce?">
     In Salesforce you can create webhooks with APEX calls. For a no-code option, use the Declarative Webhooks app from the AppExchange: create an inbound call template, choose your HTTP method, set the request body format to JSON, map the actions to take when a callback is received, and leave the response blank. You'll then get a URL to connect with Sendspark.
