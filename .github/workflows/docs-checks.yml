@@ -51,3 +51,8 @@ jobs:
       # in a navigation group, and no page may newly lose all inbound links.
       - name: Page graph (navigation coverage and orphan ratchet)
         run: python3 .github/scripts/check_docs_graph.py
+
+      # Defects that build cleanly and link correctly, so nothing else sees them.
+      # Each one was found live by the 2026-08 screenshot-versus-prose audit.
+      - name: Check prose and alt text
+        run: python3 .github/scripts/check_prose_defects.py
