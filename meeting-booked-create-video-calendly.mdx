@@ -13,8 +13,8 @@ When someone books a meeting through Calendly, Sendspark can automatically creat
 
 ## Key takeaways
 
-- A workflow pairs one **trigger** (Calendly's **Invitee Created** event) with actions that create and send the video.
-- The **Invitee Created** event fires anytime someone books a meeting and is created as an invitee.
+- A workflow pairs one **trigger** (Calendly's **Invitee created** event) with actions that create and send the video.
+- The **Invitee created** event fires anytime someone books a meeting and is created as an invitee.
 - Map the fields from Calendly into Sendspark so the AI video is personalized to the person who booked.
 - Send the finished video directly in Gmail or Outreach, or use one of the other automated ways to share videos.
 
@@ -32,7 +32,7 @@ Add a trigger to start the automation.
 
 ![Empty trigger step prompting to add a trigger for the selected app](/images/11158045/75d38c4f-image.png)
 
-Select **Calendly**, and the event **"Invitee Created."**This event will fire anytime someone books a meeting (and gets created as an invitee)
+Select **Calendly**, and the event **Invitee created**This event will fire anytime someone books a meeting (and gets created as an invitee)
 
 ![Trigger setup with Calendly app and Invitee created event selected](/images/11158045/2c4c5161-image.png)
 
@@ -48,6 +48,8 @@ Map the fields from Calendly into Sendspark in order to use in the AI video pers
 
 ## 4. Add Action: Send Video
 
+Set **Email Format** to **HTML** and use the **Email Embed HTML** output from the Create dynamic video step — the video only renders if both are set.
+
 You can send this video directly in Gmail or Outreach, or check out one of the [many other ways](/auto-send-ai-personalized-videos) to share your video in automated workflows.
 
 ![Gmail send email action embedding the dynamic video into the message body](/images/11158045/9fbd6d00-image.png)
@@ -60,7 +62,7 @@ The entire workflow should look something like this:
 
 <AccordionGroup>
   <Accordion title="Which Calendly event triggers the video?">
-    Use the **Invitee Created** event. It fires anytime someone books a meeting and is created as an invitee in Calendly, which is what starts the automation.
+    Use the **Invitee created** event. It fires anytime someone books a meeting and is created as an invitee in Calendly, which is what starts the automation.
   </Accordion>
   <Accordion title="Do I need to record a video first?">
     No. The workflow's **Create dynamic video** action generates the Sendspark video automatically when the trigger fires, using the fields you map in from Calendly.
@@ -72,7 +74,7 @@ The entire workflow should look something like this:
     You can send it directly in Gmail or Outreach as an action, or use one of the [many other ways](/auto-send-ai-personalized-videos) to share videos in automated workflows.
   </Accordion>
   <Accordion title="Where do I build this automation?">
-    In the [Sendspark Agentic Workflows](https://sendspark.com/agentic-workflows) section. Click **New Automation** to start from scratch.
+    In the [Sendspark Agentic Workflows](https://sendspark.com/agentic-workflows) section. Click **New automation** to start from scratch.
   </Accordion>
 </AccordionGroup>
 
