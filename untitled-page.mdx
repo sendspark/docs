@@ -1,0 +1,100 @@
+---
+title: "Automatically Generate and Send Videos in Sendspark via SMS Using Go High Level -  GHL"
+---
+
+<iframe src="https://www.youtube.com/embed/7Nc3ft9yQiM" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+# Automatically Generate and Send Videos via SMS with GoHighLevel
+
+Automatically generate a personalized Sendspark video when a contact enters a workflow, save the video link to the contact, and send it automatically via SMS.
+
+## 🔄 How it works
+
+**GoHighLevel** Contact triggers the workflow ↓ **Agente Workflows** Creates the personalized Sendspark video ↓ **GoHighLevel** Receives and stores the video link ↓ **SMS** Automatically sends the video link to the contact
+
+---
+
+## 🛠️ 1. Create a custom field
+
+In GoHighLevel, create a custom contact field to store the Sendspark video URL.
+
+- Go to **Settings → Custom Fields**
+- Create a **Single Line** field
+- Set the object to **Contact**
+- Give it a name such as **Sendspark Video Link**
+- Save the field
+
+This field will store the unique video URL generated for each contact.
+
+---
+
+## 🏷️ 2. Create the trigger in GoHighLevel
+
+Create the workflow that determines when a video should be generated.
+
+For example:
+
+**Form Submitted → Add Contact Tag**
+
+You can use any trigger you want. The important part is adding a specific tag that Agente Workflows can detect.
+
+---
+
+## ⚡ 3. Generate the Sendspark video
+
+In Agente Workflows:
+
+1. Create a new workflow.
+2. Use **Contact Tag Update** as the trigger.
+3. Set the condition to the tag you created.
+4. Add the **Create Dynamic Video** action.
+5. Select your Sendspark dynamic video campaign.
+6. Map the contact's information, such as **First Name** and **Email**.
+7. Optionally, add a dynamic **Background URL**.
+8. Save the workflow.
+
+When the tag is added, Sendspark will automatically generate the personalized video.
+
+---
+
+## 🔗 4. Send the video link back to GoHighLevel
+
+Once the video is generated, add an **Update Contact** action.
+
+Map the generated **Video Link** to your custom field:
+
+**Sendspark Video Link**
+
+You can also add a second tag, such as **SS Outgoing**, to indicate that the video is ready to be sent.
+
+---
+
+## 📱 5. Automatically send the video via SMS
+
+Create another workflow in GoHighLevel.
+
+### Trigger
+
+**Contact Tag Added → SS Outgoing**
+
+### Action
+
+**Send SMS**
+
+Write your message and insert the **Sendspark Video Link** custom field.
+
+For example:
+
+> Hey! I made this video just for you: \[Sendspark Video Link\]
+
+GoHighLevel will automatically insert the unique video URL for that contact.
+
+---
+
+## 🎯 The result
+
+Once everything is configured:
+
+**Contact enters workflow → Tag is added → Sendspark generates the video → Video link is saved → SMS is sent automatically**
+
+The recipient receives the video link, which can automatically display as a thumbnail in the SMS.
