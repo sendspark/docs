@@ -1,0 +1,189 @@
+---
+title: "Connect Sendspark to Salesforce (CRM Integration)"
+description: "Install the Sendspark for Salesforce package, connect with OAuth, and see video engagement logged as completed Tasks on your Contacts and Leads."
+keywords:
+  - "salesforce crm integration"
+  - "sendspark salesforce connect"
+  - "salesforce video engagement tasks"
+  - "sendspark for salesforce package"
+  - "salesforce activity timeline video"
+noindex: true
+---
+
+{/* SUPPORT REVIEW — do not remove noindex until the AppExchange listing is live (GA). Behavior verified against api-v2 code + a live staging connect flow (SK-633 / D7). At GA: (1) swap the direct package install URL for the AppExchange "Get It Now" link; (2) refresh install-package.png (currently shows the "Upgrade" heading + the pre-listing "not authorized for distribution" warning, because the package is not yet AppExchange-listed) and oauth-allow.png (shows the pre-listing "Security Warning" banner) with post-listing captures. */}
+
+Sendspark's Salesforce integration writes video activity — video creation, views, plays, full watches, CTA clicks, and likes — onto the Salesforce record of the matching Contact or Lead. Your team sees each event as a completed Task on the timeline. You connect once with OAuth, and Sendspark does the rest.
+
+<Note>
+This integration is in a phased rollout. It is not yet available to every workspace. If you do not see the **Salesforce** option in your workspace, it is not enabled for your plan or workspace yet. Contact [support@sendspark.com](mailto:support@sendspark.com) to ask about access.
+</Note>
+
+## Key takeaways
+
+- Video engagement appears as **completed Tasks** on the matching **Contact or Lead** timeline in Salesforce.
+- Sendspark matches viewers **by email address** and writes only to records that **already exist** — it never creates Contacts or Leads.
+- Setup has two parts: **install the Sendspark for Salesforce package** in your org, then **connect** from Sendspark's Settings with OAuth.
+- Any member of the Sendspark workspace can connect or disconnect the integration.
+- Disconnecting revokes Sendspark's access at Salesforce and deletes the stored credentials. Tasks already written stay in your org.
+
+## Before you start
+
+You need:
+
+- **In Salesforce:** a user with permission to install a managed package and to authorize a connected app — normally a System Administrator. Supported editions: Enterprise, Performance, Unlimited, and Developer. Professional Edition works with the API Access add-on. The integration needs REST API access, so editions without API access are not supported.
+- **In Sendspark:** a workspace on a plan that includes CRM integrations. Any member of the workspace can connect or disconnect the integration.
+- The Salesforce user you connect with needs **API Enabled** and read/write access to the objects Sendspark writes to (Task, plus read access on Contact and Lead).
+
+## Step 1 — Install the Sendspark for Salesforce package
+
+Sendspark connects through a managed package that carries our connected app. Install it first — Salesforce blocks the authorization until the package is in your org.
+
+<Steps>
+  <Step title="1. Open the install link">Open the [Sendspark for Salesforce install link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04thk000000qCbNAAU) and sign in to the org you want to connect.</Step>
+  <Step title="2. Choose Install for Admins Only">
+    Keep **Install for Admins Only** unless your Salesforce administrator has a reason to widen it. The connection is made once, by one user — Sendspark does not need broad user access.
+
+    ![Salesforce package install screen with Install for Admins Only selected](/images/salesforce-crm/install-package.png)
+  </Step>
+  <Step title="3. Wait for the confirmation">Choose **Install** and wait for the confirmation from Salesforce. Installation usually completes in a few minutes.</Step>
+</Steps>
+
+<Note>
+The package installs configuration only. It contains no Apex, no Visualforce, and no Lightning components — it adds no UI, no triggers, and no scheduled jobs to your org.
+</Note>
+
+## Step 2 — Connect from Sendspark
+
+<Steps>
+  <Step title="1. Open Settings → Integrations">
+    In Sendspark, go to **Settings**, open the **Integrations** tab, and find **Salesforce** under **App Connections**.
+
+    ![Sendspark Integrations tab with the Salesforce row under App Connections and its Connect button](/images/salesforce-crm/integrations-page.png)
+  </Step>
+  <Step title="2. Choose Connect on the Salesforce row">
+    A dialog explains what the connection does. Choose **Continue to Salesforce**.
+
+    ![Sendspark Connect Salesforce dialog with a Continue to Salesforce button](/images/salesforce-crm/connect-modal.png)
+  </Step>
+  <Step title="3. Sign in to Salesforce">Sign in as the user whose API access Sendspark should use. Prefer a dedicated integration user over a named person's account, so the connection does not break when someone leaves.</Step>
+  <Step title="4. Review the permissions and choose Allow">
+    Salesforce lists the permissions Sendspark asks for (see the table below), then shows an **Allow** button.
+
+    ![Salesforce Allow Access screen listing the permissions Sendspark requests](/images/salesforce-crm/oauth-allow.png)
+  </Step>
+  <Step title="5. Confirm the row shows Enabled">
+    The window closes and the Salesforce row in Sendspark shows as **Enabled**.
+
+    ![Sendspark Salesforce row showing the Enabled connected state](/images/salesforce-crm/connected-row.png)
+  </Step>
+</Steps>
+
+### What Sendspark asks for, and why
+
+| Permission | Why Sendspark needs it |
+|---|---|
+| **Manage user data via APIs** (`api`) | To find the Contact or Lead that matches a viewer's email address, and to write the engagement Task to that record. |
+| **Perform requests at any time** (`refresh_token`) | To keep the connection alive without asking you to sign in again every hour. |
+| **Access the identity URL service** | Salesforce includes this so Sendspark can read the identity of the connected org and user at authorization time. |
+
+Sendspark does not request web access, full-profile access, or the ability to manage your users.
+
+## How the integration behaves
+
+**Sendspark only adds Tasks to records that already exist.** When one of these events happens, Sendspark looks for the person's email address in your org — on Contacts first, then on Leads that are not converted. If the email matches a record, Sendspark writes the engagement as a completed Task on that record. If the email matches nothing, Sendspark writes nothing. It never creates Contacts, Leads, or any other records.
+
+Two details worth knowing:
+
+- If the same email exists on both a Contact and a Lead, the **Contact wins**. If it exists on several records of the same type, the most recently modified record wins.
+- If a viewer fires the same engagement twice in a short window (for example, two page loads seconds apart), Sendspark writes **one** Task, not two.
+
+## Which events create Tasks
+
+Each event below writes one completed Task. The Task subject starts with `Sendspark:` followed by the event and the video title.
+
+| Event | When it triggers | Task description |
+|---|---|---|
+| **Video created** | A personalized (dynamic) video finishes generating for a prospect | `Video "<title>" was created.` |
+| **Video viewed** | The viewer opens the video share page | `Video "<title>" was viewed.` |
+| **Video played** | The viewer starts playback | `Video "<title>" was played.` |
+| **Video watched** | The viewer watches the video to the end | `Watched to the end of video "<title>".` |
+| **CTA clicked** | The viewer clicks the call-to-action button on the video page | `Clicked CTA "<label>" on video "<title>".` |
+| **Video liked** | The viewer likes the video | `Liked video "<title>".` |
+
+![Salesforce Contact activity timeline showing Sendspark engagement Tasks](/images/salesforce-crm/contact-timeline-tasks.png)
+
+## Step 3 — Confirm it works
+
+Send or share a Sendspark video with someone whose email address exists on a Contact or Lead in the connected org. After they watch it, open that record in Salesforce — the engagement appears in the activity timeline. Allow a few minutes for the first event.
+
+## Disconnecting
+
+<Steps>
+  <Step title="1. Open Settings → Integrations">Find the Salesforce row under **App Connections**.</Step>
+  <Step title="2. Choose Disconnect and confirm">
+    A dialog confirms what disconnecting does.
+
+    ![Sendspark Salesforce disconnect confirmation dialog](/images/salesforce-crm/disconnect-modal.png)
+  </Step>
+</Steps>
+
+When you disconnect, Sendspark does three things:
+
+1. It stops writing to your Salesforce org immediately.
+2. It revokes its authorization at Salesforce (the refresh token and every access token derived from it), so the connection is dead on both sides.
+3. It deletes the stored credentials for that workspace.
+
+Tasks already written to your Salesforce records stay there — it is your data, in your org, and Sendspark does not remove it.
+
+A Salesforce administrator can confirm the revocation under **Setup → Connected Apps OAuth Usage**: after a disconnect, the Sendspark entry no longer shows an active user token.
+
+To remove the integration entirely, also uninstall the managed package from **Setup → Installed Packages**.
+
+## Reconnecting
+
+Sendspark shows a **Reconnect** prompt on the Salesforce row when it can no longer reach your org. The usual causes are:
+
+- The Salesforce user who authorized the connection was deactivated, or their password or permissions changed.
+- An administrator revoked the app under **Connected Apps OAuth Usage**.
+- The connection sat unused past your org's refresh-token expiry policy.
+- Your org's IP restrictions or login hours now block the integration.
+
+To reconnect, go to **Settings → Integrations**, choose **Reconnect** on the Salesforce row, and complete the Salesforce login as in Step 2. You do not need to reinstall the package.
+
+<Warning>
+While the connection is in the reconnect state, Sendspark does not write engagement events to Salesforce, and it does not backfill the events it missed. Activity resumes with the first new event after you reconnect.
+</Warning>
+
+## Troubleshooting
+
+| What you see | What it means | What to do |
+|---|---|---|
+| **"Reconnect" on the Salesforce row** | The stored authorization is no longer valid. | Reconnect (above). If it recurs quickly, check whether the authorizing user is still active and whether an administrator is revoking the app. |
+| **The connection stops working within an hour of connecting** | The token refresh could not complete — often org IP restrictions or a revoked authorization. | Confirm the integration user is exempt from login IP ranges, or contact [support@sendspark.com](mailto:support@sendspark.com). |
+| **Nothing appears on the record** | The viewer's email does not match a Contact or Lead, or the authorizing user cannot access that record. | Confirm a Contact or Lead exists with that exact email, and that the integration user can see and edit it. |
+| **The Salesforce row is missing from the Integrations tab** | The integration is not enabled for your workspace or plan. | Contact [support@sendspark.com](mailto:support@sendspark.com). |
+| **An error appears in the connect window** | Salesforce declined the authorization — for example, the package is not installed in that org. | Install the package (Step 1) and retry. If the error persists, send the error text to [support@sendspark.com](mailto:support@sendspark.com). |
+
+## Your data
+
+- Sendspark stores only the OAuth credentials for your org, encrypted at rest.
+- Sendspark reads the minimum needed to match a viewer to a record, and writes engagement Tasks.
+- Sendspark does not export, sell, or use your Salesforce data to train models.
+- Disconnecting deletes the stored credentials.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Does Sendspark create Contacts or Leads in Salesforce?">No. Sendspark writes engagement Tasks only to Contacts and Leads that already exist, matched by the viewer's email address. If no record matches, nothing is written.</Accordion>
+  <Accordion title="Who in my Sendspark workspace can connect or disconnect Salesforce?">Any member of the workspace. The Salesforce side still requires a user who can authorize a connected app.</Accordion>
+  <Accordion title="Does the package add code to my Salesforce org?">No. The package carries configuration only — the connected app that authorizes Sendspark. It contains no Apex, no Visualforce, no Lightning components, no triggers, and no scheduled jobs.</Accordion>
+  <Accordion title="What happens to the Tasks if I disconnect?">They stay. Disconnecting stops new writes, revokes Sendspark's access, and deletes the stored credentials — it never deletes data from your org.</Accordion>
+  <Accordion title="Are events backfilled after an outage or a reconnect?">No. Events that occur while the connection is down are not written later. Activity resumes with the first new event after you reconnect.</Accordion>
+  <Accordion title="Is this the same as the Salesforce webhook integration?">No. This is Sendspark's direct CRM integration, connected with OAuth from Settings → Integrations. The [webhook-based setup](/connect-sendspark-with-salesforce) is a separate, older integration.</Accordion>
+</AccordionGroup>
+
+## Getting help
+
+Contact [support@sendspark.com](mailto:support@sendspark.com) or browse [help.sendspark.com](https://help.sendspark.com).
+
+_Updated August 2026._

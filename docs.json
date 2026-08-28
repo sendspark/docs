@@ -394,6 +394,7 @@
               {
                 "group": "CRM & Data Integrations",
                 "pages": [
+                  "salesforce-crm-integration",
                   "connect-sendspark-with-salesforce",
                   "constant-contact-sharpspring-integration",
                   "how-sendspark-tracking-snippets-work",
