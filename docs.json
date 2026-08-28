@@ -147,8 +147,7 @@
                   "set-global-styles",
                   "use-a-custom-domain-for-videos"
                 ]
-              },
-              "untitled-page"
+              }
             ]
           },
           {
@@ -661,6 +660,7 @@
               "highlevel-ghl-using-tags-to-trigger-actions",
               "hubspot-workflows-send-marketing-email-to-list",
               "leadconnector-ghl-agentic-workflow-automation",
+              "ghl-auto-generate-and-send-videos-via-sms",
               "sendspark-automated-workflows-beginner-s-guide",
               {
                 "group": "Automatically Send Videos",
@@ -716,8 +716,7 @@
                 "pages": [
                   "slack-notifications-for-video-views"
                 ]
-              },
-              "untitled-page-2-2"
+              }
             ]
           },
           {
@@ -2640,6 +2639,10 @@
     {
       "source": "/en/articles/11050696-*",
       "destination": "/salesloft-auto-ai-videos-for-cadence"
+    },
+    {
+      "source": "/untitled-page-2-2",
+      "destination": "/ghl-auto-generate-and-send-videos-via-sms"
     }
   ],
   "api": {
