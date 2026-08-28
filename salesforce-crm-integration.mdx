@@ -12,7 +12,7 @@ noindex: true
 
 {/* SUPPORT REVIEW — do not remove noindex until the AppExchange listing is live (GA). Behavior verified against api-v2 code + a live staging connect flow (SK-633 / D7). At GA: (1) swap the direct package install URL for the AppExchange "Get It Now" link; (2) refresh install-package.png (currently shows the "Upgrade" heading + the pre-listing "not authorized for distribution" warning, because the package is not yet AppExchange-listed) and oauth-allow.png (shows the pre-listing "Security Warning" banner) with post-listing captures. */}
 
-Sendspark's Salesforce integration writes video engagement — views, plays, full watches, CTA clicks, and likes — onto the Salesforce records of the people who watched. Your team sees each engagement as a completed Task on the Contact or Lead timeline. You connect once with OAuth, and Sendspark does the rest.
+Sendspark's Salesforce integration writes video activity — video creation, views, plays, full watches, CTA clicks, and likes — onto the Salesforce record of the matching Contact or Lead. Your team sees each event as a completed Task on the timeline. You connect once with OAuth, and Sendspark does the rest.
 
 <Note>
 This integration is in a phased rollout. It is not yet available to every workspace. If you do not see the **Salesforce** option in your workspace, it is not enabled for your plan or workspace yet. Contact [support@sendspark.com](mailto:support@sendspark.com) to ask about access.
@@ -39,7 +39,7 @@ You need:
 Sendspark connects through a managed package that carries our connected app. Install it first — Salesforce blocks the authorization until the package is in your org.
 
 <Steps>
-  <Step title="1. Open the install link">Open the [Sendspark for Salesforce install link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04thk000000qCbNAAU) and sign in to the org you want to connect. To install into a sandbox, use your sandbox login.</Step>
+  <Step title="1. Open the install link">Open the [Sendspark for Salesforce install link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04thk000000qCbNAAU) and sign in to the org you want to connect.</Step>
   <Step title="2. Choose Install for Admins Only">
     Keep **Install for Admins Only** unless your Salesforce administrator has a reason to widen it. The connection is made once, by one user — Sendspark does not need broad user access.
 
@@ -90,7 +90,7 @@ Sendspark does not request web access, full-profile access, or the ability to ma
 
 ## How the integration behaves
 
-**Sendspark only adds Tasks to records that already exist.** When someone watches a video, Sendspark looks for their email address in your org — on Contacts first, then on Leads that are not converted. If the email matches a record, Sendspark writes the engagement as a completed Task on that record. If the email matches nothing, Sendspark writes nothing. It never creates Contacts, Leads, or any other records.
+**Sendspark only adds Tasks to records that already exist.** When one of these events happens, Sendspark looks for the person's email address in your org — on Contacts first, then on Leads that are not converted. If the email matches a record, Sendspark writes the engagement as a completed Task on that record. If the email matches nothing, Sendspark writes nothing. It never creates Contacts, Leads, or any other records.
 
 Two details worth knowing:
 
