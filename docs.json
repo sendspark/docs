@@ -660,6 +660,7 @@
               "highlevel-ghl-using-tags-to-trigger-actions",
               "hubspot-workflows-send-marketing-email-to-list",
               "leadconnector-ghl-agentic-workflow-automation",
+              "ghl-auto-generate-and-send-videos-via-sms",
               "sendspark-automated-workflows-beginner-s-guide",
               {
                 "group": "Automatically Send Videos",
@@ -2641,7 +2642,7 @@
     },
     {
       "source": "/untitled-page-2-2",
-      "destination": "/leadconnector-ghl-agentic-workflow-automation"
+      "destination": "/ghl-auto-generate-and-send-videos-via-sms"
     }
   ],
   "api": {
