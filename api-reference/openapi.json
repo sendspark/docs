@@ -1735,7 +1735,7 @@
             }
           },
           "400": {
-            "description": "Bad Request — the `format` query parameter is not one of `json`, `vtt` or `srt`.",
+            "description": "Bad Request — the `format` query parameter is not one of `json`, `vtt` or `srt`, or `workspaceId` or `campaignId` is not a valid Sendspark ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1755,7 +1755,7 @@
             }
           },
           "404": {
-            "description": "Not Found — the campaign does not exist, or it belongs to another workspace. The two cases are deliberately indistinguishable.",
+            "description": "Not Found — the campaign has no transcript ready, does not exist, or belongs to another workspace. A campaign in another workspace is deliberately indistinguishable from one that does not exist; call the status endpoint to tell a missing transcript from a missing campaign.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1819,7 +1819,7 @@
             }
           },
           "400": {
-            "description": "Bad Request — the `format` query parameter is not one of `json`, `vtt` or `srt`.",
+            "description": "Bad Request — `workspaceId` or `campaignId` is not a valid Sendspark ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1844,6 +1844,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ResourceNotFoundOrInvalidAccess"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable — the transcript status could not be read.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUnavailable"
                 }
               }
             }
@@ -3675,7 +3685,7 @@
               "master",
               "prospect"
             ],
-            "description": "Which recording the transcript describes: `master` is the campaign's own video, `prospect` the personalised render made for one recipient.",
+            "description": "Which recording the transcript describes: `master` is the campaign's own video, `prospect` the personalized render made for one recipient.",
             "example": "master"
           },
           "generatedAt": {

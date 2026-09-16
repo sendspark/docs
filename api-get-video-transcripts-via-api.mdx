@@ -133,7 +133,7 @@ The SubRip version is the same cues with commas before the milliseconds and no `
 
 | Code | Meaning |
 | --- | --- |
-| `400` | `format` was something other than `json`, `vtt`, or `srt`. |
+| `400` | `format` was something other than `json`, `vtt`, or `srt`, or the workspace or campaign ID is malformed. |
 | `401` | The API Key or Secret is missing, invalid, or was revoked. |
 | `404` | Either the campaign does not exist in this workspace, or it has no transcript ready. Call the status endpoint to tell the two apart. |
 | `503` | The transcript exists but could not be read just then. Retry. |
