@@ -1665,6 +1665,191 @@
           }
         }
       }
+    },
+    "/v1/workspaces/{workspaceId}/campaigns/{campaignId}/transcript": {
+      "get": {
+        "summary": "Get a campaign video transcript",
+        "operationId": "getCampaignTranscript",
+        "description": "Returns the transcript of a campaign video as JSON, or as a subtitle file with `?format=vtt` or `?format=srt`. Reading never starts a transcription, so this endpoint costs nothing and has no side effects. A campaign whose transcript is not ready returns `404`; use the status endpoint to tell why.",
+        "tags": [
+          "Transcription"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "required": true,
+            "description": "The workspace the campaign belongs to. Retrieve it from `GET /v1/workspaces/identifier`.",
+            "schema": {
+              "type": "string",
+              "example": "7voa5y6qjj04kkbfqbgjd7kdvxlf4gqo"
+            }
+          },
+          {
+            "name": "campaignId",
+            "in": "path",
+            "required": true,
+            "description": "The campaign whose video transcript you want.",
+            "schema": {
+              "type": "string",
+              "example": "2qnbb3ki589oioyimq0o7t1dxkb402ux"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": false,
+            "description": "The representation to return. `json` is the default. `vtt` returns a WebVTT file and `srt` a SubRip file, both sent as a download with a `Content-Disposition` header.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "vtt",
+                "srt"
+              ],
+              "default": "json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The transcript, in the requested representation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignTranscriptResponseSchema"
+                }
+              },
+              "text/vtt": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "WEBVTT\n\n1\n00:00:00.779 --> 00:00:06.259\nHi there, thanks for taking a look at this.\n"
+              },
+              "application/x-subrip": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "1\n00:00:00,779 --> 00:00:06,259\nHi there, thanks for taking a look at this.\n"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — the `format` query parameter is not one of `json`, `vtt` or `srt`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized — the API key or secret is missing, invalid or revoked.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvalidAuthentication"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found — the campaign does not exist, or it belongs to another workspace. The two cases are deliberately indistinguishable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceNotFoundOrInvalidAccess"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable — the transcript exists but could not be read.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUnavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workspaces/{workspaceId}/campaigns/{campaignId}/transcript/status": {
+      "get": {
+        "summary": "Get the transcript status of a campaign video",
+        "operationId": "getCampaignTranscriptStatus",
+        "description": "Reports whether a campaign video has a transcript and whether it is ready to read. It never starts a transcription, so it is safe to poll, and a campaign that never had one returns `none` rather than an error.",
+        "tags": [
+          "Transcription"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "required": true,
+            "description": "The workspace the campaign belongs to. Retrieve it from `GET /v1/workspaces/identifier`.",
+            "schema": {
+              "type": "string",
+              "example": "7voa5y6qjj04kkbfqbgjd7kdvxlf4gqo"
+            }
+          },
+          {
+            "name": "campaignId",
+            "in": "path",
+            "required": true,
+            "description": "The campaign whose video transcript you want.",
+            "schema": {
+              "type": "string",
+              "example": "2qnbb3ki589oioyimq0o7t1dxkb402ux"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The current transcript status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignTranscriptStatusResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — the `format` query parameter is not one of `json`, `vtt` or `srt`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequest"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized — the API key or secret is missing, invalid or revoked.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvalidAuthentication"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found — the campaign does not exist, or it belongs to another workspace. The two cases are deliberately indistinguishable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceNotFoundOrInvalidAccess"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "servers": [
@@ -3445,6 +3630,130 @@
           "updatedCount",
           "totalCount"
         ]
+      },
+      "CampaignTranscriptSegmentSchema": {
+        "type": "object",
+        "description": "A block of speech, as the transcription provider divided it.",
+        "properties": {
+          "speaker": {
+            "type": "string",
+            "nullable": true,
+            "description": "The speaker the provider attributed the block to.",
+            "example": "Speaker1"
+          },
+          "start": {
+            "type": "number",
+            "description": "Seconds from the start of the video.",
+            "example": 0.78
+          },
+          "end": {
+            "type": "number",
+            "description": "Seconds from the start of the video.",
+            "example": 6.26
+          },
+          "text": {
+            "type": "string",
+            "example": "Hi there, thanks for taking a look at this."
+          }
+        }
+      },
+      "CampaignTranscriptResponseSchema": {
+        "type": "object",
+        "properties": {
+          "campaignId": {
+            "type": "string",
+            "example": "2qnbb3ki589oioyimq0o7t1dxkb402ux"
+          },
+          "language": {
+            "type": "string",
+            "description": "The language the transcript is stored under.",
+            "example": "en"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "master",
+              "prospect"
+            ],
+            "description": "Which recording the transcript describes: `master` is the campaign's own video, `prospect` the personalised render made for one recipient.",
+            "example": "master"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "When the transcript was produced. Null for a prospect transcript, which is derived from the master.",
+            "example": "2026-09-16T10:00:00.000Z"
+          },
+          "text": {
+            "type": "string",
+            "description": "The whole transcript as plain text, one line per segment.",
+            "example": "Hi there, thanks for taking a look at this."
+          },
+          "segments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CampaignTranscriptSegmentSchema"
+            }
+          }
+        }
+      },
+      "CampaignTranscriptStatusResponseSchema": {
+        "type": "object",
+        "properties": {
+          "campaignId": {
+            "type": "string",
+            "example": "2qnbb3ki589oioyimq0o7t1dxkb402ux"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "none",
+              "processing",
+              "ready",
+              "failed"
+            ],
+            "description": "`none` — no transcript was ever requested. `processing` — one is being produced. `ready` — it can be read. `failed` — generation did not succeed.",
+            "example": "ready"
+          },
+          "language": {
+            "type": "string",
+            "nullable": true,
+            "example": "en"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "master",
+              "prospect"
+            ],
+            "nullable": true,
+            "example": "master"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "example": "2026-09-16T10:00:00.000Z"
+          }
+        }
+      },
+      "InvalidAuthentication": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "number",
+            "example": 401
+          },
+          "error": {
+            "type": "string",
+            "example": "Unauthorized"
+          },
+          "message": {
+            "type": "string",
+            "example": "Missing authentication"
+          }
+        }
       }
     }
   }

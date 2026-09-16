@@ -1,0 +1,165 @@
+---
+title: "API — Get Video Transcripts via API"
+description: "Fetch a Sendspark video transcript with your API key as JSON, WebVTT, or SubRip, and check whether it is ready before you request it."
+keywords:
+  - sendspark api
+  - video transcript api
+  - download vtt subtitles
+  - srt subtitles api
+  - transcript status endpoint
+---
+
+Sendspark transcribes your videos so viewers can read along, and the API lets you take that transcript out of Sendspark and into your own tools. Fetch it as JSON with per-segment timings, or download it as a WebVTT or SubRip subtitle file. Two endpoints cover it: one returns the transcript, the other tells you whether there is one to return. Both live under `https://api-gw.sendspark.com/v1`.
+
+## Key takeaways
+
+- Authenticate the same way as every other endpoint: an **API Key** as `x-api-key` and an **API Secret** as `x-api-secret`. See [how to create API keys](/how-to-create-api-keys).
+- `?format=vtt` and `?format=srt` return a subtitle file as a download. Without the parameter you get JSON.
+- **Reading a transcript never creates one.** These endpoints only read what already exists, so they cost nothing and are safe to poll.
+- Check the status endpoint first. A campaign whose transcript is not ready returns `404` from the transcript endpoint, and the status tells you whether it is still processing, failed, or was never requested.
+- A transcript is produced for videos in campaigns that have transcription enabled. If the status is `none` and stays `none`, the video was never transcribed — asking the API will not start it.
+
+### API endpoints at a glance
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `GET` | `/workspaces/{workspaceId}/campaigns/{campaignId}/transcript` | Get the transcript as JSON, WebVTT, or SubRip |
+| `GET` | `/workspaces/{workspaceId}/campaigns/{campaignId}/transcript/status` | Check whether a transcript is ready |
+
+---
+
+## Before you start
+
+You need three things:
+
+<Steps>
+  <Step title="Your API Key and Secret">
+    Generate both in the [API Credentials tab](https://sendspark.com/settings/api-credentials) of your Sendspark settings. The Secret is shown only once, so store it when you generate it.
+  </Step>
+  <Step title="Your workspace ID">
+    Call `GET /v1/workspaces/identifier` with your credentials and it returns the workspace your API Key belongs to. It is also in your [workspace settings](/how-to-find-your-workspace-id).
+  </Step>
+  <Step title="The campaign ID of the video">
+    Open the video in Sendspark and take the ID from the URL, or list your campaigns through the API.
+  </Step>
+</Steps>
+
+## Check whether a transcript is ready
+
+```bash
+curl "https://api-gw.sendspark.com/v1/workspaces/{workspaceId}/campaigns/{campaignId}/transcript/status" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -H "x-api-secret: YOUR_API_SECRET"
+```
+
+```json
+{
+  "campaignId": "2qnbb3ki589oioyimq0o7t1dxkb402ux",
+  "status": "ready",
+  "language": "en",
+  "source": "master",
+  "generatedAt": "2026-09-16T10:00:00.000Z"
+}
+```
+
+`status` is one of four values:
+
+| Status | What it means |
+| --- | --- |
+| `none` | No transcript was ever requested for this video. |
+| `processing` | One is being produced. Check again shortly. |
+| `ready` | The transcript can be read. |
+| `failed` | Generation did not succeed. Re-enable transcription on the campaign to try again. |
+
+`source` tells you which recording the transcript describes. `master` is the campaign's own video. `prospect` means the video is a personalized render made for one recipient, and the transcript reflects that recipient's version, with their merged variables in place.
+
+## Get the transcript as JSON
+
+```bash
+curl "https://api-gw.sendspark.com/v1/workspaces/{workspaceId}/campaigns/{campaignId}/transcript" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -H "x-api-secret: YOUR_API_SECRET"
+```
+
+```json
+{
+  "campaignId": "2qnbb3ki589oioyimq0o7t1dxkb402ux",
+  "language": "en",
+  "source": "master",
+  "generatedAt": "2026-09-16T10:00:00.000Z",
+  "text": "Hi there, thanks for taking a look at this.",
+  "segments": [
+    {
+      "speaker": "Speaker1",
+      "start": 0.78,
+      "end": 6.26,
+      "text": "Hi there, thanks for taking a look at this."
+    }
+  ]
+}
+```
+
+`text` is the whole transcript as plain text — the field to use when you are pushing it into a CRM note, a search index, or a summarizer. `segments` carries the same words divided into blocks with `start` and `end` times in seconds, for anything that needs to line up with playback.
+
+<Accordion title="Why is there sometimes only one segment?">
+  Segments come from the transcription provider, and some return the entire video as a single block. If you need finer divisions, use the subtitle formats below — Sendspark builds those cues from the individual word timings rather than the provider's blocks, so they stay short whatever the provider returned.
+</Accordion>
+
+## Download subtitles
+
+Add `?format=vtt` for WebVTT or `?format=srt` for SubRip. Both come back as a file download with a `Content-Disposition` header, so `curl -O -J` saves them under a sensible name.
+
+```bash
+curl -O -J "https://api-gw.sendspark.com/v1/workspaces/{workspaceId}/campaigns/{campaignId}/transcript?format=vtt" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -H "x-api-secret: YOUR_API_SECRET"
+```
+
+```
+WEBVTT
+
+1
+00:00:00.779 --> 00:00:06.259
+Hi there, thanks for taking a look at this.
+
+2
+00:00:07.119 --> 00:00:12.579
+I wanted to walk you through what we put together.
+```
+
+The SubRip version is the same cues with commas before the milliseconds and no `WEBVTT` header. Both are standard files: upload them to YouTube, LinkedIn, or a video player, or open them in any subtitle editor.
+
+## Handling errors
+
+| Code | Meaning |
+| --- | --- |
+| `400` | `format` was something other than `json`, `vtt`, or `srt`. |
+| `401` | The API Key or Secret is missing, invalid, or was revoked. |
+| `404` | Either the campaign does not exist in this workspace, or it has no transcript ready. Call the status endpoint to tell the two apart. |
+| `503` | The transcript exists but could not be read just then. Retry. |
+
+A campaign belonging to a different workspace returns the same `404` as one that does not exist. This is deliberate: it keeps the API from confirming whether a campaign ID is real to someone who cannot read it.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Does calling the API create a transcript if one does not exist?">
+    No. Both endpoints only read. If a video was never transcribed, the status stays `none` however many times you ask, and the transcript endpoint returns `404`. Transcription is enabled on the campaign inside Sendspark — see [how to enable or disable captions](/how-to-enable-or-disable-captions).
+  </Accordion>
+  <Accordion title="How often can I poll the status endpoint?">
+    The standard limit of 30 requests per minute applies. Because the status endpoint never triggers work, polling it while a transcript is generating is fine.
+  </Accordion>
+  <Accordion title="Can I get the transcript of a personalized video for one recipient?">
+    Yes. Each personalized video is its own campaign, so call the endpoint with that campaign's ID. The response comes back with `source` set to `prospect`, and the text reflects that recipient's merged variables.
+  </Accordion>
+  <Accordion title="What language is the transcript in?">
+    The one the video was transcribed in, returned in the `language` field. Transcripts are not translated by this endpoint — see [AI personalized videos in multiple languages](/ai-personalized-videos-in-multiple-languages) for multi-language campaigns.
+  </Accordion>
+  <Accordion title="Can I edit or upload a transcript through the API?">
+    Not currently. These endpoints are read-only. Corrections are made inside Sendspark.
+  </Accordion>
+</AccordionGroup>
+
+_Updated September 2026._
