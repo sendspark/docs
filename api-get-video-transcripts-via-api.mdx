@@ -102,7 +102,7 @@ curl "https://api-gw.sendspark.com/v1/workspaces/{workspaceId}/campaigns/{campai
 `text` is the whole transcript as plain text — the field to use when you are pushing it into a CRM note, a search index, or a summarizer. `segments` carries the same words divided into blocks with `start` and `end` times in seconds, for anything that needs to line up with playback.
 
 <Accordion title="Why is there sometimes only one segment?">
-  Segments come from the transcription provider, and some return the entire video as a single block. If you need finer divisions, use the subtitle formats below — Sendspark builds those cues from the individual word timings rather than the provider's blocks, so they stay short whatever the provider returned.
+  Segments come from the transcription provider, and some return the entire video as a single block. If you need finer divisions, use the subtitle formats below — Sendspark rebuilds those cues from the individual word timings rather than the provider's blocks, so a one-segment transcript still becomes readable subtitles.
 </Accordion>
 
 ## Download subtitles
