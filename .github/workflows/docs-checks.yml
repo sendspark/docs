@@ -56,3 +56,8 @@ jobs:
       # Each one was found live by the 2026-08 screenshot-versus-prose audit.
       - name: Check prose and alt text
         run: python3 .github/scripts/check_prose_defects.py
+
+      # The Mintlify agent reads only .mintlify/AGENTS.md, and other agents read the
+      # root AGENTS.md, so the two copies must stay identical.
+      - name: Agent instructions in sync
+        run: cmp AGENTS.md .mintlify/AGENTS.md
