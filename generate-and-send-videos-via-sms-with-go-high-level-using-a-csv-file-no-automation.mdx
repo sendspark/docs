@@ -1,26 +1,116 @@
 ---
 title: "Generate and Send Videos via SMS with GoHighLevel Using a CSV File (No Automation)"
+description: "Send personalized Sendspark videos by SMS in GoHighLevel without an API or webhook: export your Dynamic Video Campaign CSV, import the video links into a custom contact field, and insert that field into an SMS."
+keywords:
+  - "gohighlevel sms video"
+  - "send video by text message highlevel"
+  - "ghl import video link csv"
+  - "ghl custom field video link"
+  - "sendspark highlevel without automation"
 ---
 
-Want to send personalized Sendspark videos to your GoHighLevel contacts via SMS without setting up automations? You can do it manually using a CSV file and a Dynamic Video Campaign.
+To send personalized Sendspark videos by SMS in GoHighLevel without an integration, generate the videos in a Dynamic Video Campaign and click **Export generated videos CSV**. Import that file into GoHighLevel contacts with the **Video Link** column mapped to a custom contact field, then insert that field into an SMS. This works on every Sendspark plan.
 
-<iframe src="https://www.youtube.com/embed/wv0tCHMKv10" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+## Key takeaways
 
-This method is ideal for teams that want to run personalized SMS outreach without configuring Agentic Workflows.
+- No API, webhook or Agentic Workflows connection is needed. You move the video links into GoHighLevel yourself with a CSV import.
+- Use the CSV that Sendspark exports, not your original list. It adds a **Video Link** column with each contact's unique video URL.
+- SMS only needs the video link. The link shows a video preview in the message on its own, so there is no embed code or thumbnail to set up.
+- Store the link in a **Single Line** custom field on the **Contact** object, then insert that field into your SMS from the contact custom values.
 
-**Plan requirements:** Bulk video generation may require the Growth plan or higher, depending on your current plan and usage. If you're on the Solo plan, you can still use this manual approach if your account has access to the required features.
+<iframe src="https://www.youtube.com/embed/wv0tCHMKv10" title="How to send SMS videos with HighLevel and Sendspark in bulk (No Automation)" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
-## How It Works
+## What do I need before I start?
 
-1. Prepare your contact list in a CSV file.
-2. Use your list to generate personalized videos in Sendspark.
-3. Retrieve the generated video links.
-4. Use those links in your GoHighLevel SMS outreach.
+- A finished **Dynamic Video Campaign** in Sendspark with your videos generated. New to campaigns? See [How to Create a Dynamic Video Campaign](/how-to-create-a-dynamic-video-campaign).
+- A GoHighLevel account where you can manage contacts, custom fields and workflows.
 
-Watch the tutorial below for a step-by-step walkthrough of the process.
+## How do I export the video links from Sendspark?
 
-**[Insert YouTube tutorial here]**
+<Steps>
+  <Step title="Wait for your videos to finish generating">
+    Open your Dynamic Video Campaign in Sendspark and check that the videos are ready.
+  </Step>
+  <Step title="Export the CSV">
+    Click **Export generated videos CSV**. The downloaded file contains your campaign data plus a **Video Link** column with each contact's personalized video URL.
+  </Step>
+</Steps>
 
-## Prefer an Automated Workflow?
+## How do I create a custom field for the video link in GoHighLevel?
 
-If you'd rather generate personalized videos and send them automatically when a contact enters a GoHighLevel workflow, check out our [Automated SMS Video Tutorial](https://help.sendspark.com/ghl-auto-generate-and-send-videos-via-sms).
+<Steps>
+  <Step title="Open custom fields">
+    In GoHighLevel, go to **Contacts**, then **Custom Fields**, and click **Create field**.
+  </Step>
+  <Step title="Set up the field">
+    Choose **Single Line**, add it to the **Contact** object, and give it a name you'll recognize, such as **Sendspark Video Link**. A description and placeholder are optional.
+  </Step>
+  <Step title="Save the field">
+    Save. The field is now available when you map CSV columns and when you insert custom values into messages.
+  </Step>
+</Steps>
+
+## How do I import the video links into my GoHighLevel contacts?
+
+<Steps>
+  <Step title="Start a CSV import">
+    In **Contacts**, click **Import**, then **Start CSV file import**, and continue to the upload page. Select the CSV you exported from Sendspark.
+  </Step>
+  <Step title="Choose how to import">
+    From the drop-down, choose **Update contacts** if these contacts already exist in GoHighLevel. Choose **Create contacts** or **Create and update contacts** if some are new.
+  </Step>
+  <Step title="Map the Video Link column">
+    On the mapping page, map the **Video Link** column from your CSV to the custom field you created, such as **Sendspark Video Link**. Map any other columns you want to update, and optionally choose not to import data in the unmapped fields.
+  </Step>
+  <Step title="Run the import">
+    Save to start the import. When it finishes, each contact's custom field holds their own video link.
+  </Step>
+</Steps>
+
+## How do I send the video link by SMS?
+
+The tutorial sends the SMS with a simple GoHighLevel workflow. Only the trigger and the SMS action are needed:
+
+<Steps>
+  <Step title="Create a workflow trigger">
+    Create a GoHighLevel workflow with any trigger you like. The tutorial uses **Contact Tag Added** with a tag of your choice.
+  </Step>
+  <Step title="Add an SMS action">
+    Add an **SMS** action and write your message, for example: "Have a look at this video I made for you."
+  </Step>
+  <Step title="Insert the video link field">
+    Click the **custom values** icon, open the **Contact** section, and select the custom field that holds the video link.
+  </Step>
+  <Step title="Send">
+    When the workflow runs for a contact, GoHighLevel fills in that contact's unique video link, and the message shows a preview of the video.
+  </Step>
+</Steps>
+
+## Which Sendspark plan do I need?
+
+This method works on every Sendspark plan, including Solo, because it uses a Dynamic Video Campaign and a CSV export rather than Agentic Workflows. Campaign size limits depend on your plan: see [Dynamic Video Campaign Limits](/dynamic-video-campaign-limits).
+
+| | This guide (CSV, no automation) | [Automated SMS guide](/ghl-auto-generate-and-send-videos-via-sms) |
+|---|---|---|
+| How videos reach GoHighLevel | You export and import a CSV | Agentic Workflows writes the link to the contact |
+| When videos are generated | In bulk, from your campaign list | Automatically when a contact is tagged |
+| Sendspark plan | Any plan | Growth and above (Agentic Workflows) |
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Do I need the Sendspark API or a webhook for this?">
+    No. This method is for accounts without an API or webhook connection between Sendspark and GoHighLevel. You move the video links yourself by exporting a CSV from Sendspark and importing it into GoHighLevel.
+  </Accordion>
+  <Accordion title="Why send only the video link instead of an embed code?">
+    For email, Sendspark gives you a code snippet that turns into a video thumbnail. SMS doesn't need one: when you send the video link in a text message, the link shows a video preview on its own.
+  </Accordion>
+  <Accordion title="Should I import my original contact list or Sendspark's CSV?">
+    Import the CSV that Sendspark exports from your campaign. Your original list doesn't have the **Video Link** column, which holds each contact's unique video URL.
+  </Accordion>
+  <Accordion title="Can I generate and send the videos automatically instead?">
+    Yes. To create a video when a contact enters a GoHighLevel workflow and send the link by SMS without any CSV steps, follow [Automatically Generate and Send Videos via SMS with GoHighLevel](/ghl-auto-generate-and-send-videos-via-sms).
+  </Accordion>
+</AccordionGroup>
+
+_Updated October 2026._
