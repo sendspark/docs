@@ -57,7 +57,7 @@ To send personalized Sendspark videos by SMS in GoHighLevel without an integrati
     In **Contacts**, click **Import**, then **Start CSV file import**, and continue to the upload page. Select the CSV you exported from Sendspark.
   </Step>
   <Step title="Choose how to import">
-    From the drop-down, choose **Update contacts** if these contacts already exist in GoHighLevel. Choose **Create contacts** or **Create and update contacts** if some are new.
+    From the drop-down, choose **Update contacts** if these contacts already exist in GoHighLevel. Choose **Create contacts** or **Create and update contacts** if some are new. GoHighLevel matches each row to an existing contact by **email address** or the contact's **unique ID**, so keep one of those columns in your file.
   </Step>
   <Step title="Map the Video Link column">
     On the mapping page, map the **Video Link** column from your CSV to the custom field you created, such as **Sendspark Video Link**. Map any other columns you want to update, and optionally choose not to import data in the unmapped fields.
@@ -107,6 +107,9 @@ This method works on every Sendspark plan, including Solo, because it uses a Dyn
   </Accordion>
   <Accordion title="Should I import my original contact list or Sendspark's CSV?">
     Import the CSV that Sendspark exports from your campaign. Your original list doesn't have the **Video Link** column, which holds each contact's unique video URL.
+  </Accordion>
+  <Accordion title="How does GoHighLevel know which video link belongs to which contact?">
+    When you import with **Update contacts**, GoHighLevel matches each row in the CSV to an existing contact by email address or by the contact's unique ID. Each matched contact then gets the video link from their own row.
   </Accordion>
   <Accordion title="Can I generate and send the videos automatically instead?">
     Yes. To create a video when a contact enters a GoHighLevel workflow and send the link by SMS without any CSV steps, follow [Automatically Generate and Send Videos via SMS with GoHighLevel](/ghl-auto-generate-and-send-videos-via-sms).
