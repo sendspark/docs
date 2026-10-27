@@ -84,7 +84,7 @@ Keep `campaignId` to check the status later, and `upload.url` for the next step.
 | --- | --- | --- |
 | `title` | Yes | The video title. Letters, digits, spaces, hyphens (-), ampersands (&) and parentheses, up to 45 characters. |
 | `folderId` | No | The folder the video goes in. Any folder of the workspace the API key user can see, except the Requested folder. Defaults to their personal folder. To find it, open the folder in your Sendspark library and copy the value after `folderId=` in the browser address bar. |
-| `templateId` | No | A share-page [template](/how-to-use-templates) of the workspace. It is applied first, so `message` and `ctaButtons` override it. |
+| `templateId` | No | A share-page [template](/how-to-use-templates) of the workspace. It is applied first, so `message` and `ctaButtons` override it. To find it, open the template in the template editor and copy the last part of the browser address, after the final `/`. |
 | `message` | No | The share-page message. Plain text, up to 2,000 characters. |
 | `ctaButtons` | No | Up to 10 share-page buttons, each with a `label` (plain text, up to 100 characters) and a `url`. An empty list removes the template's buttons. |
 
