@@ -18,6 +18,7 @@ Sendspark transcribes your videos so viewers can read along, and the API lets yo
 - **Reading a transcript never creates one.** These endpoints only read what already exists, so they cost nothing and are safe to poll.
 - Check the status endpoint first. A campaign whose transcript is not ready returns `404` from the transcript endpoint, and the status tells you whether it is still processing, failed, or was never requested.
 - A transcript is produced for videos in campaigns that have transcription enabled. If the status is `none` and stays `none`, the video was never transcribed — asking the API will not start it.
+- To get a video into Sendspark from your own systems first, [upload videos via the API](/api-upload-videos-via-api).
 
 ### API endpoints at a glance
 

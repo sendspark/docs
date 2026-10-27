@@ -1860,6 +1860,371 @@
           }
         }
       }
+    },
+    "/v1/workspaces/{workspaceId}/campaigns": {
+      "post": {
+        "summary": "Create a video and get its upload URL",
+        "operationId": "postPublicVideo",
+        "description": "Creates a standard video as the user the API secret belongs to and returns its share link plus `upload.url`, where the video file goes.\n\n1. Call this endpoint.\n2. Send the file to `upload.url` with a single HTTP `PUT` of the raw bytes, from a server, before `upload.expiresAt`. Browsers cannot upload to this URL. Accepted files: .mp4 and .mov.\n3. Poll `GET /v1/workspaces/{workspaceId}/campaigns/{campaignId}/status` about every 10 seconds until `status` is `ready`. `failed` and `expired` are also final.\n\n**Retries:** send an `Idempotency-Key` header. Repeating a request with the same key returns the first response instead of creating a second video. The same key with a different body returns `422`.\n\n**Limits:** each API key user can have 10 videos waiting for their file at a time, and each workspace can create 500 videos through the API in any 24 hours by default. Past either limit, the endpoint returns `429` with a `Retry-After` header.\n\nErrors from this endpoint carry a machine-readable `code`. Authentication and access errors (`401`, a disabled API key, a workspace ID that does not match the API key, a user who is not a member) do not.",
+        "tags": [
+          "Video Upload"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "required": true,
+            "description": "The workspace the API key belongs to. Retrieve it from `GET /v1/workspaces/identifier`.",
+            "schema": {
+              "type": "string",
+              "example": "7voa5y6qjj04kkbfqbgjd7kdvxlf4gqo"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "description": "Any unique string up to 255 characters, such as a UUID. A retry with the same key returns the first response instead of creating a second video.",
+            "schema": {
+              "type": "string",
+              "maxLength": 255,
+              "example": "2f1c9a7e-5b3d-4e8a-9c6f-0d1e2f3a4b5c"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicVideoCreatePayloadSchema"
+              },
+              "example": {
+                "title": "Welcome to Sendspark",
+                "message": "Here is a quick video I made for you.",
+                "ctaButtons": [
+                  {
+                    "label": "Book a call",
+                    "url": "https://sendspark.com/demo"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The video was created and is waiting for its file. A repeat with the same `Idempotency-Key` returns this same response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoResponseSchema"
+                },
+                "example": {
+                  "campaignId": "9kyv6gem1r2t3y4u5i6o7p8a9s0d1f2g",
+                  "shareId": "z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+                  "title": "Welcome to Sendspark",
+                  "shareUrl": "https://sendspark.com/share/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+                  "embedUrl": "https://sendspark.com/embed/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+                  "status": "waiting_for_upload",
+                  "upload": {
+                    "url": "https://storage.googleapis.com/video-storage-us-east1-uploads/...",
+                    "expiresAt": "2026-10-27T18:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: `invalid_request` when a field is missing or invalid (the message names the field), or `invalid_workspace` when the workspace ID does not match the API key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "examples": {
+                  "invalid_request": {
+                    "value": {
+                      "statusCode": 400,
+                      "error": "Bad Request",
+                      "message": "\"ctaButtons[0].url\" url must be an http, https, mailto or tel link",
+                      "code": "invalid_request"
+                    }
+                  },
+                  "invalid_title": {
+                    "value": {
+                      "statusCode": 400,
+                      "error": "Bad Request",
+                      "message": "title must contain at least one letter or digit",
+                      "code": "invalid_request"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: the API key or secret is missing, invalid or revoked.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvalidAuthentication"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden: `video_limit_reached` when the workspace has reached its plan's video limit. A disabled API key also returns `403`, without a `code`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "example": {
+                  "statusCode": 403,
+                  "error": "Forbidden",
+                  "message": "Reached the video limit.",
+                  "code": "video_limit_reached"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found: `member_not_found`, `folder_not_found` or `template_not_found`. A `404` without a `code` means the API key user is not a member of the workspace or the workspace's plan does not include this endpoint.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "examples": {
+                  "folder_not_found": {
+                    "value": {
+                      "statusCode": 404,
+                      "error": "Not Found",
+                      "message": "Folder not found. Use a folder of this workspace the API key user can see, or omit folderId to use their personal folder.",
+                      "code": "folder_not_found"
+                    }
+                  },
+                  "template_not_found": {
+                    "value": {
+                      "statusCode": 404,
+                      "error": "Not Found",
+                      "message": "Template not found. Use a share-page template of this workspace, or omit templateId.",
+                      "code": "template_not_found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict: `request_in_progress`. A request with the same `Idempotency-Key` is still running, or another video is being created for the same API key user. Retry in a few seconds.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "example": {
+                  "statusCode": 409,
+                  "error": "Conflict",
+                  "message": "A request with this Idempotency-Key is still running. Retry in a few seconds to get its result.",
+                  "code": "request_in_progress"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity: `idempotency_key_reused`. The `Idempotency-Key` was already used with a different request body.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "example": {
+                  "statusCode": 422,
+                  "error": "Unprocessable Entity",
+                  "message": "This Idempotency-Key was already used with a different request body. Use a new key for a new video.",
+                  "code": "idempotency_key_reused"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests: `open_upload_limit` when the API key user already has 10 videos waiting for their file, or `daily_upload_limit` when the workspace has created its daily number of videos through the API. Wait for the number of seconds in `Retry-After`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "examples": {
+                  "open_upload_limit": {
+                    "value": {
+                      "statusCode": 429,
+                      "error": "Too Many Requests",
+                      "message": "This API key user already has 10 videos waiting for their file. Upload the files you created, or wait for unused uploads to expire, then retry.",
+                      "code": "open_upload_limit"
+                    }
+                  },
+                  "daily_upload_limit": {
+                    "value": {
+                      "statusCode": 429,
+                      "error": "Too Many Requests",
+                      "message": "This workspace created 500 videos through the API in the last 24 hours, which is its limit. Retry later, or contact support to raise it.",
+                      "code": "daily_upload_limit"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "How many seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer",
+                  "example": 60
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error: `create_failed`. Nothing was created, so it is safe to retry.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "error": "Internal Server Error",
+                  "message": "The video could not be created. Nothing was created; it is safe to retry.",
+                  "code": "create_failed"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable: `upload_service_unavailable`. Nothing was created. Retry shortly.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "example": {
+                  "statusCode": 503,
+                  "error": "Service Unavailable",
+                  "message": "The video service is unavailable right now. Nothing was created; retry shortly.",
+                  "code": "upload_service_unavailable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workspaces/{workspaceId}/campaigns/{campaignId}/status": {
+      "get": {
+        "summary": "Get the status and share link of a video",
+        "operationId": "getPublicVideoStatus",
+        "description": "Reports the processing status and share link of a video. `status` is `waiting_for_upload`, `processing`, `ready`, `failed` or `expired`. `ready`, `failed` and `expired` are final, so stop polling there. The share link plays once `status` is `ready`.\n\nPoll about every 10 seconds. The answer can lag a few seconds behind. This endpoint works for any video in a folder the API key user can see. `upload.url` is returned only to the user who created the video.",
+        "tags": [
+          "Video Upload"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "required": true,
+            "description": "The workspace the API key belongs to. Retrieve it from `GET /v1/workspaces/identifier`.",
+            "schema": {
+              "type": "string",
+              "example": "7voa5y6qjj04kkbfqbgjd7kdvxlf4gqo"
+            }
+          },
+          {
+            "name": "campaignId",
+            "in": "path",
+            "required": true,
+            "description": "The `campaignId` returned when the video was created.",
+            "schema": {
+              "type": "string",
+              "example": "9kyv6gem1r2t3y4u5i6o7p8a9s0d1f2g"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The current status of the video.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoResponseSchema"
+                },
+                "example": {
+                  "campaignId": "9kyv6gem1r2t3y4u5i6o7p8a9s0d1f2g",
+                  "shareId": "z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+                  "title": "Welcome to Sendspark",
+                  "shareUrl": "https://sendspark.com/share/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+                  "embedUrl": "https://sendspark.com/embed/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+                  "status": "ready",
+                  "upload": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request: `invalid_workspace` when the workspace ID does not match the API key. A malformed `workspaceId` or `campaignId` also returns `400`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "example": {
+                  "statusCode": 400,
+                  "error": "Bad Request",
+                  "message": "Invalid workspace ID: the API key belongs to another workspace",
+                  "code": "invalid_workspace"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: the API key or secret is missing, invalid or revoked.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvalidAuthentication"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found: `video_not_found` when the video does not exist, was deleted, belongs to another workspace or sits in a folder the API key user cannot see. These cases are deliberately indistinguishable. `member_not_found` when the API key user or the workspace was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                },
+                "example": {
+                  "statusCode": 404,
+                  "error": "Not Found",
+                  "message": "Resource not found or invalid access",
+                  "code": "video_not_found"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error: the video could not be read right now. Retry.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicVideoError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "servers": [
@@ -3762,6 +4127,169 @@
           "message": {
             "type": "string",
             "example": "Missing authentication"
+          }
+        }
+      },
+      "PublicVideoCtaButtonSchema": {
+        "type": "object",
+        "required": [
+          "label",
+          "url"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Button text. Plain text, up to 100 characters. HTML tags are refused.",
+            "example": "Book a call"
+          },
+          "url": {
+            "type": "string",
+            "description": "An http, https, mailto or tel link. Template variables are not supported.",
+            "example": "https://sendspark.com/demo"
+          }
+        }
+      },
+      "PublicVideoCreatePayloadSchema": {
+        "type": "object",
+        "required": [
+          "title"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 500,
+            "description": "Letters, digits, spaces, hyphens (-), ampersands (&) and parentheses, up to 45 characters. Apostrophes are removed, any other character becomes a space, and a longer title is cut to fit. The response returns the title as stored.",
+            "example": "Welcome to Sendspark"
+          },
+          "folderId": {
+            "type": "string",
+            "description": "A folder of the workspace the API key user can see, other than the Requested folder. Defaults to their personal folder.",
+            "example": "9kyv6gem1r2t3y4u5i6o7p8a9s0d1f2g"
+          },
+          "templateId": {
+            "type": "string",
+            "description": "A share-page template of the workspace, applied before `message` and `ctaButtons`.",
+            "example": "z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 2000,
+            "description": "Share-page message. Plain text, up to 2000 characters. HTML tags are refused. Overrides the template message.",
+            "example": "Here is a quick video I made for you."
+          },
+          "ctaButtons": {
+            "type": "array",
+            "maxItems": 10,
+            "description": "Up to 10 share-page buttons. Overrides the template buttons. An empty list removes them.",
+            "items": {
+              "$ref": "#/components/schemas/PublicVideoCtaButtonSchema"
+            }
+          }
+        }
+      },
+      "PublicVideoUploadSchema": {
+        "type": "object",
+        "nullable": true,
+        "description": "Set while `status` is `waiting_for_upload`, otherwise `null`.",
+        "properties": {
+          "url": {
+            "type": "string",
+            "nullable": true,
+            "description": "Send the video file here in a single `PUT` of the raw bytes, from a server. Only the API key user who created the video receives it; for anyone else it is `null`.",
+            "example": "https://storage.googleapis.com/video-storage-us-east1-uploads/..."
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "After this time the URL no longer accepts a file and the video ends as `expired`.",
+            "example": "2026-10-27T18:00:00.000Z"
+          }
+        }
+      },
+      "PublicVideoResponseSchema": {
+        "type": "object",
+        "properties": {
+          "campaignId": {
+            "type": "string",
+            "description": "The video's ID. Use it to poll the status endpoint.",
+            "example": "9kyv6gem1r2t3y4u5i6o7p8a9s0d1f2g"
+          },
+          "shareId": {
+            "type": "string",
+            "description": "The ID in the share and embed links.",
+            "example": "z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true,
+            "description": "The title as stored, after cleaning.",
+            "example": "Welcome to Sendspark"
+          },
+          "shareUrl": {
+            "type": "string",
+            "nullable": true,
+            "description": "The video's share page. Uses the workspace's custom domain when one is set.",
+            "example": "https://sendspark.com/share/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s"
+          },
+          "embedUrl": {
+            "type": "string",
+            "nullable": true,
+            "description": "The embeddable player for the video.",
+            "example": "https://sendspark.com/embed/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "waiting_for_upload",
+              "processing",
+              "ready",
+              "failed",
+              "expired"
+            ],
+            "description": "`waiting_for_upload`: send the file to `upload.url` before `upload.expiresAt`. `processing`: the file arrived and is being prepared. `ready`: the share link plays. `failed`: the file could not be processed. `expired`: no file arrived before `upload.expiresAt`. `ready`, `failed` and `expired` are final.",
+            "example": "waiting_for_upload"
+          },
+          "upload": {
+            "$ref": "#/components/schemas/PublicVideoUploadSchema"
+          }
+        }
+      },
+      "PublicVideoError": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "number",
+            "example": 404
+          },
+          "error": {
+            "type": "string",
+            "example": "Not Found"
+          },
+          "message": {
+            "type": "string",
+            "example": "Folder not found"
+          },
+          "code": {
+            "type": "string",
+            "description": "A stable, machine-readable error code. Branch on this, not on `message`.",
+            "enum": [
+              "invalid_request",
+              "invalid_workspace",
+              "member_not_found",
+              "folder_not_found",
+              "template_not_found",
+              "video_not_found",
+              "video_limit_reached",
+              "open_upload_limit",
+              "daily_upload_limit",
+              "request_in_progress",
+              "idempotency_key_reused",
+              "upload_service_unavailable",
+              "create_failed"
+            ],
+            "example": "folder_not_found"
           }
         }
       }

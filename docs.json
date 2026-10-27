@@ -743,6 +743,7 @@
             "pages": [
               "api-automatically-create-dynamic-videos-via-api",
               "api-get-video-transcripts-via-api",
+              "api-upload-videos-via-api",
               "webhooks-properties-in-sendspark-webhooks"
             ]
           }

@@ -1,0 +1,234 @@
+---
+title: "API: Upload Videos via API"
+description: "Upload an MP4 or MOV file to Sendspark with your API key and secret, then get back a share link and embed link once the video is ready."
+keywords:
+  - sendspark api
+  - upload video api
+  - video upload endpoint
+  - create video share link api
+  - video processing status api
+---
+
+The Sendspark API lets a script or server upload a video file and get back a share link, with no one opening Sendspark. You create the video with one call, send the file to the upload URL it returns, then check the status until the video is ready. Both endpoints live under `https://api-gw.sendspark.com/v1` and use your API key and secret.
+
+## Key takeaways
+
+- Authenticate the same way as every other endpoint: an **API Key** as `x-api-key` and an **API Secret** as `x-api-secret`. See [how to create API keys](/how-to-create-api-keys).
+- The flow has three steps: create the video, `PUT` the file to `upload.url`, then poll the status endpoint until `status` is `ready`.
+- The video is created as the user who owns the API Secret, in their personal folder unless you choose another folder.
+- Send an `Idempotency-Key` header so a retried request never creates a second video.
+- Each API key user can have 10 videos waiting for their file at a time. Each workspace can create 500 videos through the API in any 24 hours.
+
+### API endpoints at a glance
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `POST` | `/workspaces/{workspaceId}/campaigns` | Create a video and get the URL to upload its file to |
+| `GET` | `/workspaces/{workspaceId}/campaigns/{campaignId}/status` | Get the processing status and share link of a video |
+
+---
+
+## What do I need before I start?
+
+<Steps>
+  <Step title="Your API Key and Secret">
+    Generate both in the [API Credentials tab](https://sendspark.com/settings/api-credentials) of your Sendspark settings. The Secret is shown only once, so store it when you generate it. See [how to create API keys](/how-to-create-api-keys).
+  </Step>
+  <Step title="Your workspace ID">
+    Call `GET /v1/workspaces/identifier` with your credentials and it returns the workspace your API Key belongs to. It is also in your [workspace settings](/how-to-find-your-workspace-id).
+  </Step>
+  <Step title="A video file">
+    An .mp4 or .mov file on the server or machine that runs your script.
+  </Step>
+</Steps>
+
+## How do I create the video?
+
+Send the title, and optionally the share-page message and call-to-action buttons. The response gives you the video's share link and the URL its file goes to.
+
+```bash
+curl -X POST "https://api-gw.sendspark.com/v1/workspaces/{workspaceId}/campaigns" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -H "x-api-secret: YOUR_API_SECRET" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: 2f1c9a7e-5b3d-4e8a-9c6f-0d1e2f3a4b5c" \
+  -d '{
+    "title": "Welcome to Sendspark",
+    "message": "Here is a quick video I made for you.",
+    "ctaButtons": [
+      { "label": "Book a call", "url": "https://sendspark.com/demo" }
+    ]
+  }'
+```
+
+```json
+{
+  "campaignId": "9kyv6gem1r2t3y4u5i6o7p8a9s0d1f2g",
+  "shareId": "z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+  "title": "Welcome to Sendspark",
+  "shareUrl": "https://sendspark.com/share/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+  "embedUrl": "https://sendspark.com/embed/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+  "status": "waiting_for_upload",
+  "upload": {
+    "url": "https://storage.googleapis.com/video-storage-us-east1-uploads/...",
+    "expiresAt": "2026-10-27T18:00:00.000Z"
+  }
+}
+```
+
+Keep `campaignId` to check the status later, and `upload.url` for the next step.
+
+### Which fields can I send?
+
+| Field | Required | What it does |
+| --- | --- | --- |
+| `title` | Yes | The video title. Letters, digits, spaces, hyphens (-), ampersands (&) and parentheses, up to 45 characters. |
+| `folderId` | No | The folder the video goes in. Any folder of the workspace the API key user can see, except the Requested folder. Defaults to their personal folder. |
+| `templateId` | No | A share-page [template](/how-to-use-templates) of the workspace. It is applied first, so `message` and `ctaButtons` override it. |
+| `message` | No | The share-page message. Plain text, up to 2,000 characters. |
+| `ctaButtons` | No | Up to 10 share-page buttons, each with a `label` (plain text, up to 100 characters) and a `url`. An empty list removes the template's buttons. |
+
+A few rules worth knowing:
+
+- **Titles are cleaned, not refused.** Apostrophes are removed, any other character outside the allowed set becomes a space, and a title longer than 45 characters is cut to fit. `"Hi, Sarah"` is stored as `"Hi Sarah"`. The response returns the title as stored. A title is refused only when nothing is left after cleaning, or when you send more than 500 characters.
+- **Message and button labels are plain text.** A request with an HTML tag in `message` or a button `label` is refused with `400`.
+- **Button links must be `http`, `https`, `mailto` or `tel`.** Template variables are not supported in button links.
+
+## How do I upload the video file?
+
+Send the file to `upload.url` in a single HTTP `PUT` of the raw bytes, before `upload.expiresAt`. No Sendspark headers are needed on this request.
+
+```bash
+curl -X PUT --upload-file ./my-video.mp4 "UPLOAD_URL"
+```
+
+Two things to keep in mind:
+
+- **Upload from a server, not a browser.** Browsers are blocked from sending files to this URL.
+- **Treat `upload.url` like a password.** Anyone who has it can send a file to your video. Only the API key user who created the video receives it.
+
+If no file arrives before `upload.expiresAt`, the video ends as `expired`. Create a new one to try again.
+
+## How do I know when the video is ready?
+
+Poll the status endpoint about every 10 seconds until `status` is `ready`, `failed` or `expired`. Those three are final, so stop polling there.
+
+```bash
+curl "https://api-gw.sendspark.com/v1/workspaces/{workspaceId}/campaigns/{campaignId}/status" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -H "x-api-secret: YOUR_API_SECRET"
+```
+
+```json
+{
+  "campaignId": "9kyv6gem1r2t3y4u5i6o7p8a9s0d1f2g",
+  "shareId": "z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+  "title": "Welcome to Sendspark",
+  "shareUrl": "https://sendspark.com/share/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+  "embedUrl": "https://sendspark.com/embed/z2x58rf41q2w3e4r5t6y7u8i9o0p1a2s",
+  "status": "ready",
+  "upload": null
+}
+```
+
+| Status | What it means | What to do |
+| --- | --- | --- |
+| `waiting_for_upload` | The video exists but its file has not arrived. | Send the file to `upload.url` before `upload.expiresAt`. |
+| `processing` | The file arrived and is being prepared. | Keep polling. |
+| `ready` | The share link plays the video. | Use `shareUrl` or `embedUrl`. |
+| `failed` | The file could not be processed. | Create a new video and upload the file again. |
+| `expired` | No file arrived before `upload.expiresAt`. | Create a new video and upload the file in time. |
+
+The status can lag a few seconds behind the upload, so a `waiting_for_upload` right after your `PUT` finishes is normal.
+
+The status endpoint works for any video in a folder the API key user can see. `upload` is set only while `status` is `waiting_for_upload`, and `upload.url` is `null` for anyone other than the user who created the video.
+
+## How do I share or embed the video?
+
+Once `status` is `ready`:
+
+- **`shareUrl`** is the video's share page, with your title, message and buttons. Paste it into an email, a CRM record or a message. If your workspace uses a [custom domain](/use-a-custom-domain-for-videos), the link uses it.
+- **`embedUrl`** is the player on its own, for placing the video on a web page. See [how to embed your video on a web page](/embed-your-video-on-a-web-page).
+
+Both links already exist when you create the video, but they play only once the video is `ready`. The video also appears in Sendspark, in the chosen folder, created by the API key user, and its views are tracked like any other video.
+
+## How do I retry safely?
+
+Send an `Idempotency-Key` header with any unique string up to 255 characters, such as a UUID. Use a new key for each new video and the same key when you retry a request.
+
+| What happens | Response |
+| --- | --- |
+| You repeat a request that succeeded, with the same key and body | The first response again, including the same `upload.url`. No second video is created. |
+| You repeat a request that is still running | `409` with code `request_in_progress`. Retry in a few seconds to get its result. |
+| You reuse a key with a different body | `422` with code `idempotency_key_reused`. |
+| You repeat a request that failed | It runs again. |
+
+Without the header, every request creates a new video.
+
+## What limits apply?
+
+| Limit | Value | Response when reached |
+| --- | --- | --- |
+| Videos waiting for their file, per API key user | 10 at a time | `429` with code `open_upload_limit` |
+| Videos created through the API, per workspace | 500 in any 24 hours | `429` with code `daily_upload_limit` |
+| Videos in the workspace | Your plan's video limit | `403` with code `video_limit_reached` |
+
+Both `429` responses include a `Retry-After` header with the number of seconds to wait. A slot under the first limit frees up as soon as one of your files arrives, or when an unused upload expires. To raise the daily limit, contact support.
+
+## How do I handle errors?
+
+Errors from these endpoints include a `code` field. Branch on `code`, not on `message`, because messages can change.
+
+```json
+{
+  "statusCode": 404,
+  "error": "Not Found",
+  "message": "Folder not found. Use a folder of this workspace the API key user can see, or omit folderId to use their personal folder.",
+  "code": "folder_not_found"
+}
+```
+
+| Status | Code | Meaning |
+| --- | --- | --- |
+| `400` | `invalid_request` | A field is missing or invalid. The message names the field. |
+| `400` | `invalid_workspace` | The workspace ID does not match the API key. |
+| `401` | none | The API Key or Secret is missing, invalid, or was revoked. |
+| `403` | `video_limit_reached` | The workspace reached its plan's video limit. |
+| `404` | `member_not_found` | The API key user or the workspace was not found. |
+| `404` | `folder_not_found` | `folderId` is not a folder of this workspace the API key user can see, or it is the Requested folder. |
+| `404` | `template_not_found` | `templateId` is not a share-page template of this workspace. |
+| `404` | `video_not_found` | Status only. The video does not exist, was deleted, or the API key user cannot see it. |
+| `409` | `request_in_progress` | A request with the same `Idempotency-Key`, or another video for the same API key user, is still being created. Retry in a few seconds. |
+| `422` | `idempotency_key_reused` | The `Idempotency-Key` was already used with a different body. |
+| `429` | `open_upload_limit` | The API key user already has 10 videos waiting for their file. |
+| `429` | `daily_upload_limit` | The workspace reached its daily number of videos created through the API. |
+| `500` | `create_failed` | The video could not be created. Nothing was created, so it is safe to retry. |
+| `503` | `upload_service_unavailable` | The video service is unavailable right now. Nothing was created. Retry shortly. |
+
+A few errors come from authentication and access checks and have no `code`: `401`, `403` for a disabled API key, `400` for a workspace ID that does not match the API key, and `404` when the API key user is not a member of the workspace. A `500` from the status endpoint means the video could not be read just then. Retry it.
+
+A video of another workspace, or in a folder the API key user cannot see, returns the same `404` as one that does not exist. This is deliberate: it keeps the API from confirming whether a video ID is real to someone who cannot read it.
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which file formats can I upload?">
+    .mp4 and .mov files. For the formats Sendspark accepts in the app, see [what video formats can I upload to Sendspark](/what-video-formats-can-i-upload-to-sendspark).
+  </Accordion>
+  <Accordion title="Whose name is on the video?">
+    The user who generated the API Secret. The video is created as that user, lands in their personal folder unless you pass `folderId`, and counts toward their 10 open uploads.
+  </Accordion>
+  <Accordion title="Can I upload the file from a web page in the browser?">
+    No. Browsers are blocked from sending files to `upload.url`. Send the file from a server or a script.
+  </Accordion>
+  <Accordion title="Can I check the status of a video someone else created?">
+    Yes, if it is in a folder the API key user can see. You get the status and share links, but `upload.url` is `null` because only the creator receives it.
+  </Accordion>
+  <Accordion title="Can I use a share-page template and still change the message?">
+    Yes. Pass `templateId` with `message` or `ctaButtons`. The template is applied first, then your message and buttons replace the template's.
+  </Accordion>
+</AccordionGroup>
+
+_Updated October 2026._
