@@ -514,7 +514,8 @@
                   "send-videos-in-linkedin-messages-expandi",
                   "skylead-send-dynamic-videos"
                 ]
-              }
+              },
+              "generate-and-send-videos-via-sms-with-go-high-level-using-a-csv-file-no-automation"
             ]
           },
           {

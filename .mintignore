@@ -1,0 +1,5 @@
+# Root agent instruction files: keep them out of the published site.
+# Anchored with / so .mintlify/AGENTS.md (read by the Mintlify agent) is untouched.
+# (.claude/, .mintlify/ and README.md are ignored by Mintlify by default.)
+/AGENTS.md
+/CLAUDE.md
