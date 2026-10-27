@@ -83,7 +83,7 @@ Keep `campaignId` to check the status later, and `upload.url` for the next step.
 | Field | Required | What it does |
 | --- | --- | --- |
 | `title` | Yes | The video title. Letters, digits, spaces, hyphens (-), ampersands (&) and parentheses, up to 45 characters. |
-| `folderId` | No | The folder the video goes in. Any folder of the workspace the API key user can see, except the Requested folder. Defaults to their personal folder. |
+| `folderId` | No | The folder the video goes in. Any folder of the workspace the API key user can see, except the Requested folder. Defaults to their personal folder. To find it, open the folder in your Sendspark library and copy the value after `folderId=` in the browser address bar. |
 | `templateId` | No | A share-page [template](/how-to-use-templates) of the workspace. It is applied first, so `message` and `ctaButtons` override it. |
 | `message` | No | The share-page message. Plain text, up to 2,000 characters. |
 | `ctaButtons` | No | Up to 10 share-page buttons, each with a `label` (plain text, up to 100 characters) and a `url`. An empty list removes the template's buttons. |
@@ -169,11 +169,22 @@ Without the header, every request creates a new video.
 
 | Limit | Value | Response when reached |
 | --- | --- | --- |
+| Requests, per API key, per endpoint | 30 per minute | `429` with no `code` |
 | Videos waiting for their file, per API key user | 10 at a time | `429` with code `open_upload_limit` |
-| Videos created through the API, per workspace | 500 in any 24 hours | `429` with code `daily_upload_limit` |
+| Videos created through the API, per workspace | Depends on your plan, see below | `429` with code `daily_upload_limit` |
 | Videos in the workspace | Your plan's video limit | `403` with code `video_limit_reached` |
 
-Both `429` responses include a `Retry-After` header with the number of seconds to wait. A slot under the first limit frees up as soon as one of your files arrives, or when an unused upload expires. To raise the daily limit, contact support.
+The daily limit counts videos created through the API in any rolling 24 hours, across every API key in the workspace:
+
+| Plan | Videos per 24 hours |
+| --- | --- |
+| Free trial | 20 |
+| Growth | 200 |
+| Team | 500 |
+| Business | 1,500 |
+| Enterprise | Set in your contract |
+
+Each response carries `X-RateLimit-UserPathLimit`, `X-RateLimit-UserPathRemaining` and `X-RateLimit-UserPathReset` headers, so you can slow down before you reach the request limit. The `open_upload_limit` and `daily_upload_limit` responses include a `Retry-After` header with the number of seconds to wait. A slot under the open-upload limit frees up as soon as one of your files arrives, or when an unused upload expires. To raise the daily limit, contact support.
 
 ## How do I handle errors?
 
@@ -205,7 +216,7 @@ Errors from these endpoints include a `code` field. Branch on `code`, not on `me
 | `500` | `create_failed` | The video could not be created. Nothing was created, so it is safe to retry. |
 | `503` | `upload_service_unavailable` | The video service is unavailable right now. Nothing was created. Retry shortly. |
 
-A few errors come from authentication and access checks and have no `code`: `401`, `403` for a disabled API key, `400` for a workspace ID that does not match the API key, and `404` when the API key user is not a member of the workspace. A `500` from the status endpoint means the video could not be read just then. Retry it.
+A few errors come from authentication and access checks and have no `code`: `401`, `403` for a disabled API key, `400` for a workspace ID that does not match the API key, `404` when the API key user is not a member of the workspace, and `429` when you pass the request limit. A `500` from the status endpoint means the video could not be read just then. Retry it.
 
 A video of another workspace, or in a folder the API key user cannot see, returns the same `404` as one that does not exist. This is deliberate: it keeps the API from confirming whether a video ID is real to someone who cannot read it.
 

@@ -1865,7 +1865,7 @@
       "post": {
         "summary": "Create a video and get its upload URL",
         "operationId": "postPublicVideo",
-        "description": "Creates a standard video as the user the API secret belongs to and returns its share link plus `upload.url`, where the video file goes.\n\n1. Call this endpoint.\n2. Send the file to `upload.url` with a single HTTP `PUT` of the raw bytes, from a server, before `upload.expiresAt`. Browsers cannot upload to this URL. Accepted files: .mp4 and .mov.\n3. Poll `GET /v1/workspaces/{workspaceId}/campaigns/{campaignId}/status` about every 10 seconds until `status` is `ready`. `failed` and `expired` are also final.\n\n**Retries:** send an `Idempotency-Key` header. Repeating a request with the same key returns the first response instead of creating a second video. The same key with a different body returns `422`.\n\n**Limits:** each API key user can have 10 videos waiting for their file at a time, and each workspace can create 500 videos through the API in any 24 hours by default. Past either limit, the endpoint returns `429` with a `Retry-After` header.\n\nErrors from this endpoint carry a machine-readable `code`. Authentication and access errors (`401`, a disabled API key, a workspace ID that does not match the API key, a user who is not a member) do not.",
+        "description": "Creates a standard video as the user the API secret belongs to and returns its share link plus `upload.url`, where the video file goes.\n\n1. Call this endpoint.\n2. Send the file to `upload.url` with a single HTTP `PUT` of the raw bytes, from a server, before `upload.expiresAt`. Browsers cannot upload to this URL. Accepted files: .mp4 and .mov.\n3. Poll `GET /v1/workspaces/{workspaceId}/campaigns/{campaignId}/status` about every 10 seconds until `status` is `ready`. `failed` and `expired` are also final.\n\n**Retries:** send an `Idempotency-Key` header. Repeating a request with the same key returns the first response instead of creating a second video. The same key with a different body returns `422`.\n\n**Limits:** each API key user can have 10 videos waiting for their file at a time, and each workspace can create a set number of videos through the API in any 24 hours: 20 on a free trial, 200 on Growth, 500 on Team, 1,500 on Business, and the contracted number on Enterprise. Past either limit, the endpoint returns `429` with a `Retry-After` header. Requests are also limited to 30 per minute per API key on each endpoint; past that, `429` without a `code`.\n\nErrors from this endpoint carry a machine-readable `code`. Authentication and access errors (`401`, a disabled API key, a workspace ID that does not match the API key, a user who is not a member) do not.",
         "tags": [
           "Video Upload"
         ],
@@ -2069,7 +2069,7 @@
                     "value": {
                       "statusCode": 429,
                       "error": "Too Many Requests",
-                      "message": "This workspace created 500 videos through the API in the last 24 hours, which is its limit. Retry later, or contact support to raise it.",
+                      "message": "This workspace created 200 videos through the API in the last 24 hours, which is its limit. Retry later, or contact support to raise it.",
                       "code": "daily_upload_limit"
                     }
                   }
@@ -4164,7 +4164,7 @@
           },
           "folderId": {
             "type": "string",
-            "description": "A folder of the workspace the API key user can see, other than the Requested folder. Defaults to their personal folder.",
+            "description": "A folder of the workspace the API key user can see, other than the Requested folder. Defaults to their personal folder. Find it in the address bar when the folder is open in your Sendspark library: the value after `folderId=`.",
             "example": "9kyv6gem1r2t3y4u5i6o7p8a9s0d1f2g"
           },
           "templateId": {
