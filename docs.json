@@ -494,7 +494,9 @@
                   "trigger-sendspark-videos-from-salesloft-and-send-them-via-apollo-sequences",
                   "woodpecker-send-dynamic-videos",
                   "zoho-send-dynamic-videos",
-                  "zoominfo-engage-send-dynamic-videos"
+                  "zoominfo-engage-send-dynamic-videos",
+                  "nooks-send-dynamic-videos",
+                  "plusvibe-send-dynamic-videos"
                 ]
               },
               {
