@@ -516,7 +516,8 @@
                   "linkedin-automation-platform-compatibility",
                   "send-ai-videos-on-linkedin-via-clay-lgm",
                   "send-videos-in-linkedin-messages-expandi",
-                  "skylead-send-dynamic-videos"
+                  "skylead-send-dynamic-videos",
+                  "kerux-send-dynamic-videos"
                 ]
               },
               "generate-and-send-videos-via-sms-with-go-high-level-using-a-csv-file-no-automation"
